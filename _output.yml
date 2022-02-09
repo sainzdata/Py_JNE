@@ -1,17 +1,23 @@
 bookdown::gitbook:
-  css: style.css
+  pandoc_args: [ "--csl", "apa-old-doi-prefix.csl"]
+  toc_depth: 3
+  css: [style.css, toc.css]
   config:
     toc:
       before: |
-        <li><a href="./">e-Book Example</a></li>
+        <li><center><img src="images/cover.png" alt="logo" width="50%" height="50%"style="margin: 15px 0 0 0"></center></li>
       after: |
-        <li><a href="https://github.com/Bakti-Siregar/Bookdown-Template" target="blank">Published with bookdown</a></li>
-    edit: https://github.com/Bakti-Siregar/Bookdown-Template/edit/master/%s
-    download: ["pdf", "epub"]
+        <li><a href="https://github.com/dsciencelabs/Bookdown-Tempalate_R" target="blank">Published with bookdown</a></li>
+    edit: https://github.com/dsciencelabs/Bookdown-Tempalate_R/edit/master/%s
+    download: null
+    sharing:
+      github: yes
+      facebook: yes
+      linkedin: yes
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
-  latex_engine: xelatex
-  citation_package: natbib
-  keep_tex: yes
+    latex_engine: xelatex
+    citation_package: natbib
+    keep_tex: yes
 bookdown::epub_book: default
