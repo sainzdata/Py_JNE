@@ -25,6 +25,12 @@
   background-size: 80px 60px;
 }
 
+
+body {
+  text-align: justify
+  
+}
+
 /*
 p.date {
   color:transparent;
