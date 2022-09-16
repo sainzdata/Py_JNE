@@ -24,20 +24,20 @@ Untuk mencapai hasil analis data yang baik seperti pada gambar 1 dibutuhkan peng
 
 ## Level Pemula (Beginner)
 
-Materi pelatihan analisis data ini dapat dipelajari dengan menggunakan Python atau R. Pada level ini, materi akan dibagi menjadi 5 pertemuan, yaitu;
+Materi pelatihan analisis data ini dapat dipelajari dengan menggunakan Python. Pada level ini, materi akan dibagi menjadi 5 pertemuan, yaitu;
 
-### Pertemuan 1: Instalasi & Pengenalan Dasar Python (Rstudio)
+### Pertemuan 1: Instalasi & Pengenalan Dasar Python
 
 Target Capaian Pelatihan:
 *	Memahami latar belakang 
 *	Memahami ekosistem instalasi 
-*	Memahami dan mengenal fitur-fitur dari Anaconda/Jupyter/Google Collab/Rstudio
+*	Memahami dan mengenal fitur-fitur dari Anaconda/Jupyter/Google Collab
 *	Memahami konsep variable dan tipe data 
 *	Memahami penggunaan operator 
 *	Memahami apa itu Data Structures 
 *	Memahami konsep Code Structure
 
-### Pertemuan 2: Pemrograman Python (Rstudio)
+### Pertemuan 2: Pemrograman Python
 
 Target Capaian Pelatihan:
 *	Menerapkan IF statement
