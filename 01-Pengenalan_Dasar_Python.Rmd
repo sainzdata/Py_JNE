@@ -8,6 +8,15 @@
 <img src="https://github.com/sainzdata/Py_JNE/blob/main/images/python.png?raw=true" width="550" height="180">
 </center>
 
+Inspirasi nama Python diambil dari acara TV BBC yang berjudul “Monty Python’s Flying Circus”, karena Guido adalah penggemar berat acara tersebut. Selain itu, ia ingin memberikan nama yang pendek, unik, dan sedikit misterius untuk penemuannya. He named it - Python!
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/python2.png?raw=true" width="550" height="300">
+</center>
+
+
+
+
 ## Alasan Menggunakan Python
 
 
