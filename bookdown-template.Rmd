@@ -1,3 +1,26 @@
+--- 
+title: "Modul Pelatihan JNE"
+subtitle: "Analisis Data dengan Menggunakan Python"
+author: "Bakti Siregar"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: sainzdata/Py_JNE
+description: "Materi ini diperuntukkan untuk pelatihan Analisis Data dengan menggunakan Python di JNE"
+---
+
+# Overview {-}
+
+Placeholder
+
+
+
+<!--chapter:end:index.Rmd-->
+
 # Pengenalan Dasar Python
 
 ## Sejarah Python
@@ -253,4 +276,54 @@ Salah satu bagian terpenting dalam bekerja dengan bahasa Python adalah mengetahu
 help(print)
 ```
 
+
+
+<!--chapter:end:01-Pengenalan_Dasar_Python.Rmd-->
+
+# Pemrograman Python
+
+Here is a review of existing methods.
+
+<!--chapter:end:02-Pemrograman_Python.Rmd-->
+
+# Persiapan Data
+
+We describe our methods in this chapter.
+
+<!--chapter:end:03-Persiapan_Data.Rmd-->
+
+# Visualisasi Data
+
+Some _significant_ applications are demonstrated in this chapter.
+
+## Example one
+
+## Example two
+
+<!--chapter:end:04-Visualisasi_Data.Rmd-->
+
+# Studi Kasus
+
+We have finished a nice book.
+
+<!--chapter:end:05-Studi_Kasus.Rmd-->
+
+`r if (knitr:::is_html_output()) '
+# Referensi {-}
+'`
+
+##  Pertemuan 1
+
+1.    https://www.tutorialspoint.com/r/index.htm
+2.    https://www.tutorialspoint.com/python/index.htm
+3.    https://www.anotherbookondatascience.com/chapter1.html
+4.    https://www.kodefungsi.com/fungsi/PYTHON/
+5.    https://www.anotherbookondatascience.com/chapter1.html
+6.    https://www.petanikode.com/
+
+
+
+
+
+<!--chapter:end:06-Referensi.Rmd-->
 
