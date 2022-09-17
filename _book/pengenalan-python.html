@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Pertemuan 1 Pengenalan Python | Modul Pelatihan JNE</title>
+  <meta name="description" content="Materi ini diperuntukkan untuk pelatihan Analisis Data dengan menggunakan Python di JNE" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Pertemuan 1 Pengenalan Python | Modul Pelatihan JNE" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Materi ini diperuntukkan untuk pelatihan Analisis Data dengan menggunakan Python di JNE" />
+  <meta name="github-repo" content="sainzdata/Py_JNE" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Pertemuan 1 Pengenalan Python | Modul Pelatihan JNE" />
+  
+  <meta name="twitter:description" content="Materi ini diperuntukkan untuk pelatihan Analisis Data dengan menggunakan Python di JNE" />
+  
+
+<meta name="author" content="Penulis: Bakti Siregar, S.Si.,M.Sc" />
+
+
+<meta name="date" content="2022-09-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="pemrograman-python.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="toc.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><center><img src="images/JNE.png" alt="logo" width="50%" height="50%"style="margin: 15px 0 0 0"></center></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a></li>
+<li class="chapter" data-level="1" data-path="pengenalan-python.html"><a href="pengenalan-python.html"><i class="fa fa-check"></i><b>1</b> Pengenalan Python</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="pengenalan-python.html"><a href="pengenalan-python.html#sejarah"><i class="fa fa-check"></i><b>1.1</b> Sejarah</a></li>
+<li class="chapter" data-level="1.2" data-path="pengenalan-python.html"><a href="pengenalan-python.html#mengapa-python"><i class="fa fa-check"></i><b>1.2</b> Mengapa Python?</a></li>
+<li class="chapter" data-level="1.3" data-path="pengenalan-python.html"><a href="pengenalan-python.html#r-vs-python"><i class="fa fa-check"></i><b>1.3</b> R Vs Python</a></li>
+<li class="chapter" data-level="1.4" data-path="pengenalan-python.html"><a href="pengenalan-python.html#install-python"><i class="fa fa-check"></i><b>1.4</b> Install Python</a></li>
+<li class="chapter" data-level="1.5" data-path="pengenalan-python.html"><a href="pengenalan-python.html#sintaks-dasar"><i class="fa fa-check"></i><b>1.5</b> Sintaks Dasar</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="pengenalan-python.html"><a href="pengenalan-python.html#penugasan-variabel"><i class="fa fa-check"></i><b>1.5.1</b> Penugasan Variabel</a></li>
+<li class="chapter" data-level="1.5.2" data-path="pengenalan-python.html"><a href="pengenalan-python.html#menambahkan-komentar"><i class="fa fa-check"></i><b>1.5.2</b> Menambahkan Komentar</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="pengenalan-python.html"><a href="pengenalan-python.html#operator"><i class="fa fa-check"></i><b>1.6</b> Operator</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="pengenalan-python.html"><a href="pengenalan-python.html#aritmatika"><i class="fa fa-check"></i><b>1.6.1</b> Aritmatika</a></li>
+<li class="chapter" data-level="1.6.2" data-path="pengenalan-python.html"><a href="pengenalan-python.html#relasional"><i class="fa fa-check"></i><b>1.6.2</b> Relasional</a></li>
+<li class="chapter" data-level="1.6.3" data-path="pengenalan-python.html"><a href="pengenalan-python.html#logika"><i class="fa fa-check"></i><b>1.6.3</b> Logika</a></li>
+<li class="chapter" data-level="1.6.4" data-path="pengenalan-python.html"><a href="pengenalan-python.html#lain-lain"><i class="fa fa-check"></i><b>1.6.4</b> Lain-lain</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="pengenalan-python.html"><a href="pengenalan-python.html#tipe-data"><i class="fa fa-check"></i><b>1.7</b> Tipe Data</a></li>
+<li class="chapter" data-level="1.8" data-path="pengenalan-python.html"><a href="pengenalan-python.html#bantuan"><i class="fa fa-check"></i><b>1.8</b> Bantuan</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="pemrograman-python.html"><a href="pemrograman-python.html"><i class="fa fa-check"></i><b>2</b> Pemrograman Python</a></li>
+<li class="chapter" data-level="3" data-path="persiapan-data.html"><a href="persiapan-data.html"><i class="fa fa-check"></i><b>3</b> Persiapan Data</a></li>
+<li class="chapter" data-level="4" data-path="visualisasi-data.html"><a href="visualisasi-data.html"><i class="fa fa-check"></i><b>4</b> Visualisasi Data</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="visualisasi-data.html"><a href="visualisasi-data.html#example-one"><i class="fa fa-check"></i><b>4.1</b> Example one</a></li>
+<li class="chapter" data-level="4.2" data-path="visualisasi-data.html"><a href="visualisasi-data.html#example-two"><i class="fa fa-check"></i><b>4.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="studi-kasus.html"><a href="studi-kasus.html"><i class="fa fa-check"></i><b>5</b> Studi Kasus</a></li>
+<li class="chapter" data-level="" data-path="referensi.html"><a href="referensi.html"><i class="fa fa-check"></i>Referensi</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="referensi.html"><a href="referensi.html#pertemuan-1"><i class="fa fa-check"></i><b>5.1</b> Pertemuan 1</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/sainzdata/Py_JNE" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Modul Pelatihan JNE</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="pengenalan-python" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Pertemuan 1</span> Pengenalan Python<a href="pengenalan-python.html#pengenalan-python" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="sejarah" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Sejarah<a href="pengenalan-python.html#sejarah" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Guido van Rossum</strong>, orang pertama kali yang mendesain Python di akhir tahun 1989, memulai projek ini saat masih di Centrum Wiskunde &amp; Informatice yang berpusat di Belanda. Awalnya, Guido bermaksud untuk memperbaiki sintak-sintak bermasalah pada Bahasa Pemrograman ABC yang pernah dikerjakan sebelumnya dan akhirnya terciptalah sebuah bahasa pemrograman yang lebih baik.</p>
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/python.png?raw=true" width="600" height="170">
+</center>
+<p>Inspirasi nama Python diambil dari acara TV BBC yang berjudul “Monty Python’s Flying Circus”, karena Guido adalah penggemar berat acara tersebut. Selain itu, ia ingin memberikan nama yang pendek, unik, dan sedikit misterius untuk penemuannya.</p>
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/timeline_python.png?raw=true" width="750" height="330">
+</center>
+<p>Version yang paling banyak digunakan adalah versi dari Python <strong>2.x</strong> dan <strong>3.x</strong>, dan masing-masing versi memiliki fanbase dalam penggunannya. Namun, sejak awal Januari 2020 untuk support maintenance pada Python versi <strong>2.x</strong> telah berhenti. Bahasa pemrograman Python digunakan untuk berbagai tujuan antaranya Developing, Scripting, Generation and Software testing. Karena bahasanya yang elegan dan sederhana, beberapa top perusahaan teknologi seperti Dropbox, Google, Quora, Mozilla, IBM dan Cisco menggunakan Python dalam implementasinya.</p>
+</div>
+<div id="mengapa-python" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Mengapa Python?<a href="pengenalan-python.html#mengapa-python" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Python adalah bahasa yang dapat membantumu mengembangkan hampir semua hal. Ini adalah bahasa yang bagus untuk mengembangkan backend, perangkat lunak dan kecerdasan buatan lainnya. Mari kita simak alasan-alasan apa saja yang menguatkanmu untuk belajar Python dikutip dari teknologi.id:</p>
+<ul>
+<li><strong>Open source</strong>, dan it is free.</li>
+<li>Python <strong>mudah digunakan</strong> bahkan untuk seorang pemula tanpa latar belakang IT.</li>
+<li>Python bahasanya <strong>ekspresif</strong>, karena dapat menyederhanakan code, misalkan satu baris code dapat mengerjakan banyak hal ketimbang satu baris code pada bahasa pemrograman lainnya.</li>
+<li>Python <strong>mudah dibaca</strong> (dalam hal debug, maintain, dan modify code) oleh manusia, tidak hanya komputer.</li>
+<li>Memiliki <strong>banyak Library</strong> di dalamnya.</li>
+<li>Dapat <strong>diterapkan lintas platform</strong> seperti Windows, Mac, Linux, UNIX, dll.</li>
+<li><strong>Bahasa pemorograman terpopuler</strong> dari tahun 2018 hingga saat ini berdasarakan analisis Google trend.</li>
+</ul>
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/python_pop.jpg?raw=true" width="600" height="350">
+</center>
+<p>Keunggulan Python yang bersifat interpretatif juga banyak digunakan untuk prototyping, scripting dalam pengelolaan infrastruktur, hingga pembuatan website berskala besar.Python adalah salah satu bahasa pemrograman yang dianggap sebagai opsi paling tepat untuk seluruh proyek Data Analitik, Sains Data, Artificial Intelligence (AI), termasuk machine learning.</p>
+</div>
+<div id="r-vs-python" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> R Vs Python<a href="pengenalan-python.html#r-vs-python" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Jika dibandingkan dengan bahasa pemrograman populer lainnya, R adalah salah satu pemrograman yang dianggap menjadi sanding terkuat dalam hal olah data. Olehkarena itu mari kita perhatikan keunggulan dari keduanya sebagai berikut:</p>
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/R_vs_Py.png?raw=true" width=740" height="280">
+</center>
+</div>
+<div id="install-python" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Install Python<a href="pengenalan-python.html#install-python" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="sintaks-dasar" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Sintaks Dasar<a href="pengenalan-python.html#sintaks-dasar" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="penugasan-variabel" class="section level3 hasAnchor" number="1.5.1">
+<h3><span class="header-section-number">1.5.1</span> Penugasan Variabel<a href="pengenalan-python.html#penugasan-variabel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Untuk menjalankan Python dengan Rstudio, install-lah Anaconda pada PC anda dengan baik, dan jangan lupa melakukan <a href="https://stackoverflow.com/questions/58568175/upgrade-to-python-3-8-using-conda">upgrade python</a> tersebut menggukan <strong>CMD.exe</strong> pada anaconda navigator dengan menjalankan koding berikut:</p>
+<pre><code>conda update --all
+conda create -n py38 python=3.8
+conda activate py38</code></pre>
+<p>Setelah itu, anda dapat menjalankan koding python pada Rstudio dengan mengganti <strong>```{r}</strong> menjadi <strong>```{python}</strong> pada chunck Rmd anda, dan jalankan koding berikut:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="pengenalan-python.html#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb2-2"><a href="pengenalan-python.html#cb2-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">3</span> </span>
+<span id="cb2-3"><a href="pengenalan-python.html#cb2-3" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> <span class="dv">5</span> </span>
+<span id="cb2-4"><a href="pengenalan-python.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x,y,z)</span></code></pre></div>
+<pre><code>## 2 3 5</code></pre>
+<p>Selain menyimpan atau pengisian nilai, ada juga menjumlahkan, mengurangi, perkalian, pembagian, dsb.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>Operator</strong></td>
+<td align="center"><strong>Simbol</strong></td>
+</tr>
+<tr class="even">
+<td align="center">Penjumlahan</td>
+<td align="center">+=</td>
+</tr>
+<tr class="odd">
+<td align="center">Pengurangan</td>
+<td align="center">-=</td>
+</tr>
+<tr class="even">
+<td align="center">Perkalian</td>
+<td align="center">*=</td>
+</tr>
+<tr class="odd">
+<td align="center">Pembagian</td>
+<td align="center">/=</td>
+</tr>
+<tr class="even">
+<td align="center">Sisa Bagi</td>
+<td align="center">%=</td>
+</tr>
+<tr class="odd">
+<td align="center">Pemangkatan **=</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>Perhatikan contoh berikut:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="pengenalan-python.html#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">+=</span> <span class="dv">2</span></span>
+<span id="cb4-2"><a href="pengenalan-python.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span></code></pre></div>
+<pre><code>## 4</code></pre>
+</div>
+<div id="menambahkan-komentar" class="section level3 hasAnchor" number="1.5.2">
+<h3><span class="header-section-number">1.5.2</span> Menambahkan Komentar<a href="pengenalan-python.html#menambahkan-komentar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Menambahkan/Memberikan komentar dalam skrip/koding Python adalah untuk memudahkan anda memahami arti/makna penggunaan suatu perintah/program. Komentar yang ditulis dalam sebuah program tersebut hanya bersifat penjelasan tentang apa yang dilakukannya atau apa yang seharusnya dilakukan oleh sebuah skrip/koding. Perlu dicatat bahwa komentar yang bersifat informasi tidak ada hubungannya dengan logika pemrogaram yang sedang anda gunakan. Mereka benar-benar diabaikan oleh kompiler dan dengan demikian tidak pernah tercermin pada input. Biasanya komentar dituliskan pada satu baris yang tersedia di Python, dengan menggunakan <code>#</code> di awal maupun di akhir pernyataan.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="pengenalan-python.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mengganti nilai x yang sudah direkam (Komentar di awal pernyataan) </span></span>
+<span id="cb6-2"><a href="pengenalan-python.html#cb6-2" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span><span class="dv">12</span> </span>
+<span id="cb6-3"><a href="pengenalan-python.html#cb6-3" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> x <span class="op">+</span> y   <span class="co"># Mengganti nilai z yang sudah direkam (Komentar di akhir pernyataan) </span></span></code></pre></div>
+</div>
+</div>
+<div id="operator" class="section level2 hasAnchor" number="1.6">
+<h2><span class="header-section-number">1.6</span> Operator<a href="pengenalan-python.html#operator" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Operator adalah simbol yang mengarahkan compiler untuk melakukan berbagai macam operasi terhadap beberapa penugasan. Operator mensimulasikan berbagai operasi matematis, logika, dan keputusan yang dilakukan pada sekumpulan Bilangan Kompleks, Integer, dan Numerik sebagai penugasan masukan (input). R dan Python mendukung sebagian besar empat jenis operator biner antara satu set penugasan. Dalam ini, kita akan melihat berbagai jenis operator yang tersedia di R dan Python dan penggunaannya.</p>
+<div id="aritmatika" class="section level3 hasAnchor" number="1.6.1">
+<h3><span class="header-section-number">1.6.1</span> Aritmatika<a href="pengenalan-python.html#aritmatika" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Penggunaan operator aritmatika dalam program R dan Python adalah untuk mensimulasikan berbagai operasi matematika, seperti penambahan, pengurangan, perkalian, pembagian, dan modulo. Operator aritmatika yang dilakukan bisa saja berupa nilai skalar, bilangan kompleks, atau vektor.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>Operator</strong></td>
+<td align="center"><strong>Python</strong></td>
+</tr>
+<tr class="even">
+<td align="center">Penjumlahan</td>
+<td align="center">+</td>
+</tr>
+<tr class="odd">
+<td align="center">Pengurangan</td>
+<td align="center">-</td>
+</tr>
+<tr class="even">
+<td align="center">Perkalian</td>
+<td align="center">*</td>
+</tr>
+<tr class="odd">
+<td align="center">Divisi/Pembagian</td>
+<td align="center">/</td>
+</tr>
+<tr class="even">
+<td align="center">Pemangkatan</td>
+<td align="center">**</td>
+</tr>
+<tr class="odd">
+<td align="center">Modulo</td>
+<td align="center">%</td>
+</tr>
+</tbody>
+</table>
+<p>Untuk pemahaman lebih lanjut, perhatikan cuplikan Python berikut:</p>
+<p><strong>Catatan:</strong> Terlebih dahulu install <code>numpy</code> di Anaconda Navgator anda dengan cara membuka lingkungan <em>(environment)</em> <code>py38</code> yang sudah anda buatkan sebelumnya.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="pengenalan-python.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np      <span class="co"># fungsi untuk operasi pada Array</span></span>
+<span id="cb7-2"><a href="pengenalan-python.html#cb7-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>])   <span class="co"># memuat vektor x</span></span>
+<span id="cb7-3"><a href="pengenalan-python.html#cb7-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array([<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>])   <span class="co"># memuat vektor y</span></span>
+<span id="cb7-4"><a href="pengenalan-python.html#cb7-4" aria-hidden="true" tabindex="-1"></a>x<span class="op">+</span>y                     <span class="co"># hasil penjumahan vektor x dan y</span></span></code></pre></div>
+<pre><code>## array([ 4,  7, 11])</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="pengenalan-python.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (x<span class="op">+</span>y)             <span class="co"># hasil penjumahan vektor x dan y</span></span></code></pre></div>
+<pre><code>## [ 4  7 11]</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="pengenalan-python.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (x<span class="op">-</span>y)             <span class="co"># hasil pengurangan vektor x dan y</span></span></code></pre></div>
+<pre><code>## [ 0 -1 -1]</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="pengenalan-python.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (x<span class="op">*</span>y)             <span class="co"># hasil perkalian vektor x dan y</span></span></code></pre></div>
+<pre><code>## [ 4 12 30]</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="pengenalan-python.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (x<span class="op">/</span>y)             <span class="co"># hasil pembagian vektor x dan y</span></span></code></pre></div>
+<pre><code>## [1.         0.75       0.83333333]</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="pengenalan-python.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (x<span class="op">**</span>y)            <span class="co"># hasil pemangkatan vektor x dan y</span></span></code></pre></div>
+<pre><code>## [    4    81 15625]</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="pengenalan-python.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (x<span class="op">%</span>y)             <span class="co"># hasil modulo (Sisa bagi) vektor x dan y</span></span></code></pre></div>
+<pre><code>## [0 3 5]</code></pre>
+<p>Adakalanya anda perlu menampilkan keterangan/komentar yang juga melekat pada hasil perhitungan Python itu sendiri. Maka anda dapat melakukannya dengan cara berikut:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="pengenalan-python.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Penjumahan vektor x dan y :&quot;</span>, x <span class="op">+</span> y, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Penjumahan vektor x dan y : [ 4  7 11]</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="pengenalan-python.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Pengurangan vektor x dan y :&quot;</span>, x <span class="op">-</span> y, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Pengurangan vektor x dan y : [ 0 -1 -1]</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="pengenalan-python.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Perkalian vektor x dan y :&quot;</span>, x <span class="op">*</span> y, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Perkalian vektor x dan y : [ 4 12 30]</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="pengenalan-python.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Pembagian vektor x dan y :&quot;</span>, x <span class="op">/</span> y, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Pembagian vektor x dan y : [1.         0.75       0.83333333]</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="pengenalan-python.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Pemangkatan vektor x dan y :&quot;</span>, x <span class="op">**</span> y) </span></code></pre></div>
+<pre><code>## Pemangkatan vektor x dan y : [    4    81 15625]</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="pengenalan-python.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Modulo vektor x dan y :&quot;</span>, x <span class="op">%</span> y, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Modulo vektor x dan y : [0 3 5]</code></pre>
+<p><strong>Catatan:</strong> Penjelasan lebih lekap mengenai modulo dapat lihat pada <a href="https://www.omnicalculator.com/math/modulo">link ini</a></p>
+</div>
+<div id="relasional" class="section level3 hasAnchor" number="1.6.2">
+<h3><span class="header-section-number">1.6.2</span> Relasional<a href="pengenalan-python.html#relasional" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Operator relasional melakukan operasi perbandingan antara elemen yang bersesuaian pada setiap operan. Mengembalikan nilai Boolean TRUE jika operan pertama memenuhi relasi dibandingkan dengan operan kedua. Nilai TRUE selalu dianggap lebih besar dari FALSE.</p>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="30%" />
+<col width="38%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>Operator</strong></td>
+<td align="center"><strong>Python</strong></td>
+<td align="center"><strong>Keterangan</strong></td>
+</tr>
+<tr class="even">
+<td align="center">Kurang dari</td>
+<td align="center">&lt;</td>
+<td align="center">Mengembalikan TRUE jika elemen yang bersesuaian pada operan pertama lebih kecil dari operan kedua. Selain itu akan mengembalikan FALSE</td>
+</tr>
+<tr class="odd">
+<td align="center">Kurang dari sama dengan</td>
+<td align="center">&lt;=</td>
+<td align="center">Mengembalikan TRUE jika elemen yang bersesuaian pada operan pertama kurang dari atau sama dengan elemen operan kedua. Selain itu akan mengembalikan FALSE</td>
+</tr>
+<tr class="even">
+<td align="center">Lebih besar dari</td>
+<td align="center">&gt;</td>
+<td align="center">Mengembalikan TRUE jika elemen yang bersesuaian pada operan pertama lebih besar dari operan kedua. Selain itu akan mengembalikan FALSE</td>
+</tr>
+<tr class="odd">
+<td align="center">Lebih besar dari sama dengan</td>
+<td align="center">&gt;=</td>
+<td align="center">Mengembalikan BENAR jika elemen yang bersesuaian pada operan pertama lebih besar atau sama dengan dari operan kedua. Selain itu akan mengembalikan FALSE</td>
+</tr>
+<tr class="even">
+<td align="center">Sama Dengan</td>
+<td align="center">==</td>
+<td align="center">Mengembalikan BENAR jika dan hanya jika kedua sisi bernilai sama</td>
+</tr>
+<tr class="odd">
+<td align="center">Tidak Sama dengan</td>
+<td align="center">!=</td>
+<td align="center">Mengembalikan BENAR jika elemen yang bersesuaian pada operan pertama tidak sama dengan dari operan kedua</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="pengenalan-python.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np    <span class="co"># fungsi untuk operasi pada Array</span></span>
+<span id="cb33-2"><a href="pengenalan-python.html#cb33-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>]) <span class="co"># memuat vektor x</span></span>
+<span id="cb33-3"><a href="pengenalan-python.html#cb33-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array([<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>]) <span class="co"># memuat vektor y</span></span>
+<span id="cb33-4"><a href="pengenalan-python.html#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Vektor x  kurang dari Vektor y:&quot;</span>, x <span class="op">&lt;</span> y, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Vektor x  kurang dari Vektor y: [False  True  True]</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="pengenalan-python.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Vector x kurang dari sama dengan Vector y:&quot;</span>, x <span class="op">&lt;=</span> y, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Vector x kurang dari sama dengan Vector y: [ True  True  True]</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="pengenalan-python.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Vector x lebih besar dari Vector y :&quot;</span>, x <span class="op">&gt;</span> y, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Vector x lebih besar dari Vector y : [False False False]</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="pengenalan-python.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Vector x lebih besar dari sama dengan Vector y :&quot;</span>, x <span class="op">&gt;=</span> y, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Vector x lebih besar dari sama dengan Vector y : [ True False False]</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="pengenalan-python.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Vector x sama dengan Vector y:&quot;</span>, x <span class="op">==</span> y,<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>) </span></code></pre></div>
+<pre><code>## Vector x sama dengan Vector y: [ True False False]</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="pengenalan-python.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Vector x tidak sama dengan Vector y:&quot;</span>, x <span class="op">!=</span> y) </span></code></pre></div>
+<pre><code>## Vector x tidak sama dengan Vector y: [False  True  True]</code></pre>
+</div>
+<div id="logika" class="section level3 hasAnchor" number="1.6.3">
+<h3><span class="header-section-number">1.6.3</span> Logika<a href="pengenalan-python.html#logika" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Operator logis mensimulasikan operasi keputusan, berdasarkan operator yang ditentukan antara operan, yang kemudian dievaluasi ke nilai Boolean Benar atau Salah. Nilai bilangan bulat bukan nol dianggap sebagai nilai BENAR, baik itu bilangan kompleks atau bilangan real.</p>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="30%" />
+<col width="38%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>Operator</strong></td>
+<td align="center"><strong>Python</strong></td>
+<td align="center"><strong>Keterangan</strong></td>
+</tr>
+<tr class="even">
+<td align="center">NOT</td>
+<td align="center">!</td>
+<td align="center">Operasi negasi/kebalikan pada status elemen operan</td>
+</tr>
+<tr class="odd">
+<td align="center">AND</td>
+<td align="center">&amp;</td>
+<td align="center">Mengembalikan TRUE jika kedua operan bernilai Benar</td>
+</tr>
+<tr class="even">
+<td align="center">OR</td>
+<td align="center"><span class="math inline">\(|\)</span></td>
+<td align="center">Mengembalikan TRUE jika salah satu operan adalah Benar</td>
+</tr>
+<tr class="odd">
+<td align="center">XOR</td>
+<td align="center">^</td>
+<td align="center">Mengembalikan TRUE jika salah satu dari kedua elemen pertama operan bernilai Benar</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="pengenalan-python.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np                <span class="co"># fungsi untuk operasi pada Array</span></span>
+<span id="cb45-2"><a href="pengenalan-python.html#cb45-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="va">False</span>,<span class="va">True</span>,<span class="va">False</span>])  <span class="co"># memuat vektor x</span></span>
+<span id="cb45-3"><a href="pengenalan-python.html#cb45-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array([<span class="va">True</span>,<span class="va">True</span>,<span class="va">False</span>])   <span class="co"># memuat vektor y</span></span>
+<span id="cb45-4"><a href="pengenalan-python.html#cb45-4" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb45-5"><a href="pengenalan-python.html#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Melakukan operasi logika pada Operan</span></span>
+<span id="cb45-6"><a href="pengenalan-python.html#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Logika Negasi (~) untuk vektor x:&quot;</span>, <span class="op">~</span>x, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>) </span></code></pre></div>
+<pre><code>## Logika Negasi (~) untuk vektor x: [ True False  True]</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="pengenalan-python.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Logika Negasi (~) untuk vektor y :&quot;</span>, <span class="op">~</span>y, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>) </span></code></pre></div>
+<pre><code>## Logika Negasi (~) untuk vektor y : [False False  True]</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="pengenalan-python.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Logika Konjungsi (Dan) :&quot;</span>, x <span class="op">&amp;</span> y, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Logika Konjungsi (Dan) : [False  True False]</code></pre>
+<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="pengenalan-python.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Logika Disjungsi (Atau) :&quot;</span>, x <span class="op">|</span> y, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Logika Disjungsi (Atau) : [ True  True False]</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb53-1"><a href="pengenalan-python.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Logika Disjungsi Parsial :&quot;</span>, x <span class="op">^</span> y)</span></code></pre></div>
+<pre><code>## Logika Disjungsi Parsial : [ True False False]</code></pre>
+<p><strong>Catatan:</strong> Dalam Python, hanya menggunakan True dan False bukan dalam hurup Kapital.</p>
+</div>
+<div id="lain-lain" class="section level3 hasAnchor" number="1.6.4">
+<h3><span class="header-section-number">1.6.4</span> Lain-lain<a href="pengenalan-python.html#lain-lain" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Berikut ini juga ada beberapa operator yang kemungkinan besar juga akan anda perlukan pada saat akan menggunakan Python.</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb55-1"><a href="pengenalan-python.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np            <span class="co"># library untuk memuat vektor (array)</span></span>
+<span id="cb55-2"><a href="pengenalan-python.html#cb55-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">2</span>                         <span class="co"># memuat vektor x</span></span>
+<span id="cb55-3"><a href="pengenalan-python.html#cb55-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">3</span>                         <span class="co"># memuat vektor y</span></span>
+<span id="cb55-4"><a href="pengenalan-python.html#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> log,exp,sqrt <span class="co"># mengambil beberapa fungsi dari library `math`</span></span>
+<span id="cb55-5"><a href="pengenalan-python.html#cb55-5" aria-hidden="true" tabindex="-1"></a>sqrt(x<span class="op">*</span>y)                     <span class="co"># Bentuk akar</span></span></code></pre></div>
+<pre><code>## 2.449489742783178</code></pre>
+<div class="sourceCode" id="cb57"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb57-1"><a href="pengenalan-python.html#cb57-1" aria-hidden="true" tabindex="-1"></a>log(x)                        <span class="co"># logaritma </span></span></code></pre></div>
+<pre><code>## 0.6931471805599453</code></pre>
+<div class="sourceCode" id="cb59"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb59-1"><a href="pengenalan-python.html#cb59-1" aria-hidden="true" tabindex="-1"></a>exp(y)                        <span class="co"># eksponen</span></span></code></pre></div>
+<pre><code>## 20.085536923187668</code></pre>
+<div class="sourceCode" id="cb61"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb61-1"><a href="pengenalan-python.html#cb61-1" aria-hidden="true" tabindex="-1"></a>(x<span class="op">/</span>y) <span class="op">+</span> y                     <span class="co"># Tanda kurung</span></span></code></pre></div>
+<pre><code>## 3.6666666666666665</code></pre>
+<div class="sourceCode" id="cb63"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb63-1"><a href="pengenalan-python.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np      <span class="co"># library untuk memuat vektor (array)</span></span>
+<span id="cb63-2"><a href="pengenalan-python.html#cb63-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>])   <span class="co"># memuat vektor x</span></span>
+<span id="cb63-3"><a href="pengenalan-python.html#cb63-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array([<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>])   <span class="co"># memuat vektor y</span></span>
+<span id="cb63-4"><a href="pengenalan-python.html#cb63-4" aria-hidden="true" tabindex="-1"></a>np.sqrt(x<span class="op">*</span>y)            <span class="co"># Bentuk akar</span></span></code></pre></div>
+<pre><code>## array([2.        , 3.46410162, 5.47722558])</code></pre>
+<div class="sourceCode" id="cb65"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb65-1"><a href="pengenalan-python.html#cb65-1" aria-hidden="true" tabindex="-1"></a>np.log(x)               <span class="co"># logaritma </span></span></code></pre></div>
+<pre><code>## array([0.69314718, 1.09861229, 1.60943791])</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb67-1"><a href="pengenalan-python.html#cb67-1" aria-hidden="true" tabindex="-1"></a>np.exp(y)               <span class="co"># eksponen</span></span></code></pre></div>
+<pre><code>## array([  7.3890561 ,  54.59815003, 403.42879349])</code></pre>
+<div class="sourceCode" id="cb69"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb69-1"><a href="pengenalan-python.html#cb69-1" aria-hidden="true" tabindex="-1"></a>(x<span class="op">/</span>y) <span class="op">+</span> y               <span class="co"># Tanda kurung</span></span></code></pre></div>
+<pre><code>## array([3.        , 4.75      , 6.83333333])</code></pre>
+<p><strong>Catatan:</strong> <a href="https://www.advernesia.com/blog/matematika/sifat-komutatif-asosiatif-dan-distributif/">Sifat Komutatif Asosiatif dan Distributif</a> juga berlaku dalam program Python.</p>
+</div>
+</div>
+<div id="tipe-data" class="section level2 hasAnchor" number="1.7">
+<h2><span class="header-section-number">1.7</span> Tipe Data<a href="pengenalan-python.html#tipe-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Dalam pemrograman seperti Python, tipe data merupakan konsep penting. Keduanya dapat menggunakan variabel untuk menyimpan tipe yang berbeda-beda, berikut adalah tipe data paling mendasar yang harus diketahui:</p>
+<table>
+<colgroup>
+<col width="42%" />
+<col width="23%" />
+<col width="33%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>Tipe Data</strong></td>
+<td align="center"><strong>Python</strong></td>
+<td align="center"><strong>Penjelasan</strong></td>
+</tr>
+<tr class="even">
+<td align="center">Double/Float</td>
+<td align="center">5.6</td>
+<td align="center">Bilangan yang mempunyai koma</td>
+</tr>
+<tr class="odd">
+<td align="center">Integer</td>
+<td align="center">5</td>
+<td align="center">Bilangan bulat 1,2,…,n</td>
+</tr>
+<tr class="even">
+<td align="center">Bolean/Logical</td>
+<td align="center">True/False</td>
+<td align="center">Benar bernilai 1 dan Salah bernilai 0</td>
+</tr>
+<tr class="odd">
+<td align="center">String/Character</td>
+<td align="center">‘Dsciencelabs’</td>
+<td align="center">karakter/kalimat bisa berupa huruf angka, dll (diapit tanda ” atau ’)</td>
+</tr>
+<tr class="even">
+<td align="center">Complex</td>
+<td align="center">1 + 5j</td>
+<td align="center">Pasangan angka real dan imajiner</td>
+</tr>
+</tbody>
+</table>
+<p>Berikut ini adalah koding Python yang dapat digunakan untuk menetapkan kelima tipe data diatas:</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb71-1"><a href="pengenalan-python.html#cb71-1" aria-hidden="true" tabindex="-1"></a>d1 <span class="op">=</span> <span class="fl">5.6</span>             <span class="co"># Tetapkan nilai desimal </span></span>
+<span id="cb71-2"><a href="pengenalan-python.html#cb71-2" aria-hidden="true" tabindex="-1"></a>d2 <span class="op">=</span> <span class="dv">5</span>               <span class="co"># tetapkan nilai integer</span></span>
+<span id="cb71-3"><a href="pengenalan-python.html#cb71-3" aria-hidden="true" tabindex="-1"></a>d3 <span class="op">=</span> [<span class="va">True</span>,<span class="va">False</span>]    <span class="co"># list Bolean/Logical</span></span>
+<span id="cb71-4"><a href="pengenalan-python.html#cb71-4" aria-hidden="true" tabindex="-1"></a>d4 <span class="op">=</span> [<span class="st">&quot;a&quot;</span>,<span class="st">&#39;b&#39;</span>,<span class="st">&#39;123&#39;</span>] <span class="co"># list String/Character</span></span>
+<span id="cb71-5"><a href="pengenalan-python.html#cb71-5" aria-hidden="true" tabindex="-1"></a>d5 <span class="op">=</span> <span class="dv">1</span> <span class="op">+</span> <span class="ot">5j</span>          <span class="co"># Complex </span></span></code></pre></div>
+<p>Untuk memeriksa tipe data dalam Python:</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb72-1"><a href="pengenalan-python.html#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(d5)             <span class="co"># cetak tipe data</span></span></code></pre></div>
+<pre><code>## &lt;class &#39;complex&#39;&gt;</code></pre>
+</div>
+<div id="bantuan" class="section level2 hasAnchor" number="1.8">
+<h2><span class="header-section-number">1.8</span> Bantuan<a href="pengenalan-python.html#bantuan" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Salah satu bagian terpenting dalam bekerja dengan bahasa Python adalah mengetahui di mana mencari bantuan.</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb74-1"><a href="pengenalan-python.html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(<span class="bu">print</span>)</span></code></pre></div>
+<pre><code>## Help on built-in function print in module builtins:
+## 
+## print(...)
+##     print(value, ..., sep=&#39; &#39;, end=&#39;\n&#39;, file=sys.stdout, flush=False)
+##     
+##     Prints the values to a stream, or to sys.stdout by default.
+##     Optional keyword arguments:
+##     file:  a file-like object (stream); defaults to the current sys.stdout.
+##     sep:   string inserted between values, default a space.
+##     end:   string appended after the last value, default a newline.
+##     flush: whether to forcibly flush the stream.</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="pemrograman-python.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": true,
+"twitter": true,
+"linkedin": true,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/sainzdata/Py_JNE/edit/master/01-Pengenalan_Dasar_Python.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
