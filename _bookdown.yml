@@ -1,5 +1,5 @@
 book_filename: "bookdown-template"
 language:
   ui:
-    chapter_name: "Chapter "
+    chapter_name: "Pertemuan "
 delete_merged_file: true

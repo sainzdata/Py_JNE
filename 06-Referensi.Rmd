@@ -1,3 +1,16 @@
 `r if (knitr:::is_html_output()) '
 # Referensi {-}
 '`
+
+##  Pertemuan 1
+
+1.    https://www.tutorialspoint.com/r/index.htm
+2.    https://www.tutorialspoint.com/python/index.htm
+3.    https://www.anotherbookondatascience.com/chapter1.html
+4.    https://www.kodefungsi.com/fungsi/PYTHON/
+5.    https://www.anotherbookondatascience.com/chapter1.html
+6.    https://www.petanikode.com/
+
+
+
+
