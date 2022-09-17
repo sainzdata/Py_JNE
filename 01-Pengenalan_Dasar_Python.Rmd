@@ -30,7 +30,7 @@ Python adalah bahasa yang dapat membantumu mengembangkan hampir semua hal. Ini a
 * **Bahasa pemorograman terpopuler** dari tahun 2018 hingga saat ini berdasarakan analisis Google trend.
 
 <center>
-<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/python_pop.jpg?raw=true" width="600" height="400">
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/python_pop.jpg?raw=true" width="600" height="350">
 </center>
 
 Keunggulan Python yang bersifat interpretatif juga banyak digunakan untuk prototyping, scripting dalam pengelolaan infrastruktur, hingga pembuatan website berskala besar.Python adalah salah satu bahasa pemrograman yang dianggap sebagai opsi paling tepat untuk seluruh proyek Data Analitik, Sains Data, Artificial Intelligence (AI), termasuk machine learning. 
@@ -44,8 +44,12 @@ Jika dibandingkan dengan bahasa pemrograman populer lainnya, R adalah salah satu
 </center>
 
 
+## Install Python
+
 
 ## Sintaks Dasar 
+
+
 
 ### Penugasan Variabel 
 
