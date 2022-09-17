@@ -1,6 +1,6 @@
-# Pengenalan Dasar Python
+# Pengenalan Python
 
-## Sejarah Python
+## Sejarah 
 
 **Guido van Rossum**, orang pertama kali yang mendesain Python di akhir tahun 1989, memulai projek ini saat masih di Centrum Wiskunde & Informatice yang berpusat di Belanda. Awalnya, Guido bermaksud untuk memperbaiki sintak-sintak bermasalah pada Bahasa Pemrograman ABC yang pernah dikerjakan sebelumnya dan akhirnya terciptalah sebuah bahasa pemrograman yang lebih baik.
 
@@ -17,10 +17,9 @@ Inspirasi nama Python diambil dari acara TV BBC yang berjudul “Monty Python’
 Version yang paling banyak digunakan adalah versi dari Python **2.x** dan **3.x**, dan masing-masing versi memiliki fanbase dalam penggunannya. Namun, sejak awal Januari 2020 untuk support maintenance pada Python versi **2.x** telah berhenti. Bahasa pemrograman Python digunakan untuk berbagai tujuan antaranya Developing, Scripting, Generation and Software testing. Karena bahasanya yang elegan dan sederhana, beberapa top perusahaan teknologi seperti Dropbox, Google, Quora, Mozilla, IBM dan Cisco menggunakan Python dalam implementasinya. 
 
 
-
 ## Mengapa Python?
 
-Python adalah bahasa yang dapat membantumu mengembangkan hampir semua hal. Ini adalah bahasa yang bagus untuk mengembangkan alat backend dan perangkat lunak serta kecerdasan buatan lainnya. Mari kita simak alasan-alasan apa saja yang menguatkanmu untuk belajar Python dikutip dari teknologi.id:
+Python adalah bahasa yang dapat membantumu mengembangkan hampir semua hal. Ini adalah bahasa yang bagus untuk mengembangkan backend, perangkat lunak dan kecerdasan buatan lainnya. Mari kita simak alasan-alasan apa saja yang menguatkanmu untuk belajar Python dikutip dari teknologi.id:
 
 * **Open source**, dan it is free.
 * Python **mudah digunakan** bahkan untuk seorang pemula tanpa latar belakang IT.
@@ -34,9 +33,13 @@ Python adalah bahasa yang dapat membantumu mengembangkan hampir semua hal. Ini a
 <img src="https://github.com/sainzdata/Py_JNE/blob/main/images/python_pop.jpg?raw=true" width="600" height="400">
 </center>
 
-Keunggulan Python yang bersifat interpretatif juga banyak digunakan untuk prototyping, scripting dalam pengelolaan infrastruktur, hingga pembuatan website berskala besar.
+Keunggulan Python yang bersifat interpretatif juga banyak digunakan untuk prototyping, scripting dalam pengelolaan infrastruktur, hingga pembuatan website berskala besar.Python adalah salah satu bahasa pemrograman yang dianggap sebagai opsi paling tepat untuk seluruh proyek Data Analitik, Sains Data, Artificial Intelligence (AI), termasuk machine learning. 
 
+Jika dibandingkan dengan bahasa pemrograman populer lainnya, R adalah salah satu pemrograman yang dianggap menjadi sanding terkuat dalam hal olah data. Olehkarena itu mari kita perhatikan keunggulan dari keduanya sebagai berikut:
 
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/R_vs_Py.png?raw=true" width="600" height="400">
+</center>
 
 
 ## Sintaks Dasar 
