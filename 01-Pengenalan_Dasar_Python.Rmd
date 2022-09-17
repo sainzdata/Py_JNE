@@ -14,7 +14,7 @@ Inspirasi nama Python diambil dari acara TV BBC yang berjudul “Monty Python’
 <img src="https://github.com/sainzdata/Py_JNE/blob/main/images/timeline_python.png?raw=true" width="750" height="330">
 </center>
 
-Version yang paling banyak digunakan adalah versi dari Python 2.x dan 3.x, dan masing-masing versi memiliki fanbase dalam penggunannya. Namun, sejak awal Januari 2020 untuk support maintenance pada Python versi 2.x telah berhenti. Bahasa pemrograman Python digunakan untuk berbagai tujuan antaranya Developing, Scripting, Generation and Software testing. Karena bahasanya yang elegan dan sederhana, beberapa top perusahaan teknologi seperti Dropbox, Google, Quora, Mozilla, IBM dan Cisco menggunakan Python dalam implementasinya. 
+Version yang paling banyak digunakan adalah versi dari Python **2.x** dan **3.x**, dan masing-masing versi memiliki fanbase dalam penggunannya. Namun, sejak awal Januari 2020 untuk support maintenance pada Python versi **2.x** telah berhenti. Bahasa pemrograman Python digunakan untuk berbagai tujuan antaranya Developing, Scripting, Generation and Software testing. Karena bahasanya yang elegan dan sederhana, beberapa top perusahaan teknologi seperti Dropbox, Google, Quora, Mozilla, IBM dan Cisco menggunakan Python dalam implementasinya. 
 
 
 

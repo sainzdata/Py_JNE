@@ -1,7 +1,7 @@
 --- 
 title: "Modul Pelatihan JNE"
-subtitle: "Analisis Data dengan Menggunakan Python"
-author: "Bakti Siregar"
+subtitle: "Analisis Data dengan Menggunakan Python (Pemula)"
+author: "Penulis: Bakti Siregar, S.Si.,M.Sc"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -22,7 +22,7 @@ knitr::write_bib(c(
 
 # Overview {-}
 
-Peran ilmu analisis data dalam era digital dan big data seperti sekarang ini sangatlah penting karena begitu melimpahnya data yang kita produksi setiap hari, baik itu dari akun media social, belanja online, media online, transportasi online, youtube, game, perusahaan, dll. Data tersebut menyediakan informasi yang dapat menentukan keputusan penting dalam berbagai sektor industri. Misalnya saja, perusahaan pengiriman barang seperti di JNE dapat melakukan analisis data dari hal yang paling sederhana hingga kompleks; 
+Peran ilmu analisis data dalam era digital dan big data seperti sekarang ini sangatlah penting karena begitu melimpahnya data yang kita produksi setiap hari, baik itu dari akun media social, ecommerce, media, transportasi/ekpedisi online, youtube, game, perusahaan, dll. Data tersebut menyediakan informasi yang dapat menentukan keputusan penting dalam berbagai sektor industri. Contohnya, perusahaan pengiriman barang seperti di JNE dapat melakukan analisis data dari hal yang paling sederhana hingga kompleks; 
 
 *	Jumlah transaksi yang dilakukan konsumen setiap hari, minggu, bulan, dan tahunan
 *	Berapa banyak pengiriman tepat waktu, cacat (hilang), dan pengiriman terlambat
