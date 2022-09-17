@@ -38,7 +38,7 @@ Keunggulan Python yang bersifat interpretatif juga banyak digunakan untuk protot
 Jika dibandingkan dengan bahasa pemrograman populer lainnya, R adalah salah satu pemrograman yang dianggap menjadi sanding terkuat dalam hal olah data. Olehkarena itu mari kita perhatikan keunggulan dari keduanya sebagai berikut:
 
 <center>
-<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/R_vs_Py.png?raw=true" width="600" height="400">
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/R_vs_Py.png?raw=true" width="500" height="300">
 </center>
 
 
