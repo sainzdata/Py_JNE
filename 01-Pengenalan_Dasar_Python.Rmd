@@ -31,7 +31,7 @@ Python adalah bahasa yang dapat membantumu mengembangkan hampir semua hal. Ini a
 * **Bahasa pemorograman terpopuler** dari tahun 2018 hingga saat ini berdasarakan analisis Google trend.
 
 <center>
-<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/python_pop.jpeg?raw=true" width="750" height="430">
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/python_pop.jpg?raw=true" width="600" height="400">
 </center>
 
 Keunggulan Python yang bersifat interpretatif juga banyak digunakan untuk prototyping, scripting dalam pengelolaan infrastruktur, hingga pembuatan website berskala besar.
