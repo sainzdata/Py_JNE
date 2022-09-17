@@ -2,17 +2,11 @@
 
 ## Sejarah Python
 
-#### Tesss
+**Guido van Rossum**, orang pertama kali yang mendesain Python di akhir tahun 1989, memulai projek ini saat masih di Centrum Wiskunde & Informatice yang berpusat di Belanda. Awalnya, Guido bermaksud untuk memperbaiki sintak-sintak bermasalah pada Bahasa Pemrograman ABC yang pernah dikerjakan sebelumnya dan akhirnya terciptalah sebuah bahasa pemrograman yang lebih baik.
 
-**Guido van Rossum**, orang pertama kali yang mendesain Python di akhir tahun 1989, memulai projek ini saat masih di Centrum Wiskunde & Informatice yang berpusat di Belanda. Awalnya, Guido bermaksud untuk memperbaiki sintak-sintak bermasalah pada Bahasa Pemrograman ABC yang pernah dikerjakan sebelumnya. Pada akhirnya terciptalah sebuah bahasa pemrograman yang lebih baik.
-
-
-
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/python.png?raw=true" width="700" height="530">
 
 ## Alasan Menggunakan Python
-
-
-
 
 
 ## Sintaks Dasar 
