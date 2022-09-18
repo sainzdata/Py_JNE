@@ -55,7 +55,7 @@ Python memiliki banyak versi, dan sangat mungkin jika di dalam Local Machine kit
 Sebenarnya ada banyak tools yang bisa digunakan untuk menulis Python script, yaitu: Python Shell, Spyder, Sublime Text, Visual Studio, Jupyterlab (Notebook), Google Colab, dll. Salah satu yang paling populer yaitu menggunakan Jupyterlab, tool ini sudah pasti akan terinstall otomatis apabila dilakukan proses pemasangan Python menggunakan Anaconda. Jika pemasangan Python tidak melalui Anaconda, untuk menggunakan jupyterlab maka terlebih dahulu melakukan pemasangan dengan 'pip' atau 'conda' (Script : pip install jupyterlab). Salah satu keunggulan Jupyterlab adalah kita bisa melihat integrasi antara input dan output dari script yang kita tulis, di dalam satu tampilan dokumen yang interaktif. Berikut ini adalah tampilan Jupeterlab, biasanya link http://localhost:8888/lab/:
 
 <center>
-<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/jupyterlab.png?raw=true" width=800" height="310">
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/jupyterlab.png?raw=true" width=800" height="400">
 </center>
 
 
