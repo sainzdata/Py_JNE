@@ -18,6 +18,13 @@ description: "Materi ini diperuntukkan untuk pelatihan Analisis Data dengan meng
 knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
+
+# Connect R to Python
+
+library(reticulate)
+library(Rcpp)
+# conda_list()
+use_condaenv("Py3_10_4", required = TRUE)
 ```
 
 # Overview {-}

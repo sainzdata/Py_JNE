@@ -5,7 +5,7 @@
 **Guido van Rossum**, orang pertama kali yang mendesain Python di akhir tahun 1989, memulai projek ini saat masih di Centrum Wiskunde & Informatice yang berpusat di Belanda. Awalnya, Guido bermaksud untuk memperbaiki sintak-sintak bermasalah pada Bahasa Pemrograman ABC yang pernah dikerjakan sebelumnya dan akhirnya terciptalah sebuah bahasa pemrograman yang lebih baik.
 
 <center>
-<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/python.png?raw=true" width="500" height="220">
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/python.png?raw=true" width="500" height="230">
 </center>
 
 Inspirasi nama Python diambil dari acara TV BBC yang berjudul “Monty Python’s Flying Circus”, karena Guido adalah penggemar berat acara tersebut. Selain itu, ia ingin memberikan nama yang pendek, unik, dan sedikit misterius untuk penemuannya. 
@@ -52,23 +52,15 @@ Python memiliki banyak versi, dan sangat mungkin jika di dalam Local Machine kit
 <img src="https://github.com/sainzdata/Py_JNE/blob/main/images/Install_Conda.png?raw=true" width=800" height="310">
 </center>
 
-## Sintaks Dasar 
+
+
+
+## Sintak Dasar 
 
 
 
 ### Penugasan Variabel 
 
-
-Untuk menjalankan Python dengan Rstudio, install-lah Anaconda pada PC anda dengan baik, dan jangan lupa melakukan [upgrade python](https://stackoverflow.com/questions/58568175/upgrade-to-python-3-8-using-conda ) tersebut menggukan **CMD.exe** pada anaconda navigator dengan menjalankan koding berikut:
-
-```
-conda update --all
-conda create -n py38 python=3.8
-conda activate py38
-```
-
-
-Setelah itu, anda dapat menjalankan koding python pada Rstudio dengan mengganti **\`\`\`{r}** menjadi  **\`\`\`{python}** pada chunck Rmd anda, dan jalankan koding berikut:  
 
 ```{python}
 x = 2

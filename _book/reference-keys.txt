@@ -3,7 +3,7 @@ sejarah
 mengapa-python
 r-vs-python
 install-python
-sintaks-dasar
+sintak-dasar
 penugasan-variabel
 menambahkan-komentar
 operator
