@@ -5,7 +5,7 @@
 **Guido van Rossum**, orang pertama kali yang mendesain Python di akhir tahun 1989, memulai projek ini saat masih di Centrum Wiskunde & Informatice yang berpusat di Belanda. Awalnya, Guido bermaksud untuk memperbaiki sintak-sintak bermasalah pada Bahasa Pemrograman ABC yang pernah dikerjakan sebelumnya dan akhirnya terciptalah sebuah bahasa pemrograman yang lebih baik.
 
 <center>
-<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/python.png?raw=true" width="600" height="170">
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/python.png?raw=true" width="600" height="400">
 </center>
 
 Inspirasi nama Python diambil dari acara TV BBC yang berjudul “Monty Python’s Flying Circus”, karena Guido adalah penggemar berat acara tersebut. Selain itu, ia ingin memberikan nama yang pendek, unik, dan sedikit misterius untuk penemuannya. 
