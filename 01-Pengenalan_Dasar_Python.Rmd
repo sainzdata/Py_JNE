@@ -46,6 +46,11 @@ Jika dibandingkan dengan bahasa pemrograman populer lainnya, R adalah salah satu
 
 ## Install Python
 
+Python memiliki banyak versi, dan sangat mungkin jika di dalam Local Machine kita (komputer) memiliki beberapa versi yang berbeda. Kunjungi [Anaconda.com/downloads](https://www.anaconda.com/products/distribution) dan Installer sesuai dengan Operating System (OS) Komputer anda.
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/Install_Conda.png?raw=true" width=740" height="280">
+</center>
 
 ## Sintaks Dasar 
 

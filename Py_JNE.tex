@@ -1,0 +1,825 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{docs}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\usepackage{amsthm}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Modul Pelatihan JNE},
+  pdfauthor={Penulis: Bakti Siregar, S.Si.,M.Sc},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Modul Pelatihan JNE}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Analisis Data dengan Menggunakan Python (Pemula)}
+\author{Penulis: Bakti Siregar, S.Si.,M.Sc}
+\date{2022-09-18}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\hypertarget{overview}{%
+\section*{Overview}\label{overview}}
+\addcontentsline{toc}{section}{Overview}
+
+Peran ilmu analisis data dalam era digital dan big data seperti sekarang ini sangatlah penting karena begitu melimpahnya data yang kita produksi setiap hari, baik itu dari akun media social, ecommerce, media, transportasi/ekpedisi online, youtube, game, perusahaan, dll. Data tersebut menyediakan informasi yang dapat menentukan keputusan penting dalam berbagai sektor industri. Contohnya, perusahaan pengiriman barang seperti di JNE dapat melakukan analisis data dari hal yang paling sederhana hingga kompleks;
+
+\begin{itemize}
+\tightlist
+\item
+  Jumlah transaksi yang dilakukan konsumen setiap hari, minggu, bulan, dan tahunan
+\item
+  Berapa banyak pengiriman tepat waktu, cacat (hilang), dan pengiriman terlambat
+\item
+  Rata-rata waktu yang dibutuhkan untuk melakukan pengiriman barang dari suatu daerah ke berbagai daerah
+\item
+  Mengetahui daerah asal dan tujuan pengiriman terbanyak di seluruh Indonesia
+\item
+  Pertumbuhan pengguna dari waktu ke waktu
+\item
+  Jenis produk yang paling sering dikirimkan
+\item
+  Mitra yang paling sering melakukan transaksi pengiriman barang
+\item
+  Tren pertumbuhan customer, cost, dan profit perusahaan secara umum maupun parsial
+\item
+  Analisis tingkat kepuasan pengguna
+\item
+  Faktor yang mempengaruhi perpindahan pengguna ke competitor
+\item
+  Dll.
+\end{itemize}
+
+Seluruh transaksi pengguna tersebut adalah data yang perlu dipelajari dan dianalisis. Kemudian, dapat diambil keputusan maupun kebijakan bisnis yang dinilai lebih menguntungkan bagi perusahaan seperti melakukan promo, penentuan harga, optimasi operasional pengiriman, dan lain-lain. Semakin akurat analisis data, semakin baik keputusan yang diambil, maka semakin besar profit perusahaan. Banyaknya data dan faktor yang harus dipertimbangkan dalam menganalisis data tidak mudah untuk dilakukan dengan menggunakan alat bantu klasisk seperti Excel. Tren saat ini, analis data biasanya dilakukan dengan bantuan teknologi pemrograman computer seperti R, Python, dan SQL karena dapat digunakan untuk data yang besar dan lebih fleksibel.
+
+\hypertarget{pengenalan-python}{%
+\section{Pengenalan Python}\label{pengenalan-python}}
+
+\hypertarget{sejarah}{%
+\subsection{Sejarah}\label{sejarah}}
+
+\textbf{Guido van Rossum}, orang pertama kali yang mendesain Python di akhir tahun 1989, memulai projek ini saat masih di Centrum Wiskunde \& Informatice yang berpusat di Belanda. Awalnya, Guido bermaksud untuk memperbaiki sintak-sintak bermasalah pada Bahasa Pemrograman ABC yang pernah dikerjakan sebelumnya dan akhirnya terciptalah sebuah bahasa pemrograman yang lebih baik.
+
+Inspirasi nama Python diambil dari acara TV BBC yang berjudul ``Monty Python's Flying Circus'', karena Guido adalah penggemar berat acara tersebut. Selain itu, ia ingin memberikan nama yang pendek, unik, dan sedikit misterius untuk penemuannya.
+
+Version yang paling banyak digunakan adalah versi dari Python \textbf{2.x} dan \textbf{3.x}, dan masing-masing versi memiliki fanbase dalam penggunannya. Namun, sejak awal Januari 2020 untuk support maintenance pada Python versi \textbf{2.x} telah berhenti. Bahasa pemrograman Python digunakan untuk berbagai tujuan antaranya Developing, Scripting, Generation and Software testing. Karena bahasanya yang elegan dan sederhana, beberapa top perusahaan teknologi seperti Dropbox, Google, Quora, Mozilla, IBM dan Cisco menggunakan Python dalam implementasinya.
+
+\hypertarget{mengapa-python}{%
+\subsection{Mengapa Python?}\label{mengapa-python}}
+
+Python adalah bahasa yang dapat membantumu mengembangkan hampir semua hal. Ini adalah bahasa yang bagus untuk mengembangkan backend, perangkat lunak dan kecerdasan buatan lainnya. Mari kita simak alasan-alasan apa saja yang menguatkanmu untuk belajar Python dikutip dari teknologi.id:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Open source}, dan it is free.
+\item
+  Python \textbf{mudah digunakan} bahkan untuk seorang pemula tanpa latar belakang IT.
+\item
+  Python bahasanya \textbf{ekspresif}, karena dapat menyederhanakan code, misalkan satu baris code dapat mengerjakan banyak hal ketimbang satu baris code pada bahasa pemrograman lainnya.
+\item
+  Python \textbf{mudah dibaca} (dalam hal debug, maintain, dan modify code) oleh manusia, tidak hanya komputer.
+\item
+  Memiliki \textbf{banyak Library} di dalamnya.
+\item
+  Dapat \textbf{diterapkan lintas platform} seperti Windows, Mac, Linux, UNIX, dll.
+\item
+  \textbf{Bahasa pemorograman terpopuler} dari tahun 2018 hingga saat ini berdasarakan analisis Google trend.
+\end{itemize}
+
+Keunggulan Python yang bersifat interpretatif juga banyak digunakan untuk prototyping, scripting dalam pengelolaan infrastruktur, hingga pembuatan website berskala besar.Python adalah salah satu bahasa pemrograman yang dianggap sebagai opsi paling tepat untuk seluruh proyek Data Analitik, Sains Data, Artificial Intelligence (AI), termasuk machine learning.
+
+\hypertarget{r-vs-python}{%
+\subsection{R Vs Python}\label{r-vs-python}}
+
+Jika dibandingkan dengan bahasa pemrograman populer lainnya, R adalah salah satu pemrograman yang dianggap menjadi sanding terkuat dalam hal olah data. Olehkarena itu mari kita perhatikan keunggulan dari keduanya sebagai berikut:
+
+\hypertarget{install-python}{%
+\subsection{Install Python}\label{install-python}}
+
+\hypertarget{sintaks-dasar}{%
+\subsection{Sintaks Dasar}\label{sintaks-dasar}}
+
+\hypertarget{penugasan-variabel}{%
+\subsubsection{Penugasan Variabel}\label{penugasan-variabel}}
+
+Untuk menjalankan Python dengan Rstudio, install-lah Anaconda pada PC anda dengan baik, dan jangan lupa melakukan \href{https://stackoverflow.com/questions/58568175/upgrade-to-python-3-8-using-conda}{upgrade python} tersebut menggukan \textbf{CMD.exe} pada anaconda navigator dengan menjalankan koding berikut:
+
+\begin{verbatim}
+conda update --all
+conda create -n py38 python=3.8
+conda activate py38
+\end{verbatim}
+
+Setelah itu, anda dapat menjalankan koding python pada Rstudio dengan mengganti \textbf{```\{r\}} menjadi \textbf{```\{python\}} pada chunck Rmd anda, dan jalankan koding berikut:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{=} \DecValTok{2}
+\NormalTok{y }\OperatorTok{=} \DecValTok{3} 
+\NormalTok{z }\OperatorTok{=} \DecValTok{5} 
+\BuiltInTok{print}\NormalTok{(x,y,z)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 2 3 5
+\end{verbatim}
+
+Selain menyimpan atau pengisian nilai, ada juga menjumlahkan, mengurangi, perkalian, pembagian, dsb.
+
+\begin{longtable}[]{@{}cc@{}}
+\toprule()
+\endhead
+\textbf{Operator} & \textbf{Simbol} \\
+Penjumlahan & += \\
+Pengurangan & -= \\
+Perkalian & *= \\
+Pembagian & /= \\
+Sisa Bagi & \%= \\
+Pemangkatan **= & \\
+\bottomrule()
+\end{longtable}
+
+Perhatikan contoh berikut:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{+=} \DecValTok{2}
+\BuiltInTok{print}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 4
+\end{verbatim}
+
+\hypertarget{menambahkan-komentar}{%
+\subsubsection{Menambahkan Komentar}\label{menambahkan-komentar}}
+
+Menambahkan/Memberikan komentar dalam skrip/koding Python adalah untuk memudahkan anda memahami arti/makna penggunaan suatu perintah/program. Komentar yang ditulis dalam sebuah program tersebut hanya bersifat penjelasan tentang apa yang dilakukannya atau apa yang seharusnya dilakukan oleh sebuah skrip/koding. Perlu dicatat bahwa komentar yang bersifat informasi tidak ada hubungannya dengan logika pemrogaram yang sedang anda gunakan. Mereka benar-benar diabaikan oleh kompiler dan dengan demikian tidak pernah tercermin pada input. Biasanya komentar dituliskan pada satu baris yang tersedia di Python, dengan menggunakan \texttt{\#} di awal maupun di akhir pernyataan.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Mengganti nilai x yang sudah direkam (Komentar di awal pernyataan) }
+\NormalTok{x}\OperatorTok{=}\DecValTok{12} 
+\NormalTok{z }\OperatorTok{=}\NormalTok{ x }\OperatorTok{+}\NormalTok{ y   }\CommentTok{\# Mengganti nilai z yang sudah direkam (Komentar di akhir pernyataan) }
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{operator}{%
+\subsection{Operator}\label{operator}}
+
+Operator adalah simbol yang mengarahkan compiler untuk melakukan berbagai macam operasi terhadap beberapa penugasan. Operator mensimulasikan berbagai operasi matematis, logika, dan keputusan yang dilakukan pada sekumpulan Bilangan Kompleks, Integer, dan Numerik sebagai penugasan masukan (input). R dan Python mendukung sebagian besar empat jenis operator biner antara satu set penugasan. Dalam ini, kita akan melihat berbagai jenis operator yang tersedia di R dan Python dan penggunaannya.
+
+\hypertarget{aritmatika}{%
+\subsubsection{Aritmatika}\label{aritmatika}}
+
+Penggunaan operator aritmatika dalam program R dan Python adalah untuk mensimulasikan berbagai operasi matematika, seperti penambahan, pengurangan, perkalian, pembagian, dan modulo. Operator aritmatika yang dilakukan bisa saja berupa nilai skalar, bilangan kompleks, atau vektor.
+
+\begin{longtable}[]{@{}cc@{}}
+\toprule()
+\endhead
+\textbf{Operator} & \textbf{Python} \\
+Penjumlahan & + \\
+Pengurangan & - \\
+Perkalian & * \\
+Divisi/Pembagian & / \\
+Pemangkatan & ** \\
+Modulo & \% \\
+\bottomrule()
+\end{longtable}
+
+Untuk pemahaman lebih lanjut, perhatikan cuplikan Python berikut:
+
+\textbf{Catatan:} Terlebih dahulu install \texttt{numpy} di Anaconda Navgator anda dengan cara membuka lingkungan \emph{(environment)} \texttt{py38} yang sudah anda buatkan sebelumnya.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np      }\CommentTok{\# fungsi untuk operasi pada Array}
+\NormalTok{x }\OperatorTok{=}\NormalTok{ np.array([}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{5}\NormalTok{])   }\CommentTok{\# memuat vektor x}
+\NormalTok{y }\OperatorTok{=}\NormalTok{ np.array([}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{6}\NormalTok{])   }\CommentTok{\# memuat vektor y}
+\NormalTok{x}\OperatorTok{+}\NormalTok{y                     }\CommentTok{\# hasil penjumahan vektor x dan y}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## array([ 4,  7, 11])
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{ (x}\OperatorTok{+}\NormalTok{y)             }\CommentTok{\# hasil penjumahan vektor x dan y}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [ 4  7 11]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{ (x}\OperatorTok{{-}}\NormalTok{y)             }\CommentTok{\# hasil pengurangan vektor x dan y}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [ 0 -1 -1]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{ (x}\OperatorTok{*}\NormalTok{y)             }\CommentTok{\# hasil perkalian vektor x dan y}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [ 4 12 30]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{ (x}\OperatorTok{/}\NormalTok{y)             }\CommentTok{\# hasil pembagian vektor x dan y}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1.         0.75       0.83333333]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{ (x}\OperatorTok{**}\NormalTok{y)            }\CommentTok{\# hasil pemangkatan vektor x dan y}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [    4    81 15625]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{ (x}\OperatorTok{\%}\NormalTok{y)             }\CommentTok{\# hasil modulo (Sisa bagi) vektor x dan y}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [0 3 5]
+\end{verbatim}
+
+Adakalanya anda perlu menampilkan keterangan/komentar yang juga melekat pada hasil perhitungan Python itu sendiri. Maka anda dapat melakukannya dengan cara berikut:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Penjumahan vektor x dan y :"}\NormalTok{, x }\OperatorTok{+}\NormalTok{ y, }\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Penjumahan vektor x dan y : [ 4  7 11]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Pengurangan vektor x dan y :"}\NormalTok{, x }\OperatorTok{{-}}\NormalTok{ y, }\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Pengurangan vektor x dan y : [ 0 -1 -1]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Perkalian vektor x dan y :"}\NormalTok{, x }\OperatorTok{*}\NormalTok{ y, }\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Perkalian vektor x dan y : [ 4 12 30]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Pembagian vektor x dan y :"}\NormalTok{, x }\OperatorTok{/}\NormalTok{ y, }\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Pembagian vektor x dan y : [1.         0.75       0.83333333]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Pemangkatan vektor x dan y :"}\NormalTok{, x }\OperatorTok{**}\NormalTok{ y) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Pemangkatan vektor x dan y : [    4    81 15625]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Modulo vektor x dan y :"}\NormalTok{, x }\OperatorTok{\%}\NormalTok{ y, }\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Modulo vektor x dan y : [0 3 5]
+\end{verbatim}
+
+\textbf{Catatan:} Penjelasan lebih lekap mengenai modulo dapat lihat pada \href{https://www.omnicalculator.com/math/modulo}{link ini}
+
+\hypertarget{relasional}{%
+\subsubsection{Relasional}\label{relasional}}
+
+Operator relasional melakukan operasi perbandingan antara elemen yang bersesuaian pada setiap operan. Mengembalikan nilai Boolean TRUE jika operan pertama memenuhi relasi dibandingkan dengan operan kedua. Nilai TRUE selalu dianggap lebih besar dari FALSE.
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3077}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3077}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3846}}@{}}
+\toprule()
+\endhead
+\textbf{Operator} & \textbf{Python} & \textbf{Keterangan} \\
+Kurang dari & \textless{} & Mengembalikan TRUE jika elemen yang bersesuaian pada operan pertama lebih kecil dari operan kedua. Selain itu akan mengembalikan FALSE \\
+Kurang dari sama dengan & \textless= & Mengembalikan TRUE jika elemen yang bersesuaian pada operan pertama kurang dari atau sama dengan elemen operan kedua. Selain itu akan mengembalikan FALSE \\
+Lebih besar dari & \textgreater{} & Mengembalikan TRUE jika elemen yang bersesuaian pada operan pertama lebih besar dari operan kedua. Selain itu akan mengembalikan FALSE \\
+Lebih besar dari sama dengan & \textgreater= & Mengembalikan BENAR jika elemen yang bersesuaian pada operan pertama lebih besar atau sama dengan dari operan kedua. Selain itu akan mengembalikan FALSE \\
+Sama Dengan & == & Mengembalikan BENAR jika dan hanya jika kedua sisi bernilai sama \\
+Tidak Sama dengan & != & Mengembalikan BENAR jika elemen yang bersesuaian pada operan pertama tidak sama dengan dari operan kedua \\
+\bottomrule()
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np    }\CommentTok{\# fungsi untuk operasi pada Array}
+\NormalTok{x }\OperatorTok{=}\NormalTok{ np.array([}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{5}\NormalTok{]) }\CommentTok{\# memuat vektor x}
+\NormalTok{y }\OperatorTok{=}\NormalTok{ np.array([}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{6}\NormalTok{]) }\CommentTok{\# memuat vektor y}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Vektor x  kurang dari Vektor y:"}\NormalTok{, x }\OperatorTok{\textless{}}\NormalTok{ y, }\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Vektor x  kurang dari Vektor y: [False  True  True]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Vector x kurang dari sama dengan Vector y:"}\NormalTok{, x }\OperatorTok{\textless{}=}\NormalTok{ y, }\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Vector x kurang dari sama dengan Vector y: [ True  True  True]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Vector x lebih besar dari Vector y :"}\NormalTok{, x }\OperatorTok{\textgreater{}}\NormalTok{ y, }\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Vector x lebih besar dari Vector y : [False False False]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Vector x lebih besar dari sama dengan Vector y :"}\NormalTok{, x }\OperatorTok{\textgreater{}=}\NormalTok{ y, }\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Vector x lebih besar dari sama dengan Vector y : [ True False False]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Vector x sama dengan Vector y:"}\NormalTok{, x }\OperatorTok{==}\NormalTok{ y,}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Vector x sama dengan Vector y: [ True False False]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Vector x tidak sama dengan Vector y:"}\NormalTok{, x }\OperatorTok{!=}\NormalTok{ y) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Vector x tidak sama dengan Vector y: [False  True  True]
+\end{verbatim}
+
+\hypertarget{logika}{%
+\subsubsection{Logika}\label{logika}}
+
+Operator logis mensimulasikan operasi keputusan, berdasarkan operator yang ditentukan antara operan, yang kemudian dievaluasi ke nilai Boolean Benar atau Salah. Nilai bilangan bulat bukan nol dianggap sebagai nilai BENAR, baik itu bilangan kompleks atau bilangan real.
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3077}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3077}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3846}}@{}}
+\toprule()
+\endhead
+\textbf{Operator} & \textbf{Python} & \textbf{Keterangan} \\
+NOT & ! & Operasi negasi/kebalikan pada status elemen operan \\
+AND & \& & Mengembalikan TRUE jika kedua operan bernilai Benar \\
+OR & \(|\) & Mengembalikan TRUE jika salah satu operan adalah Benar \\
+XOR & \^{} & Mengembalikan TRUE jika salah satu dari kedua elemen pertama operan bernilai Benar \\
+\bottomrule()
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np                }\CommentTok{\# fungsi untuk operasi pada Array}
+\NormalTok{x }\OperatorTok{=}\NormalTok{ np.array([}\VariableTok{False}\NormalTok{,}\VariableTok{True}\NormalTok{,}\VariableTok{False}\NormalTok{])  }\CommentTok{\# memuat vektor x}
+\NormalTok{y }\OperatorTok{=}\NormalTok{ np.array([}\VariableTok{True}\NormalTok{,}\VariableTok{True}\NormalTok{,}\VariableTok{False}\NormalTok{])   }\CommentTok{\# memuat vektor y}
+ 
+\CommentTok{\# Melakukan operasi logika pada Operan}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Logika Negasi (\textasciitilde{}) untuk vektor x:"}\NormalTok{, }\OperatorTok{\textasciitilde{}}\NormalTok{x, }\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Logika Negasi (~) untuk vektor x: [ True False  True]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Logika Negasi (\textasciitilde{}) untuk vektor y :"}\NormalTok{, }\OperatorTok{\textasciitilde{}}\NormalTok{y, }\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Logika Negasi (~) untuk vektor y : [False False  True]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Logika Konjungsi (Dan) :"}\NormalTok{, x }\OperatorTok{\&}\NormalTok{ y, }\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Logika Konjungsi (Dan) : [False  True False]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Logika Disjungsi (Atau) :"}\NormalTok{, x }\OperatorTok{|}\NormalTok{ y, }\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Logika Disjungsi (Atau) : [ True  True False]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\StringTok{"Logika Disjungsi Parsial :"}\NormalTok{, x }\OperatorTok{\^{}}\NormalTok{ y)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Logika Disjungsi Parsial : [ True False False]
+\end{verbatim}
+
+\textbf{Catatan:} Dalam Python, hanya menggunakan True dan False bukan dalam hurup Kapital.
+
+\hypertarget{lain-lain}{%
+\subsubsection{Lain-lain}\label{lain-lain}}
+
+Berikut ini juga ada beberapa operator yang kemungkinan besar juga akan anda perlukan pada saat akan menggunakan Python.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np            }\CommentTok{\# library untuk memuat vektor (array)}
+\NormalTok{x }\OperatorTok{=} \DecValTok{2}                         \CommentTok{\# memuat vektor x}
+\NormalTok{y }\OperatorTok{=} \DecValTok{3}                         \CommentTok{\# memuat vektor y}
+\ImportTok{from}\NormalTok{ math }\ImportTok{import}\NormalTok{ log,exp,sqrt }\CommentTok{\# mengambil beberapa fungsi dari library \textasciigrave{}math\textasciigrave{}}
+\NormalTok{sqrt(x}\OperatorTok{*}\NormalTok{y)                     }\CommentTok{\# Bentuk akar}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 2.449489742783178
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{log(x)                        }\CommentTok{\# logaritma }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 0.6931471805599453
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{exp(y)                        }\CommentTok{\# eksponen}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 20.085536923187668
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(x}\OperatorTok{/}\NormalTok{y) }\OperatorTok{+}\NormalTok{ y                     }\CommentTok{\# Tanda kurung}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 3.6666666666666665
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np      }\CommentTok{\# library untuk memuat vektor (array)}
+\NormalTok{x }\OperatorTok{=}\NormalTok{ np.array([}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{5}\NormalTok{])   }\CommentTok{\# memuat vektor x}
+\NormalTok{y }\OperatorTok{=}\NormalTok{ np.array([}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{6}\NormalTok{])   }\CommentTok{\# memuat vektor y}
+\NormalTok{np.sqrt(x}\OperatorTok{*}\NormalTok{y)            }\CommentTok{\# Bentuk akar}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## array([2.        , 3.46410162, 5.47722558])
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{np.log(x)               }\CommentTok{\# logaritma }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## array([0.69314718, 1.09861229, 1.60943791])
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{np.exp(y)               }\CommentTok{\# eksponen}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## array([  7.3890561 ,  54.59815003, 403.42879349])
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(x}\OperatorTok{/}\NormalTok{y) }\OperatorTok{+}\NormalTok{ y               }\CommentTok{\# Tanda kurung}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## array([3.        , 4.75      , 6.83333333])
+\end{verbatim}
+
+\textbf{Catatan:} \href{https://www.advernesia.com/blog/matematika/sifat-komutatif-asosiatif-dan-distributif/}{Sifat Komutatif Asosiatif dan Distributif} juga berlaku dalam program Python.
+
+\hypertarget{tipe-data}{%
+\subsection{Tipe Data}\label{tipe-data}}
+
+Dalam pemrograman seperti Python, tipe data merupakan konsep penting. Keduanya dapat menggunakan variabel untuk menyimpan tipe yang berbeda-beda, berikut adalah tipe data paling mendasar yang harus diketahui:
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4286}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2381}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule()
+\endhead
+\textbf{Tipe Data} & \textbf{Python} & \textbf{Penjelasan} \\
+Double/Float & 5.6 & Bilangan yang mempunyai koma \\
+Integer & 5 & Bilangan bulat 1,2,\ldots,n \\
+Bolean/Logical & True/False & Benar bernilai 1 dan Salah bernilai 0 \\
+String/Character & `Dsciencelabs' & karakter/kalimat bisa berupa huruf angka, dll (diapit tanda '' atau ') \\
+Complex & 1 + 5j & Pasangan angka real dan imajiner \\
+\bottomrule()
+\end{longtable}
+
+Berikut ini adalah koding Python yang dapat digunakan untuk menetapkan kelima tipe data diatas:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{d1 }\OperatorTok{=} \FloatTok{5.6}             \CommentTok{\# Tetapkan nilai desimal }
+\NormalTok{d2 }\OperatorTok{=} \DecValTok{5}               \CommentTok{\# tetapkan nilai integer}
+\NormalTok{d3 }\OperatorTok{=}\NormalTok{ [}\VariableTok{True}\NormalTok{,}\VariableTok{False}\NormalTok{]    }\CommentTok{\# list Bolean/Logical}
+\NormalTok{d4 }\OperatorTok{=}\NormalTok{ [}\StringTok{"a"}\NormalTok{,}\StringTok{\textquotesingle{}b\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}123\textquotesingle{}}\NormalTok{] }\CommentTok{\# list String/Character}
+\NormalTok{d5 }\OperatorTok{=} \DecValTok{1} \OperatorTok{+} \OtherTok{5j}          \CommentTok{\# Complex }
+\end{Highlighting}
+\end{Shaded}
+
+Untuk memeriksa tipe data dalam Python:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{type}\NormalTok{(d5)             }\CommentTok{\# cetak tipe data}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## <class 'complex'>
+\end{verbatim}
+
+\hypertarget{bantuan}{%
+\subsection{Bantuan}\label{bantuan}}
+
+Salah satu bagian terpenting dalam bekerja dengan bahasa Python adalah mengetahui di mana mencari bantuan.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{help}\NormalTok{(}\BuiltInTok{print}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Help on built-in function print in module builtins:
+## 
+## print(...)
+##     print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
+##     
+##     Prints the values to a stream, or to sys.stdout by default.
+##     Optional keyword arguments:
+##     file:  a file-like object (stream); defaults to the current sys.stdout.
+##     sep:   string inserted between values, default a space.
+##     end:   string appended after the last value, default a newline.
+##     flush: whether to forcibly flush the stream.
+\end{verbatim}
+
+\hypertarget{pemrograman-python}{%
+\section{Pemrograman Python}\label{pemrograman-python}}
+
+Here is a review of existing methods.
+
+\hypertarget{persiapan-data}{%
+\section{Persiapan Data}\label{persiapan-data}}
+
+We describe our methods in this chapter.
+
+\hypertarget{visualisasi-data}{%
+\section{Visualisasi Data}\label{visualisasi-data}}
+
+Some \emph{significant} applications are demonstrated in this chapter.
+
+\hypertarget{example-one}{%
+\subsection{Example one}\label{example-one}}
+
+\hypertarget{example-two}{%
+\subsection{Example two}\label{example-two}}
+
+\hypertarget{studi-kasus}{%
+\section{Studi Kasus}\label{studi-kasus}}
+
+We have finished a nice book.
+
+\hypertarget{pertemuan-1}{%
+\subsection{Pertemuan 1}\label{pertemuan-1}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \url{https://www.tutorialspoint.com/r/index.htm}
+\item
+  \url{https://www.statista.com/chart/16567/popular-programming-languages/}
+\item
+  \url{https://www.anotherbookondatascience.com/chapter1.html}
+\item
+  \url{https://www.kodefungsi.com/fungsi/PYTHON/}
+\item
+  \url{https://www.anotherbookondatascience.com/chapter1.html}
+\item
+  \url{https://www.petanikode.com}
+\item
+  \url{https://stiki-indonesia.ac.id/2021/03/23/perkembangan-python-dan-alasan-sangat-penting-untuk-data-analitik/}
+\end{enumerate}
+
+\end{document}
