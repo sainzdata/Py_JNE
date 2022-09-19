@@ -1,3 +1,6 @@
 # Persiapan Data
 
 We describe our methods in this chapter.
+
+
+https://www.dqlab.id/kenali-4-fungsi-penting-pandas-python-untuk-pengolahan-data

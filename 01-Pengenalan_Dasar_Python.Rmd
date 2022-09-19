@@ -52,12 +52,28 @@ Python memiliki banyak versi, dan sangat mungkin jika di dalam Local Machine kit
 <img src="https://github.com/sainzdata/Py_JNE/blob/main/images/Install_Conda.png?raw=true" width=800" height="310">
 </center>
 
+
+
 ### Windows 
 
 Berikut ini adalah video tutorial untuk melakukan installasi Anconda di Windows.
 
 <iframe width="780" height="420" src="https://www.youtube.com/embed/ZKNy-sPBKQc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+### Macintosh
+ 
+Berikut ini adalah video tutorial untuk melakukan installasi Anconda di Macintosh (Mac OS).
+
+<iframe width="780" height="420" src="https://www.youtube.com/embed/mriOWu00jy4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Linux
+
+Berikut ini adalah video tutorial untuk melakukan installasi Anconda di Linux.
+
+<iframe width="780" height="420"  src="https://www.youtube.com/embed/3b3g_t3zwro" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## Ekosistem Python
 
 Sebenarnya ada banyak tools yang bisa digunakan untuk menulis Python script, yaitu: 
 * [Python Shell](https://www.python.org/shell/), 

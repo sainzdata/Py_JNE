@@ -4,6 +4,9 @@ mengapa-python
 r-vs-python
 install-python
 windows
+macintosh
+linux
+ekosistem-python
 konsep-dasar-python
 penugasan-variabel
 menambahkan-komentar
