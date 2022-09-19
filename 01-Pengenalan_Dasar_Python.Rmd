@@ -88,7 +88,7 @@ Selain Jupyterlab, cara alternatif yang paling banyak digunakan untuk menulis ko
 Untuk mempermudah pemahaman kita tentang konsep dan cara kerja Python, Kita coba analogikan Python sebagai proses memasak Roti. Perhatikan gambar berikut: 
 
 <center>
-<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/analogi_Py.png?raw=true" width=800" height="400">
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/analogi_py.png?raw=true" width=800" height="400">
 </center>
 
 
