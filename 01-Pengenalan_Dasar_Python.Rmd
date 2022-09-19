@@ -76,19 +76,17 @@ Selain Jupyterlab, cara alternatif yang paling banyak digunakan untuk menulis ko
 **Catatan (Opsional):** Lakukan update sebelum menggunakan Python, istall library paling umum digunakan yaitu; (panda, numpy, matplotlib, seaborn) dengan menggunakan pip dan conda (Contoh: pip install panda atau conda install panda)
 
 
-# Pemahaman Dasar  
+## Konsep Dasar Python
 
 Untuk mempermudah pemahaman kita tentang konsep dan cara kerja Python, Kita coba analogikan Python sebagai proses memasak Roti. Perhatikan gambar berikut: 
 
 <center>
-<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/googlecolab.png?raw=true" width=800" height="400">
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/analogi_py.png?raw=true" width=800" height="400">
 </center>
 
 
 
-
-
-## Penugasan Variabel 
+### Penugasan Variabel 
 
 
 ```{python}
@@ -117,7 +115,7 @@ x += 2
 print(x)
 ```
 
-## Menambahkan Komentar 
+### Menambahkan Komentar 
 
 Menambahkan/Memberikan komentar dalam skrip/koding Python adalah untuk memudahkan anda memahami arti/makna penggunaan suatu perintah/program. Komentar yang ditulis dalam sebuah program tersebut hanya bersifat penjelasan tentang apa yang dilakukannya atau apa yang seharusnya dilakukan oleh sebuah skrip/koding. Perlu dicatat bahwa komentar yang bersifat informasi tidak ada hubungannya dengan logika pemrogaram yang sedang anda gunakan. Mereka benar-benar diabaikan oleh kompiler dan dengan demikian tidak pernah tercermin pada input. Biasanya komentar dituliskan pada satu baris yang tersedia di Python, dengan menggunakan `#` di awal maupun di akhir pernyataan.
 
