@@ -3,6 +3,7 @@ sejarah
 mengapa-python
 r-vs-python
 install-python
+windows
 konsep-dasar-python
 penugasan-variabel
 menambahkan-komentar

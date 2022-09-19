@@ -52,6 +52,13 @@ Python memiliki banyak versi, dan sangat mungkin jika di dalam Local Machine kit
 <img src="https://github.com/sainzdata/Py_JNE/blob/main/images/Install_Conda.png?raw=true" width=800" height="310">
 </center>
 
+### Windows 
+
+Berikut ini adalah video tutorial untuk melakukan installasi Anconda di Windows.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZKNy-sPBKQc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 Sebenarnya ada banyak tools yang bisa digunakan untuk menulis Python script, yaitu: 
 * [Python Shell](https://www.python.org/shell/), 
 * [Spyder](https://www.spyder-ide.org/), 
@@ -81,7 +88,7 @@ Selain Jupyterlab, cara alternatif yang paling banyak digunakan untuk menulis ko
 Untuk mempermudah pemahaman kita tentang konsep dan cara kerja Python, Kita coba analogikan Python sebagai proses memasak Roti. Perhatikan gambar berikut: 
 
 <center>
-<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/analogi_py.png?raw=true" width=800" height="400">
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/analogi_Py.png?raw=true" width=800" height="400">
 </center>
 
 
