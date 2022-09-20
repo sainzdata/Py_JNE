@@ -1,0 +1,102 @@
+# Apa Itu Python? {-}
+
+Python dalam pembelajaran ini bukanlah seokor binatang melata menyeramkan seperti yang kita banyangkan atau seekor ular besar yang pernah kita tonton di televisi.Tetapi, Python yang akan kita gunakan adalah sebuah bahasa pemrograman yang digunakan untuk membuat aplikasi, perintah komputer, dan melakukan analisis data.
+
+## Sejarah
+
+**Guido van Rossum** adalah seorang progammer yang pertama kali mendesain dan mengimplementasikan Python pada bulan Desember 1989. Projek ini mulai dikembangkan di Centrum Wiskunde & Informatice yang berpusat di Belanda. Awalnya, Guido bermaksud untuk memperbaiki sintak-sintak bermasalah pada Bahasa Pemrograman ABC yang pernah dikerjakan sebelumnya. Sehingga dalam perjalanannya bahasa pemrograman Python banyak dipengaruhi oleh bahasa pemrograman ABC. Menariknya, tidak seperti bahasa pemrograman lainnya yang banyak dikerjakan dan dirilis oleh perusahaan besar dengan melibatkan para profesional. Python justru dikembangkan secara berkesinambungan oleh ribuan Programmer, penguji, dan pengguna yang kebanyakan bukan ahli IT dari seluruh dunia hingga akhirnya menjadi seperti sekarang. 
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/python.png?raw=true" width="500" height="230">
+</center>
+
+Inspirasi nama Python diambil dari acara TV BBC yang berjudul “Monty Python’s Flying Circus”, karena Guido adalah penggemar berat acara tersebut. Selain itu, ia ingin memberikan nama yang pendek, unik, dan sedikit misterius untuk penemuannya. 
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/timeline_python.png?raw=true" width="750" height="330">
+</center>
+
+Version yang paling banyak digunakan adalah versi dari Python **2.x** dan **3.x**, dan masing-masing versi memiliki fanbase dalam penggunannya. Namun, sejak awal Januari 2020 untuk support maintenance pada Python versi **2.x** telah berhenti. Bahasa pemrograman Python digunakan untuk berbagai tujuan antaranya Developing, Scripting, Generation and Software testing. Karena bahasanya yang elegan dan sederhana, beberapa top perusahaan teknologi seperti Dropbox, Google, Quora, Mozilla, IBM dan Cisco menggunakan Python dalam implementasinya. 
+
+
+## Peranan
+
+Peranan Python sebagai bahasa pemrograman yang populer seperti sekarang ini sudah tidak diragukan lagi. Python dapat membantumu mengembangkan banyak hal, seperti mengembangkan backend, perangkat lunak dan kecerdasan buatan lainnya. Mari kita simak alasan-alasan apa saja yang menguatkanmu untuk belajar Python dikutip dari teknologi.id:
+
+* **Open source**, dan it is free.
+* Python **mudah digunakan** bahkan untuk seorang pemula tanpa latar belakang IT.
+* Python bahasanya **ekspresif**, karena dapat menyederhanakan code, misalkan satu baris code dapat mengerjakan banyak hal ketimbang satu baris code pada bahasa pemrograman lainnya. 
+* Python **mudah dibaca** (dalam hal debug, maintain, dan modify code) oleh manusia, tidak hanya komputer. 
+* Memiliki **banyak Library** di dalamnya.
+* Dapat **diterapkan lintas platform** seperti Windows, Mac, Linux, UNIX, dll. 
+* **Bahasa pemorograman terpopuler** dari tahun 2018 hingga saat ini berdasarakan analisis Google trend.
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/python_pop.jpg?raw=true" width="600" height="350">
+</center>
+
+Keunggulan Python yang bersifat interpretatif juga banyak digunakan untuk prototyping, scripting dalam pengelolaan infrastruktur, hingga pembuatan website berskala besar.Python adalah salah satu bahasa pemrograman yang dianggap sebagai opsi paling tepat untuk seluruh proyek Data Analitik, Sains Data, Artificial Intelligence (AI), termasuk machine learning. 
+
+## Keunggulan 
+
+Jika dibandingkan dengan bahasa pemrograman populer lainnya, R adalah salah satu pemrograman yang dianggap menjadi sanding terkuat dalam hal olah data. Olehkarena itu mari kita perhatikan keunggulan dari keduanya sebagai berikut:
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/R_vs_Py.png?raw=true" width=740" height="280">
+</center>
+
+
+## Install Python
+
+Python memiliki banyak versi, dan sangat mungkin jika di dalam Local Machine kita (komputer) memiliki beberapa versi yang berbeda. Kunjungi [Anaconda.com](https://www.anaconda.com/products/distribution) dan download Installer sesuai dengan Operating System (OS) di komputer anda.
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/Install_Conda.png?raw=true" width=800" height="310">
+</center>
+
+
+
+### Windows 
+
+Berikut ini adalah video tutorial untuk melakukan installasi Anconda di Windows.
+
+<iframe width="780" height="420" src="https://www.youtube.com/embed/ZKNy-sPBKQc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Macintosh
+ 
+Berikut ini adalah video tutorial untuk melakukan installasi Anconda di Macintosh (Mac OS).
+
+<iframe width="780" height="420" src="https://www.youtube.com/embed/mriOWu00jy4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Linux
+
+Berikut ini adalah video tutorial untuk melakukan installasi Anconda di Linux.
+
+<iframe width="780" height="420"  src="https://www.youtube.com/embed/3b3g_t3zwro" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## Penggunaan Python
+
+Sebenarnya ada banyak tools yang dapat digunakan untuk menulis Python script, yaitu: 
+
+* [Python Shell](https://www.python.org/shell/), 
+* [Spyder](https://www.spyder-ide.org/), 
+* [Sublime Text](https://www.sublimetext.com/), 
+* [Visual Studio](https://visualstudio.microsoft.com/vs/features/python/), 
+* [Jupyterlab (Notebook)](https://jupyter.org/), 
+* [Google Colab](https://colab.research.google.com/?hl=id), dll.
+
+Salah satu yang paling populer yaitu menggunakan Jupyterlab, tool ini sudah pasti akan terinstall otomatis apabila dilakukan proses pemasangan Python menggunakan Anaconda. Jika pemasangan Python tidak melalui Anaconda, untuk menggunakan Jupyterlab maka terlebih dahulu melakukan pemasangan dengan 'pip' atau 'conda' (Script : `pip install jupyterlab`). Salah satu keunggulan Jupyterlab adalah kita bisa melihat integrasi antara input dan output dari script yang kita tulis, di dalam satu tampilan dokumen yang interaktif. Berikut ini adalah tampilan Jupeterlab, biasanya link http://localhost:8888/lab/:
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/jupyterlab.png?raw=true" width=800" height="400">
+</center>
+
+Selain Jupyterlab, cara alternatif yang paling banyak digunakan untuk menulis koding Python adalah Google Colab: 
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/googlecolab.png?raw=true" width=800" height="400">
+</center>
+
+
+**Catatan (Opsional):** Lakukan update sebelum menggunakan Python, istall library paling umum digunakan yaitu; (panda, numpy, matplotlib, seaborn) dengan menggunakan pip dan conda (Contoh: `pip install panda` atau `conda install panda`)

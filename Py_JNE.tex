@@ -129,7 +129,7 @@
 \makeatother
 \subtitle{Analisis Data dengan Menggunakan Python (Pemula)}
 \author{Penulis: Bakti Siregar, S.Si.,M.Sc}
-\date{2022-09-18}
+\date{2022-09-20}
 
 \begin{document}
 \maketitle
@@ -172,8 +172,11 @@ Peran ilmu analisis data dalam era digital dan big data seperti sekarang ini san
 
 Seluruh transaksi pengguna tersebut adalah data yang perlu dipelajari dan dianalisis. Kemudian, dapat diambil keputusan maupun kebijakan bisnis yang dinilai lebih menguntungkan bagi perusahaan seperti melakukan promo, penentuan harga, optimasi operasional pengiriman, dan lain-lain. Semakin akurat analisis data, semakin baik keputusan yang diambil, maka semakin besar profit perusahaan. Banyaknya data dan faktor yang harus dipertimbangkan dalam menganalisis data tidak mudah untuk dilakukan dengan menggunakan alat bantu klasisk seperti Excel. Tren saat ini, analis data biasanya dilakukan dengan bantuan teknologi pemrograman computer seperti R, Python, dan SQL karena dapat digunakan untuk data yang besar dan lebih fleksibel.
 
-\hypertarget{pengenalan-python}{%
-\section{Pengenalan Python}\label{pengenalan-python}}
+\hypertarget{apa-itu-pythonv}{%
+\section*{Apa Itu Pythonv}\label{apa-itu-pythonv}}
+\addcontentsline{toc}{section}{Apa Itu Pythonv}
+
+Python dalam pembelajaran ini bukanlah seokor binatang melata menyeramkan seperti yang kita banyangkan atau seekor ular besar yang pernah kita tonton di televisi.Tetapi, Python yang akan kita gunakan adalah sebuah bahasa pemrograman yang digunakan untuk membuat aplikasi, perintah komputer, dan melakukan analisis data.
 
 \hypertarget{sejarah}{%
 \subsection{Sejarah}\label{sejarah}}
@@ -184,8 +187,8 @@ Inspirasi nama Python diambil dari acara TV BBC yang berjudul ``Monty Python's F
 
 Version yang paling banyak digunakan adalah versi dari Python \textbf{2.x} dan \textbf{3.x}, dan masing-masing versi memiliki fanbase dalam penggunannya. Namun, sejak awal Januari 2020 untuk support maintenance pada Python versi \textbf{2.x} telah berhenti. Bahasa pemrograman Python digunakan untuk berbagai tujuan antaranya Developing, Scripting, Generation and Software testing. Karena bahasanya yang elegan dan sederhana, beberapa top perusahaan teknologi seperti Dropbox, Google, Quora, Mozilla, IBM dan Cisco menggunakan Python dalam implementasinya.
 
-\hypertarget{mengapa-python}{%
-\subsection{Mengapa Python?}\label{mengapa-python}}
+\hypertarget{peranan}{%
+\subsection{Peranan}\label{peranan}}
 
 Python adalah bahasa yang dapat membantumu mengembangkan hampir semua hal. Ini adalah bahasa yang bagus untuk mengembangkan backend, perangkat lunak dan kecerdasan buatan lainnya. Mari kita simak alasan-alasan apa saja yang menguatkanmu untuk belajar Python dikutip dari teknologi.id:
 
@@ -209,29 +212,69 @@ Python adalah bahasa yang dapat membantumu mengembangkan hampir semua hal. Ini a
 
 Keunggulan Python yang bersifat interpretatif juga banyak digunakan untuk prototyping, scripting dalam pengelolaan infrastruktur, hingga pembuatan website berskala besar.Python adalah salah satu bahasa pemrograman yang dianggap sebagai opsi paling tepat untuk seluruh proyek Data Analitik, Sains Data, Artificial Intelligence (AI), termasuk machine learning.
 
-\hypertarget{r-vs-python}{%
-\subsection{R Vs Python}\label{r-vs-python}}
+\hypertarget{keunggulan}{%
+\subsection{Keunggulan}\label{keunggulan}}
 
 Jika dibandingkan dengan bahasa pemrograman populer lainnya, R adalah salah satu pemrograman yang dianggap menjadi sanding terkuat dalam hal olah data. Olehkarena itu mari kita perhatikan keunggulan dari keduanya sebagai berikut:
 
-\hypertarget{install-python}{%
-\subsection{Install Python}\label{install-python}}
+\hypertarget{cara-install-python}{%
+\subsection{Cara Install Python}\label{cara-install-python}}
 
-\hypertarget{sintaks-dasar}{%
-\subsection{Sintaks Dasar}\label{sintaks-dasar}}
+Python memiliki banyak versi, dan sangat mungkin jika di dalam Local Machine kita (komputer) memiliki beberapa versi yang berbeda. Kunjungi \href{https://www.anaconda.com/products/distribution}{Anaconda.com} dan download Installer sesuai dengan Operating System (OS) di komputer anda.
 
-\hypertarget{penugasan-variabel}{%
-\subsubsection{Penugasan Variabel}\label{penugasan-variabel}}
+\hypertarget{windows}{%
+\subsubsection{Windows}\label{windows}}
 
-Untuk menjalankan Python dengan Rstudio, install-lah Anaconda pada PC anda dengan baik, dan jangan lupa melakukan \href{https://stackoverflow.com/questions/58568175/upgrade-to-python-3-8-using-conda}{upgrade python} tersebut menggukan \textbf{CMD.exe} pada anaconda navigator dengan menjalankan koding berikut:
+Berikut ini adalah video tutorial untuk melakukan installasi Anconda di Windows.
 
-\begin{verbatim}
-conda update --all
-conda create -n py38 python=3.8
-conda activate py38
-\end{verbatim}
+\hypertarget{macintosh}{%
+\subsubsection{Macintosh}\label{macintosh}}
 
-Setelah itu, anda dapat menjalankan koding python pada Rstudio dengan mengganti \textbf{```\{r\}} menjadi \textbf{```\{python\}} pada chunck Rmd anda, dan jalankan koding berikut:
+Berikut ini adalah video tutorial untuk melakukan installasi Anconda di Macintosh (Mac OS).
+
+\hypertarget{linux}{%
+\subsubsection{Linux}\label{linux}}
+
+Berikut ini adalah video tutorial untuk melakukan installasi Anconda di Linux.
+
+\hypertarget{cara-menggunakan-python}{%
+\subsection{Cara Menggunakan Python}\label{cara-menggunakan-python}}
+
+Sebenarnya ada banyak tools yang bisa digunakan untuk menulis Python script, yaitu:
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://www.python.org/shell/}{Python Shell},
+\item
+  \href{https://www.spyder-ide.org/}{Spyder},
+\item
+  \href{https://www.sublimetext.com/}{Sublime Text},
+\item
+  \href{https://visualstudio.microsoft.com/vs/features/python/}{Visual Studio},
+\item
+  \href{https://jupyter.org/}{Jupyterlab (Notebook)},
+\item
+  \href{https://colab.research.google.com/?hl=id}{Google Colab}, dll.
+\end{itemize}
+
+Salah satu yang paling populer yaitu menggunakan Jupyterlab, tool ini sudah pasti akan terinstall otomatis apabila dilakukan proses pemasangan Python menggunakan Anaconda. Jika pemasangan Python tidak melalui Anaconda, untuk menggunakan Jupyterlab maka terlebih dahulu melakukan pemasangan dengan `pip' atau `conda' (Script : pip install jupyterlab). Salah satu keunggulan Jupyterlab adalah kita bisa melihat integrasi antara input dan output dari script yang kita tulis, di dalam satu tampilan dokumen yang interaktif. Berikut ini adalah tampilan Jupeterlab, biasanya link \url{http://localhost:8888/lab/}:
+
+Selain Jupyterlab, cara alternatif yang paling banyak digunakan untuk menulis koding Python adalah Google Colab:
+
+\textbf{Catatan (Opsional):} Lakukan update sebelum menggunakan Python, istall library paling umum digunakan yaitu; (panda, numpy, matplotlib, seaborn) dengan menggunakan pip dan conda (Contoh: pip install panda atau conda install panda)
+
+\hypertarget{konsep-dasar-python}{%
+\section{Konsep Dasar Python}\label{konsep-dasar-python}}
+
+Untuk mempermudah pemahaman kita tentang konsep dan cara kerja Python, dapat dianalogikan sebagai proses memasak Roti. Perhatikan gambar berikut:
+
+Koding (instruksi) untuk mengolah antara bahan, persiapan sampai dengan proses memasak dibutuhkan ``kata'' khusus, ``simbol'', sehingga dikombinasikan sebagai sebuah ``kalimat''.
+
+\hypertarget{material-python}{%
+\subsection{Material Python}\label{material-python}}
+
+\url{https://medium.com/analytics-vidhya/data-types-in-python-506009234f89}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -783,6 +826,8 @@ Here is a review of existing methods.
 \section{Persiapan Data}\label{persiapan-data}}
 
 We describe our methods in this chapter.
+
+\url{https://www.dqlab.id/kenali-4-fungsi-penting-pandas-python-untuk-pengolahan-data}
 
 \hypertarget{visualisasi-data}{%
 \section{Visualisasi Data}\label{visualisasi-data}}
