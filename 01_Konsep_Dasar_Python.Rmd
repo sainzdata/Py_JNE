@@ -29,7 +29,7 @@ Apapun yang diimplementasikan di Python disebut sebagai sebuah objek. Object ini
 Variabel merupakan tempat penyimpanan sementara yang dapat digunakan untuk menyimpan data atau informasi. Variabel bersifat mutable, artinya nilai yang ada di dalam variabel dapat diubah, Nilai yang ada di dalam variabel pun dapat berupa bilangan maupun kata. Jadi, apabila suatu saat data tersebut ingin ditampilkan, kita hanya perlu memanggil variabel tersebut untuk menampilkan data yang tersimpan. Dengan kata lain variabel dapat dianggap seperti sebuah sticky note yang menempel di sebuah objek. 
 
 <center>
-<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/variabel.png?raw=true" width=350" height="200">
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/variabel.png?raw=true" width=400" height="200">
 </center>
 
 
@@ -38,9 +38,6 @@ Penulisan variabel dalam Python juga memiliki aturan tertentu, yaitu:
 * Karakter pertama harus berupa huruf atau garis bawah/underscore (_).
 * Karakter selanjutnya dapat berupa huruf, garis bawah/underscore (_) atau angka.
 * Karakter pada nama variabel bersifat sensitif (case-sensitif). Artinya huruf kecil dan huruf besar dibedakan. Sebagai contoh, variabel nama dan Nama dianggap menjadi variabel yang berbeda.
-
-
-
 
 
 
