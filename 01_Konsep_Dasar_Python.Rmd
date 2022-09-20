@@ -29,7 +29,7 @@ Apapun yang diimplementasikan di Python disebut sebagai sebuah objek. Object ini
 Variabel merupakan tempat penyimpanan sementara yang dapat digunakan untuk menyimpan data atau informasi. Variabel bersifat mutable, artinya nilai yang ada di dalam variabel dapat diubah, Nilai yang ada di dalam variabel pun dapat berupa bilangan maupun kata. Jadi, apabila suatu saat data tersebut ingin ditampilkan, kita hanya perlu memanggil variabel tersebut untuk menampilkan data yang tersimpan. Dengan kata lain variabel dapat dianggap seperti sebuah sticky note yang menempel di sebuah objek. 
 
 <center>
-<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/variabel.png?raw=true" width=500" height="300">
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/variabel.png?raw=true" width=350" height="200">
 </center>
 
 
