@@ -33,3 +33,4 @@ penggunaan
 atribut-perlengkapan
 atribut-bahan-bahan
 objek
+variabel

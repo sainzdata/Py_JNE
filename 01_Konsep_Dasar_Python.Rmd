@@ -11,7 +11,7 @@ Sejatinya koding yang dituliskan dalam bahasa pemrograman Python adalah suatu in
 
 ## Atribut (Bahan-bahan)
 
-Setiap bahasa pemrograman memiliki atribut dan aturan penulisan yang berbeda-beda. Python memiliki beberapa aturan penulisan statement, penamaan variabel, penulisan simbol, hingga penulisan operator. Jika terdapat penulisan yang tidak sesuai dengan aturan, maka program tidak akan berjalan atau error. Berikut ini adalah beberapa atribut dan struktur penulisan yang perlu diperhatikan pengguna Python.
+Setiap bahasa pemrograman memiliki atribut dan aturan penulisan yang berbeda-beda. Python memiliki beberapa aturan penulisan objek, variabel, statement, operator, hingga penulisan komentar. Jika terdapat penulisan yang tidak sesuai dengan aturan, maka program tidak akan berjalan atau error. Berikut ini adalah beberapa atribut dan struktur penulisan yang perlu diperhatikan pengguna Python.
 
 ### Objek 
 
@@ -23,6 +23,18 @@ Apapun yang diimplementasikan di Python disebut sebagai sebuah objek. Object ini
 
 
 Catatan: Tipe object, menentukan apakah value yang ada di dalam kotak ini dapat diubah (mutable) atau konstan (immutable).
+
+### Variabel 
+
+Variabel merupakan tempat penyimpanan sementara yang dapat digunakan untuk menyimpan data atau informasi. Variabel bersifat mutable, artinya nilai yang ada di dalam variabel dapat diubah, Nilai yang ada di dalam variabel pun dapat berupa bilangan maupun kata. Jadi, apabila suatu saat data tersebut ingin ditampilkan, kita hanya perlu memanggil variabel tersebut untuk menampilkan data yang tersimpan. Penulisan variabel dalam Python juga memiliki aturan tertentu, yaitu:
+
+* Karakter pertama harus berupa huruf atau garis bawah/underscore (_).
+* Karakter selanjutnya dapat berupa huruf, garis bawah/underscore (_) atau angka.
+* Karakter pada nama variabel bersifat sensitif (case-sensitif). Artinya huruf kecil dan huruf besar dibedakan. Sebagai contoh, variabel nama dan Nama dianggap menjadi variabel yang berbeda.
+
+Dibawah ini adalah contoh penggunaan variabel dalam bahasa pemrograman Python,
+
+
 
 
 https://medium.com/analytics-vidhya/data-types-in-python-506009234f89
