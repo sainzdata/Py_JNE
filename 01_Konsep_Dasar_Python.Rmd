@@ -15,11 +15,14 @@ Setiap bahasa pemrograman memiliki atribut dan aturan penulisan yang berbeda-bed
 
 ### Objek 
 
-Apapun yang diimplementasikan di Python disebut sebagai sebuah objek. Object ini tentu akan memiliki beberapa tipe, misalnya nilai Integer atau Boolean. Berdasarkan tipe suatu objek tersebut, dapat menentukan proses apa yang bisa dilakukan dengan data yang dimiliki. Contoh; suatu nilai Integer dianggap sebagai objek yang dianalogikan dengan sebuah kotak transparan yang memiliki nilai 20.
+Apapun yang diimplementasikan di Python disebut sebagai sebuah objek. Object ini tentu akan memiliki beberapa tipe, misalnya nilai Integer atau Boolean. Berdasarkan tipe suatu objek tersebut, dapat menentukan proses apa yang bisa dilakukan dengan data yang dimiliki. Contoh; suatu nilai Integer dianggap sebagai objek yang dianalogikan dengan sebuah kotak transparan yang memiliki nilai 10.
 
 <center>
-<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/tipe_objek.png?raw=true" width=800" height="300">
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/tipe_objek.png?raw=true" width=500" height="300">
 </center>
+
+
+Catatan: Tipe object, menentukan apakah value yang ada di dalam kotak ini dapat diubah (mutable) atau konstan (immutable).
 
 
 https://medium.com/analytics-vidhya/data-types-in-python-506009234f89
