@@ -23,3 +23,13 @@ example-one
 example-two
 studi-kasus
 pertemuan-1
+sejarah-perkembangan-python
+peranan-penggunaan-python
+keunggulan-python
+cara-install-python
+cara-menggunaan-python
+instalasi
+penggunaan
+atribut-perlengkapan
+atribut-bahan-bahan
+objek

@@ -1,15 +1,25 @@
 # Konsep Dasar Python
 
-Untuk mempermudah pemahaman kita tentang konsep dan cara kerja Python, dapat dianalogikan sebagai proses memasak Roti. Perhatikan gambar berikut: 
+Untuk memulai mempelajari segala sesuatu perlu dilakukan dari hal yang sangat fundamental, begitu pula jika anda ingin belajar  Python. Konsep dasar dan cara kerja Python, dapat dianalogikan sebagai proses memasak Roti serata bagaimana cara menyajiannya. Perhatikan gambar berikut: 
 
 <center>
 <img src="https://github.com/sainzdata/Py_JNE/blob/main/images/analogi_py.png?raw=true" width=800" height="300">
 </center>
 
-Koding (instruksi) untuk mengolah antara bahan, persiapan sampai dengan proses memasak dibutuhkan “kata” khusus, “simbol”, sehingga dikombinasikan sebagai sebuah “kalimat”.
+Sejatinya koding yang dituliskan dalam bahasa pemrograman Python adalah suatu instruksi dari pengguna **(user)** kepada komputer untuk melakukan proses mengolah antara bahan, persiapan sampai dengan memasak dibutuhkan “kata” khusus, “simbol”, sehingga dikombinasikan sebagai sebuah “kalimat”.
 
 
-## Material Python
+## Atribut (Bahan-bahan)
+
+Setiap bahasa pemrograman memiliki atribut dan aturan penulisan yang berbeda-beda. Python memiliki beberapa aturan penulisan statement, penamaan variabel, penulisan simbol, hingga penulisan operator. Jika terdapat penulisan yang tidak sesuai dengan aturan, maka program tidak akan berjalan atau error. Berikut ini adalah beberapa atribut dan struktur penulisan yang perlu diperhatikan pengguna Python.
+
+### Objek 
+
+Apapun yang diimplementasikan di Python disebut sebagai sebuah objek. Object ini tentu akan memiliki beberapa tipe, misalnya nilai Integer atau Boolean. Berdasarkan tipe suatu objek tersebut, dapat menentukan proses apa yang bisa dilakukan dengan data yang dimiliki. Contoh; suatu nilai Integer dianggap sebagai objek yang dianalogikan dengan sebuah kotak transparan yang memiliki nilai 20.
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/tipe_objek.png?raw=true" width=800" height="300">
+</center>
 
 
 https://medium.com/analytics-vidhya/data-types-in-python-506009234f89

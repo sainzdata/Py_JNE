@@ -1,4 +1,4 @@
-# Apa Itu Python? {-}
+# Pengenalan Python? {-}
 
 Python dalam pembelajaran ini bukanlah seokor binatang melata menyeramkan seperti yang kita banyangkan atau seekor ular besar yang pernah kita tonton di televisi.Tetapi, Python yang akan kita gunakan adalah sebuah bahasa pemrograman yang digunakan untuk membuat aplikasi, perintah komputer, dan melakukan analisis data.
 
@@ -19,7 +19,7 @@ Inspirasi nama Python diambil dari acara TV BBC yang berjudul “Monty Python’
 Version yang paling banyak digunakan adalah versi dari Python **2.x** dan **3.x**, dan masing-masing versi memiliki fanbase dalam penggunannya. Namun, sejak awal Januari 2020 untuk support maintenance pada Python versi **2.x** telah berhenti. Bahasa pemrograman Python digunakan untuk berbagai tujuan antaranya Developing, Scripting, Generation and Software testing. Karena bahasanya yang elegan dan sederhana, beberapa top perusahaan teknologi seperti Dropbox, Google, Quora, Mozilla, IBM dan Cisco menggunakan Python dalam implementasinya. 
 
 
-## Peranan
+## Peranan 
 
 Peranan Python sebagai bahasa pemrograman yang populer seperti sekarang ini sudah tidak diragukan lagi. Python dapat membantumu mengembangkan banyak hal, seperti mengembangkan backend, perangkat lunak dan kecerdasan buatan lainnya. Mari kita simak alasan-alasan apa saja yang menguatkanmu untuk belajar Python dikutip dari teknologi.id:
 
@@ -37,7 +37,7 @@ Peranan Python sebagai bahasa pemrograman yang populer seperti sekarang ini suda
 
 Keunggulan Python yang bersifat interpretatif juga banyak digunakan untuk prototyping, scripting dalam pengelolaan infrastruktur, hingga pembuatan website berskala besar.Python adalah salah satu bahasa pemrograman yang dianggap sebagai opsi paling tepat untuk seluruh proyek Data Analitik, Sains Data, Artificial Intelligence (AI), termasuk machine learning. 
 
-## Keunggulan 
+## Keunggulan
 
 Jika dibandingkan dengan bahasa pemrograman populer lainnya, R adalah salah satu pemrograman yang dianggap menjadi sanding terkuat dalam hal olah data. Olehkarena itu mari kita perhatikan keunggulan dari keduanya sebagai berikut:
 
@@ -46,7 +46,7 @@ Jika dibandingkan dengan bahasa pemrograman populer lainnya, R adalah salah satu
 </center>
 
 
-## Install Python
+## Instalasi
 
 Python memiliki banyak versi, dan sangat mungkin jika di dalam Local Machine kita (komputer) memiliki beberapa versi yang berbeda. Kunjungi [Anaconda.com](https://www.anaconda.com/products/distribution) dan download Installer sesuai dengan Operating System (OS) di komputer anda.
 
@@ -75,7 +75,7 @@ Berikut ini adalah video tutorial untuk melakukan installasi Anconda di Linux.
 <iframe width="780" height="420"  src="https://www.youtube.com/embed/3b3g_t3zwro" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-## Penggunaan Python
+## Penggunaan
 
 Sebenarnya ada banyak tools yang dapat digunakan untuk menulis Python script, yaitu: 
 
