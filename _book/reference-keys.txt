@@ -34,3 +34,4 @@ atribut-perlengkapan
 atribut-bahan-bahan
 objek
 variabel
+komentar
