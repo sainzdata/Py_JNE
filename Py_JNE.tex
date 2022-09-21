@@ -129,7 +129,7 @@
 \makeatother
 \subtitle{Analisis Data dengan Menggunakan Python (Pemula)}
 \author{Penulis: Bakti Siregar, S.Si.,M.Sc}
-\date{2022-09-20}
+\date{2022-09-21}
 
 \begin{document}
 \maketitle
@@ -172,16 +172,16 @@ Peran ilmu analisis data dalam era digital dan big data seperti sekarang ini san
 
 Seluruh transaksi pengguna tersebut adalah data yang perlu dipelajari dan dianalisis. Kemudian, dapat diambil keputusan maupun kebijakan bisnis yang dinilai lebih menguntungkan bagi perusahaan seperti melakukan promo, penentuan harga, optimasi operasional pengiriman, dan lain-lain. Semakin akurat analisis data, semakin baik keputusan yang diambil, maka semakin besar profit perusahaan. Banyaknya data dan faktor yang harus dipertimbangkan dalam menganalisis data tidak mudah untuk dilakukan dengan menggunakan alat bantu klasisk seperti Excel. Tren saat ini, analis data biasanya dilakukan dengan bantuan teknologi pemrograman computer seperti R, Python, dan SQL karena dapat digunakan untuk data yang besar dan lebih fleksibel.
 
-\hypertarget{apa-itu-pythonv}{%
-\section*{Apa Itu Pythonv}\label{apa-itu-pythonv}}
-\addcontentsline{toc}{section}{Apa Itu Pythonv}
+\hypertarget{pengenalan-python}{%
+\section*{Pengenalan Python?}\label{pengenalan-python}}
+\addcontentsline{toc}{section}{Pengenalan Python?}
 
 Python dalam pembelajaran ini bukanlah seokor binatang melata menyeramkan seperti yang kita banyangkan atau seekor ular besar yang pernah kita tonton di televisi.Tetapi, Python yang akan kita gunakan adalah sebuah bahasa pemrograman yang digunakan untuk membuat aplikasi, perintah komputer, dan melakukan analisis data.
 
 \hypertarget{sejarah}{%
 \subsection{Sejarah}\label{sejarah}}
 
-\textbf{Guido van Rossum}, orang pertama kali yang mendesain Python di akhir tahun 1989, memulai projek ini saat masih di Centrum Wiskunde \& Informatice yang berpusat di Belanda. Awalnya, Guido bermaksud untuk memperbaiki sintak-sintak bermasalah pada Bahasa Pemrograman ABC yang pernah dikerjakan sebelumnya dan akhirnya terciptalah sebuah bahasa pemrograman yang lebih baik.
+\textbf{Guido van Rossum} adalah seorang progammer yang pertama kali mendesain dan mengimplementasikan Python pada bulan Desember 1989. Projek ini mulai dikembangkan di Centrum Wiskunde \& Informatice yang berpusat di Belanda. Awalnya, Guido bermaksud untuk memperbaiki sintak-sintak bermasalah pada Bahasa Pemrograman ABC yang pernah dikerjakan sebelumnya. Sehingga dalam perjalanannya bahasa pemrograman Python banyak dipengaruhi oleh bahasa pemrograman ABC. Menariknya, tidak seperti bahasa pemrograman lainnya yang banyak dikerjakan dan dirilis oleh perusahaan besar dengan melibatkan para profesional. Python justru dikembangkan secara berkesinambungan oleh ribuan Programmer, penguji, dan pengguna yang kebanyakan bukan ahli IT dari seluruh dunia hingga akhirnya menjadi seperti sekarang.
 
 Inspirasi nama Python diambil dari acara TV BBC yang berjudul ``Monty Python's Flying Circus'', karena Guido adalah penggemar berat acara tersebut. Selain itu, ia ingin memberikan nama yang pendek, unik, dan sedikit misterius untuk penemuannya.
 
@@ -190,7 +190,7 @@ Version yang paling banyak digunakan adalah versi dari Python \textbf{2.x} dan \
 \hypertarget{peranan}{%
 \subsection{Peranan}\label{peranan}}
 
-Python adalah bahasa yang dapat membantumu mengembangkan hampir semua hal. Ini adalah bahasa yang bagus untuk mengembangkan backend, perangkat lunak dan kecerdasan buatan lainnya. Mari kita simak alasan-alasan apa saja yang menguatkanmu untuk belajar Python dikutip dari teknologi.id:
+Peranan Python sebagai bahasa pemrograman yang populer seperti sekarang ini sudah tidak diragukan lagi. Python dapat membantumu mengembangkan banyak hal, seperti mengembangkan backend, perangkat lunak dan kecerdasan buatan lainnya. Mari kita simak alasan-alasan apa saja yang menguatkanmu untuk belajar Python dikutip dari teknologi.id:
 
 \begin{itemize}
 \tightlist
@@ -217,8 +217,8 @@ Keunggulan Python yang bersifat interpretatif juga banyak digunakan untuk protot
 
 Jika dibandingkan dengan bahasa pemrograman populer lainnya, R adalah salah satu pemrograman yang dianggap menjadi sanding terkuat dalam hal olah data. Olehkarena itu mari kita perhatikan keunggulan dari keduanya sebagai berikut:
 
-\hypertarget{cara-install-python}{%
-\subsection{Cara Install Python}\label{cara-install-python}}
+\hypertarget{instalasi}{%
+\subsection{Instalasi}\label{instalasi}}
 
 Python memiliki banyak versi, dan sangat mungkin jika di dalam Local Machine kita (komputer) memiliki beberapa versi yang berbeda. Kunjungi \href{https://www.anaconda.com/products/distribution}{Anaconda.com} dan download Installer sesuai dengan Operating System (OS) di komputer anda.
 
@@ -237,10 +237,10 @@ Berikut ini adalah video tutorial untuk melakukan installasi Anconda di Macintos
 
 Berikut ini adalah video tutorial untuk melakukan installasi Anconda di Linux.
 
-\hypertarget{cara-menggunakan-python}{%
-\subsection{Cara Menggunakan Python}\label{cara-menggunakan-python}}
+\hypertarget{penggunaan}{%
+\subsection{Penggunaan}\label{penggunaan}}
 
-Sebenarnya ada banyak tools yang bisa digunakan untuk menulis Python script, yaitu:
+Sebenarnya ada banyak tools yang dapat digunakan untuk menulis Python script, yaitu:
 
 \begin{itemize}
 \tightlist
@@ -258,21 +258,47 @@ Sebenarnya ada banyak tools yang bisa digunakan untuk menulis Python script, yai
   \href{https://colab.research.google.com/?hl=id}{Google Colab}, dll.
 \end{itemize}
 
-Salah satu yang paling populer yaitu menggunakan Jupyterlab, tool ini sudah pasti akan terinstall otomatis apabila dilakukan proses pemasangan Python menggunakan Anaconda. Jika pemasangan Python tidak melalui Anaconda, untuk menggunakan Jupyterlab maka terlebih dahulu melakukan pemasangan dengan `pip' atau `conda' (Script : pip install jupyterlab). Salah satu keunggulan Jupyterlab adalah kita bisa melihat integrasi antara input dan output dari script yang kita tulis, di dalam satu tampilan dokumen yang interaktif. Berikut ini adalah tampilan Jupeterlab, biasanya link \url{http://localhost:8888/lab/}:
+Salah satu yang paling populer yaitu menggunakan Jupyterlab, tool ini sudah pasti akan terinstall otomatis apabila dilakukan proses pemasangan Python menggunakan Anaconda. Jika pemasangan Python tidak melalui Anaconda, untuk menggunakan Jupyterlab maka terlebih dahulu melakukan pemasangan dengan `pip' atau `conda' (Script : \texttt{pip\ install\ jupyterlab}). Salah satu keunggulan Jupyterlab adalah kita bisa melihat integrasi antara input dan output dari script yang kita tulis, di dalam satu tampilan dokumen yang interaktif. Berikut ini adalah tampilan Jupeterlab, biasanya link \url{http://localhost:8888/lab/}:
 
 Selain Jupyterlab, cara alternatif yang paling banyak digunakan untuk menulis koding Python adalah Google Colab:
 
-\textbf{Catatan (Opsional):} Lakukan update sebelum menggunakan Python, istall library paling umum digunakan yaitu; (panda, numpy, matplotlib, seaborn) dengan menggunakan pip dan conda (Contoh: pip install panda atau conda install panda)
+\textbf{Catatan (Opsional):} Lakukan update sebelum menggunakan Python, istall library paling umum digunakan yaitu; (panda, numpy, matplotlib, seaborn) dengan menggunakan pip dan conda (Contoh: \texttt{pip\ install\ panda} atau \texttt{conda\ install\ panda})
 
 \hypertarget{konsep-dasar-python}{%
 \section{Konsep Dasar Python}\label{konsep-dasar-python}}
 
-Untuk mempermudah pemahaman kita tentang konsep dan cara kerja Python, dapat dianalogikan sebagai proses memasak Roti. Perhatikan gambar berikut:
+Untuk memulai mempelajari segala sesuatu perlu dilakukan dari hal yang sangat fundamental, begitu pula jika anda ingin belajar Python. Konsep dasar dan cara kerja Python, dapat dianalogikan sebagai proses memasak Roti serata bagaimana cara menyajiannya. Perhatikan gambar berikut:
 
-Koding (instruksi) untuk mengolah antara bahan, persiapan sampai dengan proses memasak dibutuhkan ``kata'' khusus, ``simbol'', sehingga dikombinasikan sebagai sebuah ``kalimat''.
+Sejatinya koding yang dituliskan dalam bahasa pemrograman Python adalah suatu instruksi dari pengguna \textbf{(user)} kepada komputer untuk melakukan proses mengolah antara bahan, persiapan sampai dengan memasak dibutuhkan ``kata'' khusus, ``simbol'', sehingga dikombinasikan sebagai sebuah ``kalimat''.
 
-\hypertarget{material-python}{%
-\subsection{Material Python}\label{material-python}}
+\hypertarget{atribut-bahan-bahan}{%
+\subsection{Atribut (Bahan-bahan)}\label{atribut-bahan-bahan}}
+
+Setiap bahasa pemrograman memiliki atribut dan aturan penulisan yang berbeda-beda. Python memiliki beberapa aturan penulisan objek, variabel, statement, operator, hingga penulisan komentar. Jika terdapat penulisan yang tidak sesuai dengan aturan, maka program tidak akan berjalan atau error. Berikut ini adalah beberapa atribut dan struktur penulisan yang perlu diperhatikan pengguna Python.
+
+\hypertarget{objek}{%
+\subsubsection{Objek}\label{objek}}
+
+Apapun yang diimplementasikan di Python disebut sebagai sebuah objek. Object ini tentu akan memiliki beberapa tipe, misalnya nilai Integer atau Boolean. Berdasarkan tipe suatu objek tersebut, dapat menentukan proses apa yang bisa dilakukan dengan data yang dimiliki. Contoh; suatu nilai Integer dianggap sebagai objek yang dianalogikan dengan sebuah kotak transparan yang memiliki nilai 10.
+
+\textbf{Catatan:} Tipe object, menentukan apakah value yang ada di dalam kotak ini dapat diubah (mutable) atau konstan (immutable).
+
+\hypertarget{variabel}{%
+\subsubsection{Variabel}\label{variabel}}
+
+Variabel merupakan tempat penyimpanan sementara yang dapat digunakan untuk menyimpan data atau informasi. Variabel bersifat mutable, artinya nilai yang ada di dalam variabel dapat diubah, Nilai yang ada di dalam variabel pun dapat berupa bilangan maupun kata. Jadi, apabila suatu saat data tersebut ingin ditampilkan, kita hanya perlu memanggil variabel tersebut untuk menampilkan data yang tersimpan. Dengan kata lain variabel dapat dianggap seperti sebuah sticky note yang menempel di sebuah objek.
+
+Penulisan variabel dalam Python juga memiliki aturan tertentu, yaitu:
+
+\begin{itemize}
+\tightlist
+\item
+  Karakter pertama harus berupa huruf atau garis bawah/underscore (\_).
+\item
+  Karakter selanjutnya dapat berupa huruf, garis bawah/underscore (\_) atau angka.
+\item
+  Karakter pada nama variabel bersifat sensitif (case-sensitif). Artinya huruf kecil dan huruf besar dibedakan. Sebagai contoh, variabel nama dan Nama dianggap menjadi variabel yang berbeda.
+\end{itemize}
 
 \url{https://medium.com/analytics-vidhya/data-types-in-python-506009234f89}
 
@@ -317,8 +343,8 @@ Perhatikan contoh berikut:
 ## 4
 \end{verbatim}
 
-\hypertarget{menambahkan-komentar}{%
-\subsubsection{Menambahkan Komentar}\label{menambahkan-komentar}}
+\hypertarget{komentar}{%
+\subsubsection{Komentar}\label{komentar}}
 
 Menambahkan/Memberikan komentar dalam skrip/koding Python adalah untuk memudahkan anda memahami arti/makna penggunaan suatu perintah/program. Komentar yang ditulis dalam sebuah program tersebut hanya bersifat penjelasan tentang apa yang dilakukannya atau apa yang seharusnya dilakukan oleh sebuah skrip/koding. Perlu dicatat bahwa komentar yang bersifat informasi tidak ada hubungannya dengan logika pemrogaram yang sedang anda gunakan. Mereka benar-benar diabaikan oleh kompiler dan dengan demikian tidak pernah tercermin pada input. Biasanya komentar dituliskan pada satu baris yang tersedia di Python, dengan menggunakan \texttt{\#} di awal maupun di akhir pernyataan.
 

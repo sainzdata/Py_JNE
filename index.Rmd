@@ -20,16 +20,15 @@ knitr::write_bib(c(
 ), 'packages.bib')
 
 # Connect R to Python
-
 library(reticulate)
 library(Rcpp)
 # conda_list()
-use_condaenv("Py3_10_4", required = TRUE)
+use_condaenv("Py3_10_4", required = F)
 ```
 
 # Overview {-}
 
-Peran ilmu analisis data dalam era digital dan big data seperti sekarang ini sangatlah penting karena begitu melimpahnya data yang kita produksi setiap hari, baik itu dari akun media social, ecommerce, media, transportasi/ekpedisi online, youtube, game, perusahaan, dll. Data tersebut menyediakan informasi yang dapat menentukan keputusan penting dalam berbagai sektor industri. Contohnya, perusahaan pengiriman barang seperti di JNE dapat melakukan analisis data dari hal yang paling sederhana hingga kompleks; 
+Peran ilmu analisis data dalam era digital dan big data seperti sekarang ini snangatlah penting karena begitu melimpahnya data yang kita produksi setiap hari, baik itu dari akun media social, ecommerce, media, transportasi/ekpedisi online, youtube, game, perusahaan, dll. Data tersebut menyediakan informasi yang dapat menentukan keputusan penting dalam berbagai sektor industri. Contohnya, perusahaan pengiriman barang seperti di JNE dapat melakukan analisis data dari hal yang paling sederhana hingga kompleks; 
 
 *	Jumlah transaksi yang dilakukan konsumen setiap hari, minggu, bulan, dan tahunan
 *	Berapa banyak pengiriman tepat waktu, cacat (hilang), dan pengiriman terlambat

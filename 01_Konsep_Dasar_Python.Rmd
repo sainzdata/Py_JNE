@@ -24,6 +24,7 @@ Apapun yang diimplementasikan di Python disebut sebagai sebuah objek. Object ini
 
 **Catatan:** Tipe object, menentukan apakah value yang ada di dalam kotak ini dapat diubah (mutable) atau konstan (immutable).
 
+
 ### Variabel 
 
 Variabel merupakan tempat penyimpanan sementara yang dapat digunakan untuk menyimpan data atau informasi. Variabel bersifat mutable, artinya nilai yang ada di dalam variabel dapat diubah, Nilai yang ada di dalam variabel pun dapat berupa bilangan maupun kata. Jadi, apabila suatu saat data tersebut ingin ditampilkan, kita hanya perlu memanggil variabel tersebut untuk menampilkan data yang tersimpan. Dengan kata lain variabel dapat dianggap seperti sebuah sticky note yang menempel di sebuah objek. 
@@ -33,22 +34,36 @@ Variabel merupakan tempat penyimpanan sementara yang dapat digunakan untuk menyi
 </center>
 
 
-Penulisan variabel dalam Python juga memiliki aturan tertentu, yaitu:
+### Komentar 
 
-* Karakter pertama harus berupa huruf atau garis bawah/underscore (_).
+Menambahkan/Memberikan komentar dalam skrip/koding Python adalah untuk memudahkan anda memahami arti/makna penggunaan suatu perintah/program. Komentar yang ditulis dalam sebuah program tersebut hanya bersifat penjelasan tentang apa yang dilakukannya atau apa yang seharusnya dilakukan oleh sebuah skrip/koding. Perlu dicatat bahwa komentar yang bersifat informasi tidak ada hubungannya dengan logika pemrogaram yang sedang anda gunakan. Mereka benar-benar diabaikan oleh kompiler dan dengan demikian tidak pernah tercermin pada input. Biasanya komentar dituliskan pada satu baris yang tersedia di Python, dengan menggunakan `#` di awal maupun di akhir pernyataan.
+
+
+```{python eval=FALSE, include=T}
+# input suatu nilai ke variabel `x1` (contoh: komentar di awal script)
+x1  = 10
+x_1 = 12   # input suatu nilai ke variabel `x_1` (contoh: komentar di akhir script)
+1x  = 13   # contoh penulisan variabel yang salah
+```
+
+**Catatan:** Penulisan variabel dalam Python juga memiliki aturan tertentu, sebagai berikut.
+
+* Karakter pertama harus berupa huruf atau garis bawah/underscore (_), artinya **tidak boleh dimulai dengan angka**.
 * Karakter selanjutnya dapat berupa huruf, garis bawah/underscore (_) atau angka.
-* Karakter pada nama variabel bersifat sensitif (case-sensitif). Artinya huruf kecil dan huruf besar dibedakan. Sebagai contoh, variabel nama dan Nama dianggap menjadi variabel yang berbeda.
+* Karakter pada nama variabel bersifat sensitif (case-sensitif). Artinya huruf kecil dan huruf besar dibedakan. Sebagai contoh, variabel nama dan Nama dianggap menjadi variabel yang berbeda. 
 
 
+### Statement
+
+Statement adalah instruksi atau kalimat perintah yang diberikan dalam beberapa baris untuk dieksekusi oleh komputer. Pada bahasa Python, jika kita ingin menuliskan beberapa statement dalam satu baris maka kita harus memisahkannya dengan titik-koma. Seperti contoh berikut:
+
+```{python}
+x = 2; y = 3; z = x+y; 
+print(x,y,z)
+```
 
 https://medium.com/analytics-vidhya/data-types-in-python-506009234f89
 
-```{python}
-x = 2
-y = 3 
-z = 5 
-print(x,y,z)
-```
 
 Selain menyimpan atau pengisian nilai, ada juga menjumlahkan, mengurangi, perkalian, pembagian, dsb.
 
@@ -67,17 +82,6 @@ Perhatikan contoh berikut:
 ```{python}
 x += 2
 print(x)
-```
-
-### Komentar 
-
-Menambahkan/Memberikan komentar dalam skrip/koding Python adalah untuk memudahkan anda memahami arti/makna penggunaan suatu perintah/program. Komentar yang ditulis dalam sebuah program tersebut hanya bersifat penjelasan tentang apa yang dilakukannya atau apa yang seharusnya dilakukan oleh sebuah skrip/koding. Perlu dicatat bahwa komentar yang bersifat informasi tidak ada hubungannya dengan logika pemrogaram yang sedang anda gunakan. Mereka benar-benar diabaikan oleh kompiler dan dengan demikian tidak pernah tercermin pada input. Biasanya komentar dituliskan pada satu baris yang tersedia di Python, dengan menggunakan `#` di awal maupun di akhir pernyataan.
-
-
-```{python}
-# Mengganti nilai x yang sudah direkam (Komentar di awal pernyataan) 
-x=12 
-z = x + y   # Mengganti nilai z yang sudah direkam (Komentar di akhir pernyataan) 
 ```
 
 

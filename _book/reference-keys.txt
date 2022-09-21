@@ -11,6 +11,7 @@ atribut-bahan-bahan
 objek
 variabel
 komentar
+statement
 operator
 aritmatika
 relasional
