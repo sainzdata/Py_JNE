@@ -72,7 +72,7 @@ Dalam persiapan data, kita perlu mengetahui apa tipe data karena tiap tipe data 
 Berikut adalah tipe data yang umum di Python:
 
 <center>
-<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/tipedata_py.jpeg?raw=true" width=600" height="400">
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/tipedata_py.jpeg?raw=true" width=630" height="430">
 </center>
 
 **Keterangan:**
@@ -175,16 +175,72 @@ Untuk mempermudah pemahaman mengenai algoritma ini, maka berikut ini diberikan t
 **Catatan:** Jika anda ingin belajar lebih lanjut mengenai prosedur membuat flowchart silahkan klik [disini](https://ndoware.com/diagram-alir-flowchart.html). 
 
 
-### Struktur Percabangan If
+### Percabangan if
 
-Percabangan If digunakan saat terdapat satu pilihan keputusan. Contoh, Jika peserta pelatihan tidak lulus dalam ujian, maka kita harus ikut remidi. Sedangkan yang lulus dapat sertifikat.
-
+Percabangan `if` digunakan saat terdapat satu pilihan keputusan. Contoh, Jika peserta pelatihan tidak lulus dalam ujian, maka kita harus ikut remidi. Sedangkan yang lulus dapat sertifikat.
 
 <center>
 <img src="https://github.com/sainzdata/Py_JNE/blob/main/images/if.png?raw=true" width="270" height="270">
 </center>
 
-Dalam hal ini digunakan operator relasi sama dengan (==) untuk membandingkan isi variabel lulus. Sedangkan tanda titik-dua (:) adalah tanda untuk memulai blok kode If. Perlu **dicatat** bahwa: Penulisan blok **If**, harus diberikan indentasi **tab atau spasi 2x**.
+Dalam hal ini digunakan operator relasi sama dengan (==) untuk membandingkan isi variabel lulus. Sedangkan tanda titik-dua (:) adalah tanda untuk memulai blok kode `if`. 
+
+```{python, eval=F}
+# Program untuk Check Kelulusan
+
+lulus = input("Apakah anda lulus? [ya/tidak]: ")
+
+if lulus == "tidak":
+   print("Anda harus ikut ujian remidi")
+```
+**Catatan**: Penulisan blok `if`, harus diberikan indentasi tab atau spasi 2x.
+
+Biar pemahamannya semakin mantap, silahkan coba contoh kasus berikut ini.
+
+```{python, eval=F}
+# program untuk mengecek bonus dan diskon
+
+biaya_pengiriman = input("Total biaya pengiriman: Rp ")
+
+# jumlah yang harus dibayar adalah berapa total pengirimannya
+# tapi kalau dapat diskon akan berkurang biaya pengiriamannya
+
+bayar = biaya_pengiriman
+
+# jika dia biaya pengiriman di atas 100rb maka berikan bonus dan diskon
+
+if int(biaya_pengiriman) > 100000:
+    print("dan diskon 5%")
+    print("Kamu mendapatkan bonus minuman dingin")
+
+    # hitung diskonnya
+    diskon = int(biaya_pengiriman) * 5/100   # 5%
+    bayar = int(biaya_pengiriman) - diskon
+
+    # cetak struk
+    print("Total yang harus dibayar: Rp %s" % bayar)
+    print("Terima kasih sudah mengirim paket dengan JNE")
+    print("Selamat Datang Kembali...")
+```
+
+### Percabangan if/else
+
+Percabangan If/Else digunakan saat terdapat dua pilihan keputusan.
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/if.png?raw=true" width="270" height="270">
+</center>
+
+Contoh, jika diterapkan contoh diatas maka diperoleh;
+
+```{python, eval=F}
+umur = input("Berapa biaya pengiriman?: ")
+
+if int(umur) >= 100000:
+    print("Anda berhak mendapatkan diskon 5%")
+else:
+    print("Ayo tingkatkan lagi transksinya untuk mendapatkan diskon")
+```
 
 
 

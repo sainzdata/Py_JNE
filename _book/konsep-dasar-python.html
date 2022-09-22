@@ -167,7 +167,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="konsep-dasar-python.html"><a href="konsep-dasar-python.html#proses-algoritma"><i class="fa fa-check"></i><b>1.3</b> Proses (Algoritma)</a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="konsep-dasar-python.html"><a href="konsep-dasar-python.html#struktur-percabangan-if"><i class="fa fa-check"></i><b>1.3.1</b> Struktur Percabangan If</a></li>
+<li class="chapter" data-level="1.3.1" data-path="konsep-dasar-python.html"><a href="konsep-dasar-python.html#percabangan-if"><i class="fa fa-check"></i><b>1.3.1</b> Percabangan if</a></li>
+<li class="chapter" data-level="1.3.2" data-path="konsep-dasar-python.html"><a href="konsep-dasar-python.html#percabangan-ifelse"><i class="fa fa-check"></i><b>1.3.2</b> Percabangan if/else</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="persiapan-data.html"><a href="persiapan-data.html"><i class="fa fa-check"></i><b>2</b> Persiapan Data</a></li>
@@ -176,7 +177,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5" data-path="studi-kasus.html"><a href="studi-kasus.html"><i class="fa fa-check"></i><b>5</b> Studi Kasus</a></li>
 <li class="chapter" data-level="" data-path="referensi.html"><a href="referensi.html"><i class="fa fa-check"></i>Referensi</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="referensi.html"><a href="referensi.html#pertemuan-1"><i class="fa fa-check"></i><b>5.1</b> Pertemuan 1</a></li>
+<li class="chapter" data-level="" data-path="referensi.html"><a href="referensi.html#pertemuan-1"><i class="fa fa-check"></i>Pertemuan 1</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/sainzdata/Py_JNE" target="blank">Published with bookdown</a></li>
@@ -251,7 +252,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">1.2.1</span> Tipe Data<a href="konsep-dasar-python.html#tipe-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Berikut adalah tipe data yang umum di Python:</p>
 <center>
-<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/tipedata_py.jpeg?raw=true" width=600" height="400">
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/tipedata_py.jpeg?raw=true" width=630" height="430">
 </center>
 <p><strong>Keterangan:</strong></p>
 <ul>
@@ -343,13 +344,58 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <img src="https://github.com/sainzdata/Py_JNE/blob/main/images/masak-telurs.png?raw=true" width="550" height="700">
 </center>
 <p><strong>Catatan:</strong> Jika anda ingin belajar lebih lanjut mengenai prosedur membuat flowchart silahkan klik <a href="https://ndoware.com/diagram-alir-flowchart.html">disini</a>.</p>
-<div id="struktur-percabangan-if" class="section level3 hasAnchor" number="1.3.1">
-<h3><span class="header-section-number">1.3.1</span> Struktur Percabangan If<a href="konsep-dasar-python.html#struktur-percabangan-if" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Percabangan If digunakan saat terdapat satu pilihan keputusan. Contoh, Jika peserta pelatihan tidak lulus dalam ujian, maka kita harus ikut remidi. Sedangkan yang lulus dapat sertifikat.</p>
+<div id="percabangan-if" class="section level3 hasAnchor" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> Percabangan if<a href="konsep-dasar-python.html#percabangan-if" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Percabangan <code>if</code> digunakan saat terdapat satu pilihan keputusan. Contoh, Jika peserta pelatihan tidak lulus dalam ujian, maka kita harus ikut remidi. Sedangkan yang lulus dapat sertifikat.</p>
 <center>
 <img src="https://github.com/sainzdata/Py_JNE/blob/main/images/if.png?raw=true" width="270" height="270">
 </center>
-<p>Dalam hal ini digunakan operator relasi sama dengan (==) untuk membandingkan isi variabel lulus. Sedangkan tanda titik-dua (:) adalah tanda untuk memulai blok kode If. Perlu <strong>dicatat</strong> bahwa: Penulisan blok <strong>If</strong>, harus diberikan indentasi <strong>tab atau spasi 2x</strong>.</p>
+<p>Dalam hal ini digunakan operator relasi sama dengan (==) untuk membandingkan isi variabel lulus. Sedangkan tanda titik-dua (:) adalah tanda untuk memulai blok kode <code>if</code>.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="konsep-dasar-python.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Program untuk Check Kelulusan</span></span>
+<span id="cb7-2"><a href="konsep-dasar-python.html#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="konsep-dasar-python.html#cb7-3" aria-hidden="true" tabindex="-1"></a>lulus <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Apakah anda lulus? [ya/tidak]: &quot;</span>)</span>
+<span id="cb7-4"><a href="konsep-dasar-python.html#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="konsep-dasar-python.html#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> lulus <span class="op">==</span> <span class="st">&quot;tidak&quot;</span>:</span>
+<span id="cb7-6"><a href="konsep-dasar-python.html#cb7-6" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">&quot;Anda harus ikut ujian remidi&quot;</span>)</span></code></pre></div>
+<p><strong>Catatan</strong>: Penulisan blok <code>if</code>, harus diberikan indentasi tab atau spasi 2x.</p>
+<p>Biar pemahamannya semakin mantap, silahkan coba contoh kasus berikut ini.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="konsep-dasar-python.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># program untuk mengecek bonus dan diskon</span></span>
+<span id="cb8-2"><a href="konsep-dasar-python.html#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="konsep-dasar-python.html#cb8-3" aria-hidden="true" tabindex="-1"></a>biaya_pengiriman <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Total biaya pengiriman: Rp &quot;</span>)</span>
+<span id="cb8-4"><a href="konsep-dasar-python.html#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="konsep-dasar-python.html#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># jumlah yang harus dibayar adalah berapa total pengirimannya</span></span>
+<span id="cb8-6"><a href="konsep-dasar-python.html#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># tapi kalau dapat diskon akan berkurang biaya pengiriamannya</span></span>
+<span id="cb8-7"><a href="konsep-dasar-python.html#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="konsep-dasar-python.html#cb8-8" aria-hidden="true" tabindex="-1"></a>bayar <span class="op">=</span> biaya_pengiriman</span>
+<span id="cb8-9"><a href="konsep-dasar-python.html#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="konsep-dasar-python.html#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># jika dia biaya pengiriman di atas 100rb maka berikan bonus dan diskon</span></span>
+<span id="cb8-11"><a href="konsep-dasar-python.html#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="konsep-dasar-python.html#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">int</span>(biaya_pengiriman) <span class="op">&gt;</span> <span class="dv">100000</span>:</span>
+<span id="cb8-13"><a href="konsep-dasar-python.html#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;dan diskon 5%&quot;</span>)</span>
+<span id="cb8-14"><a href="konsep-dasar-python.html#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Kamu mendapatkan bonus minuman dingin&quot;</span>)</span>
+<span id="cb8-15"><a href="konsep-dasar-python.html#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="konsep-dasar-python.html#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># hitung diskonnya</span></span>
+<span id="cb8-17"><a href="konsep-dasar-python.html#cb8-17" aria-hidden="true" tabindex="-1"></a>    diskon <span class="op">=</span> <span class="bu">int</span>(biaya_pengiriman) <span class="op">*</span> <span class="dv">5</span><span class="op">/</span><span class="dv">100</span>   <span class="co"># 5%</span></span>
+<span id="cb8-18"><a href="konsep-dasar-python.html#cb8-18" aria-hidden="true" tabindex="-1"></a>    bayar <span class="op">=</span> <span class="bu">int</span>(biaya_pengiriman) <span class="op">-</span> diskon</span>
+<span id="cb8-19"><a href="konsep-dasar-python.html#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-20"><a href="konsep-dasar-python.html#cb8-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># cetak struk</span></span>
+<span id="cb8-21"><a href="konsep-dasar-python.html#cb8-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Total yang harus dibayar: Rp </span><span class="sc">%s</span><span class="st">&quot;</span> <span class="op">%</span> bayar)</span>
+<span id="cb8-22"><a href="konsep-dasar-python.html#cb8-22" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Terima kasih sudah mengirim paket dengan JNE&quot;</span>)</span>
+<span id="cb8-23"><a href="konsep-dasar-python.html#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Selamat Datang Kembali...&quot;</span>)</span></code></pre></div>
+</div>
+<div id="percabangan-ifelse" class="section level3 hasAnchor" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> Percabangan if/else<a href="konsep-dasar-python.html#percabangan-ifelse" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Percabangan If/Else digunakan saat terdapat dua pilihan keputusan.</p>
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/if.png?raw=true" width="270" height="270">
+</center>
+<p>Contoh, jika diterapkan contoh diatas maka diperoleh;</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="konsep-dasar-python.html#cb9-1" aria-hidden="true" tabindex="-1"></a>umur <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Berapa biaya pengiriman?: &quot;</span>)</span>
+<span id="cb9-2"><a href="konsep-dasar-python.html#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="konsep-dasar-python.html#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">int</span>(umur) <span class="op">&gt;=</span> <span class="dv">100000</span>:</span>
+<span id="cb9-4"><a href="konsep-dasar-python.html#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Anda berhak mendapatkan diskon 5%&quot;</span>)</span>
+<span id="cb9-5"><a href="konsep-dasar-python.html#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb9-6"><a href="konsep-dasar-python.html#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Ayo tingkatkan lagi transksinya untuk mendapatkan diskon&quot;</span>)</span></code></pre></div>
 
 </div>
 </div>

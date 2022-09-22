@@ -22,3 +22,5 @@ visualisasi-data
 pemodelan
 studi-kasus
 pertemuan-1
+percabangan-if
+percabangan-ifelse
