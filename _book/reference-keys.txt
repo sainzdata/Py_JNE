@@ -1,3 +1,5 @@
+jadwal-pelatihan
+hak-dan-kewajiban-peserta
 sejarah
 peranan
 keunggulan
@@ -18,6 +20,9 @@ operator
 proses-algoritma
 percabangan-if
 percabangan-ifelse
+percabangan-ifelifelse
+perulangan-for
+perulangan-while
 persiapan-data
 visualisasi-data
 pemodelan

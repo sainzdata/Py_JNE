@@ -43,3 +43,19 @@ Peran ilmu analisis data dalam era digital dan big data seperti sekarang ini sna
 *	Dll.
 
 Seluruh transaksi pengguna tersebut adalah data yang perlu dipelajari dan dianalisis. Kemudian, dapat diambil keputusan maupun kebijakan bisnis yang dinilai lebih menguntungkan bagi perusahaan seperti melakukan promo, penentuan harga, optimasi operasional pengiriman, dan lain-lain. Semakin akurat analisis data, semakin baik keputusan yang diambil, maka semakin besar profit perusahaan. Banyaknya data dan faktor yang harus dipertimbangkan dalam menganalisis data tidak mudah untuk dilakukan dengan menggunakan alat bantu klasisk seperti Excel. Tren saat ini, analis data biasanya dilakukan dengan bantuan teknologi pemrograman computer seperti R, Python, dan SQL karena dapat digunakan untuk data yang besar dan lebih fleksibel.
+
+
+## Jadwal Pelatihan 
+
+* Day #1 (23 Sept 2022) ~ Pengenalan & Konsep Dasar Python
+* Day #2 (30 Sept 2022) ~ Persiapan Data
+* Day #3 (14 Okt 2022) ~ Visualisasi Data
+* Day #4 (21 Okt 2022) ~ Pemodelan
+* Day #5 (28 Okt 2022) ~ Studi Kasus
+
+
+## Hak dan Kewajiban Peserta
+
+* 
+
+

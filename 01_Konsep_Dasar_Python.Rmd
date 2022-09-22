@@ -175,7 +175,7 @@ Untuk mempermudah pemahaman mengenai algoritma ini, maka berikut ini diberikan t
 **Catatan:** Jika anda ingin belajar lebih lanjut mengenai prosedur membuat flowchart silahkan klik [disini](https://ndoware.com/diagram-alir-flowchart.html). 
 
 
-### Percabangan if
+### Percabangan If
 
 Percabangan `if` digunakan saat terdapat satu pilihan keputusan. Contoh, Jika peserta pelatihan tidak lulus dalam ujian, maka kita harus ikut remidi. Sedangkan yang lulus dapat sertifikat.
 
@@ -223,7 +223,7 @@ if int(biaya_pengiriman) > 100000:
     print("Selamat Datang Kembali...")
 ```
 
-### Percabangan if/else
+### Percabangan If/Else
 
 Percabangan If/Else digunakan saat terdapat dua pilihan keputusan.
 
@@ -240,6 +240,113 @@ if int(nilai) >= 75:
     print("Anda berhak mendapatkan Sertifikat")
 else:
     print("Diwajibkan untuk ikut remidi")
+```
+
+
+### Percabangan If/Elif/Else
+
+Percabangan If/Elif/Else digunakan apabila terdapat lebih dari dua pilihan keputusan.
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/if-elif-else.png?raw=true" width="550" height="400">
+</center>
+
+Berikut ini adalah cara penyusunan programmnya:
+
+```
+if begini:
+    maka ini
+elif begitu:
+    maka itu
+elif begono:
+    maka anu
+    .
+    .
+    .
+elif dst:
+    maka dst    
+else:
+    pokoknya selain yg diatas!
+```
+
+Misalkan kita akan membuat program untuk menentukan grade nilai dengan flow chart diatas, Maka kode programnya adalah sebagai berikut:
+
+```{python, eval=F}
+# menentukan grade nilai kelulusan
+
+nilai = int(input("Inputkan nilaimu: "))
+
+if nilai >= 90:
+   grade = "A"
+elif nilai >= 80:
+   grade = "B+"
+elif nilai >= 70:
+   grade = "B"
+elif nilai >= 60:
+   grade = "C+"
+elif nilai >= 50:
+   grade = "C"
+elif nilai >= 40:
+   grade = "D"
+else:
+   grade = "E"
+
+print("Grade: %s" % grade)
+```
+
+### Perulangan for
+
+Perualangan dalam bahasa pemrograman berfungsi menyuruh komputer melakukan sesuatu secara berulang-ulang. Terdapat dua jenis perualangan dalam bahasa pemrograman python, yaitu perulangan dengan for dan while. Perbedaannya adalah perulangan for biasanya digunakan untuk mengulangi kode yang sudah diketahui banyak perulangannya. 
+
+Contoh program:
+
+```{python eval=F}
+ulang = 10
+
+for i in range(ulang):
+    print(f"Perulangan ke-{i}")
+```
+
+Variabel `i` berfungsi untuk menampung indeks, dan fungsi `range()` berfungsi untuk membuat list dengan range dari 0-10. Fungsi str() berfungsi merubah tipe data integer ke string
+
+
+Contoh lain menggunakan senarai (list):
+
+```{python eval=F}
+item = ['SS','YES','OK','PESONA']
+
+for Pruduk_JNE in item:
+    print(Pruduk_JNE)
+```
+
+
+### Perulangan while
+
+Perulangan while untuk perulangan yang memiliki syarat dan tidak tentu berapa banyak perulangannya.
+
+```{python eval=F}
+jawab = 'ya'
+hitung = 0
+
+while(jawab == 'ya'):
+    hitung += 1
+    jawab = input("Ulang lagi tidak? ")
+
+print(f"Total perulagan: {hitung}")
+```
+
+Atau bisa juga dengan bentuk yang seperti ini, dengan menggunakan kata kuci `break`
+
+
+```{python eval=F}
+jawab = 'ya'
+hitung = 0
+
+while(jawab == 'ya'):
+    hitung += 1
+    jawab = input("Ulang lagi tidak? ")
+
+print(f"Total perulagan: {hitung}")
 ```
 
 
