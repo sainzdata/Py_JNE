@@ -1,3 +1,43 @@
+--- 
+title: "Modul Pelatihan JNE"
+subtitle: "Analisis Data dengan Menggunakan Python (Pemula)"
+author: "Penulis: Bakti Siregar, S.Si.,M.Sc"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: docs
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: sainzdata/Py_JNE
+description: "Materi ini diperuntukkan untuk pelatihan Analisis Data dengan menggunakan Python di JNE"
+---
+
+# Overview {-}
+
+Placeholder
+
+
+
+<!--chapter:end:index.Rmd-->
+
+
+# Pengenalan Python? {-}
+
+Placeholder
+
+
+## Sejarah
+## Peranan 
+## Keunggulan
+## Instalasi
+### Windows 
+### Macintosh
+### Linux
+## Teks Editor
+
+<!--chapter:end:00-Pengenalan_Python.Rmd-->
+
 # Konsep Dasar Python
 
 Untuk memulai mempelajari segala sesuatu perlu dilakukan dari hal yang sangat fundamental, begitu pula jika anda ingin belajar  Python. Konsep dasar dan cara kerja Python, dapat dianalogikan sebagai proses memasak Roti serata bagaimana cara menyajiannya. Perhatikan gambar berikut: 
@@ -177,4 +217,58 @@ Untuk mempermudah pemahaman mengenai algoritma ini, maka berikut ini diberikan t
 **Catatan:** Jika anda ingin belajar lebih lanjut mengenai prosedur membuat flowchart silahkan klik [disini](https://ndoware.com/diagram-alir-flowchart.html). 
 
 
+
+
+<!--chapter:end:01_Konsep_Dasar_Python.Rmd-->
+
+# Pemrograman Python
+
+Here is a review of existing methods.
+
+<!--chapter:end:02-Pemrograman_Python.Rmd-->
+
+# Persiapan Data
+
+We describe our methods in this chapter.
+
+
+https://www.dqlab.id/kenali-4-fungsi-penting-pandas-python-untuk-pengolahan-data
+
+<!--chapter:end:03-Persiapan_Data.Rmd-->
+
+# Visualisasi Data
+
+Some _significant_ applications are demonstrated in this chapter.
+
+## Example one
+
+## Example two
+
+<!--chapter:end:04-Visualisasi_Data.Rmd-->
+
+# Studi Kasus
+
+We have finished a nice book.
+
+<!--chapter:end:05-Studi_Kasus.Rmd-->
+
+`r if (knitr:::is_html_output()) '
+# Referensi {-}
+'`
+
+##  Pertemuan 1
+
+1.    https://www.tutorialspoint.com/r/index.htm
+2.    https://www.statista.com/chart/16567/popular-programming-languages/
+3.    https://www.anotherbookondatascience.com/chapter1.html
+4.    https://www.kodefungsi.com/fungsi/PYTHON/
+5.    https://www.anotherbookondatascience.com/chapter1.html
+6.    https://www.petanikode.com
+7.    https://stiki-indonesia.ac.id/2021/03/23/perkembangan-python-dan-alasan-sangat-penting-untuk-data-analitik/
+
+
+
+
+
+<!--chapter:end:06-Referensi.Rmd-->
 
