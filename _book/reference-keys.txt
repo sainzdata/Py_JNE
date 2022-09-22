@@ -17,10 +17,8 @@ tipe-data
 operator
 proses-algoritma
 struktur-percabangan-if
-pemrograman-python
 persiapan-data
 visualisasi-data
-example-one
-example-two
+pemodelan
 studi-kasus
 pertemuan-1
