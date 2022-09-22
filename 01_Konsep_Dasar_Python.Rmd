@@ -177,11 +177,15 @@ Untuk mempermudah pemahaman mengenai algoritma ini, maka berikut ini diberikan t
 
 ### Struktur Percabangan If
 
-Percabangan If digunakan saat terdapat satu pilihan keputusan. Misalkan, kalau kita tidak lulus dalam ujian, maka kita ikut remidi. Sedangkan kalau lulus tidak perlu ikut remidi.
+Percabangan If digunakan saat terdapat satu pilihan keputusan. Contoh, Jika peserta pelatihan tidak lulus dalam ujian, maka kita harus ikut remidi. Sedangkan yang lulus dapat sertifikat.
 
 
 <center>
-<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/if.png?raw=true" width="400" height="300">
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/if.png?raw=true" width="270" height="270">
 </center>
+
+Dalam hal ini digunakan operator relasi sama dengan (==) untuk membandingkan isi variabel lulus. Sedangkan tanda titik-dua (:) adalah tanda untuk memulai blok kode If. Perlu dicata bahwa: **Penulisan blok If, harus diberikan indentasi tab atau spasi 2x**.
+
+
 
 
