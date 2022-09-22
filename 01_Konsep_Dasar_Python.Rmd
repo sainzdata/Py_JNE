@@ -168,7 +168,7 @@ Untuk mempermudah pemahaman mengenai algoritma ini, maka berikut ini diberikan t
 * Siap untuk dimakan
 
 <center>
-<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/masak-telurs.png?raw=true" width=550" height="700">
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/masak-telurs.png?raw=true" width="550" height="700">
 </center>
 
 
@@ -180,6 +180,8 @@ Untuk mempermudah pemahaman mengenai algoritma ini, maka berikut ini diberikan t
 Percabangan If digunakan saat terdapat satu pilihan keputusan. Misalkan, kalau kita tidak lulus dalam ujian, maka kita ikut remidi. Sedangkan kalau lulus tidak perlu ikut remidi.
 
 
-
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/if.png?raw=true" width="300" height="200">
+</center>
 
 
