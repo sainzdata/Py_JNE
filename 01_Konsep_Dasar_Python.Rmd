@@ -184,7 +184,7 @@ Percabangan If digunakan saat terdapat satu pilihan keputusan. Contoh, Jika pese
 <img src="https://github.com/sainzdata/Py_JNE/blob/main/images/if.png?raw=true" width="270" height="270">
 </center>
 
-Dalam hal ini digunakan operator relasi sama dengan (==) untuk membandingkan isi variabel lulus. Sedangkan tanda titik-dua (:) adalah tanda untuk memulai blok kode If. Perlu dicata bahwa: **Penulisan blok If, harus diberikan indentasi tab atau spasi 2x**.
+Dalam hal ini digunakan operator relasi sama dengan (==) untuk membandingkan isi variabel lulus. Sedangkan tanda titik-dua (:) adalah tanda untuk memulai blok kode If. Perlu **dicatat** bahwa: Penulisan blok **If**, harus diberikan indentasi **tab atau spasi 2x**.
 
 
 
