@@ -15,7 +15,7 @@ komentar
 persiapan
 tipe-data
 operator
-bantuan
+proses-algoritma
 pemrograman-python
 persiapan-data
 visualisasi-data
@@ -23,4 +23,3 @@ example-one
 example-two
 studi-kasus
 pertemuan-1
-proses-algoritma
