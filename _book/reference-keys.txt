@@ -1,5 +1,6 @@
 jadwal-pelatihan
-hak-dan-kewajiban-peserta
+kewajiban-hak-peserta
+tim-penyusun-pemateri
 sejarah
 peranan
 keunggulan
@@ -23,6 +24,7 @@ percabangan-ifelse
 percabangan-ifelifelse
 perulangan-for
 perulangan-while
+section
 persiapan-data
 visualisasi-data
 pemodelan

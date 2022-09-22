@@ -53,9 +53,27 @@ Seluruh transaksi pengguna tersebut adalah data yang perlu dipelajari dan dianal
 * Day #4 (21 Okt 2022) ~ Pemodelan
 * Day #5 (28 Okt 2022) ~ Studi Kasus
 
+**Catatan:** Setiap pertemuan akan ada penilian dan akan dikalkulasikan untuk menentukan kelulusan peserta.
 
-## Hak dan Kewajiban Peserta
+## Kewajiban & Hak Peserta
 
-* 
+* Membawa Laptop masing-masing
+* Hadir 15 menit sebelum acara di mulai
+* Daftar Hadir dan Evaluasi Peserta Pelatihan [Klik Disini](https://forms.office.com/r/tS77MwiuTQ)
+* Evaluasi PIC Learning [Klik Disini](https://docs.google.com/forms/d/e/1FAIpQLSfCCbD8lVLxno9fi9wOUyp-Wk0QRWYWzJe7g_7uTjZCqMlZVA/viewform)
+* Peserta akan mendapatkan Sertifikat (Kompetensi Data Analitics Beginer), bagi yang lulus dengan skor minimal 75. Jika tidak lulus maka akan diadakan remedi.
+* Setelah memberikan H+2 setelah training berakhir;
+  * Scan sertifikat
+  * Copy modul training
+
+## Tim Penyusun & Pemateri
+
+* Pemateri: Bakti Siregar, S.Si., M.Sc
+* Penulis, editor, dan asisten: 
+	* Yosia
+	* Clara Della Evania
+	* Karen Natalie	
+	* Brigita Tiara Elgityana Melantika	
+	
 
 
