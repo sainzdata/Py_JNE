@@ -180,7 +180,7 @@ Untuk mempermudah pemahaman mengenai algoritma ini, maka berikut ini diberikan t
 Percabangan `if` digunakan saat terdapat satu pilihan keputusan. Contoh, Jika peserta pelatihan tidak lulus dalam ujian, maka kita harus ikut remidi. Sedangkan yang lulus dapat sertifikat.
 
 <center>
-<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/if.png?raw=true" width="270" height="270">
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/if.png?raw=true" width="300" height="300">
 </center>
 
 Dalam hal ini digunakan operator relasi sama dengan (==) untuk membandingkan isi variabel lulus. Sedangkan tanda titik-dua (:) adalah tanda untuk memulai blok kode `if`. 
@@ -228,18 +228,18 @@ if int(biaya_pengiriman) > 100000:
 Percabangan If/Else digunakan saat terdapat dua pilihan keputusan.
 
 <center>
-<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/if.png?raw=true" width="270" height="270">
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/if-else.png?raw=true" width="500" height="350">
 </center>
 
-Contoh, jika diterapkan contoh diatas maka diperoleh;
+Jika contoh diatas diterapkan dengan program Python maka diperoleh;
 
 ```{python, eval=F}
-umur = input("Berapa biaya pengiriman?: ")
+nilai = input("Berapa Nilai Anda?: ")
 
-if int(umur) >= 100000:
-    print("Anda berhak mendapatkan diskon 5%")
+if int(nilai) >= 75:
+    print("Anda berhak mendapatkan Sertifikat")
 else:
-    print("Ayo tingkatkan lagi transksinya untuk mendapatkan diskon")
+    print("Diwajibkan untuk ikut remidi")
 ```
 
 
