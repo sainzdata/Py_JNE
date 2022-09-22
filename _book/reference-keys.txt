@@ -24,7 +24,7 @@ percabangan-ifelse
 percabangan-ifelifelse
 perulangan-for
 perulangan-while
-section
+penyajian
 persiapan-data
 visualisasi-data
 pemodelan

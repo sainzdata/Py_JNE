@@ -1,6 +1,6 @@
 --- 
 title: "Modul Pelatihan JNE"
-subtitle: "Analisis Data dengan Menggunakan Python (Pemula)"
+subtitle: "Data Analytic With Phyton (Beginner)"
 author: "Penulis: Bakti Siregar, S.Si.,M.Sc"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
