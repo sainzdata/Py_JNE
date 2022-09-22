@@ -1,6 +1,6 @@
 # Konsep Dasar Python
 
-Untuk memulai mempelajari segala sesuatu perlu dilakukan dari hal yang sangat fundamental, begitu pula jika anda ingin belajar  Python. Konsep dasar dan cara kerja Python, dapat dianalogikan sebagai proses memasak Roti serata bagaimana cara menyajiannya. Perhatikan gambar berikut: 
+Untuk memulai mempelajari segala sesuatu perlu dilakukan dari hal yang sangat fundamental, begitu pula jika anda ingin belajar  Python. Konsep dasar dan cara kerja Python, dapat dianalogikan sebagai proses memasak Roti serata bagaimana cara menyajiannya. Perhatikan gambar 1 berikut: 
 
 <center>
 <img src="https://github.com/sainzdata/Py_JNE/blob/main/images/analogi_py.png?raw=true" width=800" height="300">
@@ -168,11 +168,9 @@ Untuk mempermudah pemahaman mengenai algoritma ini, maka berikut ini diberikan t
 * Siap untuk dimakan
 
 <center>
-<figure>
-  <img style="float: center; margin: 0px 0px 0px 0px; width:70%" src="https://github.com/sainzdata/Py_JNE/blob/main/images/masak-telurs.png?raw=true"/>
-  <figcaption>Flowchart 1: Memasak Telur, sumber:[bitlabs](https://bitlabs.id/blog/wp-content/uploads/2021/03/2-flowchart-masak-telurs.png).</figcaption>
-</figure>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/masak-telurs.png?raw=true" width=500" height="600">
 </center>
+
 
 **Catatan:** Jika anda ingin belajar lebih lanjut mengenai prosedur membuat flowchart silahkan klik [disini](https://ndoware.com/diagram-alir-flowchart.html). 
 
