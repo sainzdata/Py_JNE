@@ -37,7 +37,7 @@ Variabel merupakan tempat penyimpanan sementara yang dapat digunakan untuk menyi
 
 Statement adalah instruksi atau kalimat perintah yang diberikan dalam beberapa baris untuk dieksekusi oleh komputer. Pada bahasa Python, jika kita ingin menuliskan beberapa statement dalam satu baris maka kita harus memisahkannya dengan titik-koma. Seperti contoh berikut:
 
-```{python}
+```{python, eval=F}
 a = 10 ; b = 12; c = a+b; 
 print(a,b,c)
 ```
@@ -181,7 +181,7 @@ Percabangan If digunakan saat terdapat satu pilihan keputusan. Misalkan, kalau k
 
 
 <center>
-<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/if.png?raw=true" width="300" height="200">
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/if.png?raw=true" width="400" height="300">
 </center>
 
 

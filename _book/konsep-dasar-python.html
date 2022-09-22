@@ -232,15 +232,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Statement adalah instruksi atau kalimat perintah yang diberikan dalam beberapa baris untuk dieksekusi oleh komputer. Pada bahasa Python, jika kita ingin menuliskan beberapa statement dalam satu baris maka kita harus memisahkannya dengan titik-koma. Seperti contoh berikut:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="konsep-dasar-python.html#cb1-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">10</span> <span class="op">;</span> b <span class="op">=</span> <span class="dv">12</span><span class="op">;</span> c <span class="op">=</span> a<span class="op">+</span>b<span class="op">;</span> </span>
 <span id="cb1-2"><a href="konsep-dasar-python.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a,b,c)</span></code></pre></div>
-<pre><code>## 10 12 22</code></pre>
 </div>
 <div id="komentar" class="section level3 hasAnchor" number="1.1.4">
 <h3><span class="header-section-number">1.1.4</span> Komentar<a href="konsep-dasar-python.html#komentar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Menambahkan/Memberikan komentar dalam skrip/koding Python adalah untuk memudahkan anda memahami arti/makna penggunaan suatu perintah/program. Komentar yang ditulis dalam sebuah program tersebut hanya bersifat penjelasan tentang apa yang dilakukannya atau apa yang seharusnya dilakukan oleh sebuah skrip/koding. Perlu dicatat bahwa komentar yang bersifat informasi tidak ada hubungannya dengan logika pemrogaram yang sedang anda gunakan. Mereka benar-benar diabaikan oleh kompiler dan dengan demikian tidak pernah tercermin pada input. Biasanya komentar dituliskan pada satu baris yang tersedia di Python, dengan menggunakan <code>#</code> di awal maupun di akhir pernyataan.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="konsep-dasar-python.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># input suatu nilai ke variabel (contoh: komentar di awal script)</span></span>
-<span id="cb3-2"><a href="konsep-dasar-python.html#cb3-2" aria-hidden="true" tabindex="-1"></a>a1  <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb3-3"><a href="konsep-dasar-python.html#cb3-3" aria-hidden="true" tabindex="-1"></a>a_1 <span class="op">=</span> <span class="dv">12</span>   <span class="co"># input suatu nilai ke variabel (contoh: komentar di akhir script)</span></span>
-<span id="cb3-4"><a href="konsep-dasar-python.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="er">a</span>  <span class="op">=</span> <span class="dv">13</span>   <span class="co"># contoh penulisan variabel yang salah</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="konsep-dasar-python.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># input suatu nilai ke variabel (contoh: komentar di awal script)</span></span>
+<span id="cb2-2"><a href="konsep-dasar-python.html#cb2-2" aria-hidden="true" tabindex="-1"></a>a1  <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb2-3"><a href="konsep-dasar-python.html#cb2-3" aria-hidden="true" tabindex="-1"></a>a_1 <span class="op">=</span> <span class="dv">12</span>   <span class="co"># input suatu nilai ke variabel (contoh: komentar di akhir script)</span></span>
+<span id="cb2-4"><a href="konsep-dasar-python.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="er">a</span>  <span class="op">=</span> <span class="dv">13</span>   <span class="co"># contoh penulisan variabel yang salah</span></span></code></pre></div>
 <p><strong>Keterangan:</strong> Penulisan variabel dalam Python juga memiliki aturan tertentu, sebagai berikut.</p>
 <ul>
 <li>Karakter pertama harus berupa huruf atau garis bawah/underscore (_), artinya <strong>tidak boleh dimulai dengan angka</strong>.</li>
@@ -272,48 +271,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="operator-penugasan" class="section level4 unnumbered hasAnchor">
 <h4>Operator Penugasan<a href="konsep-dasar-python.html#operator-penugasan" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Seperti namanya, operator ini digunakan untuk memberikan tugas pada variabel. Selain menyimpan atau pengisian nilai, ada juga menjumlahkan, mengurangi, perkalian, pembagian, dsb. Selengkapnya bisa dilihat contoh berikut.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="konsep-dasar-python.html#cb4-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">9</span>                   <span class="co"># Input suatu nilai ke variabel</span></span>
-<span id="cb4-2"><a href="konsep-dasar-python.html#cb4-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">+=</span> <span class="dv">8</span>                  <span class="co"># tambahkan dengan 8 </span></span>
-<span id="cb4-3"><a href="konsep-dasar-python.html#cb4-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">-=</span> <span class="dv">7</span>                  <span class="co"># kurangi 7</span></span>
-<span id="cb4-4"><a href="konsep-dasar-python.html#cb4-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">*=</span> <span class="dv">6</span>                  <span class="co"># kali 6</span></span>
-<span id="cb4-5"><a href="konsep-dasar-python.html#cb4-5" aria-hidden="true" tabindex="-1"></a>a <span class="op">/=</span> <span class="dv">5</span>                  <span class="co"># bagi dengan 5</span></span>
-<span id="cb4-6"><a href="konsep-dasar-python.html#cb4-6" aria-hidden="true" tabindex="-1"></a>a <span class="op">**=</span><span class="dv">4</span>                  <span class="co"># pangkat 4</span></span>
-<span id="cb4-7"><a href="konsep-dasar-python.html#cb4-7" aria-hidden="true" tabindex="-1"></a>a</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="konsep-dasar-python.html#cb3-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">9</span>                   <span class="co"># Input suatu nilai ke variabel</span></span>
+<span id="cb3-2"><a href="konsep-dasar-python.html#cb3-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">+=</span> <span class="dv">8</span>                  <span class="co"># tambahkan dengan 8 </span></span>
+<span id="cb3-3"><a href="konsep-dasar-python.html#cb3-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">-=</span> <span class="dv">7</span>                  <span class="co"># kurangi 7</span></span>
+<span id="cb3-4"><a href="konsep-dasar-python.html#cb3-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">*=</span> <span class="dv">6</span>                  <span class="co"># kali 6</span></span>
+<span id="cb3-5"><a href="konsep-dasar-python.html#cb3-5" aria-hidden="true" tabindex="-1"></a>a <span class="op">/=</span> <span class="dv">5</span>                  <span class="co"># bagi dengan 5</span></span>
+<span id="cb3-6"><a href="konsep-dasar-python.html#cb3-6" aria-hidden="true" tabindex="-1"></a>a <span class="op">**=</span><span class="dv">4</span>                  <span class="co"># pangkat 4</span></span>
+<span id="cb3-7"><a href="konsep-dasar-python.html#cb3-7" aria-hidden="true" tabindex="-1"></a>a</span></code></pre></div>
 </div>
 <div id="operator-aritmatika" class="section level4 unnumbered hasAnchor">
 <h4>Operator Aritmatika<a href="konsep-dasar-python.html#operator-aritmatika" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Opeartor aritmatika termasuk dalam operator yang paling sering digunakan dalam pemrograman. Berikut adalah contoh penggunaanya:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="konsep-dasar-python.html#cb5-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">3</span>                   <span class="co"># Input suatu nilai ke variabel</span></span>
-<span id="cb5-2"><a href="konsep-dasar-python.html#cb5-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">6</span>                   <span class="co"># Input suatu nilai ke variabel</span></span>
-<span id="cb5-3"><a href="konsep-dasar-python.html#cb5-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">+</span> b                   <span class="co"># Penjumlahan</span></span>
-<span id="cb5-4"><a href="konsep-dasar-python.html#cb5-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">-</span> b                   <span class="co"># Pengurangan</span></span>
-<span id="cb5-5"><a href="konsep-dasar-python.html#cb5-5" aria-hidden="true" tabindex="-1"></a>a <span class="op">*</span> b                   <span class="co"># Perkalian</span></span>
-<span id="cb5-6"><a href="konsep-dasar-python.html#cb5-6" aria-hidden="true" tabindex="-1"></a>a <span class="op">/</span> b                   <span class="co"># Pembagian</span></span>
-<span id="cb5-7"><a href="konsep-dasar-python.html#cb5-7" aria-hidden="true" tabindex="-1"></a>a <span class="op">//</span> b                  <span class="co"># Pembagian bulat</span></span>
-<span id="cb5-8"><a href="konsep-dasar-python.html#cb5-8" aria-hidden="true" tabindex="-1"></a>a <span class="op">%</span> b                   <span class="co"># Sisa Bagi (modulo)</span></span>
-<span id="cb5-9"><a href="konsep-dasar-python.html#cb5-9" aria-hidden="true" tabindex="-1"></a>a <span class="op">**</span> b                  <span class="co"># Pangkat</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="konsep-dasar-python.html#cb4-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">3</span>                   <span class="co"># Input suatu nilai ke variabel</span></span>
+<span id="cb4-2"><a href="konsep-dasar-python.html#cb4-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">6</span>                   <span class="co"># Input suatu nilai ke variabel</span></span>
+<span id="cb4-3"><a href="konsep-dasar-python.html#cb4-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">+</span> b                   <span class="co"># Penjumlahan</span></span>
+<span id="cb4-4"><a href="konsep-dasar-python.html#cb4-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">-</span> b                   <span class="co"># Pengurangan</span></span>
+<span id="cb4-5"><a href="konsep-dasar-python.html#cb4-5" aria-hidden="true" tabindex="-1"></a>a <span class="op">*</span> b                   <span class="co"># Perkalian</span></span>
+<span id="cb4-6"><a href="konsep-dasar-python.html#cb4-6" aria-hidden="true" tabindex="-1"></a>a <span class="op">/</span> b                   <span class="co"># Pembagian</span></span>
+<span id="cb4-7"><a href="konsep-dasar-python.html#cb4-7" aria-hidden="true" tabindex="-1"></a>a <span class="op">//</span> b                  <span class="co"># Pembagian bulat</span></span>
+<span id="cb4-8"><a href="konsep-dasar-python.html#cb4-8" aria-hidden="true" tabindex="-1"></a>a <span class="op">%</span> b                   <span class="co"># Sisa Bagi (modulo)</span></span>
+<span id="cb4-9"><a href="konsep-dasar-python.html#cb4-9" aria-hidden="true" tabindex="-1"></a>a <span class="op">**</span> b                  <span class="co"># Pangkat</span></span></code></pre></div>
 </div>
 <div id="operator-pembanding" class="section level4 unnumbered hasAnchor">
 <h4>Operator Pembanding<a href="konsep-dasar-python.html#operator-pembanding" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Operator ini digunakan untuk membandingkan dua buah nilai. Operator ini juga dikenal dengan operator relasi dan sering digunakan untuk membuat sebuah logika atau kondisi. Perhatikan contoh berikut:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="konsep-dasar-python.html#cb6-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">3</span>                   <span class="co"># Input suatu nilai ke variabel</span></span>
-<span id="cb6-2"><a href="konsep-dasar-python.html#cb6-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">6</span>                   <span class="co"># Input suatu nilai ke variabel</span></span>
-<span id="cb6-3"><a href="konsep-dasar-python.html#cb6-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">==</span> b                  <span class="co"># apakah a sama dengan b?</span></span>
-<span id="cb6-4"><a href="konsep-dasar-python.html#cb6-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">&lt;</span> b                   <span class="co"># apakah a lebih kecil dari b?</span></span>
-<span id="cb6-5"><a href="konsep-dasar-python.html#cb6-5" aria-hidden="true" tabindex="-1"></a>a <span class="op">&gt;</span> b                   <span class="co"># apakah a lebih besar dari b?</span></span>
-<span id="cb6-6"><a href="konsep-dasar-python.html#cb6-6" aria-hidden="true" tabindex="-1"></a>a <span class="op">&lt;=</span> b                  <span class="co"># apakah a lebih kecil sama dengan b?</span></span>
-<span id="cb6-7"><a href="konsep-dasar-python.html#cb6-7" aria-hidden="true" tabindex="-1"></a>a <span class="op">&gt;=</span> b                  <span class="co"># apakah a lebih besar sama dengan b? b?</span></span>
-<span id="cb6-8"><a href="konsep-dasar-python.html#cb6-8" aria-hidden="true" tabindex="-1"></a>a <span class="op">!=</span> b                  <span class="co"># apakah a bukan b?</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="konsep-dasar-python.html#cb5-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">3</span>                   <span class="co"># Input suatu nilai ke variabel</span></span>
+<span id="cb5-2"><a href="konsep-dasar-python.html#cb5-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">6</span>                   <span class="co"># Input suatu nilai ke variabel</span></span>
+<span id="cb5-3"><a href="konsep-dasar-python.html#cb5-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">==</span> b                  <span class="co"># apakah a sama dengan b?</span></span>
+<span id="cb5-4"><a href="konsep-dasar-python.html#cb5-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">&lt;</span> b                   <span class="co"># apakah a lebih kecil dari b?</span></span>
+<span id="cb5-5"><a href="konsep-dasar-python.html#cb5-5" aria-hidden="true" tabindex="-1"></a>a <span class="op">&gt;</span> b                   <span class="co"># apakah a lebih besar dari b?</span></span>
+<span id="cb5-6"><a href="konsep-dasar-python.html#cb5-6" aria-hidden="true" tabindex="-1"></a>a <span class="op">&lt;=</span> b                  <span class="co"># apakah a lebih kecil sama dengan b?</span></span>
+<span id="cb5-7"><a href="konsep-dasar-python.html#cb5-7" aria-hidden="true" tabindex="-1"></a>a <span class="op">&gt;=</span> b                  <span class="co"># apakah a lebih besar sama dengan b? b?</span></span>
+<span id="cb5-8"><a href="konsep-dasar-python.html#cb5-8" aria-hidden="true" tabindex="-1"></a>a <span class="op">!=</span> b                  <span class="co"># apakah a bukan b?</span></span></code></pre></div>
 </div>
 <div id="opeartor-logika" class="section level4 unnumbered hasAnchor">
 <h4>Opeartor Logika<a href="konsep-dasar-python.html#opeartor-logika" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="konsep-dasar-python.html#cb7-1" aria-hidden="true" tabindex="-1"></a>a<span class="op">=</span><span class="va">True</span>                  <span class="co"># Input suatu nilai ke variabel</span></span>
-<span id="cb7-2"><a href="konsep-dasar-python.html#cb7-2" aria-hidden="true" tabindex="-1"></a>b<span class="op">=</span><span class="va">False</span>                 <span class="co"># Input suatu nilai ke variabel</span></span>
-<span id="cb7-3"><a href="konsep-dasar-python.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">not</span> a                   <span class="co"># negasi </span></span>
-<span id="cb7-4"><a href="konsep-dasar-python.html#cb7-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">&amp;</span> b                   <span class="co"># Logika AND</span></span>
-<span id="cb7-5"><a href="konsep-dasar-python.html#cb7-5" aria-hidden="true" tabindex="-1"></a>a <span class="kw">and</span> b                 <span class="co"># Logika AND</span></span>
-<span id="cb7-6"><a href="konsep-dasar-python.html#cb7-6" aria-hidden="true" tabindex="-1"></a>a <span class="op">|</span> b                   <span class="co"># Logika OR</span></span>
-<span id="cb7-7"><a href="konsep-dasar-python.html#cb7-7" aria-hidden="true" tabindex="-1"></a>a <span class="kw">or</span> b                  <span class="co"># Logika OR</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="konsep-dasar-python.html#cb6-1" aria-hidden="true" tabindex="-1"></a>a<span class="op">=</span><span class="va">True</span>                  <span class="co"># Input suatu nilai ke variabel</span></span>
+<span id="cb6-2"><a href="konsep-dasar-python.html#cb6-2" aria-hidden="true" tabindex="-1"></a>b<span class="op">=</span><span class="va">False</span>                 <span class="co"># Input suatu nilai ke variabel</span></span>
+<span id="cb6-3"><a href="konsep-dasar-python.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">not</span> a                   <span class="co"># negasi </span></span>
+<span id="cb6-4"><a href="konsep-dasar-python.html#cb6-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">&amp;</span> b                   <span class="co"># Logika AND</span></span>
+<span id="cb6-5"><a href="konsep-dasar-python.html#cb6-5" aria-hidden="true" tabindex="-1"></a>a <span class="kw">and</span> b                 <span class="co"># Logika AND</span></span>
+<span id="cb6-6"><a href="konsep-dasar-python.html#cb6-6" aria-hidden="true" tabindex="-1"></a>a <span class="op">|</span> b                   <span class="co"># Logika OR</span></span>
+<span id="cb6-7"><a href="konsep-dasar-python.html#cb6-7" aria-hidden="true" tabindex="-1"></a>a <span class="kw">or</span> b                  <span class="co"># Logika OR</span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -352,7 +351,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">1.3.1</span> Struktur Percabangan If<a href="konsep-dasar-python.html#struktur-percabangan-if" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Percabangan If digunakan saat terdapat satu pilihan keputusan. Misalkan, kalau kita tidak lulus dalam ujian, maka kita ikut remidi. Sedangkan kalau lulus tidak perlu ikut remidi.</p>
 <center>
-<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/if.png?raw=true" width="300" height="200">
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/if.png?raw=true" width="400" height="300">
 </center>
 
 </div>
