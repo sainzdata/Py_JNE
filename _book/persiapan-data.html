@@ -23,7 +23,7 @@
 <meta name="author" content="Penulis: Bakti Siregar, S.Si.,M.Sc" />
 
 
-<meta name="date" content="2022-09-23" />
+<meta name="date" content="2022-09-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -180,7 +180,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="konsep-dasar-python.html"><a href="konsep-dasar-python.html#penyajian"><i class="fa fa-check"></i><b>1.4</b> Penyajian</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="persiapan-data.html"><a href="persiapan-data.html"><i class="fa fa-check"></i><b>2</b> Persiapan Data</a></li>
+<li class="chapter" data-level="2" data-path="persiapan-data.html"><a href="persiapan-data.html"><i class="fa fa-check"></i><b>2</b> Persiapan Data</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="persiapan-data.html"><a href="persiapan-data.html#tahapan-persiapan-data"><i class="fa fa-check"></i><b>2.1</b> Tahapan Persiapan Data</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="persiapan-data.html"><a href="persiapan-data.html#pengumpulan-data-data-collection"><i class="fa fa-check"></i><b>2.1.1</b> Pengumpulan data (Data Collection)</a></li>
+<li class="chapter" data-level="2.1.2" data-path="persiapan-data.html"><a href="persiapan-data.html#data-discovery-dan-profiling"><i class="fa fa-check"></i><b>2.1.2</b> Data Discovery dan Profiling</a></li>
+<li class="chapter" data-level="2.1.3" data-path="persiapan-data.html"><a href="persiapan-data.html#pembersiahan-data-data-cleansing"><i class="fa fa-check"></i><b>2.1.3</b> Pembersiahan Data Data Cleansing</a></li>
+<li class="chapter" data-level="2.1.4" data-path="persiapan-data.html"><a href="persiapan-data.html#data-formatting"><i class="fa fa-check"></i><b>2.1.4</b> DATA FORMATTING</a></li>
+<li class="chapter" data-level="2.1.5" data-path="persiapan-data.html"><a href="persiapan-data.html#data-combining-and-analyzing"><i class="fa fa-check"></i><b>2.1.5</b> DATA COMBINING AND ANALYZING</a></li>
+<li class="chapter" data-level="2.1.6" data-path="persiapan-data.html"><a href="persiapan-data.html#data-validation-and-publishing"><i class="fa fa-check"></i><b>2.1.6</b> DATA VALIDATION AND PUBLISHING</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="persiapan-data.html"><a href="persiapan-data.html#mengapa-python-vs-excel"><i class="fa fa-check"></i><b>2.2</b> Mengapa Python vs Excel?</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="visualisasi-data.html"><a href="visualisasi-data.html"><i class="fa fa-check"></i><b>3</b> Visualisasi Data</a></li>
 <li class="chapter" data-level="4" data-path="pemodelan.html"><a href="pemodelan.html"><i class="fa fa-check"></i><b>4</b> Pemodelan</a></li>
 <li class="chapter" data-level="5" data-path="studi-kasus.html"><a href="studi-kasus.html"><i class="fa fa-check"></i><b>5</b> Studi Kasus</a></li>
@@ -210,8 +222,65 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="persiapan-data" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">Pertemuan 2</span> Persiapan Data<a href="persiapan-data.html#persiapan-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Materi masih dalam proses pengembangan oleh Tim</p>
+<p>Secara umum, tujuan analisis data adalah untuk menjelaskan suatu data agar lebih mudah dipahami, selanjutnya dibuat sebuah kesimpulan. Suatu kesimpulan tersebut, didapatkan dari pengujian hipotesis (dugaan) bersasarkan data sampel maupun populasi, yang kemudian biasa dilakukan pemodelan hingga prediksi. Proses analisis data ini, secara singkat dapat diperlihatkan dengan gambar berikut:</p>
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/Infografic-Data-Analytics-How-To-Process.gif?raw=true" width=800" height="310">
+</center>
+<div id="tahapan-persiapan-data" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Tahapan Persiapan Data<a href="persiapan-data.html#tahapan-persiapan-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Adapun hal pertama yang dilakukan sebelum analisis data, ada berbagai tahapan yang harus dilalui yaitu persiapan data <strong>(data preparation)</strong>. Sederhananya, persiapan data adalah proses mengambil data mentah dan menyiapkannya untuk diserap dalam platform analitik (dalam hal ini digunakan Python). Tahapan persiapan data ini sering kali membutuhkan waktu bahkan hinga 60%-80% dari seluruh siklus analisis, kecepatan dan efisiensi proses persiapan data perlu dijadikan prioritas. Adapun beberapa tahapan yang harus Anda lalui dalam melakukan data preparation, di antaranya adalah:</p>
+<div id="pengumpulan-data-data-collection" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Pengumpulan data (Data Collection)<a href="persiapan-data.html#pengumpulan-data-data-collection" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Data yang relevan dikumpulkan dari sistem operasional, data warehouse, data lake, dan sumber data lainnya. Selama langkah pengumpulan data, data scientist, anggota tim BI, professional data lainnya, serta pengguna akhir yang mengumpulkan data harus mengonfirmasi bahwa data tersebut sesuai dengan tujuan aplikasi analitik yang direncanakan.</p>
+</div>
+<div id="data-discovery-dan-profiling" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Data Discovery dan Profiling<a href="persiapan-data.html#data-discovery-dan-profiling" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Langkah selanjutnya adalah data discovery dan profiling yang berguna untuk mengeksplorasi data yang dikumpulkan. Dari eksplorasi tersebut, apa yang terkandung dalam data akan lebih mudah dipahami. Langkah-langkah yang perlu dilakukan untuk mempersiapkan data sesuai tujuan penggunaannya juga bisa ditentukan. Langkah profiling atau pembuatan profil data bisa membantu mengidentifikasi pola, hubungan, dan atribut lain dalam data, serta mengatasi inkonsistensi, anomali, nilai yang hilang, dan masalah lain yang terdapat pada data.</p>
+</div>
+<div id="pembersiahan-data-data-cleansing" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Pembersiahan Data Data Cleansing<a href="persiapan-data.html#pembersiahan-data-data-cleansing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Data cleansing adalah proses memperbaiki kesalahan dan masalah data yang teridentifikasi guna membuat kumpulan data yang lengkap dan akurat. Misalnya, sebagai bagian dari data cleansing, data yang salah akan dihapus atau diperbaiki, nilai yang hilang akan diisi, dan entri yang tidak konsisten akan diselaraskan.</p>
+</div>
+<div id="data-formatting" class="section level3 hasAnchor" number="2.1.4">
+<h3><span class="header-section-number">2.1.4</span> DATA FORMATTING<a href="persiapan-data.html#data-formatting" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Setelah kumpulan data dibersihkan, data perlu diformat. Langkah ini mencakup penyelesaian masalah seperti beberapa format tanggal dalam data atau singkatan yang tidak konsisten. Ada juga kemungkinan bahwa beberapa variabel data tidak diperlukan untuk analisis, sehingga harus dihapus dari kumpulan data analisis.</p>
+<p>Langkah data preparation ini akan mendapat manfaat dari automasi. Langkah cleansing dan formatting harus disimpan ke dalam strategi berulang yang dapat diterapkan oleh para ilmuwan atau insinyur data ke kumpulan data serupa di masa mendatang. Misalnya, analisis bulanan data penjualan dan support kemungkinan akan memiliki sumber yang sama, sehingga langkah pembersihan dan pemformatan yang diperlukan juga akan sama setiap bulannya.</p>
+</div>
+<div id="data-combining-and-analyzing" class="section level3 hasAnchor" number="2.1.5">
+<h3><span class="header-section-number">2.1.5</span> DATA COMBINING AND ANALYZING<a href="persiapan-data.html#data-combining-and-analyzing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Saat kumpulan data telah dibersihkan dan diformat, data kemudian dapat diubah dengan digabungkan bersama kumpulan input. Setelah langkah penggabungan selesai, data siap untuk dipindahkan ke staging area data warehouse. Begitu data dimuat ke dalam staging area, ada kesempatan kedua untuk validasi.</p>
+<p>Setelah analisis dimulai, perubahan pada kumpulan data hanya boleh dilakukan dengan sangat hati-hati. Selama analisis, algoritma biasanya disesuaikan dan dibandingkan dengan hasil lainnya. Perubahan pada data dapat mengubah hasil analisis sehingga sulit untuk menentukan apakah perbedaan hasil tersebut disebabkan oleh perubahan pada data atau algoritma.</p>
+</div>
+<div id="data-validation-and-publishing" class="section level3 hasAnchor" number="2.1.6">
+<h3><span class="header-section-number">2.1.6</span> DATA VALIDATION AND PUBLISHING<a href="persiapan-data.html#data-validation-and-publishing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Pada langkah terakhir ini, rutinitas otomatis dijalankan terhadap data untuk memvalidasi konsistensi, kelengkapan, dan akurasinya. Data yang disiapkan kemudian disimpan pada data warehouse, data lake, atau repositori lain dan digunakan secara langsung oleh siapa pun yang menyiapkannya. Bisa juga tersedia untuk diakses pengguna lain.</p>
+</div>
+</div>
+<div id="mengapa-python-vs-excel" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Mengapa Python vs Excel?<a href="persiapan-data.html#mengapa-python-vs-excel" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Sebelum kita mulai, Anda mungkin bertanya-tanya mengapa Python layak untuk dipertimbangkan. Mengapa Anda tidak bisa terus menggunakan Excel? Meskipun Excel bagus, ada beberapa area yang membuat bahasa pemrograman seperti Python lebih baik untuk jenis analisis data tertentu. Berikut adalah beberapa alasan bagi Pengguna Excel harus Mempertimbangkan belajar pemrograman Python:</p>
+<ol style="list-style-type: decimal">
+<li><p>Pengimporan dan manipulasi data yang lebih kuat
+Tidak seperti Excel, Python pada dasarnya dapat membaca semua jenis data, baik data terstruktur maupun tidak terstruktur. Manipulasi data – tugas seperti sub-pengaturan, penggabungan, dan pengodean ulang data – juga jauh lebih mudah dengan Python. Siapa pun yang menghabiskan banyak waktu mencoba menggabungkan dan membersihkan beberapa kumpulan data besar di Excel untuk analisis dapat membuktikan bahwa itu adalah proses yang sulit dan memakan waktu. Tetapi Python membuat proses ini lebih sederhana dan lebih cepat.</p></li>
+<li><p>Otomatisasi lebih mudah
+Excel bisa menjadi penghalang besar saat Anda mencoba mengotomatiskan proses atau menjalankan analisis yang sama beberapa kali. Menggunakan Python dapat membuat ini lebih cepat. Misalnya, jika Anda perlu menjalankan analisis yang sama pada kumpulan data penjualan baru setiap minggu, melakukan ini di Excel akan memerlukan membuka file yang berbeda secara manual setiap minggu dan memasukkan kembali rumus dan elemen lain yang diperlukan untuk analisis. Tetapi Anda dapat melakukan analisis yang sama secara otomatis dalam bahasa seperti Python, menulis skrip sederhana yang mengimpor data baru dan menjalankan analisis yang sama setiap minggu, mengeluarkan hasilnya dalam format apa pun yang Anda inginkan.</p></li>
+<li><p>Lebih mudah bekerja dengan banyak data
+Di Excel, proyek diatur dalam lembar atau tab, dan jika Anda pernah berurusan dengan file Excel yang memiliki banyak lembar atau banyak entri data di setiap lembar, Anda tahu bahwa itu bisa menjadi sangat lambat dengan sangat cepat. Python, bagaimanapun, dapat menangani sejumlah besar data jauh lebih cepat.</p></li>
+<li><p>Lebih dapat direproduksi
+Analisis data paling berguna ketika Anda dapat menjelaskan apa yang telah Anda lakukan kepada orang lain, dan orang lain dapat dengan mudah mereproduksi pekerjaan Anda untuk mengonfirmasinya (atau Anda dapat mereproduksinya sendiri untuk memeriksa ulang). Tapi ini sulit di Excel. Dalam Python, menjalankan kembali analisis semudah menekan “Enter”, dan menambahkan komentar ke kode Anda dengan mudah.</p></li>
+<li><p>Lebih mudah untuk menemukan dan memperbaiki kesalahan
+Saat Anda membuat kesalahan di Excel, mencari tahu apa yang salah bisa jadi sulit. Tetapi ketika Anda membuat kesalahan dalam bahasa pengkodean, Anda biasanya akan mendapatkan pesan kesalahan yang menjelaskan apa yang salah. Dan tentu saja, Anda juga harus memiliki komentar yang menjelaskan setiap baris kode Anda, yang membuatnya lebih mudah untuk kembali dan memeriksa ulang setiap langkah untuk mencari kesalahan.</p></li>
+<li><p>Aksesibilitas sumber terbuka
+Excel memang hebat, tetapi dimiliki oleh Microsoft, yang berarti Anda pada akhirnya bergantung pada Microsoft dalam hal pembaruan dan dukungan fitur. Tidak seperti Excel, Python gratis dan open source, ini juga berarti bahwa setiap pengembang (termasuk Anda) dapat membuat paket dan menambahkan fungsionalitas untuk meningkatkan kemudahan penggunaan.</p></li>
+<li><p>Statistik tingkat lanjut dan kemampuan pembelajaran mesin
+Python memiliki kemampuan statistik yang lebih maju daripada Excel dan memungkinkan pembuatan model pembelajaran mesin.</p></li>
+<li><p>Kemampuan visualisasi data tingkat lanjut
+Jelas, Excel dapat membuat berbagai bagan, tetapi bahasa pemrograman dapat melakukan lebih banyak, Python memiliki kemampuan grafis yang lebih baik, lebih canggih, dan canggih. Semakin mudah Anda memahami data Anda, semakin besar kemungkinan pekerjaan Anda akan berdampak nyata.</p></li>
+<li><p>Stabilitas lintas platform
+Skrip dalam bahasa pemrograman seperti Python dapat dijalankan di platform apa pun dan akan berfungsi di seluruh mesin Windows, Mac, dan Linux, tetapi hal yang sama tidak selalu berlaku untuk file Excel.</p></li>
+</ol>
 
+</div>
 </div>
             </section>
 
