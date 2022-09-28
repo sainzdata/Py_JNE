@@ -27,12 +27,6 @@ perulangan-while
 penyajian
 persiapan-data
 tahapan-persiapan-data
-pengumpulan-data-data-collection
-data-discovery-dan-profiling
-pembersiahan-data-data-cleansing
-data-formatting
-data-combining-and-analyzing
-data-validation-and-publishing
 mengapa-python-vs-excel
 visualisasi-data
 pemodelan

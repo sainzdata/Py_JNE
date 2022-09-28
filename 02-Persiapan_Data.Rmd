@@ -11,7 +11,7 @@ Secara umum, tujuan analisis data adalah untuk menjelaskan suatu data agar lebih
 Adapun hal pertama yang dilakukan sebelum analisis data, ada berbagai tahapan yang harus dilalui yaitu persiapan data **(data preparation)**. Sederhananya, persiapan data adalah proses mengambil data mentah dan menyiapkannya untuk diserap dalam platform analitik (dalam hal ini digunakan Python). Tahapan persiapan data ini sering kali membutuhkan waktu bahkan hinga **60%-80%** dari seluruh siklus analisis, kecepatan dan efisiensi proses persiapan data perlu dijadikan prioritas. Adapun beberapa tahapan yang harus Anda lalui dalam melakukan data preparation, di antaranya adalah:
 
 <center>
-<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/persiapan_data.png?raw=true" width=800" height="400">
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/persiapan_data.png?raw=true" width=800" height="370">
 </center>
 
 ## Mengapa Python vs Excel?
