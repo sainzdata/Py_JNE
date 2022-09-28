@@ -18,30 +18,16 @@ Adapun hal pertama yang dilakukan sebelum analisis data, ada berbagai tahapan ya
 
 Sebelum kita mulai, Anda mungkin bertanya-tanya mengapa Python layak untuk dipertimbangkan. Mengapa Anda tidak bisa terus menggunakan Excel? Meskipun Excel bagus, ada beberapa area yang membuat bahasa pemrograman seperti Python lebih baik untuk jenis analisis data tertentu. Berikut adalah beberapa alasan bagi Pengguna Excel harus Mempertimbangkan belajar pemrograman Python: 
 
-1. Pengimporan dan manipulasi data yang lebih kuat
-Tidak seperti Excel, Python pada dasarnya dapat membaca semua jenis data, baik data terstruktur maupun tidak terstruktur. Manipulasi data – tugas seperti sub-pengaturan, penggabungan, dan pengodean ulang data – juga jauh lebih mudah dengan Python. Siapa pun yang menghabiskan banyak waktu mencoba menggabungkan dan membersihkan beberapa kumpulan data besar di Excel untuk analisis dapat membuktikan bahwa itu adalah proses yang sulit dan memakan waktu. Tetapi Python membuat proses ini lebih sederhana dan lebih cepat.
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/py_vs_xl.png?raw=true" width=800" height="370">
+</center>
 
-2. Otomatisasi lebih mudah
-Excel bisa menjadi penghalang besar saat Anda mencoba mengotomatiskan proses atau menjalankan analisis yang sama beberapa kali. Menggunakan Python dapat membuat ini lebih cepat. Misalnya, jika Anda perlu menjalankan analisis yang sama pada kumpulan data penjualan baru setiap minggu, melakukan ini di Excel akan memerlukan membuka file yang berbeda secara manual setiap minggu dan memasukkan kembali rumus dan elemen lain yang diperlukan untuk analisis. Tetapi Anda dapat melakukan analisis yang sama secara otomatis dalam bahasa seperti Python, menulis skrip sederhana yang mengimpor data baru dan menjalankan analisis yang sama setiap minggu, mengeluarkan hasilnya dalam format apa pun yang Anda inginkan.
 
-3. Lebih mudah bekerja dengan banyak data
-Di Excel, proyek diatur dalam lembar atau tab, dan jika Anda pernah berurusan dengan file Excel yang memiliki banyak lembar atau banyak entri data di setiap lembar, Anda tahu bahwa itu bisa menjadi sangat lambat dengan sangat cepat. Python, bagaimanapun, dapat menangani sejumlah besar data jauh lebih cepat.
+Tidak dapat disangkal bahwa Excel adalah alat yang paling umum digunakan dalam analisis data. Kesederhanaannya dikombinasikan dengan betapa kuatnya ketika dikuasai menjadikannya pilihan utama bagi banyak orang. Namun, jika kita merujuk pada perbandingan Python versus Excel di atas, terlihat jelas betapa terbatasnya Excel sebenarnya. Jadi pertanyaan sebenarnya adalah **mengapa lebih banyak orang menggunakan Excel daripada Panda?** Jawaban atas pertanyaan itu sangat sederhana. Kebanyakan orang tidak akrab dengan Python dan menganggap gagasan mempelajari bahasa pemrograman apa pun menakutkan. Selain itu, manusia adalah makhluk kebiasaan. Begitu kita masuk ke dalam rutinitas, kita cenderung untuk tinggal di dalamnya. Bagi sebagian besar analis data, rutinitas itu menggunakan Excel. Beralih ke Python tampaknya sangat bermasalah dan memakan waktu sehingga kebanyakan orang lebih suka tinggal di zona nyaman mereka daripada meluangkan waktu untuk mempelajari sesuatu yang benar-benar baru. 
 
-4. Lebih dapat direproduksi
-Analisis data paling berguna ketika Anda dapat menjelaskan apa yang telah Anda lakukan kepada orang lain, dan orang lain dapat dengan mudah mereproduksi pekerjaan Anda untuk mengonfirmasinya (atau Anda dapat mereproduksinya sendiri untuk memeriksa ulang). Tapi ini sulit di Excel. Dalam Python, menjalankan kembali analisis semudah menekan "Enter", dan menambahkan komentar ke kode Anda dengan mudah.
 
-5. Lebih mudah untuk menemukan dan memperbaiki kesalahan
-Saat Anda membuat kesalahan di Excel, mencari tahu apa yang salah bisa jadi sulit. Tetapi ketika Anda membuat kesalahan dalam bahasa pengkodean, Anda biasanya akan mendapatkan pesan kesalahan yang menjelaskan apa yang salah. Dan tentu saja, Anda juga harus memiliki komentar yang menjelaskan setiap baris kode Anda, yang membuatnya lebih mudah untuk kembali dan memeriksa ulang setiap langkah untuk mencari kesalahan.
+## Persiapan Data di Python Vs Excel
 
-6. Aksesibilitas sumber terbuka
-Excel memang hebat, tetapi dimiliki oleh Microsoft, yang berarti Anda pada akhirnya bergantung pada Microsoft dalam hal pembaruan dan dukungan fitur. Tidak seperti Excel, Python gratis dan open source, ini juga berarti bahwa setiap pengembang (termasuk Anda) dapat membuat paket dan menambahkan fungsionalitas untuk meningkatkan kemudahan penggunaan.
+Konten ini masih dalam pengembangan Tim
 
-7. Statistik tingkat lanjut dan kemampuan pembelajaran mesin
-Python memiliki kemampuan statistik yang lebih maju daripada Excel dan memungkinkan pembuatan model pembelajaran mesin.
-
-8. Kemampuan visualisasi data tingkat lanjut
-Jelas, Excel dapat membuat berbagai bagan, tetapi bahasa pemrograman dapat melakukan lebih banyak, Python memiliki kemampuan grafis yang lebih baik, lebih canggih, dan canggih. Semakin mudah Anda memahami data Anda, semakin besar kemungkinan pekerjaan Anda akan berdampak nyata.
-
-9. Stabilitas lintas platform
-Skrip dalam bahasa pemrograman seperti Python dapat dijalankan di platform apa pun dan akan berfungsi di seluruh mesin Windows, Mac, dan Linux, tetapi hal yang sama tidak selalu berlaku untuk file Excel.
 

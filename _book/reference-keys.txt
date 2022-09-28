@@ -28,6 +28,7 @@ penyajian
 persiapan-data
 tahapan-persiapan-data
 mengapa-python-vs-excel
+persiapan-data-di-python-vs-excel
 visualisasi-data
 pemodelan
 studi-kasus
