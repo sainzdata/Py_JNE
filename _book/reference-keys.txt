@@ -28,7 +28,13 @@ penyajian
 persiapan-data
 tahapan-persiapan-data
 mengapa-python-vs-excel
-persiapan-data-di-python-vs-excel
+contoh-sederhana
+impor-data
+menyortir-data
+penjumlahan-nilai-di-kolom
+join-data
+kondisional-nilai
+tabel-pivot
 visualisasi-data
 pemodelan
 studi-kasus

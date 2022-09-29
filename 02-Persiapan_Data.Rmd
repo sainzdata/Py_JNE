@@ -18,16 +18,216 @@ Adapun hal pertama yang dilakukan sebelum analisis data, ada berbagai tahapan ya
 
 Sebelum kita mulai, Anda mungkin bertanya-tanya mengapa Python layak untuk dipertimbangkan. Mengapa Anda tidak bisa terus menggunakan Excel? Meskipun Excel bagus, ada beberapa area yang membuat bahasa pemrograman seperti Python lebih baik untuk jenis analisis data tertentu. Berikut adalah beberapa alasan bagi Pengguna Excel harus Mempertimbangkan belajar pemrograman Python: 
 
+<br>
 <center>
 <img src="https://github.com/sainzdata/Py_JNE/blob/main/images/py_vs_xl.png?raw=true" width=800" height="370">
 </center>
-
+<br>
 
 Tidak dapat disangkal bahwa Excel adalah alat yang paling umum digunakan dalam analisis data. Kesederhanaannya dikombinasikan dengan betapa kuatnya ketika dikuasai menjadikannya pilihan utama bagi banyak orang. Namun, jika kita merujuk pada perbandingan Python versus Excel di atas, terlihat jelas betapa terbatasnya Excel sebenarnya. Jadi pertanyaan sebenarnya adalah **mengapa lebih banyak orang menggunakan Excel daripada Panda?** Jawaban atas pertanyaan itu sangat sederhana. Kebanyakan orang tidak akrab dengan Python dan menganggap gagasan mempelajari bahasa pemrograman apa pun menakutkan. Selain itu, manusia adalah makhluk kebiasaan. Begitu kita masuk ke dalam rutinitas, kita cenderung untuk tinggal di dalamnya. Bagi sebagian besar analis data, rutinitas itu menggunakan Excel. Beralih ke Python tampaknya sangat bermasalah dan memakan waktu sehingga kebanyakan orang lebih suka tinggal di zona nyaman mereka daripada meluangkan waktu untuk mempelajari sesuatu yang benar-benar baru. 
 
 
-## Persiapan Data di Python Vs Excel
+## Contoh Sederhana
 
-Konten ini masih dalam pengembangan Tim
+Untuk memperjelas pembahasan mengenai penggunaan Python dibanding Excel diatas, selanjutnya akan diperlihatkan dengan contoh sederhana. Dalam hal ini, penulis tidak sedang menganjurkan untuk meninggalkan Excel dalam proses olah data. Tetapi sebagai pengguna Excel, dapat juga memanfaatkan kekuatan Python untuk menghemat waktu Anda. Perlu diingat bahwa kedua alat ini dapat bekerja dengan baik bersama-sama, dan Anda mungkin menemukan bahwa beberapa tugas sebaiknya dibiarkan di Excel, sementara yang lain dapat diselesaikan dengan keunggulan, fleksibilitas, dan transparansi yang ditawarkan oleh Python.
 
 
+### Impor Data 
+
+Andaikan [DP2.xlsx](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fsainzdata%2FPy_JNE%2Fmain%2Fdata%2FDP2.xlsx&wdOrigin=BROWSELINK) dan [Manager.csv](https://raw.githubusercontent.com/sainzdata/Py_JNE/main/data/Manager.csv) adalah data yang akan dianalisis, proses impor dan membacanya di Python dan Excel sangatlah berbeda. 
+
+#### Excel {-}
+
+Dengan menggunakan Excel kita hanya perlu klik dua kali file (data) dalam format excel atau menggunakan toolbar open file.
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/excel1.png?raw=true" width=800" height="300">
+</center>
+
+
+#### Python {-}
+
+Untuk melakukan impor data dengan Python, gunakan sintak berikut: 
+
+```{python, eval=F}
+import pandas as pd                                         # library untuk impor data
+sales = pd.read_excel('data/DP2.xlsx', sheet_name='Sales')  # simpan sebagai variabel sales
+print(sales)                                                # print data
+type(sales)                                                 # memastikan tipe data frame
+```
+
+**Catatan:** Jangan lupa install library/pakages `pandas` dengan cara `pip install pandas`.
+
+Adapun beberapa perbedaan antara bagaimana Python `(pandas)` merepresentasikan data vs apa yang kita lihat di Excel:
+
+* Di Python, nomor baris dimulai dari 0 versus 1 di Excel.
+* Nama kolom dalam Python diambil dari data, versus Excel di mana kolom diberi label menggunakan huruf.
+* Jika ada nilai yang hilang dalam data asli, Python memiliki placeholder `NaN` yang menunjukkan bahwa nilai tersebut tidak ada atau nol.
+* Data penjualan memiliki titik desimal yang ditambahkan ke setiap nilai karena Python menyimpan nilai numerik yang menyertakan nilai null `(NaN)` sebagai tipe numerik yang dikenal sebagai float.
+
+### Menyortir Data
+
+Selanjutnya, cara menyortir atau mengurutkan data kita di Excel dan Python.
+
+#### Excel {-}
+
+Untuk mengurutkan data berdasarkan kolom "Start Date", adalah dengan cara:
+
+1. Blok kolom "Start Date"
+2. Klik toolbar `Home` 
+3. Pilih Short&Filter yang dinginkan (Min ke Max atau sebaliknya)
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/sort.png?raw=true" width=800" height="400">
+</center>
+
+#### Python {-}
+
+Dengan library pandas, menyortir data dapat diterapkan dengan menggunakan fungsi `DataFrame.sort_values()`. diperlihatkan sebagai berikut:
+
+```{python eval=F}
+sales = sales.sort_values("Start Date",ascending=True)      # mengurutkan data (a-z) 
+print(sales)                                                # print data               
+```
+
+### Penjumlahan Nilai di Kolom
+
+Tiga kolom terakhir dari data tersebut berisi nilai penjualan untuk tiga bulan pertama tahun ini, yang dikenal sebagai kuartal pertama. Andaikan kita ingin menjumlahkan nilai-nilai tersebut di Excel dan Python.
+
+#### Excel {-}
+
+Mari kita mulai dengan melihat bagaimana melakukan ini di Excel:
+
+1. Masukkan nama kolom baru `Sales Q1` di sel `H1`.
+2. Di sel `H2`, gunakan rumus `=SUM()` dan tentukan rentang sel menggunakan koordinatnya.
+3. Seret rumus ke bawah ke semua baris.
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/jumlahan_kolom.png?raw=true" width=800" height="400">
+</center>
+
+#### Python {-}
+
+```{python eval=F}
+q1_columns = sales[["Sales January", "Sales February", "Sales March"]]
+sales["Sales Q1"] = q1_columns.sum(axis=1)
+sales
+```
+
+
+### Join Data 
+
+Menggabung data adalah hal lumrah dalam proses pengolahan data, sehingga kemampuan ini sangat penting untuk dipertimbangkan. Mari kita lihat cara menggabungkan data pada suatu kolom baru "Manager" di Excel dan Python.
+
+#### Excel {-}
+
+* Mulai dengan menambahkan nama kolom ke sel I1.
+* gunakan rumus VLOOKUP() di sel I2, dengan menetapkan:
+
+  * untuk mencari nilai dari sel B2 (Departemen)
+  * dalam pemilihan data manajer, yang kami tentukan menggunakan koordinat
+  * dan tentukan kita ingin memilih nilai dari kolom kedua dari data tersebut.
+* Klik dan seret rumus ke bawah ke semua sel.
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/join_data.png?raw=true" width=800" height="400">
+</center>
+
+#### Python {-}
+
+Untuk bekerja dengan data ini di Python, pertama-tama kita harus mengimpornya data lain yang ingin dihubungkan.
+
+```{python eval=F}
+managers = pd.read_csv('data/Managers.csv',sep=";")
+print(managers)
+```
+
+Untuk menggabungkan data `Managers` ke `Sales` menggunakan Python, kita akan menggunakan fungsi pandas.merge(). Dengan memberikan argumen berikut, dalam urutan:
+
+* `Sales`: nama kerangka data pertama, atau kiri, yang ingin kami gabungkan
+* `Managers`: nama kerangka data kedua, atau kanan, yang ingin kami gabungkan
+* `how='left'`: metode yang ingin kita gunakan untuk menggabungkan data. Gabung kir ini adalah proses menyimpan semua baris dari kerangka data kiri (pertama).
+* `on='Department'`: Nama kolom di kedua kerangka data tempat kita akan bergabung.
+
+```{python eval=F}
+sales = pd.merge(sales, managers, how='left', on='Department')
+print(sales)
+```
+
+**Catatan:** Jika ini tampaknya agak membingungkan pada awalnya, tidak apa-apa. Model untuk menggabungkan data dengan Python berbeda dengan yang digunakan di Excel, tetapi hal ini sangat powerfull. Perhatikan bahwa dalam Python kita dapat menentukan dengan tepat bagaimana kita menggabungkan data kita menggunakan sintaks dan nama kolom yang jelas.
+
+
+### Kondisional Nilai
+
+Jika kita melihat kolom `End Date`, kita dapat melihat ada nilai yang hilang masih bekerja tetapi sisanya telah pergi. Tugas kita selanjutnya adalah membuat kolom yang memberi tahu jika setiap tenaga `Sales` pada kolom `End Date`yang hilang (kosong) tersebut adalah karyawan yang masih aktif saat ini. 
+
+#### Excel {-}
+
+Dimulai dengan Excel, untuk menambahkan kolom ini kita dapat:
+
+* Menambahkan nama kolom baru ke sel `J1`.
+* Gunakan rumus `IF()` untuk memeriksa apakah sel `D1` (End Date) kosong, dan jika demikian isi `J2` dengan `TRUE`, jika tidak `FALSE`.
+* Seret rumus ke sel di bawah ini. 
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/if_excel.png?raw=true" width=800" height="400">
+</center>
+
+#### Python {-}
+
+Di Python, kita dapat menggunakan fungsi `pandas.isnull()` untuk memeriksa nilai nol di kolom `End Date`, dan menetapkan hasilnya ke kolom baru:
+
+```{python eval=F}
+sales["Current Employee"] = pd.isnull(sales['End Date'])
+sales
+```
+
+### Tabel pivot
+
+Salah satu fitur Excel yang paling kuat adalah tabel pivot, yang memfasilitasi analisis data menggunakan agregasi. Kita akan melihat dua aplikasi tabel pivot yang berbeda di Excel dan Python.
+
+#### Excel {-}
+
+Berikut ini diperlihatkan tabel pivot di Excel yang menghitung jumlah karyawan di setiap departemen:
+
+* Blok data yang ingin dibutkan dalam tabel pivot
+* Klik toolbar `Insert` dan pilih `PivotTable`
+* Klik OK
+* Pilih nama variabel baris, kolom dan nilainya (sesuai kebutuhan)
+
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/pivot.png?raw=true" width=800" height="400">
+</center>
+
+#### Python {-}
+
+Mari kita gunakan metode Python untuk menghitung jumlah karyawan di setiap departemen:
+
+```{python eval=F}
+sales['Department'].value_counts()
+```
+
+
+Contoh tabel pivot kedua juga digabungkan berdasarkan departemen, tetapi kali ini kita menghitung rata-rata Sales Q1: gunakan metode DataFrame.pivot_table(). Kita perlu menentukan beberapa argumen berikut:
+
+* `index`: kolom yang akan diagregasi.
+* `values`: kolom yang ingin kita gunakan nilainya.
+* `aggfunc`: fungsi agregasi yang ingin kita gunakan, dalam hal ini rata-rata `mean`.
+
+```{python eval=F}
+sales.pivot_table(index='Department', 
+                  values='Sales Q1', 
+                  aggfunc='mean')
+```
+
+**Catatan:** Silahkan mencoba fungsi agregasi lain seperti: sum, count, min, dan max.
+
+Cara lainnya, 
+
+```{python eval=F}
+pd.pivot_table(data=sales,
+               index='Department', 
+               values='Sales Q1', 
+               aggfunc='mean')
+```
