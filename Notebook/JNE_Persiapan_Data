@@ -1,0 +1,60 @@
+import pandas as pd
+
+# Kita akan melihat worksheets dari data excel 
+sheet = pd.ExcelFile('C:/Users/yosia/Downloads/Omset_202001_202012.xlsx')
+myworksheets = sheet.sheet_names
+myworksheets
+
+# import data dari excel
+df = pd.read_excel('C:/Users/yosia/Downloads/Omset_202001_202012.xlsx')
+print(df)
+# maka hasilnya akan di worksheet utama kita yang ada di excel
+
+# Import data dari excel dengan memilih worksheets 
+df1 = pd.concat(pd.read_excel('C:/Users/yosia/Downloads/Omset_202001_202012.xlsx', 
+                             sheet_name=['2020-01','2020-02','2020-03']),ignore_index=True)
+print(df1)
+
+# import data di excel dengan semua worksheets (Alternatif)
+df2 = pd.concat(pd.read_excel('C:/Users/yosia/Downloads/Omset_202001_202012.xlsx', 
+                             sheet_name=None), ignore_index=True)
+print(df2)
+
+# cek tipe data atau struktur data setiap kolom
+tipedata = df2.info()
+print(tipedata)
+
+# cek missing value
+df2.isnull().sum()
+
+# import data dari excel yang sudah di gabungkan (dengan cara manual di excel)
+df3 = pd.read_excel ('C:/Users/yosia/OneDrive/Documents/Omset_202001_202012.xlsx', sheet_name='Append1')
+print (df3)
+
+# Ekstrasi Data Frame
+data_2020 = pd.concat(pd.read_excel('C:/Users/yosia/Downloads/Omset_202001_202012.xlsx', 
+                             sheet_name=None), ignore_index=True)
+data_2021 = pd.concat(pd.read_excel('C:/Users/yosia/Downloads/Omset_202101_202112.xlsx', 
+                             sheet_name=None), ignore_index=True)
+data_2022 = pd.concat(pd.read_excel('C:/Users/yosia/Downloads/Omset_202201_202207.xlsx', 
+                             sheet_name=None), ignore_index=True)
+# gabungkan semua data
+big_data = pd.concat([data_2020,data_2021,data_2022],ignore_index=True)
+print(big_data)
+
+# Kita rubah data tanggal yang sebelumnya object menjadi format tanggal
+# note = kita mengasumsikan di setiap bulan tanggal 1 karena tidak tertera tanggal hanya bulan dan tahun saja
+big_data['PERIODE'] = pd.to_datetime(big_data['PERIODE'], format='%Y-%m-%d')
+big_data['PERIODE'] 
+
+# Ekstrak spesifik kolom di big_data kita
+big_data['REGION']
+big_data[['PERIODE','TOTAL_OMZET']]
+
+# Ekstrak data dengan sebuah kondisi tertentu
+cek_data = big_data[(big_data['PERIODE'] > "2020-09-30") & 
+               (big_data['PERIODE'] < "2021-11-01")]
+cek_data
+
+
+
