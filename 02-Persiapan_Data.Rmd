@@ -27,7 +27,7 @@ Sebelum kita mulai, Anda mungkin bertanya-tanya mengapa Python layak untuk diper
 Tidak dapat disangkal bahwa Excel adalah alat yang paling umum digunakan dalam analisis data. Kesederhanaannya dikombinasikan dengan betapa kuatnya ketika dikuasai menjadikannya pilihan utama bagi banyak orang. Namun, jika kita merujuk pada perbandingan Python versus Excel di atas, terlihat jelas betapa terbatasnya Excel sebenarnya. Jadi pertanyaan sebenarnya adalah **mengapa lebih banyak orang menggunakan Excel daripada Panda?** Jawaban atas pertanyaan itu sangat sederhana. Kebanyakan orang tidak akrab dengan Python dan menganggap gagasan mempelajari bahasa pemrograman apa pun menakutkan. Selain itu, manusia adalah makhluk kebiasaan. Begitu kita masuk ke dalam rutinitas, kita cenderung untuk tinggal di dalamnya. Bagi sebagian besar analis data, rutinitas itu menggunakan Excel. Beralih ke Python tampaknya sangat bermasalah dan memakan waktu sehingga kebanyakan orang lebih suka tinggal di zona nyaman mereka daripada meluangkan waktu untuk mempelajari sesuatu yang benar-benar baru. 
 
 
-## Contoh Sederhana
+## Contoh Persiapan Data 1
 
 Untuk memperjelas pembahasan mengenai penggunaan Python dibanding Excel diatas, selanjutnya akan diperlihatkan dengan contoh sederhana. Dalam hal ini, penulis tidak sedang menganjurkan untuk meninggalkan Excel dalam proses olah data. Tetapi sebagai pengguna Excel, dapat juga memanfaatkan kekuatan Python untuk menghemat waktu Anda. Perlu diingat bahwa kedua alat ini dapat bekerja dengan baik bersama-sama, dan Anda mungkin menemukan bahwa beberapa tugas sebaiknya dibiarkan di Excel, sementara yang lain dapat diselesaikan dengan keunggulan, fleksibilitas, dan transparansi yang ditawarkan oleh Python.
 
@@ -225,9 +225,106 @@ sales.pivot_table(index='Department',
 
 Cara lainnya, 
 
-```{python eval=F}
+```{python,eval=F}
 pd.pivot_table(data=sales,
                index='Department', 
                values='Sales Q1', 
                aggfunc='mean')
 ```
+
+
+## Contoh Persiapan Data 2
+
+* [Klik Disini : Github](https://github.com/sainzdata/Py_JNE/tree/main/Notebook)
+* [Klik Disini: Google Colab](https://colab.research.google.com/)
+
+## Persiapan Data Lanjutan
+
+Pada tahapan ini, kita akan mencoba menggunakan data yang lebih komplek yaitu:
+
+* Omset_202001_202012 (omset Jan sd Des 2020) [Klik disini untuk Review dan Download](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fsainzdata%2FPy_JNE%2Fmain%2Fdata%2FOmset_202001_202012.xlsx&wdOrigin=BROWSELINK) 
+* Omset_202101_202112 (omset Jan sd Des 2021) [Klik disini untuk Review dan Download](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fsainzdata%2FPy_JNE%2Fmain%2Fdata%2FOmset_202101_202112.xlsx&wdOrigin=BROWSELINK) 
+* Omset_202201_202207 (omset Jan sd Jul 2022) [Klik disini untuk Review dan Download](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fsainzdata%2FPy_JNE%2Fmain%2Fdata%2FOmset_202201_202207.xlsx&wdOrigin=BROWSELINK) 
+
+dilakukan proses persiapan data dengan Python sebagai berikut:
+
+### Import Data
+
+Install library yang dibutuhkan di Melalui CMD di Anacond `pip install xlrd`.
+
+```{python eval=F}
+data_2020 = pd.concat(pd.read_excel('data/Omset_202001_202012.xlsx', 
+                                    sheet_name=None), 
+                                    ignore_index=True)
+data_2021 = pd.concat(pd.read_excel('data/Omset_202101_202112.xlsx', 
+                                    sheet_name=None), 
+                                    ignore_index=True)
+data_2022 = pd.concat(pd.read_excel('data/Omset_202201_202207.xlsx', 
+                                    sheet_name=None), 
+                                    ignore_index=True)
+# gabungkan semua data
+all_data = pd.concat([data_2020,data_2021,data_2022],ignore_index=True)
+print(all_data)
+```
+
+**Catatan:** Jika Anda melakukan penggabungan dengan Excel, hal yang paling mungkin anda lakukan seperti pada [link ini](https://rpubs.com/yosia/appendinexcel) ditulis oleh Tim **(Yosia)**.
+
+### Format Tanggal
+
+Hal yang sangat krusial dalam hal analisis adalah data yang berhubungan dengan tanggal. Berikut ini adalah sintak yang dapat digunakan di Python:
+
+```{python eval=F}
+all_data['PERIODE'] = pd.to_datetime(all_data['PERIODE'], format='%Y-%m-%d')
+all_data['PERIODE'] 
+```
+
+### Ekstrak Kondisional Data
+
+```{python eval=F}
+eks_data = all_data[(all_data['PERIODE'] > "2020-09-01") & 
+                    (all_data['PERIODE'] < "2020-11-01")]
+                    
+print(eks_data)
+```
+
+
+
+### 8 Baris Pertama (Tugas)
+ 
+Perlihatkan 8 baris pertama dari data yang sedang anda gunakan! 
+
+### Check Dimensi Data (Tugas)
+
+Check dimensi data tersebut, berapa baris dan kolomnya?
+
+
+### Check Atribut Kolom (Tugas)
+
+Bagaimana caranya untuk mengetahui nama variabel (atribut kolom dataset)?
+
+### Info Dasar Data (Tugas)
+
+Cara paling powerful untuk mengetahui detail informasi dasar pada data, dapat dilakukan dengan? 
+
+
+### Pembulatan Nilai (Tugas)
+
+Lakukan pembulatan untuk setiap nilai desimal yang anda miliki didalam dataset tersebut diatas! 
+
+
+### Pilah Data Kolom (Tugas)
+
+Pilihlah data berdasarkan beberapa kolom dengan menggunakan `string` dan `number`!
+
+
+###  Kolom Baru (Tugas)
+
+Butalah kolom baru dengan nilai penjulahan atau pengurangan atau perkalian dari kolom lainnya. 
+
+### Sortir Data
+
+Coba perlihatkan bagaiman jika anda diminta untuk melakukan proses sortir data berdarsar atrribut kolom yang anda inginkan!
+
+### Tabel Pivot 
+
+Perlihatkan contoh tabel pivot dengan Python!
