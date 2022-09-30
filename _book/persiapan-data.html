@@ -187,11 +187,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3" data-path="persiapan-data.html"><a href="persiapan-data.html#contoh-persiapan-data-1"><i class="fa fa-check"></i><b>2.3</b> Contoh Persiapan Data 1</a>
 <ul>
 <li class="chapter" data-level="2.3.1" data-path="persiapan-data.html"><a href="persiapan-data.html#impor-data"><i class="fa fa-check"></i><b>2.3.1</b> Impor Data</a></li>
-<li class="chapter" data-level="2.3.2" data-path="persiapan-data.html"><a href="persiapan-data.html#menyortir-data"><i class="fa fa-check"></i><b>2.3.2</b> Menyortir Data</a></li>
-<li class="chapter" data-level="2.3.3" data-path="persiapan-data.html"><a href="persiapan-data.html#penjumlahan-nilai-di-kolom"><i class="fa fa-check"></i><b>2.3.3</b> Penjumlahan Nilai di Kolom</a></li>
-<li class="chapter" data-level="2.3.4" data-path="persiapan-data.html"><a href="persiapan-data.html#join-data"><i class="fa fa-check"></i><b>2.3.4</b> Join Data</a></li>
-<li class="chapter" data-level="2.3.5" data-path="persiapan-data.html"><a href="persiapan-data.html#kondisional-nilai"><i class="fa fa-check"></i><b>2.3.5</b> Kondisional Nilai</a></li>
-<li class="chapter" data-level="2.3.6" data-path="persiapan-data.html"><a href="persiapan-data.html#tabel-pivot"><i class="fa fa-check"></i><b>2.3.6</b> Tabel pivot</a></li>
+<li class="chapter" data-level="2.3.2" data-path="persiapan-data.html"><a href="persiapan-data.html#ekspor-simpan-data"><i class="fa fa-check"></i><b>2.3.2</b> Ekspor (Simpan Data)</a></li>
+<li class="chapter" data-level="2.3.3" data-path="persiapan-data.html"><a href="persiapan-data.html#menyortir-data"><i class="fa fa-check"></i><b>2.3.3</b> Menyortir Data</a></li>
+<li class="chapter" data-level="2.3.4" data-path="persiapan-data.html"><a href="persiapan-data.html#penjumlahan-nilai-di-kolom"><i class="fa fa-check"></i><b>2.3.4</b> Penjumlahan Nilai di Kolom</a></li>
+<li class="chapter" data-level="2.3.5" data-path="persiapan-data.html"><a href="persiapan-data.html#join-data"><i class="fa fa-check"></i><b>2.3.5</b> Join Data</a></li>
+<li class="chapter" data-level="2.3.6" data-path="persiapan-data.html"><a href="persiapan-data.html#kondisional-nilai"><i class="fa fa-check"></i><b>2.3.6</b> Kondisional Nilai</a></li>
+<li class="chapter" data-level="2.3.7" data-path="persiapan-data.html"><a href="persiapan-data.html#tabel-pivot"><i class="fa fa-check"></i><b>2.3.7</b> Tabel pivot</a></li>
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="persiapan-data.html"><a href="persiapan-data.html#contoh-persiapan-data-2"><i class="fa fa-check"></i><b>2.4</b> Contoh Persiapan Data 2</a></li>
 <li class="chapter" data-level="2.5" data-path="persiapan-data.html"><a href="persiapan-data.html#persiapan-data-lanjutan"><i class="fa fa-check"></i><b>2.5</b> Persiapan Data Lanjutan</a>
@@ -276,11 +277,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="python" class="section level4 unnumbered hasAnchor">
 <h4>Python<a href="persiapan-data.html#python" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Untuk melakukan impor data dengan Python, gunakan sintak berikut:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="persiapan-data.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd                                         <span class="co"># library untuk impor data</span></span>
-<span id="cb1-2"><a href="persiapan-data.html#cb1-2" aria-hidden="true" tabindex="-1"></a>sales <span class="op">=</span> pd.read_excel(<span class="st">&#39;data/DP2.xlsx&#39;</span>, sheet_name<span class="op">=</span><span class="st">&#39;Sales&#39;</span>)  <span class="co"># simpan sebagai variabel sales</span></span>
-<span id="cb1-3"><a href="persiapan-data.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sales)                                                <span class="co"># print data</span></span>
-<span id="cb1-4"><a href="persiapan-data.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(sales)                                                 <span class="co"># memastikan tipe data frame</span></span></code></pre></div>
-<p><strong>Catatan:</strong> Jangan lupa install library/pakages <code>pandas</code> dengan cara <code>pip install pandas</code>.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="persiapan-data.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd                                         <span class="co"># library untuk impor data</span></span>
+<span id="cb16-2"><a href="persiapan-data.html#cb16-2" aria-hidden="true" tabindex="-1"></a>sales <span class="op">=</span> pd.read_excel(<span class="st">&#39;data/DP2.xlsx&#39;</span>, sheet_name<span class="op">=</span><span class="st">&#39;Sales&#39;</span>)  <span class="co"># simpan sebagai variabel sales</span></span>
+<span id="cb16-3"><a href="persiapan-data.html#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sales)                                                <span class="co"># print data</span></span>
+<span id="cb16-4"><a href="persiapan-data.html#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(sales)                                                 <span class="co"># memastikan tipe data frame</span></span></code></pre></div>
+<p><strong>Catatan:</strong> Jangan lupa install library/pakages <code>pandas</code> dengan cara <code>pip install pandas</code> dan <code>pip install openpyxl</code>.</p>
 <p>Adapun beberapa perbedaan antara bagaimana Python <code>(pandas)</code> merepresentasikan data vs apa yang kita lihat di Excel:</p>
 <ul>
 <li>Di Python, nomor baris dimulai dari 0 versus 1 di Excel.</li>
@@ -290,11 +291,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 </div>
-<div id="menyortir-data" class="section level3 hasAnchor" number="2.3.2">
-<h3><span class="header-section-number">2.3.2</span> Menyortir Data<a href="persiapan-data.html#menyortir-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Selanjutnya, cara menyortir atau mengurutkan data kita di Excel dan Python.</p>
+<div id="ekspor-simpan-data" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Ekspor (Simpan Data)<a href="persiapan-data.html#ekspor-simpan-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="excel-1" class="section level4 unnumbered hasAnchor">
 <h4>Excel<a href="persiapan-data.html#excel-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Untuk simpan data di Excel, kita bisa menggunakan toolbar File &gt; Save As &gt; dan simpan pada folder yang diinginkan.</p>
+</div>
+<div id="python-1" class="section level4 unnumbered hasAnchor">
+<h4>Python<a href="persiapan-data.html#python-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Jika kita ingin menyimpan data yang kita olah dengan Python, berikut adalah sintaknya:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="persiapan-data.html#cb17-1" aria-hidden="true" tabindex="-1"></a>sales.to_excel(<span class="st">&#39;data/sales.xlsx&#39;</span>, sheet_name<span class="op">=</span><span class="st">&#39;bebas&#39;</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="menyortir-data" class="section level3 hasAnchor" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> Menyortir Data<a href="persiapan-data.html#menyortir-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Selanjutnya, cara menyortir atau mengurutkan data kita di Excel dan Python.</p>
+<div id="excel-2" class="section level4 unnumbered hasAnchor">
+<h4>Excel<a href="persiapan-data.html#excel-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Untuk mengurutkan data berdasarkan kolom “Start Date”, adalah dengan cara:</p>
 <ol style="list-style-type: decimal">
 <li>Blok kolom “Start Date”</li>
@@ -305,18 +318,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <img src="https://github.com/sainzdata/Py_JNE/blob/main/images/sort.png?raw=true" width=800" height="400">
 </center>
 </div>
-<div id="python-1" class="section level4 unnumbered hasAnchor">
-<h4>Python<a href="persiapan-data.html#python-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="python-2" class="section level4 unnumbered hasAnchor">
+<h4>Python<a href="persiapan-data.html#python-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Dengan library pandas, menyortir data dapat diterapkan dengan menggunakan fungsi <code>DataFrame.sort_values()</code>. diperlihatkan sebagai berikut:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="persiapan-data.html#cb2-1" aria-hidden="true" tabindex="-1"></a>sales <span class="op">=</span> sales.sort_values(<span class="st">&quot;Start Date&quot;</span>,ascending<span class="op">=</span><span class="va">True</span>)      <span class="co"># mengurutkan data (a-z) </span></span>
-<span id="cb2-2"><a href="persiapan-data.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sales)                                                <span class="co"># print data               </span></span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="persiapan-data.html#cb18-1" aria-hidden="true" tabindex="-1"></a>sales <span class="op">=</span> sales.sort_values(<span class="st">&quot;Start Date&quot;</span>,ascending<span class="op">=</span><span class="va">True</span>)      <span class="co"># mengurutkan data (a-z) </span></span>
+<span id="cb18-2"><a href="persiapan-data.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sales)                                                <span class="co"># print data               </span></span></code></pre></div>
 </div>
 </div>
-<div id="penjumlahan-nilai-di-kolom" class="section level3 hasAnchor" number="2.3.3">
-<h3><span class="header-section-number">2.3.3</span> Penjumlahan Nilai di Kolom<a href="persiapan-data.html#penjumlahan-nilai-di-kolom" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="penjumlahan-nilai-di-kolom" class="section level3 hasAnchor" number="2.3.4">
+<h3><span class="header-section-number">2.3.4</span> Penjumlahan Nilai di Kolom<a href="persiapan-data.html#penjumlahan-nilai-di-kolom" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Tiga kolom terakhir dari data tersebut berisi nilai penjualan untuk tiga bulan pertama tahun ini, yang dikenal sebagai kuartal pertama. Andaikan kita ingin menjumlahkan nilai-nilai tersebut di Excel dan Python.</p>
-<div id="excel-2" class="section level4 unnumbered hasAnchor">
-<h4>Excel<a href="persiapan-data.html#excel-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="excel-3" class="section level4 unnumbered hasAnchor">
+<h4>Excel<a href="persiapan-data.html#excel-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Mari kita mulai dengan melihat bagaimana melakukan ini di Excel:</p>
 <ol style="list-style-type: decimal">
 <li>Masukkan nama kolom baru <code>Sales Q1</code> di sel <code>H1</code>.</li>
@@ -327,18 +340,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <img src="https://github.com/sainzdata/Py_JNE/blob/main/images/jumlahan_kolom.png?raw=true" width=800" height="400">
 </center>
 </div>
-<div id="python-2" class="section level4 unnumbered hasAnchor">
-<h4>Python<a href="persiapan-data.html#python-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="persiapan-data.html#cb3-1" aria-hidden="true" tabindex="-1"></a>q1_columns <span class="op">=</span> sales[[<span class="st">&quot;Sales January&quot;</span>, <span class="st">&quot;Sales February&quot;</span>, <span class="st">&quot;Sales March&quot;</span>]]</span>
-<span id="cb3-2"><a href="persiapan-data.html#cb3-2" aria-hidden="true" tabindex="-1"></a>sales[<span class="st">&quot;Sales Q1&quot;</span>] <span class="op">=</span> q1_columns.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb3-3"><a href="persiapan-data.html#cb3-3" aria-hidden="true" tabindex="-1"></a>sales</span></code></pre></div>
+<div id="python-3" class="section level4 unnumbered hasAnchor">
+<h4>Python<a href="persiapan-data.html#python-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="persiapan-data.html#cb19-1" aria-hidden="true" tabindex="-1"></a>q1_columns <span class="op">=</span> sales[[<span class="st">&quot;Sales January&quot;</span>, <span class="st">&quot;Sales February&quot;</span>, <span class="st">&quot;Sales March&quot;</span>]]</span>
+<span id="cb19-2"><a href="persiapan-data.html#cb19-2" aria-hidden="true" tabindex="-1"></a>sales[<span class="st">&quot;Sales Q1&quot;</span>] <span class="op">=</span> q1_columns.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb19-3"><a href="persiapan-data.html#cb19-3" aria-hidden="true" tabindex="-1"></a>sales</span></code></pre></div>
 </div>
 </div>
-<div id="join-data" class="section level3 hasAnchor" number="2.3.4">
-<h3><span class="header-section-number">2.3.4</span> Join Data<a href="persiapan-data.html#join-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="join-data" class="section level3 hasAnchor" number="2.3.5">
+<h3><span class="header-section-number">2.3.5</span> Join Data<a href="persiapan-data.html#join-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Menggabung data adalah hal lumrah dalam proses pengolahan data, sehingga kemampuan ini sangat penting untuk dipertimbangkan. Mari kita lihat cara menggabungkan data pada suatu kolom baru “Manager” di Excel dan Python.</p>
-<div id="excel-3" class="section level4 unnumbered hasAnchor">
-<h4>Excel<a href="persiapan-data.html#excel-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="excel-4" class="section level4 unnumbered hasAnchor">
+<h4>Excel<a href="persiapan-data.html#excel-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li><p>Mulai dengan menambahkan nama kolom ke sel I1.</p></li>
 <li><p>gunakan rumus VLOOKUP() di sel I2, dengan menetapkan:</p>
@@ -353,11 +366,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <img src="https://github.com/sainzdata/Py_JNE/blob/main/images/join_data.png?raw=true" width=800" height="400">
 </center>
 </div>
-<div id="python-3" class="section level4 unnumbered hasAnchor">
-<h4>Python<a href="persiapan-data.html#python-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="python-4" class="section level4 unnumbered hasAnchor">
+<h4>Python<a href="persiapan-data.html#python-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Untuk bekerja dengan data ini di Python, pertama-tama kita harus mengimpornya data lain yang ingin dihubungkan.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="persiapan-data.html#cb4-1" aria-hidden="true" tabindex="-1"></a>managers <span class="op">=</span> pd.read_csv(<span class="st">&#39;data/Managers.csv&#39;</span>,sep<span class="op">=</span><span class="st">&quot;;&quot;</span>)</span>
-<span id="cb4-2"><a href="persiapan-data.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(managers)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="persiapan-data.html#cb20-1" aria-hidden="true" tabindex="-1"></a>managers <span class="op">=</span> pd.read_csv(<span class="st">&#39;data/Managers.csv&#39;</span>,sep<span class="op">=</span><span class="st">&quot;;&quot;</span>)</span>
+<span id="cb20-2"><a href="persiapan-data.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(managers)</span></code></pre></div>
 <p>Untuk menggabungkan data <code>Managers</code> ke <code>Sales</code> menggunakan Python, kita akan menggunakan fungsi pandas.merge(). Dengan memberikan argumen berikut, dalam urutan:</p>
 <ul>
 <li><code>Sales</code>: nama kerangka data pertama, atau kiri, yang ingin kami gabungkan</li>
@@ -365,16 +378,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>how='left'</code>: metode yang ingin kita gunakan untuk menggabungkan data. Gabung kir ini adalah proses menyimpan semua baris dari kerangka data kiri (pertama).</li>
 <li><code>on='Department'</code>: Nama kolom di kedua kerangka data tempat kita akan bergabung.</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="persiapan-data.html#cb5-1" aria-hidden="true" tabindex="-1"></a>sales <span class="op">=</span> pd.merge(sales, managers, how<span class="op">=</span><span class="st">&#39;left&#39;</span>, on<span class="op">=</span><span class="st">&#39;Department&#39;</span>)</span>
-<span id="cb5-2"><a href="persiapan-data.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sales)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="persiapan-data.html#cb21-1" aria-hidden="true" tabindex="-1"></a>sales <span class="op">=</span> pd.merge(sales, managers, how<span class="op">=</span><span class="st">&#39;left&#39;</span>, on<span class="op">=</span><span class="st">&#39;Department&#39;</span>)</span>
+<span id="cb21-2"><a href="persiapan-data.html#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sales)</span></code></pre></div>
 <p><strong>Catatan:</strong> Jika ini tampaknya agak membingungkan pada awalnya, tidak apa-apa. Model untuk menggabungkan data dengan Python berbeda dengan yang digunakan di Excel, tetapi hal ini sangat powerfull. Perhatikan bahwa dalam Python kita dapat menentukan dengan tepat bagaimana kita menggabungkan data kita menggunakan sintaks dan nama kolom yang jelas.</p>
 </div>
 </div>
-<div id="kondisional-nilai" class="section level3 hasAnchor" number="2.3.5">
-<h3><span class="header-section-number">2.3.5</span> Kondisional Nilai<a href="persiapan-data.html#kondisional-nilai" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="kondisional-nilai" class="section level3 hasAnchor" number="2.3.6">
+<h3><span class="header-section-number">2.3.6</span> Kondisional Nilai<a href="persiapan-data.html#kondisional-nilai" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Jika kita melihat kolom <code>End Date</code>, kita dapat melihat ada nilai yang hilang masih bekerja tetapi sisanya telah pergi. Tugas kita selanjutnya adalah membuat kolom yang memberi tahu jika setiap tenaga <code>Sales</code> pada kolom <code>End Date</code>yang hilang (kosong) tersebut adalah karyawan yang masih aktif saat ini.</p>
-<div id="excel-4" class="section level4 unnumbered hasAnchor">
-<h4>Excel<a href="persiapan-data.html#excel-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="excel-5" class="section level4 unnumbered hasAnchor">
+<h4>Excel<a href="persiapan-data.html#excel-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Dimulai dengan Excel, untuk menambahkan kolom ini kita dapat:</p>
 <ul>
 <li>Menambahkan nama kolom baru ke sel <code>J1</code>.</li>
@@ -385,18 +398,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <img src="https://github.com/sainzdata/Py_JNE/blob/main/images/if_excel.png?raw=true" width=800" height="400">
 </center>
 </div>
-<div id="python-4" class="section level4 unnumbered hasAnchor">
-<h4>Python<a href="persiapan-data.html#python-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="python-5" class="section level4 unnumbered hasAnchor">
+<h4>Python<a href="persiapan-data.html#python-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Di Python, kita dapat menggunakan fungsi <code>pandas.isnull()</code> untuk memeriksa nilai nol di kolom <code>End Date</code>, dan menetapkan hasilnya ke kolom baru:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="persiapan-data.html#cb6-1" aria-hidden="true" tabindex="-1"></a>sales[<span class="st">&quot;Current Employee&quot;</span>] <span class="op">=</span> pd.isnull(sales[<span class="st">&#39;End Date&#39;</span>])</span>
-<span id="cb6-2"><a href="persiapan-data.html#cb6-2" aria-hidden="true" tabindex="-1"></a>sales</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="persiapan-data.html#cb22-1" aria-hidden="true" tabindex="-1"></a>sales[<span class="st">&quot;Current Employee&quot;</span>] <span class="op">=</span> pd.isnull(sales[<span class="st">&#39;End Date&#39;</span>])</span>
+<span id="cb22-2"><a href="persiapan-data.html#cb22-2" aria-hidden="true" tabindex="-1"></a>sales</span></code></pre></div>
 </div>
 </div>
-<div id="tabel-pivot" class="section level3 hasAnchor" number="2.3.6">
-<h3><span class="header-section-number">2.3.6</span> Tabel pivot<a href="persiapan-data.html#tabel-pivot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="tabel-pivot" class="section level3 hasAnchor" number="2.3.7">
+<h3><span class="header-section-number">2.3.7</span> Tabel pivot<a href="persiapan-data.html#tabel-pivot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Salah satu fitur Excel yang paling kuat adalah tabel pivot, yang memfasilitasi analisis data menggunakan agregasi. Kita akan melihat dua aplikasi tabel pivot yang berbeda di Excel dan Python.</p>
-<div id="excel-5" class="section level4 unnumbered hasAnchor">
-<h4>Excel<a href="persiapan-data.html#excel-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="excel-6" class="section level4 unnumbered hasAnchor">
+<h4>Excel<a href="persiapan-data.html#excel-6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Berikut ini diperlihatkan tabel pivot di Excel yang menghitung jumlah karyawan di setiap departemen:</p>
 <ul>
 <li>Blok data yang ingin dibutkan dalam tabel pivot</li>
@@ -408,25 +421,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <img src="https://github.com/sainzdata/Py_JNE/blob/main/images/pivot.png?raw=true" width=800" height="400">
 </center>
 </div>
-<div id="python-5" class="section level4 unnumbered hasAnchor">
-<h4>Python<a href="persiapan-data.html#python-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="python-6" class="section level4 unnumbered hasAnchor">
+<h4>Python<a href="persiapan-data.html#python-6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Mari kita gunakan metode Python untuk menghitung jumlah karyawan di setiap departemen:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="persiapan-data.html#cb7-1" aria-hidden="true" tabindex="-1"></a>sales[<span class="st">&#39;Department&#39;</span>].value_counts()</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="persiapan-data.html#cb23-1" aria-hidden="true" tabindex="-1"></a>sales[<span class="st">&#39;Department&#39;</span>].value_counts()</span></code></pre></div>
 <p>Contoh tabel pivot kedua juga digabungkan berdasarkan departemen, tetapi kali ini kita menghitung rata-rata Sales Q1: gunakan metode DataFrame.pivot_table(). Kita perlu menentukan beberapa argumen berikut:</p>
 <ul>
 <li><code>index</code>: kolom yang akan diagregasi.</li>
 <li><code>values</code>: kolom yang ingin kita gunakan nilainya.</li>
 <li><code>aggfunc</code>: fungsi agregasi yang ingin kita gunakan, dalam hal ini rata-rata <code>mean</code>.</li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="persiapan-data.html#cb8-1" aria-hidden="true" tabindex="-1"></a>sales.pivot_table(index<span class="op">=</span><span class="st">&#39;Department&#39;</span>, </span>
-<span id="cb8-2"><a href="persiapan-data.html#cb8-2" aria-hidden="true" tabindex="-1"></a>                  values<span class="op">=</span><span class="st">&#39;Sales Q1&#39;</span>, </span>
-<span id="cb8-3"><a href="persiapan-data.html#cb8-3" aria-hidden="true" tabindex="-1"></a>                  aggfunc<span class="op">=</span><span class="st">&#39;mean&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="persiapan-data.html#cb24-1" aria-hidden="true" tabindex="-1"></a>sales.pivot_table(index<span class="op">=</span><span class="st">&#39;Department&#39;</span>, </span>
+<span id="cb24-2"><a href="persiapan-data.html#cb24-2" aria-hidden="true" tabindex="-1"></a>                  values<span class="op">=</span><span class="st">&#39;Sales Q1&#39;</span>, </span>
+<span id="cb24-3"><a href="persiapan-data.html#cb24-3" aria-hidden="true" tabindex="-1"></a>                  aggfunc<span class="op">=</span><span class="st">&#39;mean&#39;</span>)</span></code></pre></div>
 <p><strong>Catatan:</strong> Silahkan mencoba fungsi agregasi lain seperti: sum, count, min, dan max.</p>
 <p>Cara lainnya,</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="persiapan-data.html#cb9-1" aria-hidden="true" tabindex="-1"></a>pd.pivot_table(data<span class="op">=</span>sales,</span>
-<span id="cb9-2"><a href="persiapan-data.html#cb9-2" aria-hidden="true" tabindex="-1"></a>               index<span class="op">=</span><span class="st">&#39;Department&#39;</span>, </span>
-<span id="cb9-3"><a href="persiapan-data.html#cb9-3" aria-hidden="true" tabindex="-1"></a>               values<span class="op">=</span><span class="st">&#39;Sales Q1&#39;</span>, </span>
-<span id="cb9-4"><a href="persiapan-data.html#cb9-4" aria-hidden="true" tabindex="-1"></a>               aggfunc<span class="op">=</span><span class="st">&#39;mean&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="persiapan-data.html#cb25-1" aria-hidden="true" tabindex="-1"></a>pd.pivot_table(data<span class="op">=</span>sales,</span>
+<span id="cb25-2"><a href="persiapan-data.html#cb25-2" aria-hidden="true" tabindex="-1"></a>               index<span class="op">=</span><span class="st">&#39;Department&#39;</span>, </span>
+<span id="cb25-3"><a href="persiapan-data.html#cb25-3" aria-hidden="true" tabindex="-1"></a>               values<span class="op">=</span><span class="st">&#39;Sales Q1&#39;</span>, </span>
+<span id="cb25-4"><a href="persiapan-data.html#cb25-4" aria-hidden="true" tabindex="-1"></a>               aggfunc<span class="op">=</span><span class="st">&#39;mean&#39;</span>)</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -449,32 +462,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="import-data" class="section level3 hasAnchor" number="2.5.1">
 <h3><span class="header-section-number">2.5.1</span> Import Data<a href="persiapan-data.html#import-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Install library yang dibutuhkan di Melalui CMD di Anacond <code>pip install xlrd</code>.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="persiapan-data.html#cb10-1" aria-hidden="true" tabindex="-1"></a>data_2020 <span class="op">=</span> pd.concat(pd.read_excel(<span class="st">&#39;data/Omset_202001_202012.xlsx&#39;</span>, </span>
-<span id="cb10-2"><a href="persiapan-data.html#cb10-2" aria-hidden="true" tabindex="-1"></a>                                    sheet_name<span class="op">=</span><span class="va">None</span>), </span>
-<span id="cb10-3"><a href="persiapan-data.html#cb10-3" aria-hidden="true" tabindex="-1"></a>                                    ignore_index<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb10-4"><a href="persiapan-data.html#cb10-4" aria-hidden="true" tabindex="-1"></a>data_2021 <span class="op">=</span> pd.concat(pd.read_excel(<span class="st">&#39;data/Omset_202101_202112.xlsx&#39;</span>, </span>
-<span id="cb10-5"><a href="persiapan-data.html#cb10-5" aria-hidden="true" tabindex="-1"></a>                                    sheet_name<span class="op">=</span><span class="va">None</span>), </span>
-<span id="cb10-6"><a href="persiapan-data.html#cb10-6" aria-hidden="true" tabindex="-1"></a>                                    ignore_index<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb10-7"><a href="persiapan-data.html#cb10-7" aria-hidden="true" tabindex="-1"></a>data_2022 <span class="op">=</span> pd.concat(pd.read_excel(<span class="st">&#39;data/Omset_202201_202207.xlsx&#39;</span>, </span>
-<span id="cb10-8"><a href="persiapan-data.html#cb10-8" aria-hidden="true" tabindex="-1"></a>                                    sheet_name<span class="op">=</span><span class="va">None</span>), </span>
-<span id="cb10-9"><a href="persiapan-data.html#cb10-9" aria-hidden="true" tabindex="-1"></a>                                    ignore_index<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb10-10"><a href="persiapan-data.html#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co"># gabungkan semua data</span></span>
-<span id="cb10-11"><a href="persiapan-data.html#cb10-11" aria-hidden="true" tabindex="-1"></a>all_data <span class="op">=</span> pd.concat([data_2020,data_2021,data_2022],ignore_index<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb10-12"><a href="persiapan-data.html#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(all_data)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="persiapan-data.html#cb26-1" aria-hidden="true" tabindex="-1"></a>data_2020 <span class="op">=</span> pd.concat(pd.read_excel(<span class="st">&#39;data/Omset_202001_202012.xlsx&#39;</span>, </span>
+<span id="cb26-2"><a href="persiapan-data.html#cb26-2" aria-hidden="true" tabindex="-1"></a>                                    sheet_name<span class="op">=</span><span class="va">None</span>), </span>
+<span id="cb26-3"><a href="persiapan-data.html#cb26-3" aria-hidden="true" tabindex="-1"></a>                                    ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb26-4"><a href="persiapan-data.html#cb26-4" aria-hidden="true" tabindex="-1"></a>data_2021 <span class="op">=</span> pd.concat(pd.read_excel(<span class="st">&#39;data/Omset_202101_202112.xlsx&#39;</span>, </span>
+<span id="cb26-5"><a href="persiapan-data.html#cb26-5" aria-hidden="true" tabindex="-1"></a>                                    sheet_name<span class="op">=</span><span class="va">None</span>), </span>
+<span id="cb26-6"><a href="persiapan-data.html#cb26-6" aria-hidden="true" tabindex="-1"></a>                                    ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb26-7"><a href="persiapan-data.html#cb26-7" aria-hidden="true" tabindex="-1"></a>data_2022 <span class="op">=</span> pd.concat(pd.read_excel(<span class="st">&#39;data/Omset_202201_202207.xlsx&#39;</span>, </span>
+<span id="cb26-8"><a href="persiapan-data.html#cb26-8" aria-hidden="true" tabindex="-1"></a>                                    sheet_name<span class="op">=</span><span class="va">None</span>), </span>
+<span id="cb26-9"><a href="persiapan-data.html#cb26-9" aria-hidden="true" tabindex="-1"></a>                                    ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb26-10"><a href="persiapan-data.html#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="co"># gabungkan semua data</span></span>
+<span id="cb26-11"><a href="persiapan-data.html#cb26-11" aria-hidden="true" tabindex="-1"></a>all_data <span class="op">=</span> pd.concat([data_2020,data_2021,data_2022],ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb26-12"><a href="persiapan-data.html#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(all_data)</span></code></pre></div>
 <p><strong>Catatan:</strong> Jika Anda melakukan penggabungan dengan Excel, hal yang paling mungkin anda lakukan seperti pada <a href="https://rpubs.com/yosia/appendinexcel">link ini</a> ditulis oleh Tim <strong>(Yosia)</strong>.</p>
 </div>
 <div id="format-tanggal" class="section level3 hasAnchor" number="2.5.2">
 <h3><span class="header-section-number">2.5.2</span> Format Tanggal<a href="persiapan-data.html#format-tanggal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Hal yang sangat krusial dalam hal analisis adalah data yang berhubungan dengan tanggal. Berikut ini adalah sintak yang dapat digunakan di Python:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="persiapan-data.html#cb11-1" aria-hidden="true" tabindex="-1"></a>all_data[<span class="st">&#39;PERIODE&#39;</span>] <span class="op">=</span> pd.to_datetime(all_data[<span class="st">&#39;PERIODE&#39;</span>], <span class="bu">format</span><span class="op">=</span><span class="st">&#39;%Y-%m-</span><span class="sc">%d</span><span class="st">&#39;</span>)</span>
-<span id="cb11-2"><a href="persiapan-data.html#cb11-2" aria-hidden="true" tabindex="-1"></a>all_data[<span class="st">&#39;PERIODE&#39;</span>] </span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="persiapan-data.html#cb27-1" aria-hidden="true" tabindex="-1"></a>all_data[<span class="st">&#39;PERIODE&#39;</span>] <span class="op">=</span> pd.to_datetime(all_data[<span class="st">&#39;PERIODE&#39;</span>], <span class="bu">format</span><span class="op">=</span><span class="st">&#39;%Y-%m-</span><span class="sc">%d</span><span class="st">&#39;</span>)</span>
+<span id="cb27-2"><a href="persiapan-data.html#cb27-2" aria-hidden="true" tabindex="-1"></a>all_data[<span class="st">&#39;PERIODE&#39;</span>] </span></code></pre></div>
 </div>
 <div id="ekstrak-kondisional-data" class="section level3 hasAnchor" number="2.5.3">
 <h3><span class="header-section-number">2.5.3</span> Ekstrak Kondisional Data<a href="persiapan-data.html#ekstrak-kondisional-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="persiapan-data.html#cb12-1" aria-hidden="true" tabindex="-1"></a>eks_data <span class="op">=</span> all_data[(all_data[<span class="st">&#39;PERIODE&#39;</span>] <span class="op">&gt;</span> <span class="st">&quot;2020-09-01&quot;</span>) <span class="op">&amp;</span> </span>
-<span id="cb12-2"><a href="persiapan-data.html#cb12-2" aria-hidden="true" tabindex="-1"></a>                    (all_data[<span class="st">&#39;PERIODE&#39;</span>] <span class="op">&lt;</span> <span class="st">&quot;2020-11-01&quot;</span>)]</span>
-<span id="cb12-3"><a href="persiapan-data.html#cb12-3" aria-hidden="true" tabindex="-1"></a>                    </span>
-<span id="cb12-4"><a href="persiapan-data.html#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(eks_data)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="persiapan-data.html#cb28-1" aria-hidden="true" tabindex="-1"></a>eks_data <span class="op">=</span> all_data[(all_data[<span class="st">&#39;PERIODE&#39;</span>] <span class="op">&gt;</span> <span class="st">&quot;2020-09-01&quot;</span>) <span class="op">&amp;</span> </span>
+<span id="cb28-2"><a href="persiapan-data.html#cb28-2" aria-hidden="true" tabindex="-1"></a>                    (all_data[<span class="st">&#39;PERIODE&#39;</span>] <span class="op">&lt;</span> <span class="st">&quot;2020-11-01&quot;</span>)]</span>
+<span id="cb28-3"><a href="persiapan-data.html#cb28-3" aria-hidden="true" tabindex="-1"></a>                    </span>
+<span id="cb28-4"><a href="persiapan-data.html#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(eks_data)</span></code></pre></div>
 </div>
 <div id="baris-pertama-tugas" class="section level3 hasAnchor" number="2.5.4">
 <h3><span class="header-section-number">2.5.4</span> 8 Baris Pertama (Tugas)<a href="persiapan-data.html#baris-pertama-tugas" class="anchor-section" aria-label="Anchor link to header"></a></h3>

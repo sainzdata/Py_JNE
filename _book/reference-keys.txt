@@ -30,6 +30,7 @@ tahapan-persiapan-data
 mengapa-python-vs-excel
 contoh-persiapan-data-1
 impor-data
+ekspor-simpan-data
 menyortir-data
 penjumlahan-nilai-di-kolom
 join-data
