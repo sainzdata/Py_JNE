@@ -1,0 +1,174 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "a0c79f58-89ca-4bfa-8f68-f6e56e933d62",
+   "metadata": {},
+   "source": [
+    "# Latihan 1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 49,
+   "id": "4a1efb23-0414-49bf-979e-0dae87c500d6",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Berat Kiriman: Kg  1\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Biaya Per kg: Rp 10000\n",
+      "pengiriman dapat dilakukan\n",
+      "charge 0\n",
+      "Total yang harus dibayar: Rp 10000\n"
+     ]
+    }
+   ],
+   "source": [
+    "# program untuk mengecek status dan biaya charge kiriman\n",
+    "\n",
+    "berat_kiriman = input(\"Berat Kiriman: Kg \")\n",
+    "\n",
+    "# jumlah yang harus dibayar adalah total berapa berat kirimannya\n",
+    "# tapi kalau terkena charge akan bertambah biaya pengirimannya\n",
+    "# jika berat kiriman melebihi batas maka gagal kirim\n",
+    "\n",
+    "bayar = berat_kiriman\n",
+    "# hitung biaya pengiriman\n",
+    "per_kg = 10000\n",
+    "bayar = int(berat_kiriman) * int(per_kg)\n",
+    "\n",
+    "# jika berat kurang dari 50kg maka pengiriman dapat dilakukan\n",
+    "# jika berat kiriman kiriman lebih besar sama dengan 50kg pengiriman dapat dilakukan akan tetapi dikenakan charge 500.000\n",
+    "# jika berat kiriman lebih besar dari 120kg maka gagal kirim\n",
+    "\n",
+    "if int(berat_kiriman) >120:\n",
+    "    charge = 0\n",
+    "    print(\"Biaya Per kg: Rp %s\" % per_kg)\n",
+    "    print(\"pengiriman tidak dapat dilakukan\")\n",
+    "    print(\"charge 0\")\n",
+    "    bayar = 0\n",
+    "    \n",
+    "elif int(berat_kiriman) >=50:\n",
+    "    charge = 500000\n",
+    "    print(\"Biaya Per kg: Rp %s\" % per_kg)\n",
+    "    print(\"pengiriman dapat dilakukan & dikenakan charge\")\n",
+    "    print(\"charge 500,000\")\n",
+    "    bayar = int(berat_kiriman) * int(per_kg) + int(charge)\n",
+    "\n",
+    "else:\n",
+    "    charge = 0\n",
+    "    print(\"Biaya Per kg: Rp %s\" % per_kg)\n",
+    "    print(\"pengiriman dapat dilakukan\")\n",
+    "    print(\"charge 0\")\n",
+    "    bayar = int(berat_kiriman) * int(per_kg) + int(charge)\n",
+    "          \n",
+    "\n",
+    "# cek status kiriman\n",
+    "print(\"Total yang harus dibayar: Rp %s\" % bayar)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f5db4db2-ee00-4175-8dae-f1fd90d746c7",
+   "metadata": {},
+   "source": [
+    "# Latihan 2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 60,
+   "id": "77a9ea83-90a1-4cfe-bbd1-73ab40171be2",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "grade: 3\n",
+      "Masukkan masa kerja: 6\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Dept head\n",
+      "Gaji anda Rp 15000000\n"
+     ]
+    }
+   ],
+   "source": [
+    "grade= int(input(\"grade:\"))\n",
+    "masakerja= int(input(\"Masukkan masa kerja:\"))\n",
+    "\n",
+    "if grade == 1 and masakerja <= 2:\n",
+    "    print (\"Staff\")\n",
+    "    print (\"Gaji anda Rp 3500000\")\n",
+    "elif grade == 1 and masakerja >2:\n",
+    "    print (\"Staff\")\n",
+    "    print (\"Gaji anda Rp 4000000\")    \n",
+    "elif grade == 2 and masakerja <= 3:\n",
+    "    print (\"head\")\n",
+    "    print (\"Gaji anda Rp 4500000\")\n",
+    "elif grade == 2 and masakerja >3:\n",
+    "    print (\"head\")\n",
+    "    print (\"Gaji anda Rp 5000000\")    \n",
+    "elif grade == 3 and masakerja <= 5:\n",
+    "    print (\"Dept head\")\n",
+    "    print (\"Gaji anda Rp 10000000\")\n",
+    "elif grade == 3 and masakerja >5:\n",
+    "    print (\"Dept head\")\n",
+    "    print (\"Gaji anda Rp 15000000\")\n",
+    "else:\n",
+    "    print (\"data anda tidak ditemukan\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "5ebcde36-7d5d-4604-8640-fc3bfca12502",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "dd04a1d6-53fd-489a-831a-f0d3b57aa193",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.12"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

@@ -1,0 +1,168 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "82ecf656-7ddc-4db7-b4e3-e5832c2f63cf",
+   "metadata": {},
+   "source": [
+    "# Soal Latihan 1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "d077b51c-5dc6-4ea7-b787-85447d69c9f7",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Total berat kiriman: 51\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Berat kiriman 51 Kg\n",
+      "Biaya yang harus dibayar Rp 510000\n",
+      "Kiriman anda dikenakan biaya charge Rp500.000\n",
+      "Total biaya pengiriman Rp 1010000\n",
+      "Terima kasih sudah mengirim paket melalui JNE\n",
+      "Sampai berjumpa Kembali\n"
+     ]
+    }
+   ],
+   "source": [
+    "# program untuk mengecek charge biaya pengiriman dan maximum tonase\n",
+    "# jumlah yang harus dibayar adalah berapa total berat kirimannya x tarif\n",
+    "# jika dia berat kiriman di bawah 50kg maka pengiriman dapat dilakukan\n",
+    "# tapi kalau lebih dari 50kg akan dikenakan charge 500rb\n",
+    "# tapi kalau lebih dari 120kg pengiriman tidak dapat dilakukan\n",
+    "\n",
+    "berat_kiriman = int(input(\"Total berat kiriman:\"))\n",
+    "\n",
+    "# biaya pengiriman\n",
+    "tarif = int(berat_kiriman) * 10000\n",
+    "charge = int(tarif) + 500000\n",
+    "                    \n",
+    "if berat_kiriman < 50 :\n",
+    "    print(\"Berat kiriman\" , berat_kiriman , \"Kg\")\n",
+    "    print(\"Pengiriman dapat dilakukan\")\n",
+    "    print(\"Biaya yang harus dibayar Rp\", tarif )\n",
+    "    print(\"Terima kasih sudah mengirim paket dengan JNE\")\n",
+    "    print(\"Sampai berjumpa Kembali\")\n",
+    "    \n",
+    "elif berat_kiriman >= 120 :\n",
+    "    print(\"Maaf, pengiriman anda tidak dapat dilakukan karena melebihi maximum tonase\")\n",
+    "    \n",
+    "elif berat_kiriman >= 50 :\n",
+    "    print(\"Berat kiriman\" , berat_kiriman , \"Kg\")\n",
+    "    print(\"Biaya yang harus dibayar Rp\", tarif)\n",
+    "    print(\"Kiriman anda dikenakan biaya charge Rp500.000\")\n",
+    "    print(\"Total biaya pengiriman Rp\", charge)\n",
+    "    print(\"Terima kasih sudah mengirim paket melalui JNE\")\n",
+    "    print(\"Sampai berjumpa Kembali\")\n",
+    "    \n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f511eff1-e759-409e-90ee-5793a2990f23",
+   "metadata": {},
+   "source": [
+    "# Soal Latihan 2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "04bc93fe-545f-490f-9945-62d29363e708",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Inputkan grade pegawai:  2\n",
+      "Inputkan masa kerja pegawai:  3\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Level jabatan : Head\n",
+      "Masa kerja 3 Tahun\n",
+      "Nominal gaji baru Rp4.500.000\n"
+     ]
+    }
+   ],
+   "source": [
+    "Grade = int(input(\"Inputkan grade pegawai: \"))\n",
+    "Masa_kerja = int(input(\"Inputkan masa kerja pegawai: \"))\n",
+    "\n",
+    "if Grade == 1:\n",
+    "    if Masa_kerja <=2:\n",
+    "        print(\"Level jabatan : Staff\")\n",
+    "        print(\"Masa kerja\", Masa_kerja , \"Tahun\")\n",
+    "        print(\"Nominal gaji baru Rp3.500.000\")\n",
+    "    elif Masa_kerja >=2:\n",
+    "        print(\"Level jabatan : Staff\")\n",
+    "        print(\"Masa kerja\", Masa_kerja , \"Tahun\")\n",
+    "        print(\"Nominal gaji baru Rp4.000.000\")\n",
+    "    \n",
+    "elif Grade == 2:\n",
+    "    if Masa_kerja <=3:\n",
+    "        print(\"Level jabatan : Head\")\n",
+    "        print(\"Masa kerja\", Masa_kerja , \"Tahun\")\n",
+    "        print(\"Nominal gaji baru Rp4.500.000\") \n",
+    "    \n",
+    "    elif Masa_kerja >=3:\n",
+    "        print(\"Level jabatan : Head\")\n",
+    "        print(\"Masa kerja\", Masa_kerja , \"Tahun\")\n",
+    "        print(\"Nominal gaji baru Rp5.000.000\")\n",
+    "\n",
+    "elif Grade == 3:\n",
+    "    if Masa_kerja <=5:\n",
+    "        print(\"Level jabatan : Dept Head\")\n",
+    "        print(\"Masa kerja\", Masa_kerja , \"Tahun\")\n",
+    "        print(\"Nominal gaji baru Rp10.000.000\")\n",
+    "    elif Masa_kerja >=5:\n",
+    "        print(\"Level jabatan : Dept Head\")\n",
+    "        print(\"Masa kerja\", Masa_kerja , \"Tahun\")\n",
+    "        print(\"Nominal gaji baru Rp15.000.000\")  \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b24780f2-e961-4e91-9c5d-353117b33caa",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.12"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

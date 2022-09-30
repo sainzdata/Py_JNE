@@ -1,0 +1,140 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "8f3d9aca-e3e6-408b-a053-d019672e2dbc",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Petugas : Wendi Bharata\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Berat kg: 50\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Biaya Per kg:Rp 10000\n",
+      "Ongkos kirim :Rp 500000\n",
+      "charge : Rp 500000\n",
+      "Total yang harus dibayar :Rp 1000000\n",
+      "Terima kasih\n"
+     ]
+    }
+   ],
+   "source": [
+    "print (\"Petugas : Wendi Bharata\")\n",
+    "berat=int(input(\"Berat kg:\"))\n",
+    "if berat>120:\n",
+    "       print (\"Mohon maaf, berat kiriman melebihi batas, sehingga tidak bisa dilakukan pengiriman\")\n",
+    "elif berat >=50:\n",
+    "    Biaya_Per_kg=int(10000)\n",
+    "    ongkos_kirim=int(berat)*Biaya_Per_kg\n",
+    "    charge=500000\n",
+    "    perhitungan=int(berat)*Biaya_Per_kg+charge\n",
+    "    print ('Biaya Per kg:Rp',Biaya_Per_kg)\n",
+    "    print ('Ongkos kirim :Rp',ongkos_kirim)\n",
+    "    print ('charge : Rp',charge)\n",
+    "    print ('Total yang harus dibayar :Rp',perhitungan)\n",
+    "    print ('Terima kasih')\n",
+    "else:\n",
+    "    Biaya_Per_kg=int(10000)\n",
+    "    ongkos_kirim=int(berat)*Biaya_Per_kg\n",
+    "    charge=0\n",
+    "    perhitungan=int(berat)*Biaya_Per_kg+charge\n",
+    "    print ('Biaya Per kg:Rp',Biaya_Per_kg)\n",
+    "    print ('Ongkos kirim :Rp',ongkos_kirim)\n",
+    "    print ('charge : Rp',charge)\n",
+    "    print ('Total yang harus dibayar :Rp',perhitungan)\n",
+    "    print ('Terima kasih')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "8ad29ddc-185e-49db-a5a5-e5402cc2bfa0",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Jabatan : staff\n",
+      "Masa Kerja: 2\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Grade :1\n",
+      "Gaji : Rp 3500000\n"
+     ]
+    }
+   ],
+   "source": [
+    "Jabatan=(input('Jabatan :'))\n",
+    "Masa_kerja=int(input('Masa Kerja:'))\n",
+    "if Jabatan==('staff') and Masa_kerja<=2:\n",
+    "    print('Grade :1')\n",
+    "    print('Gaji : Rp 3500000')\n",
+    "elif Jabatan==('staff') and Masa_kerja>=3:\n",
+    "    print('Grade :1')\n",
+    "    print('Gaji : Rp 4000000')\n",
+    "elif Jabatan==('head') and Masa_kerja<=2:\n",
+    "    print ('Grade :2')\n",
+    "    print('Gaji : Rp 4500000')\n",
+    "elif Jabatan==('head') and Masa_kerja>3:\n",
+    "    print('Grade :2')\n",
+    "    print('Gaji : Rp 5000000')\n",
+    "elif Jabatan==('dept head') and Masa_kerja<=5:\n",
+    "    print('Grade :3')\n",
+    "    print('Gaji : Rp 10000000')\n",
+    "elif Jabatan==('dept head') and Masa_kerja>5:\n",
+    "    print('Grade :3')\n",
+    "    print('Gaji : Rp 15000000')\n",
+    "else :\n",
+    "    print ('Data tidak ditemukan, silahkan periksa ulang data')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "7695f705-c36e-4472-9615-08f5e3588c29",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.12"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

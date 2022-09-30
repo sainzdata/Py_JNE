@@ -1,0 +1,133 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "collapsed_sections": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Tugas 2"
+      ],
+      "metadata": {
+        "id": "fJKJG7csJRkT"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 3,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "KuK87xLq8Yt5",
+        "outputId": "d560c23e-a469-4884-9d19-5bb85307b258"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Grade:3\n",
+            "Masa Kerja:6\n",
+            "Level anda adalah Dept Head\n",
+            "Gaji anda sebesar Rp 15000000\n"
+          ]
+        }
+      ],
+      "source": [
+        "grade= int(input(\"Grade:\"))\n",
+        "masakerja= int(input(\"Masa Kerja:\"))\n",
+        "\n",
+        "if grade ==1 and masakerja <=2:\n",
+        "  print (\"Level anda adalah Staff\")\n",
+        "  print (\"Gaji anda sebesar Rp 3500000\")\n",
+        "elif grade ==1 and masakerja >2:\n",
+        "  print (\"Level anda adalah Staff\")\n",
+        "  print (\"Gaji anda sebesar Rp 4000000\")\n",
+        "elif grade ==2 and masakerja <=3:\n",
+        "  print (\"Level anda adalah Head\")\n",
+        "  print (\"Gaji anda sebesar Rp 4500000\")\n",
+        "elif grade ==2 and masakerja >3:\n",
+        "  print (\"Level anda adalah Head\")\n",
+        "  print (\"Gaji anda sebesar Rp 5000000\")\n",
+        "elif grade ==3 and masakerja <=5:\n",
+        "  print (\"Level anda adalah Dept Head\")\n",
+        "  print (\"Gaji anda sebesar Rp 10000000\")\n",
+        "elif grade ==3 and masakerja >5:\n",
+        "  print (\"Level anda adalah Dept Head\")\n",
+        "  print (\"Gaji anda sebesar Rp 15000000\")\n",
+        "else:\n",
+        "  print (\"Data anda tidak ditemukan\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Tugas 1"
+      ],
+      "metadata": {
+        "id": "kVTuQk-AMd_4"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "berat_kiriman=input(\"Total Berat Kiriman:\")\n",
+        "biaya_kirim=10000\n",
+        "charge_kiriman=500000\n",
+        "\n",
+        "if int(berat_kiriman)>120:\n",
+        "  print(\"Tidak Dapat Dikirimkan\")\n",
+        "  bayar=0\n",
+        "\n",
+        "elif int(berat_kiriman)>=50:\n",
+        "  print(\"Dikenakan Charge Rp 500,000\")\n",
+        "  bayar=int(berat_kiriman)*biaya_kirim+charge_kiriman\n",
+        "\n",
+        "else:\n",
+        "  print(\"Dapat Dikirimkan\")\n",
+        "  bayar=int(berat_kiriman)*biaya_kirim\n",
+        "\n",
+        "print(\"Total yang harus dibayarkan: Rp\", bayar)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "fdrebWQ_Mg1q",
+        "outputId": "818773e4-9a5b-4962-bf0c-f9e9feca10e9"
+      },
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Total Berat Kiriman:50\n",
+            "Dikenakan Charge Rp 500,000\n",
+            "Total yang harus dibayarkan: Rp 1000000\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "IhgqVG_4JEVc"
+      }
+    }
+  ]
+}

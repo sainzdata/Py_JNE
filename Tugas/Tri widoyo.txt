@@ -1,0 +1,167 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "id": "800afb9f-76e5-4693-8e8f-4490d7e98160",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Latihan 1\n",
+      "Tri Widoyo\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "berat_paket: kg 10\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Biaya Per kg: Rp 10000\n",
+      "pengantaran dapat dilakukan\n",
+      "charge = 0\n",
+      "Total biaya kirim: Rp 100000\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"Latihan 1\")\n",
+    "print(\"Tri Widoyo\")\n",
+    "\n",
+    "# program berat kiriman\n",
+    "berat =int( input(\"berat_paket: kg\")) \n",
+    "\n",
+    "#program ongkos kirim\n",
+    "bayar = berat\n",
+    "# hitung biaya kirim\n",
+    "per_kg = 10000\n",
+    "bayar =berat * int (per_kg)\n",
+    "\n",
+    "if berat>= 120:\n",
+    "    charge = 0\n",
+    "    print(\"Biaya Per kg: Rp %s\" % per_kg)\n",
+    "    print(\"pengantaran tidak dapat dilakukan\")\n",
+    "    print(\"charge = 0\")\n",
+    "    bayar = 0\n",
+    "    \n",
+    "elif berat>= 50:\n",
+    "    charge = 500000\n",
+    "    print(\"Biaya Per kg: Rp %s\" % per_kg)\n",
+    "    print(\"pengantaran dapat dilakukan & kena charge\")\n",
+    "    print(\"charge 500000\")\n",
+    "    bayar = berat * int (per_kg) + charge\n",
+    "          \n",
+    "else:           \n",
+    "     charge = 0\n",
+    "     print(\"Biaya Per kg: Rp %s\" % per_kg) \n",
+    "     print(\"pengantaran dapat dilakukan\")\n",
+    "     print(\"charge = 0\")\n",
+    "     bayar = berat * int (per_kg) + charge\n",
+    "          \n",
+    "print(\"Total biaya kirim: Rp %s\" % bayar) \n",
+    "           \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 52,
+   "id": "7b6422b1-c9d2-4175-85e9-899135f5b4e2",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Latihan 2\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "grade: 1\n",
+      "masa kerja: 2\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "staff\n",
+      "mendapat gaji Rp 3500000\n"
+     ]
+    }
+   ],
+   "source": [
+    "print (\"Latihan 2\")\n",
+    "\n",
+    "grade = int(input(\"grade:\"))\n",
+    "masa_kerja = int(input(\"masa kerja:\"))\n",
+    "                \n",
+    "if grade == 1 and masa_kerja <= 2:\n",
+    "            print (\"staff\")\n",
+    "            print (\"mendapat gaji Rp 3500000\")\n",
+    "                \n",
+    "elif grade == 1 and masa_kerja >2:\n",
+    "            print (\"staff\")\n",
+    "            print (\"mendapat gaji Rp 400000\")\n",
+    "                       \n",
+    "elif grade == 2 and masa_kerja <= 3:\n",
+    "            print (\"head\")\n",
+    "            print (\"mendapat gaji Rp 4500000\")\n",
+    "                       \n",
+    "elif grade == 2 and masa_kerja > 3:\n",
+    "            print (\"head\")\n",
+    "            print (\"mendapat gaji Rp 5000000\")\n",
+    "                              \n",
+    "elif grade == 3 and masa_kerja <= 5:\n",
+    "            print (\"dept head\")\n",
+    "            print (\"mendapat gaji 10000000\")\n",
+    "                              \n",
+    "elif grade == 3 and masa_kerja > 5:\n",
+    "            print (\"dept head\")\n",
+    "            print (\"mendapat gaji 15000000\")\n",
+    "\n",
+    "else:\n",
+    "    print (\"data tidak ditemukan\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3c1f9c91-f97a-4f05-9806-b9b48ba594f9",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.13"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
