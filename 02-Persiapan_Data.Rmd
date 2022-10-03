@@ -34,7 +34,7 @@ Untuk memperjelas pembahasan mengenai penggunaan Python dibanding Excel diatas, 
 
 ### Impor Data 
 
-Andaikan [DP2.xlsx](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fsainzdata%2FPy_JNE%2Fmain%2Fdata%2FDP2.xlsx&wdOrigin=BROWSELINK) dan [Manager.csv](https://raw.githubusercontent.com/sainzdata/Py_JNE/main/data/Manager.csv) adalah data yang akan dianalisis, proses impor dan membacanya di Python dan Excel sangatlah berbeda. 
+Andaikan [DP2.xlsx](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fsainzdata%2FPy_JNE%2Fmain%2Fdata%2FDP2.xlsx&wdOrigin=BROWSELINK) dan [Manager.csv](https://raw.githubusercontent.com/sainzdata/Py_JNE/main/data/Managers.csv) adalah data yang akan dianalisis, proses impor dan membacanya di Python dan Excel sangatlah berbeda. 
 
 #### Excel {-}
 
@@ -56,7 +56,7 @@ print(sales)                                                # print data
 type(sales)                                                 # memastikan tipe data frame
 ```
 
-**Catatan:** Jangan lupa install library/pakages `pandas` dengan cara `pip install pandas`.
+**Catatan:** Jangan lupa install library yang dibutuhkan dengan cara `pip install pandas` dan `pip install openpyxl`.
 
 Adapun beberapa perbedaan antara bagaimana Python `(pandas)` merepresentasikan data vs apa yang kita lihat di Excel:
 
@@ -64,6 +64,21 @@ Adapun beberapa perbedaan antara bagaimana Python `(pandas)` merepresentasikan d
 * Nama kolom dalam Python diambil dari data, versus Excel di mana kolom diberi label menggunakan huruf.
 * Jika ada nilai yang hilang dalam data asli, Python memiliki placeholder `NaN` yang menunjukkan bahwa nilai tersebut tidak ada atau nol.
 * Data penjualan memiliki titik desimal yang ditambahkan ke setiap nilai karena Python menyimpan nilai numerik yang menyertakan nilai null `(NaN)` sebagai tipe numerik yang dikenal sebagai float.
+
+### Ekspor (Simpan Data)
+
+#### Excel {-}
+
+Untuk simpan data di Excel, kita bisa menggunakan toolbar File > Save As > dan simpan pada folder yang diinginkan.
+
+#### Python {-}
+
+Jika kita ingin menyimpan data yang kita olah dengan Python, berikut adalah sintaknya:
+
+```{python eval=F}
+sales.to_excel('data/sales.xlsx', sheet_name='bebas')
+```
+
 
 ### Menyortir Data
 
