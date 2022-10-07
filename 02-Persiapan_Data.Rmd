@@ -293,6 +293,34 @@ all_data['PERIODE'] = pd.to_datetime(all_data['PERIODE'], format='%Y-%m-%d')
 all_data['PERIODE'] 
 ```
 
+
+### Rename Variabel
+
+Saat menganalisis data, terkadang kita perlu melakukan penggantian nama kolom untuk memudahkan pemahaman atribut tersebut.
+
+```{python}
+list(all_data.columns)
+sorted(all_data)
+```
+
+
+
+```{python, eval=F}
+data.columns = ['Periode', 'Regional', 'Branch_Id', 
+                'BRANCH_NAME', 'SERVICES_CODE', 'ZONE_DESTINATION',                 'JUMLAH_AWB', 'JUMLAH_WEIGHT', 'JUMLAH_CASH',                       'JUMLAH_CREDIT', 'JUMLAH_COD', 'JUMLAH_EPAY',                       'TOTAL_OMZET']
+```
+
+
+### Ekspor Data
+
+Jika data yang sudah dipersiapkan dengan baik dan dianggap sudah layak untuk dilanjukan ke tahap analisis dasar seperti menggukan Visualisasi maka data tersebut dapat disimpan.
+
+```{python, eval=F}
+all_data.to_excel('data/all_data.xlsx', sheet_name='omset',index=False)
+```
+
+
+
 ### Ekstrak Kondisional Data
 
 ```{python eval=F}

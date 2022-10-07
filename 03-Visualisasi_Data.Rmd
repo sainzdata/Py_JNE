@@ -1,5 +1,11 @@
 # Visualisasi Data
 
-Materi masih dalam proses pengembangan oleh Tim
+## Import Data
+
+```{python}
+data = pd.read_excel('data/Omset_202001_202012.xlsx')   # import data 
+print(data)
+```
+
 
 
