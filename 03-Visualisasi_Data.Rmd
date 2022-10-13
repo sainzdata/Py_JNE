@@ -148,9 +148,8 @@ df.reset_index(inplace=True)
 df["TOTAL_OMZET"] = (df['TOTAL_OMZET']/1000000000)
 
 # membuat grafik lingkaran (pie-chart)
-fig = px.pie(df, values='TOTAL_OMZET', names='REGION', hole=0.5,
-             hover_data=['REGION'], 
-             labels={'REGION':'Omset Regional'})
+fig = px.pie(df, values='TOTAL_OMZET', names='REGION', hole=0.5, 
+             labels={'TOTAL_OMZET':'Total Omset','REGION':'Regional'})
 
 # Pengaturan detail grafik
 fig.update_layout(showlegend=True,
@@ -164,8 +163,117 @@ fig.update_traces(textposition='inside', textinfo='percent+label');
 fig.show()
 ```
 
-Grafik tersebut diatas juga dapat dilengkapi dengan informasi lain, seperti halnya varibel jumlah total resi pengiriman atau Airway Bill (AWB). Berikut ini script yang digunakan dalam Python:
+Grafik tersebut diatas juga dapat dilengkapi dengan informasi lain, seperti halnya varibel total timbangan barang terkirim. Berikut ini script yang digunakan dalam Python:
 
+```{python}
+import plotly.express as px
+
+# Tabel Pivot untuk menghitung jumlah omzet berdasarkan Region
+df=pd.pivot_table(data,index=['REGION'], values=['TOTAL_OMZET','JUMLAH_WEIGHT'], aggfunc='sum')
+
+# Komfersi indeks menjadi Kolom
+df.reset_index(inplace=True)
+
+# Konversi Total omset menjadi per-miliar 
+df["TOTAL_OMZET"] = (df['TOTAL_OMZET']/1000000000)
+
+# membuat grafik lingkaran (pie-chart)
+fig = px.pie(df, values='TOTAL_OMZET', names='REGION', hole=0.5,
+             hover_data=['JUMLAH_WEIGHT'], 
+             labels={'TOTAL_OMZET':'Total Omset',
+                     'REGION':'Regional', 
+                     'JUMLAH_WEIGHT':'Timbangan Barang (KG)'})
+
+# Pengaturan detail grafik
+fig.update_layout(showlegend=True,
+                  autosize=False,
+                  width=800,
+                  height=600,
+                  title="Total Omset Berdasarkan Regional Per-miliar Rupiah dan Timbangan Barang Terkirim");
+
+fig.update_traces(textposition='inside', textinfo='percent+label');
+
+fig.show()
+```
+
+## Bar-Chart
+
+Bar chart (Diagram batang) merupakan salah satu bentuk grafik yang digunakan untuk membandingkan data antar variabel dan melihat frekuensi atau besaran dari variabel tersebut. Berikut ini diperlihatkan contoh grafik untuk memperlihatkan **total pendapatan (omset) berdasarkan regional pelayanan JNE**.
+
+```{python}
+# Tabel Pivot untuk menghitung jumlah omzet berdasarkan Region
+df=pd.pivot_table(data,index=['REGION'], values='TOTAL_OMZET', aggfunc='sum')
+
+# Komfersi indeks menjadi Kolom
+df.reset_index(inplace=True)
+
+# Urutkan data dari yang besar ke kecil
+df=df.sort_values("TOTAL_OMZET",ascending=False)
+
+# Konversi Total omset menjadi per-miliar 
+df["TOTAL_OMZET"] = (df['TOTAL_OMZET']/1000000000)
+
+# impor library yg dibutuhkan untuk visualisasi
+import plotly.express as px
+
+# membuat grafik batang (bar-chart)
+fig = px.bar(df, x='REGION', y='TOTAL_OMZET',color='REGION', text_auto='.2s')
+
+# Pengaturan detail grafik
+fig.update_layout(barmode='stack',
+                  showlegend=False,
+                  title="Total Omset Berdasarkan Region",
+                  xaxis_title="Regional",
+                  yaxis_title="Per-miliar (Rp)");
+
+# Pengaturan rotasi axis x (+-360 derajat)
+fig.update_xaxes(tickangle=-45);
+
+# Menghapus label di axis y
+fig.update_yaxes(showticklabels=False);
+
+# Pengaturan posisi, ukuran, dan rotasi teks
+fig.update_traces(textfont_size=12, textangle=0, textposition="outside");
+
+fig.show()
+```
+
+Dengan konsep yang sama, berikut ini diperlihatkan contoh grafik untuk memperlihatkan **total pendapatan (omset) berdasarkan produk pelayanan JNE**.
+
+```{python}
+# Tabel Pivot untuk menghitung jumlah omzet berdasarkan Region
+df=pd.pivot_table(data,index=['SERVICES_CODE'], values='TOTAL_OMZET', aggfunc='sum')
+
+# Komfersi indeks menjadi Kolom
+df.reset_index(inplace=True)
+
+# Urutkan data dari yang besar ke kecil
+df=df.sort_values("TOTAL_OMZET",ascending=False).head(10)
+
+# Konversi Total omset menjadi per-miliar 
+df["TOTAL_OMZET"] = (df['TOTAL_OMZET']/1000000000)
+
+# impor library yg dibutuhkan untuk visualisasi
+import plotly.express as px
+
+# membuat grafik batang (bar-chart)
+fig = px.bar(df, y='SERVICES_CODE', x='TOTAL_OMZET',color='SERVICES_CODE', text_auto='.2s')
+
+# Pengaturan detail grafik
+fig.update_layout(barmode='stack',
+                  showlegend=False,
+                  title="Total Omset Berdasarkan Produk Pengirimannya",
+                  xaxis_title="Per-miliar (Rp)",
+                  yaxis_title="Pruduk")
+
+# Pengaturan rotasi axis x (+-360 derajat)
+fig.update_xaxes(tickangle=0, showticklabels=False)
+
+# Pengaturan posisi, ukuran, dan rotasi teks
+fig.update_traces(textfont_size=12, textangle=0, textposition="outside")
+
+fig.show()
+```
 
 
 Pada sesi ini digunakan paket open source yang sangat banyak digunakan dalam proses data analitics, yaitu Plotly. Paket Plotly adalah program yang untuk visualisasi data interaktif yang dapat digunakan di Python, R, Julia, Javascript, ggplot2, F#, MATLAB®, dan Dash. Untuk menginstall paket ini di komputer anda, silahkan gunakan `pip install plotly` melalui environtment Python.

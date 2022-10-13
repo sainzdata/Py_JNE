@@ -62,3 +62,4 @@ perbaharui-data
 statistik-dasar
 tabel-pivot-2
 pie-chart
+bar-chart
