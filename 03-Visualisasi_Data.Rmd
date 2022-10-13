@@ -139,7 +139,7 @@ Berikut ini deperlihatkan grafik lingkaran untuk memperlihatkan Total Omset yang
 import plotly.express as px
 
 # Tabel Pivot untuk menghitung jumlah omzet berdasarkan Region
-df=pd.pivot_table(data,index=['REGION'], values='TOTAL_OMZET', aggfunc='sum')
+df=pd.pivot_table(data,index=['REGION'], values=['TOTAL_OMZET'], aggfunc='sum')
 
 # Komfersi indeks menjadi Kolom
 df.reset_index(inplace=True)
@@ -149,11 +149,23 @@ df["TOTAL_OMZET"] = (df['TOTAL_OMZET']/1000000000)
 
 # membuat grafik lingkaran (pie-chart)
 fig = px.pie(df, values='TOTAL_OMZET', names='REGION', hole=0.5,
-             title='Total Omset Berdasarkan Regional Per-miliar Rupiah',
-             hover_data=['REGION'], labels={'REGION':'Omset Regional'})
-fig.update_traces(textposition='inside', textinfo='percent+label')
-# fig.show()
+             hover_data=['REGION'], 
+             labels={'REGION':'Omset Regional'})
+
+# Pengaturan detail grafik
+fig.update_layout(showlegend=True,
+                  autosize=False,
+                  width=800,
+                  height=600,
+                  title="Total Omset Berdasarkan Regional Per-miliar Rupiah");
+
+fig.update_traces(textposition='inside', textinfo='percent+label');
+
+fig.show()
 ```
+
+Grafik tersebut diatas juga dapat dilengkapi dengan informasi lain, seperti halnya varibel jumlah total resi pengiriman atau Airway Bill (AWB). Berikut ini script yang digunakan dalam Python:
+
 
 
 Pada sesi ini digunakan paket open source yang sangat banyak digunakan dalam proses data analitics, yaitu Plotly. Paket Plotly adalah program yang untuk visualisasi data interaktif yang dapat digunakan di Python, R, Julia, Javascript, ggplot2, F#, MATLAB®, dan Dash. Untuk menginstall paket ini di komputer anda, silahkan gunakan `pip install plotly` melalui environtment Python.
