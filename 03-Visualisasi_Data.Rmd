@@ -1,6 +1,6 @@
 # Visualisasi Data
 
-Visualisasi data adalah proses mempresentasikan data terstruktur maupun tidak terstruktur melalui grafik untuk mengkomunikasikan informasi secara lebih efisien dan mudah dimengerti. Pada bagian ini, diasumsikan anda sudah melakukan persiapan data dan impor data sebelum divisualisasikan. Langkah selanjutnya, adalah mengetahui informasi dasar mengenai dataset:
+Visualisasi data adalah proses mempresentasikan data terstruktur maupun tidak terstruktur melalui grafik untuk mengkomunikasikan informasi secara lebih efisien dan mudah dimengerti. Ada banyak library visualisasi data di Python, seperti; [pandas](https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html#visualization-barplot), [matplotlib](https://matplotlib.org/stable/gallery/index.html), dan [seaborn](https://seaborn.pydata.org/examples/index.html). Dalam pelatihan ini, menggunakan library visualisasi terbaik dan interaktif yang juga dapat diterapkan diberbagai bahasa pemrograman termasuk Python yaitu: [Plotly](https://plotly.com/graphing-libraries/). Pada bagian ini, diasumsikan anda sudah melakukan persiapan data dan impor data sebelum divisualisasikan. Langkah selanjutnya, adalah mengetahui informasi dasar mengenai dataset:
 
 ## Import Data
 
@@ -189,7 +189,7 @@ fig.update_layout(showlegend=True,
                   autosize=False,
                   width=800,
                   height=600,
-                  title="Total Omset Berdasarkan Regional Per-miliar Rupiah dan Timbangan Barang Terkirim");
+                  title="Omset Berdasarkan Regional Per-miliar Rupiah dan Timbangan Barang");
 
 fig.update_traces(textposition='inside', textinfo='percent+label');
 
@@ -200,7 +200,7 @@ fig.show()
 
 Bar chart (Diagram batang) merupakan salah satu bentuk grafik yang digunakan untuk membandingkan data antar variabel dan melihat frekuensi atau besaran dari variabel tersebut. Berikut ini diperlihatkan contoh grafik untuk memperlihatkan **total pendapatan (omset) berdasarkan regional pelayanan JNE**.
 
-```{python}
+```{python, eval=F}
 # Tabel Pivot untuk menghitung jumlah omzet berdasarkan Region
 df=pd.pivot_table(data,index=['REGION'], values='TOTAL_OMZET', aggfunc='sum')
 
@@ -222,6 +222,49 @@ fig = px.bar(df, x='REGION', y='TOTAL_OMZET',color='REGION', text_auto='.2s')
 # Pengaturan detail grafik
 fig.update_layout(barmode='stack',
                   showlegend=False,
+                  autosize=False,
+                  width=800,
+                  height=600,
+                  title="Total Omset Berdasarkan Region",
+                  xaxis_title="Regional",
+                  yaxis_title="Per-miliar (Rp)")
+
+# Pengaturan rotasi axis x (+-360 derajat)
+fig.update_xaxes(tickangle=-45)
+
+# Menghapus label di axis y
+fig.update_yaxes(showticklabels=False)
+
+# Pengaturan posisi, ukuran, dan rotasi teks
+fig.update_traces(textfont_size=12, textangle=0, textposition="outside")
+```
+
+
+```{python include=FALSE}
+# Tabel Pivot untuk menghitung jumlah omzet berdasarkan Region
+df=pd.pivot_table(data,index=['REGION'], values='TOTAL_OMZET', aggfunc='sum')
+
+# Komfersi indeks menjadi Kolom
+df.reset_index(inplace=True)
+
+# Urutkan data dari yang besar ke kecil
+df=df.sort_values("TOTAL_OMZET",ascending=False)
+
+# Konversi Total omset menjadi per-miliar 
+df["TOTAL_OMZET"] = (df['TOTAL_OMZET']/1000000000)
+
+# impor library yg dibutuhkan untuk visualisasi
+import plotly.express as px
+
+# membuat grafik batang (bar-chart)
+fig = px.bar(df, x='REGION', y='TOTAL_OMZET',color='REGION', text_auto='.2s')
+
+# Pengaturan detail grafik
+fig.update_layout(barmode='stack',
+                  showlegend=False,
+                  autosize=False,
+                  width=800,
+                  height=600,
                   title="Total Omset Berdasarkan Region",
                   xaxis_title="Regional",
                   yaxis_title="Per-miliar (Rp)");
@@ -234,13 +277,15 @@ fig.update_yaxes(showticklabels=False);
 
 # Pengaturan posisi, ukuran, dan rotasi teks
 fig.update_traces(textfont_size=12, textangle=0, textposition="outside");
+```
 
+```{python echo=FALSE}
 fig.show()
 ```
 
 Dengan konsep yang sama, berikut ini diperlihatkan contoh grafik untuk memperlihatkan **total pendapatan (omset) berdasarkan produk pelayanan JNE**.
 
-```{python}
+```{python, eval=F}
 # Tabel Pivot untuk menghitung jumlah omzet berdasarkan Region
 df=pd.pivot_table(data,index=['SERVICES_CODE'], values='TOTAL_OMZET', aggfunc='sum')
 
@@ -262,6 +307,9 @@ fig = px.bar(df, y='SERVICES_CODE', x='TOTAL_OMZET',color='SERVICES_CODE', text_
 # Pengaturan detail grafik
 fig.update_layout(barmode='stack',
                   showlegend=False,
+                  autosize=False,
+                  width=800,
+                  height=600,
                   title="Total Omset Berdasarkan Produk Pengirimannya",
                   xaxis_title="Per-miliar (Rp)",
                   yaxis_title="Pruduk")
@@ -271,7 +319,45 @@ fig.update_xaxes(tickangle=0, showticklabels=False)
 
 # Pengaturan posisi, ukuran, dan rotasi teks
 fig.update_traces(textfont_size=12, textangle=0, textposition="outside")
+```
 
+```{python include=FALSE}
+# Tabel Pivot untuk menghitung jumlah omzet berdasarkan Region
+df=pd.pivot_table(data,index=['SERVICES_CODE'], values='TOTAL_OMZET', aggfunc='sum')
+
+# Komfersi indeks menjadi Kolom
+df.reset_index(inplace=True)
+
+# Urutkan data dari yang besar ke kecil
+df=df.sort_values("TOTAL_OMZET",ascending=False).head(10)
+
+# Konversi Total omset menjadi per-miliar 
+df["TOTAL_OMZET"] = (df['TOTAL_OMZET']/1000000000)
+
+# impor library yg dibutuhkan untuk visualisasi
+import plotly.express as px
+
+# membuat grafik batang (bar-chart)
+fig = px.bar(df, y='SERVICES_CODE', x='TOTAL_OMZET',color='SERVICES_CODE', text_auto='.2s')
+
+# Pengaturan detail grafik
+fig.update_layout(barmode='stack',
+                  showlegend=False,
+                  autosize=False,
+                  width=800,
+                  height=600,
+                  title="Total Omset Berdasarkan Produk Pengirimannya",
+                  xaxis_title="Per-miliar (Rp)",
+                  yaxis_title="Pruduk")
+
+# Pengaturan rotasi axis x (+-360 derajat)
+fig.update_xaxes(tickangle=0, showticklabels=False)
+
+# Pengaturan posisi, ukuran, dan rotasi teks
+fig.update_traces(textfont_size=12, textangle=0, textposition="outside")
+```
+
+```{python echo=FALSE}
 fig.show()
 ```
 

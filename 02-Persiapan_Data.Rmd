@@ -219,7 +219,7 @@ Berikut ini diperlihatkan tabel pivot di Excel yang menghitung jumlah karyawan d
 
 Mari kita gunakan metode Python untuk menghitung jumlah karyawan di setiap departemen:
 
-```{python eval=F}
+```{python}
 sales['Department'].value_counts()
 ```
 
