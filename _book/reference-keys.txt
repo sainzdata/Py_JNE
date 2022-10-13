@@ -63,3 +63,5 @@ statistik-dasar
 tabel-pivot-2
 pie-chart
 bar-chart
+quiz-1
+quiz-2-2

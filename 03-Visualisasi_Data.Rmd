@@ -56,7 +56,15 @@ Selain cara diatas, berikut ini juga dapat digunakan untuk mengisi maupun memper
 edh6=data.fillna(data.mode().iloc[0])          # data data hilang dengan median() dan mean()
 ```
 
-**Catatan:** Apabila data yang hilang berhubungan dengan time series analisis atau regresi makan akan digunakan pembaharuan data dengan interpolasi (bagian ini akan dibahas pada visualisasi data (line chart))
+### Quiz 1 {-} 
+
+> Apa yang terjadi jika anda mengisi data yang hilang tersebut dengan dengan median() dan mean()? jelaskan!
+
+### Quiz 2  {2}
+
+> Bagaimana cara untuk memastikan apakah masih ada data yang hilang (data tidak lengkap) di `edh6` ?
+
+**Catatan:** Apabila data yang hilang berhubungan dengan analisis time series atau regresi makan akan digunakan pembaharuan data dengan interpolasi (bagian ini akan dibahas pada visualisasi data (line chart))
 
 
 ## Statistik Dasar
@@ -67,6 +75,10 @@ Selanjutnya, mengetahui informasi statistik dasar mengenai data tersebut. Dapat 
 data.describe()                              # informasi statistik dasar (data numerik saja)
 ```
 
+### Quiz 3 {-}
+
+> Berdasarkan deskripsi statistik dasar di atas, apakah anda dapat menemukan informasi yang ganjil (janggal)? Jika iya, berikan penjelasan anda?
+
 Hasil statistik dasar diatas, hanya memperlihatkan data numerik saja. Lalu bagaimana dengan data kategori yang ada pada dataset tersebut? Gunakan script sebagai berikut:
 
 ```{python}
@@ -74,6 +86,10 @@ Hasil statistik dasar diatas, hanya memperlihatkan data numerik saja. Lalu bagai
 kategori = data.select_dtypes(include='object')
 kategori.describe().transpose()
 ```
+
+### Quiz 4 {-}
+
+> Perhatikan deskriptif statistik data kategorikal diatas dan diskusikan dengan Tim Anda apakah informasi penting yang di temukan? 
 
 ## Tabel Pivot
 
@@ -103,6 +119,10 @@ df=df.sort_values(['TOTAL_OMZET','JUMLAH_WEIGHT'],ascending=True)
 print(df)
 ```
 
+### Quiz 5 {-}
+
+> Buatlah script menggunakan Python untuk menyimpan data dari hasil tabel pivot di atas!
+
 Hasil dari Tabel Pivot diatas dapat diperlihatkan secara visual, perhatikan tabel berikut:
 
 ```{python}
@@ -120,6 +140,10 @@ fig = go.Figure(data = [go.Table(
 
 fig.show()
 ```
+
+### Quiz 6 {-}
+
+> Andaikan Anda sebagai tim Audit melakukan ananlisa terhadap Total  pengiriman dan Total Omset yang diperoleh JNE berdasarkan Produknya. Dengan menggukanan tabel pivot dan visual seperti contoh diatas, apa yang anda temukan? 
 
 **Catatan:** Tabel Pivot dan visualisasi tabel diatas memang sangat membantu untuk menganalisis data. Tetapi dalam banyak kondisi, terdapat berbagai jenis visual (grafik) lainnya yang lebih efektif dan lebih interaktif untuk menjelaskan suatu informasi yang kita butuhkan. 
 
@@ -196,6 +220,10 @@ fig.update_traces(textposition='inside', textinfo='percent+label');
 fig.show()
 ```
 
+### Quiz 7 {-}
+
+> Setelah memperlajari visualisasi Pie-Chart diatas, bagamana jika anda sebagai tim audit ingin total (persentase) resi pengiriman barang berdasarkan regionalnya?
+
 ## Bar-Chart
 
 Bar chart (Diagram batang) merupakan salah satu bentuk grafik yang digunakan untuk membandingkan data antar variabel dan melihat frekuensi atau besaran dari variabel tersebut. Berikut ini diperlihatkan contoh grafik untuk memperlihatkan **total pendapatan (omset) berdasarkan regional pelayanan JNE**.
@@ -222,9 +250,6 @@ fig = px.bar(df, x='REGION', y='TOTAL_OMZET',color='REGION', text_auto='.2s')
 # Pengaturan detail grafik
 fig.update_layout(barmode='stack',
                   showlegend=False,
-                  autosize=False,
-                  width=800,
-                  height=600,
                   title="Total Omset Berdasarkan Region",
                   xaxis_title="Regional",
                   yaxis_title="Per-miliar (Rp)")
@@ -262,9 +287,6 @@ fig = px.bar(df, x='REGION', y='TOTAL_OMZET',color='REGION', text_auto='.2s')
 # Pengaturan detail grafik
 fig.update_layout(barmode='stack',
                   showlegend=False,
-                  autosize=False,
-                  width=800,
-                  height=600,
                   title="Total Omset Berdasarkan Region",
                   xaxis_title="Regional",
                   yaxis_title="Per-miliar (Rp)");
@@ -307,9 +329,6 @@ fig = px.bar(df, y='SERVICES_CODE', x='TOTAL_OMZET',color='SERVICES_CODE', text_
 # Pengaturan detail grafik
 fig.update_layout(barmode='stack',
                   showlegend=False,
-                  autosize=False,
-                  width=800,
-                  height=600,
                   title="Total Omset Berdasarkan Produk Pengirimannya",
                   xaxis_title="Per-miliar (Rp)",
                   yaxis_title="Pruduk")
@@ -343,9 +362,6 @@ fig = px.bar(df, y='SERVICES_CODE', x='TOTAL_OMZET',color='SERVICES_CODE', text_
 # Pengaturan detail grafik
 fig.update_layout(barmode='stack',
                   showlegend=False,
-                  autosize=False,
-                  width=800,
-                  height=600,
                   title="Total Omset Berdasarkan Produk Pengirimannya",
                   xaxis_title="Per-miliar (Rp)",
                   yaxis_title="Pruduk")
@@ -361,6 +377,9 @@ fig.update_traces(textfont_size=12, textangle=0, textposition="outside")
 fig.show()
 ```
 
+### Quiz 8 {-}
 
-Pada sesi ini digunakan paket open source yang sangat banyak digunakan dalam proses data analitics, yaitu Plotly. Paket Plotly adalah program yang untuk visualisasi data interaktif yang dapat digunakan di Python, R, Julia, Javascript, ggplot2, F#, MATLAB®, dan Dash. Untuk menginstall paket ini di komputer anda, silahkan gunakan `pip install plotly` melalui environtment Python.
+>  seandainya anda ingin mengatur ukuran grafik Bar-Chart diatas, bagaimana caranya?
+
+
 
