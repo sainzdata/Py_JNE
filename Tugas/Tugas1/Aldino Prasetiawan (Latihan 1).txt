@@ -1,0 +1,161 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "f1c7f971-af08-4de5-9370-fdeabfc8ef77",
+   "metadata": {},
+   "source": [
+    "#LATIHAN 1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "bf6c74a0-daf9-4eb1-ba0f-959650bc264f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Masukkan Berat Kiriman Anda (Kg): 55\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Biaya kirim per Kg : Rp. 10000\n",
+      "Dikenai Charge Sebesar : Rp. 500000\n",
+      "Total yang harus dibayar: Rp. 1050000\n"
+     ]
+    }
+   ],
+   "source": [
+    "y=10000 #harga per kilo\n",
+    "z=500000 #charge apabila lebih dari 50 Kg\n",
+    "\n",
+    "berat=input (\"Masukkan Berat Kiriman Anda (Kg):\")\n",
+    "print (\"Biaya kirim per Kg : Rp. %s\" % y)\n",
+    "\n",
+    "## Rumus\n",
+    "bayar1=int (berat)*y\n",
+    "bayar2=int (berat)*y+z\n",
+    "\n",
+    "if int (berat)>=120:\n",
+    "    print (\"MOHON MAAF KIRIMAN ANDA GAGAL KIRIM\")\n",
+    "elif int (berat)>=50:\n",
+    "    print (\"Dikenai Charge Sebesar : Rp. 500000\")\n",
+    "    print(\"Total yang harus dibayar: Rp. %s\" % bayar2)\n",
+    "elif int (berat)<50:\n",
+    "    print (\"Pengantaran Dapat Dilakukan\")  \n",
+    "    print(\"Total yang harus dibayar: Rp. %s\" % bayar1)\n",
+    "else:   \n",
+    "    print(\"SELAMAT TELAH MENGGUNAKAN JASA KAMI\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2e93dc9a-7c74-437c-be35-f5b1c8214f05",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "7490c97a-d332-4b6e-b219-168d7576fdd3",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "26b3c393-41ed-43c0-9b59-dd4c19a6620f",
+   "metadata": {},
+   "source": [
+    "#LATIHAN 2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "a7720376-72c1-4518-97b4-4b0a1d727381",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Masukkan Nilai Grade Anda (1 s.d 3):  1\n",
+      "Masukkan Masa Kerja Anda (tahun):  4\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Gaji Anda Sebesar: 4 Juta\n"
+     ]
+    }
+   ],
+   "source": [
+    "grade = int(input(\"Masukkan Nilai Grade Anda (1 s.d 3): \"))\n",
+    "masakerja = int(input(\"Masukkan Masa Kerja Anda (tahun): \"))\n",
+    "\n",
+    "if int(grade) == 1 and int(masakerja) <=2:\n",
+    "        print (\"Gaji Anda Sebesar: 3,5 Juta\")\n",
+    "elif int(grade) ==  1 and int(masakerja) >=2:\n",
+    "    print (\"Gaji Anda Sebesar: 4 Juta\")\n",
+    "elif int(grade) == 2 and int(masakerja) <=3:\n",
+    "    print (\"Gaji Anda Sebesar: 4,5 Juta\")\n",
+    "elif int(grade) == 2 and int(masakerja) >3:\n",
+    "    print (\"Gaji Anda Sebesar: 5 Juta\")\n",
+    "elif int(grade) == 3 and int(masakerja) <=5:\n",
+    "    print (\"Gaji Anda Sebesar: 10 Juta\")\n",
+    "elif int(grade) == 3 and int(masakerja) >5:\n",
+    "    print (\"Gaji Anda Sebesar: 15 Juta\")\n",
+    "else:\n",
+    "    print (\"NILAI & MASA KERJA YANG ANDA MASUKKAN SALAH\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "5533a04e-64c3-4363-9961-7a3dd67265a3",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "959c4fe0-aa2e-4cdf-b416-4c5918fafc29",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.12"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

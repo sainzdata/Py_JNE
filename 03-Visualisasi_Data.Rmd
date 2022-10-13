@@ -1,11 +1,38 @@
 # Visualisasi Data
 
+Visualisasi data adalah proses mempresentasikan data terstruktur maupun tidak terstruktur melalui grafik untuk mengkomunikasikan informasi secara lebih efisien dan mudah dimengerti. Pada bagian ini, diasumsikan anda sudah melakukan persiapan data dan impor data sebelum divisualisasikan. Langkah selanjutnya, adalah mengetahui informasi dasar mengenai dataset:
+
 ## Import Data
 
 ```{python}
-data = pd.read_excel('data/Omset_202001_202012.xlsx')   # import data 
-print(data)
+import pandas as pd
+data = pd.read_excel('data/all_data.xlsx')   # import data 
+data.info()
 ```
 
+Berikut ini adalah deskripsi dataset yang sedang digunakan:
+    
+* PERIODE = Transaksi Bulanan
+* REGION = Regional
+* BRANCH_ID = Nomor ID Cabang
+* BRANCH_NAME = Nama Cabang
+* SERVICES_CODE = Code Produk       
+* ZONE_DESTINATION = Tujuan Pengiriman 
+* JUMLAH_AWB = Jumlah Resi Pengiriman        
+* JUMLAH_WEIGHT = Berat Barang yang dikirimkan
+* JUMLAH_CASH = Pembayaran Tunai     
+* JUMLAH_CREDIT = Pembayaran Kredit
+* JUMLAH_COD = Pembayaran di tempat
+* JUMLAH_EPAY = Pembayaran Online
+* TOTAL_OMZET = Total Omset
 
+## Periksa Kelengkapan Data
+
+Dataset terkadang memuat data yang hilang, bisa saja karena tidak dikumpulkan atau tidak pernah ada. Sehingga, untuk melakukan analisa perlu dilakukan pemeriksaan kelengkapan data terlebih dahulu. Berikut ini diperlihatkan cara untuk mengekstrak baris yang berisi setidaknya satu nilai yang hilang:
+
+```{python}
+data[data.isnull().any(axis=1)]   # bisa gunakan `isnull()` atau `isna()`
+```
+
+Pada sesi ini digunakan paket open source yang sangat banyak digunakan dalam proses data analitics, yaitu Plotly. Paket Plotly adalah program yang untuk visualisasi data interaktif yang dapat digunakan di Python, R, Julia, Javascript, ggplot2, F#, MATLAB®, dan Dash. Untuk menginstall paket ini di komputer anda, silahkan gunakan `pip install plotly` melalui environtment Python.
 

@@ -53,3 +53,7 @@ tabel-pivot-1
 visualisasi-data
 pemodelan
 studi-kasus
+rename-variabel
+ekspor-data
+import-data-1
+periksa-kelengkapan-data
