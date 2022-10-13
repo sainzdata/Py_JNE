@@ -57,3 +57,8 @@ rename-variabel
 ekspor-data
 import-data-1
 periksa-kelengkapan-data
+verifikasi-kelengkapan-data
+perbaharui-data
+statistik-dasar
+tabel-pivot-2
+pie-chart

@@ -5,9 +5,9 @@ Visualisasi data adalah proses mempresentasikan data terstruktur maupun tidak te
 ## Import Data
 
 ```{python}
-import pandas as pd
+import pandas as pd                          # library yang dibutuhakan
 data = pd.read_excel('data/all_data.xlsx')   # import data 
-data.info()
+data.info()                                  # informasi dasar mengenai dataset
 ```
 
 Berikut ini adalah deskripsi dataset yang sedang digunakan:
@@ -26,13 +26,135 @@ Berikut ini adalah deskripsi dataset yang sedang digunakan:
 * JUMLAH_EPAY = Pembayaran Online
 * TOTAL_OMZET = Total Omset
 
-## Periksa Kelengkapan Data
+## Verifikasi Kelengkapan Data
 
 Dataset terkadang memuat data yang hilang, bisa saja karena tidak dikumpulkan atau tidak pernah ada. Sehingga, untuk melakukan analisa perlu dilakukan pemeriksaan kelengkapan data terlebih dahulu. Berikut ini diperlihatkan cara untuk mengekstrak baris yang berisi setidaknya satu nilai yang hilang:
 
 ```{python}
 data[data.isnull().any(axis=1)]   # bisa gunakan `isnull()` atau `isna()`
 ```
+
+```{python}
+data.isna().sum()                 # menghitung data yang hilang disetiap kolom
+```
+
+## Perbaharui Data
+
+Ada banyak langkah yang dapat dilakukan untuk mengisi data yang hilang denga Python, berikut ini adalah cara yang paling sering digunakan:
+
+```{python}
+edh1=data.fillna({"ZONE_DESTINATION":'A'})     # ganti data hilang pada spesifik kolom
+edh2=data.fillna(method="ffill")               # ganti data hilang dgn baris sebelumnya
+edh3=data.fillna(method="bfill")               # ganti data hilang dgn baris setelahya
+edh4=data.fillna(0)                            # ganti data hilang dng 0
+edh5=data.dropna()                             # hapus data hilang
+```
+
+Selain cara diatas, berikut ini juga dapat digunakan untuk mengisi maupun memperbaharui data yang hilang:
+
+```{python}
+edh6=data.fillna(data.mode().iloc[0])          # data data hilang dengan median() dan mean()
+```
+
+**Catatan:** Apabila data yang hilang berhubungan dengan time series analisis atau regresi makan akan digunakan pembaharuan data dengan interpolasi (bagian ini akan dibahas pada visualisasi data (line chart))
+
+
+## Statistik Dasar
+
+Selanjutnya, mengetahui informasi statistik dasar mengenai data tersebut. Dapat dilakukan dengan script berikut:
+
+```{python}
+data.describe()                              # informasi statistik dasar (data numerik saja)
+```
+
+Hasil statistik dasar diatas, hanya memperlihatkan data numerik saja. Lalu bagaimana dengan data kategori yang ada pada dataset tersebut? Gunakan script sebagai berikut:
+
+```{python}
+# untuk memilih data kategori digunakan include='object' dan sebaliknya gunakan include='number'
+kategori = data.select_dtypes(include='object')
+kategori.describe().transpose()
+```
+
+## Tabel Pivot
+
+Saat melakukan analisis dengan menggunakan fungsi `describe()`seperti yang kita lakukan diatas, terkadang tidak menjawab informasi yang kita inginkan. Karena semua deskripsi tersebut diperhitungkan berdasarkan kolom dari masing-masing variabel pada dataset. Olehkarena itu, jika anda ingin mengetahui deskriptif statistik berdasarkan indeks tertentu makan anda perlu menggunakan Tabel Pivot. Analisis statistik deskriptif tersebut akan diperlihatkan dengan fungsi agregasi `aggfunc` yang ada di Python, yaitu:
+
+* `sum` : yang digunakan untuk pejumlahan nilai pada indeks variabel yang sama.
+* `mean` : ~ nilai rata-rata ~
+* `min` :  ~ nilai minumum ~
+* `max` :  ~ nilai maksimum ~
+* `count` : frekuensi
+
+
+Untuk mengetahui jumlah total pengiriman dan total omset yang diperoleh JNE berdasarkan regionalnya, dapat diperlihatkan dengan script berikut:
+
+```{python}
+# Tabel Pivot untuk menghitung jumlah omzet berdasarkan Region
+import numpy as np
+
+df=pd.pivot_table(data,index=['REGION'], values=['TOTAL_OMZET','JUMLAH_WEIGHT'], aggfunc='sum')
+
+# Komfersi indeks menjadi Kolom
+df.reset_index(inplace=True)
+
+# Urutkan data dari yang besar ke kecil
+df=df.sort_values(['TOTAL_OMZET','JUMLAH_WEIGHT'],ascending=True)
+
+print(df)
+```
+
+Hasil dari Tabel Pivot diatas dapat diperlihatkan secara visual, perhatikan tabel berikut:
+
+```{python}
+# impor library yg dibutuhkan untuk visualisasi
+import plotly.graph_objects as go
+
+# Menampilkan Hasil Tabel Pivot
+fig = go.Figure(data = [go.Table(
+   header = dict(values = list(df.columns),
+      fill_color = 'paleturquoise',
+      align = 'left'),
+   cells = dict(values = df.transpose().values.tolist(),
+      fill_color = 'lavender',
+      align = 'left'))])
+
+fig.show()
+```
+
+**Catatan:** Tabel Pivot dan visualisasi tabel diatas memang sangat membantu untuk menganalisis data. Tetapi dalam banyak kondisi, terdapat berbagai jenis visual (grafik) lainnya yang lebih efektif dan lebih interaktif untuk menjelaskan suatu informasi yang kita butuhkan. 
+
+## Pie-Chart
+
+Diagram lingkaran (Pie-Chart) adalah jenis grafik yang menyajikan sebuah nilai atau data dalam bentuk lingkaran. Diagram lingkaran memudahkan kita untuk mengetahui perbandingan suatu data terhadap keseluruhan data. Untuk membandingkan data satu dengan yang lainnya, maka sebuah lingkaran akan dibagi menjadi beberapa ruas lingkaran. 
+
+Pada umunya, penyajian data pada diagram lingkaran disajikan dalam bentuk derajat (°) dan persen (%). Jika data yang disajikan dalam bentuk derajat, maka ukuran satu lingkaran penuh besarnya adalah 360°. Sedangkan jika suatu data disajikan dalam persen, maka satu lingkaran penuh nilainya adalah 100%. Rumus yang digunakan adalah sebagai berikut:
+
+* Nilai yang ditanyakan (°) = (Besar sudut / 360°) x Total data
+* Nilai yang ditanyakan (%) = (Nilai persen yang ditanyakan / 100%) x Total nilai
+
+Berikut ini deperlihatkan grafik lingkaran untuk memperlihatkan Total Omset yang diperoleh JNE berdasarkan regionalnya.
+
+
+```{python}
+import plotly.express as px
+
+# Tabel Pivot untuk menghitung jumlah omzet berdasarkan Region
+df=pd.pivot_table(data,index=['REGION'], values='TOTAL_OMZET', aggfunc='sum')
+
+# Komfersi indeks menjadi Kolom
+df.reset_index(inplace=True)
+
+# Konversi Total omset menjadi per-miliar 
+df["TOTAL_OMZET"] = (df['TOTAL_OMZET']/1000000000)
+
+# membuat grafik lingkaran (pie-chart)
+fig = px.pie(df, values='TOTAL_OMZET', names='REGION', hole=0.5,
+             title='Total Omset Berdasarkan Regional Per-miliar Rupiah',
+             hover_data=['REGION'], labels={'REGION':'Omset Regional'})
+fig.update_traces(textposition='inside', textinfo='percent+label')
+# fig.show()
+```
+
 
 Pada sesi ini digunakan paket open source yang sangat banyak digunakan dalam proses data analitics, yaitu Plotly. Paket Plotly adalah program yang untuk visualisasi data interaktif yang dapat digunakan di Python, R, Julia, Javascript, ggplot2, F#, MATLAB®, dan Dash. Untuk menginstall paket ini di komputer anda, silahkan gunakan `pip install plotly` melalui environtment Python.
 
