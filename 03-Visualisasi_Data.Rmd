@@ -487,3 +487,20 @@ fig.update_xaxes(showticklabels=True)
 fig.show()
 ```
 
+
+## Scatter Plot 
+
+Scatter Plot atau Grafik Scatter juga disebut diagram diagram pencar adalah gambaran yang menunjukkan kemungkinan hubungan (korelasi) antara pasangan dua macam variabel dan menunjukkan keeratan hubungan antara dua variabel tersebut yang sering diwujudkan sebagai koefisien korelasi.
+
+[Contoh: Klik disini](https://plotly.com/python/line-and-scatter/)
+
+
+## Diagram Garis
+
+Diagram garis adalah penyajian data yang digunakan untuk menggambarkan suatu keadaan berupa data berkala atau berkelanjutan. Selain itu, diagram ini juga bisa dikatakan berhubungan dengan kurun waktu dan untuk menunjukkan perkembangan suatu keadaan. Diagram ini sangat tepat untuk menyajikan data untuk mengetahui kecenderungan kelakuan atau tren, seperti produksi minyak tiap tahun, jumlah kelahiran tiap tahun, jumlah produksi tiap jam, dan lain-lain.
+
+[Contoh: Klik disini](https://plotly.com/python/line-charts/)
+
+
+
+
