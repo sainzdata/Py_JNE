@@ -60,7 +60,7 @@ edh6=data.fillna(data.mode().iloc[0])          # data data hilang dengan median(
 
 > Apa yang terjadi jika anda mengisi data yang hilang tersebut dengan dengan median() dan mean()? jelaskan!
 
-### Quiz 2  {2}
+### Quiz 2  {-}
 
 > Bagaimana cara untuk memastikan apakah masih ada data yang hilang (data tidak lengkap) di `edh6` ?
 
@@ -262,6 +262,7 @@ fig.update_yaxes(showticklabels=False)
 
 # Pengaturan posisi, ukuran, dan rotasi teks
 fig.update_traces(textfont_size=12, textangle=0, textposition="outside")
+fig.show()
 ```
 
 
@@ -338,6 +339,7 @@ fig.update_xaxes(tickangle=0, showticklabels=False)
 
 # Pengaturan posisi, ukuran, dan rotasi teks
 fig.update_traces(textfont_size=12, textangle=0, textposition="outside")
+fig.show()
 ```
 
 ```{python include=FALSE}
@@ -382,4 +384,106 @@ fig.show()
 >  seandainya anda ingin mengatur ukuran grafik Bar-Chart diatas, bagaimana caranya?
 
 
+## Box-plot 
+
+Penyajian grafik lainnya yang bisa merangkum informasi lebih detail mengenai distribusi nilai-nilai data pengamatan adalah Box and Whisker Plots atau lebih sering disebut dengan BoxPlot atau lebih sering dikenal sebagai chart candle stick di analisa pasar saham. Lihat contoh dibawah ini untuk dapat membaca box plot
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/box-plot.png?raw=true" width=500" height="400">
+</center>
+
+
+Penjelasannya:
+
+* Outlier/Pencilan artinya suatu angka yang memiliki nilai yang sangat berbeda jauh dengan nilai dari angka lainya pada data, angkanya bernilai 3/2 lebih besar dari quartil yang paling atas atau angkanya bernilai 3/2 lebih kecil dari quartil terendah.
+* Quartil Tertinggi artinya angka yang terbesar ke 75 jika data diurutkan. Jadi 25 persen angka dalam data bernilai lebih tinggi dari angka quartil ini.
+* Median adalah nilai tengah
+* Quartil Terendah artinya angka yang terbesar ke 25 jika data diurutkan. Jadi 25 persen angka dalam data bernilai lebih rendah dari angka quartil ini.
+
+
+Berikut ini diperlihatkan contoh analisis total omset berdasarkan asal dan tujuan pengiriman barang menggunakan Boxplot.
+
+```{python, eval=F}
+import plotly.express as px
+import pandas as pd
+import numpy as np
+
+# Tabel Pivot untuk menghitung jumlah omzet berdasarkan Region
+df=pd.pivot_table(data,
+                  index=['PERIODE',
+                         'REGION', 
+                         'BRANCH_ID',
+                         'BRANCH_NAME',
+                         'SERVICES_CODE',
+                         'ZONE_DESTINATION'], 
+                  values=['TOTAL_OMZET'], aggfunc='sum')
+
+# Komfersi indeks menjadi Kolom
+df.reset_index(inplace=True)
+
+# Konversi Total omset menjadi per-miliar 
+df["TOTAL_OMZET"] = (df['TOTAL_OMZET']/1000000000)
+
+# Grafik Box-plot
+fig = px.box(df, x="REGION", 
+             y="TOTAL_OMZET", 
+             color="ZONE_DESTINATION", 
+             notched=True     # used notched shape
+            )
+
+# Pengaturan detail grafik
+fig.update_layout(barmode='stack',
+                  showlegend=True,
+                  title="Omset dari Asal ke Tujuan Pengiriman Masing2 Barang",
+                  xaxis_title="Regional",
+                  yaxis_title="Per-miliar (Rp)")
+
+# Menghapus label di axis x
+fig.update_xaxes(showticklabels=True)
+
+fig.show()
+```
+
+```{python, include=FALSE}
+import plotly.express as px
+import pandas as pd
+import numpy as np
+
+# Tabel Pivot untuk menghitung jumlah omzet berdasarkan Region
+df=pd.pivot_table(data,
+                  index=['PERIODE',
+                         'REGION', 
+                         'BRANCH_ID',
+                         'BRANCH_NAME',
+                         'SERVICES_CODE',
+                         'ZONE_DESTINATION'], 
+                  values=['TOTAL_OMZET'], aggfunc='sum')
+
+# Komfersi indeks menjadi Kolom
+df.reset_index(inplace=True)
+
+# Konversi Total omset menjadi per-miliar 
+df["TOTAL_OMZET"] = (df['TOTAL_OMZET']/1000000000)
+
+# Grafik Box-plot
+fig = px.box(df, x="REGION", 
+             y="TOTAL_OMZET", 
+             color="ZONE_DESTINATION", 
+             notched=True     # used notched shape
+            )
+
+# Pengaturan detail grafik
+fig.update_layout(barmode='stack',
+                  showlegend=True,
+                  title="Omset dari Asal ke Tujuan Pengiriman Masing2 Barang",
+                  xaxis_title="Regional",
+                  yaxis_title="Per-miliar (Rp)")
+
+# Menghapus label di axis x
+fig.update_xaxes(showticklabels=True)
+```
+
+```{python echo=FALSE}
+fig.show()
+```
 
