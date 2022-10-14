@@ -89,7 +89,7 @@ kategori.describe().transpose()
 
 ### Quiz 4 {-}
 
-> Perhatikan deskriptif statistik data kategorikal diatas dan diskusikan dengan Tim Anda apakah informasi penting yang di temukan? 
+> Perhatikan deskriptif statistik data kategorikal diatas , apakah informasi penting yang di temukan? 
 
 ## Tabel Pivot
 
