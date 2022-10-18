@@ -43,17 +43,17 @@ data.isna().sum()                 # menghitung data yang hilang disetiap kolom
 Ada banyak langkah yang dapat dilakukan untuk mengisi data yang hilang denga Python, berikut ini adalah cara yang paling sering digunakan:
 
 ```{python}
-edh1=data.fillna({"ZONE_DESTINATION":'A'})     # ganti data hilang pada spesifik kolom
-edh2=data.fillna(method="ffill")               # ganti data hilang dgn baris sebelumnya
-edh3=data.fillna(method="bfill")               # ganti data hilang dgn baris setelahya
-edh4=data.fillna(0)                            # ganti data hilang dng 0
-edh5=data.dropna()                             # hapus data hilang
+pd1=data.fillna({"ZONE_DESTINATION":'A'})     # ganti data hilang pada spesifik kolom
+pd2=data.fillna(method="ffill")               # ganti data hilang dgn baris sebelumnya
+pd3=data.fillna(method="bfill")               # ganti data hilang dgn baris setelahya
+pd4=data.fillna(0)                            # ganti data hilang dng 0
+pd5=data.dropna()                             # hapus data hilang
 ```
 
 Selain cara diatas, berikut ini juga dapat digunakan untuk mengisi maupun memperbaharui data yang hilang:
 
 ```{python}
-edh6=data.fillna(data.mode().iloc[0])          # data data hilang dengan median() dan mean()
+pd6=data.fillna(data.mode().iloc[0])          # data data hilang dengan median() dan mean()
 ```
 
 ### Quiz 1 {-} 
@@ -62,7 +62,7 @@ edh6=data.fillna(data.mode().iloc[0])          # data data hilang dengan median(
 
 ### Quiz 2  {-}
 
-> Bagaimana cara untuk memastikan apakah masih ada data yang hilang (data tidak lengkap) di `edh6` ?
+> Bagaimana cara untuk memastikan apakah masih ada data yang hilang (data tidak lengkap) di `pd6` ?
 
 **Catatan:** Apabila data yang hilang berhubungan dengan analisis time series atau regresi makan akan digunakan pembaharuan data dengan interpolasi (bagian ini akan dibahas pada visualisasi data (line chart))
 
@@ -490,9 +490,15 @@ fig.show()
 
 ## Scatter Plot 
 
-Scatter Plot atau Grafik Scatter juga disebut diagram diagram pencar adalah gambaran yang menunjukkan kemungkinan hubungan (korelasi) antara pasangan dua macam variabel dan menunjukkan keeratan hubungan antara dua variabel tersebut yang sering diwujudkan sebagai koefisien korelasi.
+Scatter Plot atau Grafik Scatter juga disebut diagram diagram pencar adalah gambaran yang menunjukkan kemungkinan hubungan (korelasi) antara pasangan dua macam variabel dan menunjukkan keeratan hubungan antara dua variabel tersebut yang sering diwujudkan sebagai koefisien korelasi. Chek [link ini],  Berikut ini diperlihatkan hubungan antara total omset dan total resi pengiriman barang:
 
-[Contoh: Klik disini](https://plotly.com/python/line-and-scatter/)
+```{python}
+https://plotly.com/python/line-and-scatter/
+# Grafik Scatter Plot
+fig = px.scatter(df, x="JUMLAH_AWB", y="TOTAL_OMZET", color="BRANCH_ID", size='TOTAL_OMZET')
+fig.show()
+```
+
 
 
 ## Diagram Garis
