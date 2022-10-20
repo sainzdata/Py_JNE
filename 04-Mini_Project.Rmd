@@ -1,0 +1,365 @@
+# Mini Project
+
+Adapun beberapa hal yang dipelajari pada program pelatihan Data Analitics With Python pertemuan ke-4 ini adalah sebagai berikut:
+
+* Penggabungan data menggunakan 3 file dibawah ini: [(download data disini)](https://jne2-my.sharepoint.com/personal/ibnu_falah_jne_co_id/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fibnu%5Ffalah%5Fjne%5Fco%5Fid%2FDocuments%2FData%20for%20P%27%20Bakti&ga=1). 
+    1. OTS ARAP UPDATE 30092022.XLSX; 
+    2. OTS CURRENT 2022 UPDATE 30092022.XLSX; 
+    3. OTS CURRENT 2022 UPDATE 30092022 PART 2.XLSX)
+* Periksa data duplikat (Nomor connote apakah ada yang double)
+* Periksa data anomali (Memeriksa Data OTS yang nilai nya minus)
+* Data outstanding diurutkan berdasarkan nama customer – Dest Runsheet
+* Analisa nilai outstanding yang tinggi berdasarkan Regional – Cabang – Kurir.
+* Outstanding berdasarkan Kurir / ID Kurir (data kurir dapat dilihat di file ID Kurir.XLSX)
+
+
+## Impor Data
+
+Dalam proses impor (baca) data dari Excel ke Python, beberapa hal yang harus diperhatikan adalah:
+
+1. Pastikan Notebook Python (Koding) anda berada dalam satu folder
+2. Buatlah folder baru untuk meyimpan data tersebut (opsional) 
+3. Nama file excel tidak memuat spasi (gunakan underline `_` jika diperlukan). Dalam hal ini, penulis merubah nama variabel menjadi OTS1, OTS2, dan OTS3.
+4. impor packages/Library/Module yang diperlukan (dalam hal ini digunakan 'pandas')
+
+```{python, eval=F}
+import pandas as pd              # library untuk impor data
+f1 = pd.read_excel('data/Mini_Project/OTS1.xlsx') 
+f2 = pd.read_excel('data/Mini_Project/OTS2.xlsx') 
+f3 = pd.read_excel('data/Mini_Project/OTS3.xlsx') 
+```
+
+Berikutnya dilakukan pemerikasan struktur data dan informasi dasar pada dataset.
+
+```{python, eval=F}
+f3.info()                        # print struktur dan informasi dasar
+```
+
+Berdasarkan pengamatan yang dilakukan pada ke-3 file dataset di atas, diperoleh beberapa catatan sebagai berikut:
+
+1. Struktur data belum jelas karena nama variabel (kolom) pada file excel tidak ada pada baris pertama
+2. Data pada `OTS1.xlsx` tidak dapat terbaca dengan baik di Python. Langkah penyelesaian permasalahan ini adalah dengan cara `Copy-Paste` file tersebut ke file excel yang baru dan replace (menimpa) file yang lama. 
+3. Nama variabel (kolom) pada baris pertama belum sesuai (tidak sama).
+4. Banyak kolom tidak sama.
+
+**Catatan:** Jika tidak ingin menghapus baris pertama dari file Excel maka dapat dilakukan dengan parameter `skiprows=1`. Selain itu, anda juga dapat menggunakan parameter `header=2` untuk menunjukan nama variabel ada pada  baris ke-2. Terlebih daripada itu, jika anda ingin melewati baris pada indeks 0, 2 dan 5 dapat menggunakan `skiprows=[0,2,5]`
+
+```{python, eval=F}
+import pandas as pd              # library untuk impor data
+f1 = pd.read_excel('data/Mini_Project/OTS1.xlsx',skiprows=1, usecols='A:I, K') 
+f2 = pd.read_excel('data/Mini_Project/OTS2.xlsx',header=1) 
+f3 = pd.read_excel('data/Mini_Project/OTS3.xlsx',header=1) 
+```
+
+
+## Konversi Format File
+
+Saat mengerjakan proyek analitik data dengan jumlah pengamatan yang banyak, proses menyimpan dan memuat kembali data ke dalam memori menjadi lebih lambat, dan setiap kali anda melakukan restart pada kernel akan membutuhkan waktu tunggu yang cukup lama. Sehingga, sangat disarankan untuk menyimpan data dengan format terbaik. Menurut **Ilia Zaitsev** di dalam artikelnya pada laman [Towards Data Science](https://towardsdatascience.com/the-best-format-to-save-pandas-data-414dca023e0d) file EXCEL atau CSV atau format teks biasa lainnya bukanlah pilihan yang baik. Ini terbukti dari proses loading data pada ke-3 file Excel diatas **membutuhkan kurang lebih 3 menit untuk ukuran file 64 Mb**. Sehingga, untuk mempercepat proses loading data ini maka dilakukan proses penyimpanan data dengan format `feather`.
+
+```{python, eval=F}
+# pip install pyarrow`                                       # jangan lupa `install
+
+f1.to_feather('data/Mini_Project/OTS1.ftr')                  # data frame f1 ke `OTS1.ftr`
+f2.to_feather('data/Mini_Project/OTS2.ftr')                  # data frame f2 ke `OTS2.ftr`
+f3.to_feather('data/Mini_Project/OTS2.ftr')                  # data frame f1 ke `OTS1.ftr`
+```
+
+## Gabungkan Data
+
+Setelah meyimpanan data dengan format `feather`, selanjutnya dilakukan proses penggabungan data.
+
+```{python}
+import pandas as pd 
+ftr1=pd.read_feather('data/Mini_Project/OTS1.ftr')           # impor data 
+ftr2=pd.read_feather('data/Mini_Project/OTS2.ftr')           # impor data 
+ftr3=pd.read_feather('data/Mini_Project/OTS2.ftr')           # impor data 
+
+datagabung = pd.concat([ftr1,ftr2,ftr3],ignore_index=True)   # gabungkan semua data
+datagabung.info()                                            # informasi dasar 
+```
+
+**Catatan:** Banyaknya observasi (baris) sudah melebihi batas **maksimum file Excel 1048576 baris/kolom**.
+
+
+## Deskripsi Data  
+
+Berikut ini adalah deskripsi dataset yang sedang digunakan:
+
+* `Connote` : No Nomor yang diberikan oleh Seller/Penjual berguna untuk melacak sejauh mana proses pengiriman
+* `Order Id` : No Resi Pengiriman          
+* `Origin` :  Asal barang yang akan dikirimkan           
+* `Dest Runsheet` : Tujuan pengiriman      
+* `Amount` : Biaya Pengiriman           
+* `Project` : Jenis Project          
+* `POD Status` :  Process On delivery Detail adalah Paket atau barang sedang atau baru saja dikirimkan oleh kurir.   
+* `Customer Name`: Nama Pelanggan       
+* `Regional` : Regional          
+* `Kategori` :  Kategori           
+* `OUTSTANDING` : Capaian/Nilai akhir (Verifikasi biaya pengiriman)      
+
+**Catatan:** Data gabungan tersebut disimpan dengan format `feather`, sehingga untuk selanjutnya data ini yang akan di impor pada saat melakukan analisis.
+
+```{python}
+datagabung.to_feather('data/Mini_Project/datagabung.ftr') # data frame f1 ke `OTS1.ftr`
+```
+
+### Quiz 1
+
+Lakukan proses impor data dan memeriksa struktur data  dengan format `feather`!
+
+## Verifikasi Kelengkapan Data
+
+Dataset terkadang memuat data yang hilang, bisa saja karena tidak dikumpulkan atau tidak pernah ada. Sehingga, untuk melakukan analisa perlu dilakukan [pemeriksaan kelengkapan data](https://stackoverflow.com/questions/26266362/how-do-i-count-the-nan-values-in-a-column-in-pandas-dataframe) terlebih dahulu. 
+
+```{python}
+df=pd.read_feather('data/Mini_Project/datagabung.ftr')  # impor data 
+df.isna().sum()                                         # jlh data hilang disetiap kolom
+```
+
+Berikut ini diperlihatkan cara untuk mengekstrak baris yang berisi setidaknya satu nilai yang hilang:
+
+```{python}
+df[df.isna().any(axis=1)]
+```
+
+**Catatan:** Data yang hilang tersebut berasal dari file `OTS1.xlsx`
+
+## Perbaharui Data
+
+Berikut ini dilakukan proses penggantian data yang hilang menggunakan nilai dari kolom lain yang besesuaian barisnya.
+
+```{python}
+df['Order Id'] = df['Order Id'].fillna(value=df['Connote No'])
+df.isna().sum()    
+```
+
+### Quiz 2 
+
+Bagaimana jika anda ingin menggantikan semua nilai pada 'Order Id' adalah sama dengan 'Connote No'? Buatlah script anda menggunakan Python!
+
+## Periksa Data Duplikat
+
+Selain identifikasi missing values, kita juga dapat mengidentifikasi adanya data yang duplikat di dataframe Pandas. Anda dapat menggunakan metode berikut untuk [menghitung duplikat](https://blog.finxter.com/4-best-ways-to-count-duplicates-in-a-dataframe/):
+
+```{python}
+df.pivot_table(columns=['Connote No'], aggfunc='size')
+```
+
+Berikut ini contoh untuk memperlihatkan data duplikat dalam dataframe berdasarkan kolom `Connote No`:
+
+```{python}
+df[df.duplicated(['Connote No'])]
+```
+
+**Catatan:** Dari hasil pemeriksaan data duplikat diatas, diduga kuat bahwa data duplikat tersebut adalah data pengulangan. Olehkarena itu, data duplikat ini dapat dihapuskan. Untuk [menghapus data duplikat](https://www.statology.org/pandas-drop-duplicates/) ini dapat dilakukan dengan cara berikut:
+
+```{python}
+df = df.drop_duplicates(['Connote No'], keep='last') # hapus data duplikat 
+df.info()
+```
+
+## Periksa Data Anomali
+
+Pemeriksaan data anomali bertujuan untuk menemukan atau menganalisis suatu nilai yang dianggap menyimpangan atau memiliki keanehan yang terjadi atau dengan kata lain tidak seperti biasanya. Berikut ini dilakukan pemerikasaan data anomali dengan statistik deskriptif numerikal.
+
+
+```{python}
+df.describe()
+```
+
+**Catatan:** Ditemukan bahwa terdapat nilai `OUTSTANDING` yang negatif. 
+
+### Quiz 3
+
+Berikut ini diperlihatkan data `OUTSTANDING` yang bernilai negatif. Lengkapi script dibawah, jika anda ingin memperbaharui nilai pada kolom OUTSTANDING tersebut dengan menggunakan nilai dari kolom `Amount`.
+
+```{python}
+df.loc[df['OUTSTANDING'] < 0, 'OUTSTANDING']
+```
+
+Berikut ini diperlihatkan data2 yang memuat nilai negatif tersebut menggunakan fungsi [`query` yang disediakan library `pandas`](https://sparkbyexamples.com/pandas/pandas-filter-by-column-value/).
+
+```{python}
+ots_negatif = df.query("OUTSTANDING < 0")
+ots_negatif.info()
+```
+
+Untuk mengurutkan data `OUTSTANDING` negatif yang paling besar ke paling kecil dapat digunakan script berikut:
+
+```{python}
+ots_negatif.sort_values('OUTSTANDING', ascending=True)
+```
+
+### Quiz 4
+
+Perhatikan script dibawah ini, kemudian lakukan pembaharuan data `OUTSTANDING` yang bernilai negatif tersebut menjadi satu dataframe baru. Gunakan gunakan `pd.DataFrame()`.
+
+```{python}
+ots_negatif = df.query("OUTSTANDING < 0")
+```
+
+Berikut ini dilakukan pemerikasaan data anomali dengan statistik deskriptif kategorikal.
+
+```{python}
+ots_negatif = df.query("OUTSTANDING < 0")
+```
+
+Berikut ini dilakukan pemerikasaan data anomali dengan statistik deskriptif kategorikal.
+
+```{python}
+kategori = df.select_dtypes(include='object') # pilih data kategori
+kategori.describe().transpose()               # deskriptif kategorical
+```
+
+### Quiz 5
+
+Berikan pendapat (temuan) anda mengenai statistik deskriptif kategorikal diatas!
+
+## Membuat Kolom Baru
+
+Dalam analisis data terkadang kita perlu membuat kolom baru untuk menampung informasi yang lebih detail yang dapat membantu kita melihat lebih jauh tentang data yang sedang kita observasi. Untuk itu, pada tulisan ini, saya akan membahas cara menambahkan kolom baru pada dataframe pandas. Berikut ini dilakukan penambahan kolom baru untuk melihat `Selisih` nilai antara kolom `Amount` dan `OUTSTANDING`.
+
+```{python}
+df['Selisih'] = (df['OUTSTANDING']-df['Amount'])
+```
+
+### Quiz 6
+
+Dataframe diatas sudah memiliki kolom `Selisih` nilai dari kolom `Amount` dan `OUTSTANDING`. Bagaimana jika anda diminta untuk memperlihatkan nilai selisih yang lebih besar dan lebih kecil dari nol? tunjukan script dan hasilnya!
+
+## Analisis Outstanding
+
+### Regional
+
+Berikut ini adalah Analisa nilai outstanding yang berdasarkan Regional:
+
+```{python}
+# Tabel Pivot
+ots=pd.pivot_table(df,index=['Regional'], 
+                   values=['OUTSTANDING'], aggfunc='sum')
+
+# Komfersi indeks menjadi Kolom
+ots.reset_index(inplace=True)
+
+# Urutkan data dari yang besar ke kecil
+ots=ots.sort_values(['OUTSTANDING'],ascending=False).head(100)
+
+# Konversi Total omset menjadi per-juta 
+ots["OUTSTANDING"] = (ots['OUTSTANDING']/1000000)
+
+ots
+```
+
+```{python}
+# impor library yg dibutuhkan untuk visualisasi
+import plotly.express as px
+
+# membuat grafik batang (bar-chart)
+fig = px.bar(ots, y='OUTSTANDING', x='Regional',color='Regional', text_auto='.2s')
+
+# Pengaturan detail grafik
+fig.update_layout(barmode='stack',
+                  width=800,
+                  height=600,
+                  showlegend=False,
+                  title="Total OTS Berdasarkan Regional",
+                  xaxis_title="Regional",
+                  yaxis_title="Per-miliar (Rp)");
+
+# Pengaturan rotasi axis x (+-360 derajat)
+fig.update_xaxes(tickangle=-45, showticklabels=True);
+
+# Pengaturan posisi, ukuran, dan rotasi teks
+fig.update_traces(textfont_size=12, textangle=0, textposition="outside");
+
+fig.show()
+```
+
+### Pelanggan & Tujuan
+
+Berikut ini dperlihatkan pencapaian **(outstanding)** yang diurutkan berdasarkan nama `customer ~ Dest Runsheet`.
+
+```{python}
+# Tabel Pivot
+ots=pd.pivot_table(df,index=['Customer Name','Dest Runsheet'], 
+                   values=['OUTSTANDING'], aggfunc='sum')
+
+# Komfersi indeks menjadi Kolom
+ots.reset_index(inplace=True)
+
+# Urutkan data dari yang besar ke kecil
+ots=ots.sort_values(['OUTSTANDING'],ascending=False).head(100)
+
+# Konversi Total omset menjadi per-juta 
+ots["OUTSTANDING"] = (ots['OUTSTANDING']/1000000)
+
+ots
+```
+
+Untuk menganalisis secara visual, dapat diperlihatkan dengan menggunakan `Bar-Chart` sebagai berikut:
+
+```{python}
+# impor library yg dibutuhkan untuk visualisasi
+import plotly.express as px
+
+# membuat grafik batang (bar-chart)
+fig = px.bar(ots, y='Dest Runsheet', x='OUTSTANDING',color='Customer Name', text_auto='.2s')
+
+# Pengaturan detail grafik
+fig.update_layout(barmode='stack',
+                  width=1000,
+                  height=600,
+                  showlegend=True,
+                  title="Total OTS Berdasarkan Tujuan Pengiriman",
+                  xaxis_title="Per-miliar (Rp)",
+                  yaxis_title="Tujuan Pengiriman");
+
+# Pengaturan rotasi axis x (+-360 derajat)
+fig.update_xaxes(tickangle=0, showticklabels=False);
+
+# Pengaturan posisi, ukuran, dan rotasi teks
+fig.update_traces(textfont_size=12, textangle=0, textposition="outside");
+
+fig.show()
+```
+
+### Quiz 7
+
+Buatlah Analisa nilai outstanding yang berdasarkan `Dest Runsheet` dan `POD Status`
+
+### Quiz 8 
+
+Buatlah Analisa nilai outstanding yang berdasarkan `Origin` dan `Dest Runsheet`
+
+### Projek
+
+Berikut ini diperlihatkan analisis Outstanding berdasarkan persentase `Project`:
+
+```{python}
+# Tabel Pivot untuk menghitung jumlah omzet berdasarkan Region
+df=pd.pivot_table(df,index=['Project'], values=['OUTSTANDING'], aggfunc='sum')
+
+# Komfersi indeks menjadi Kolom
+df.reset_index(inplace=True)
+
+# Konversi Total omset menjadi per-miliar 
+df["OUTSTANDING"] = (df['OUTSTANDING']/1000000000)
+
+import plotly.express as px
+# membuat grafik lingkaran (pie-chart)
+fig = px.pie(df, values='OUTSTANDING', names='Project', hole=0.5)
+
+# Pengaturan detail grafik
+fig.update_layout(showlegend=True,
+                  autosize=False,
+                  width=800,
+                  height=600,
+                  title="Total Outstanding berdasarkan persentase `Project`");
+
+fig.update_traces(textposition='outside', textinfo='percent+label');
+
+fig.show()
+
+```
+
+
