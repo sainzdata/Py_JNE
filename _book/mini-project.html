@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Pertemuan 4 Mini Project | Modul Pelatihan JNE</title>
+  <meta name="description" content="Materi ini diperuntukkan untuk pelatihan Analisis Data dengan menggunakan Python di JNE" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Pertemuan 4 Mini Project | Modul Pelatihan JNE" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Materi ini diperuntukkan untuk pelatihan Analisis Data dengan menggunakan Python di JNE" />
+  <meta name="github-repo" content="sainzdata/Py_JNE" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Pertemuan 4 Mini Project | Modul Pelatihan JNE" />
+  
+  <meta name="twitter:description" content="Materi ini diperuntukkan untuk pelatihan Analisis Data dengan menggunakan Python di JNE" />
+  
+
+<meta name="author" content="Penulis: Bakti Siregar, S.Si.,M.Sc" />
+
+
+<meta name="date" content="2022-10-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="visualisasi-data.html"/>
+<link rel="next" href="studi-kasus.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="toc.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><center><img src="https://github.com/sainzdata/Py_JNE/blob/main/images/JNE_logo.png?raw=true" alt="logo" width="50%" height="50%"style="margin: 15px 0 0 0"></center></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#jadwal-pelatihan"><i class="fa fa-check"></i><b>0.1</b> Jadwal Pelatihan</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#kewajiban-hak-peserta"><i class="fa fa-check"></i><b>0.2</b> Kewajiban &amp; Hak Peserta</a></li>
+<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#tim-penyusun-pemateri"><i class="fa fa-check"></i><b>0.3</b> Tim Penyusun &amp; Pemateri</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="pengenalan-python.html"><a href="pengenalan-python.html"><i class="fa fa-check"></i>Pengenalan Python?</a>
+<ul>
+<li class="chapter" data-level="0.4" data-path="pengenalan-python.html"><a href="pengenalan-python.html#sejarah"><i class="fa fa-check"></i><b>0.4</b> Sejarah</a></li>
+<li class="chapter" data-level="0.5" data-path="pengenalan-python.html"><a href="pengenalan-python.html#peranan"><i class="fa fa-check"></i><b>0.5</b> Peranan</a></li>
+<li class="chapter" data-level="0.6" data-path="pengenalan-python.html"><a href="pengenalan-python.html#keunggulan"><i class="fa fa-check"></i><b>0.6</b> Keunggulan</a></li>
+<li class="chapter" data-level="0.7" data-path="pengenalan-python.html"><a href="pengenalan-python.html#instalasi"><i class="fa fa-check"></i><b>0.7</b> Instalasi</a>
+<ul>
+<li class="chapter" data-level="0.7.1" data-path="pengenalan-python.html"><a href="pengenalan-python.html#windows"><i class="fa fa-check"></i><b>0.7.1</b> Windows</a></li>
+<li class="chapter" data-level="0.7.2" data-path="pengenalan-python.html"><a href="pengenalan-python.html#macintosh"><i class="fa fa-check"></i><b>0.7.2</b> Macintosh</a></li>
+<li class="chapter" data-level="0.7.3" data-path="pengenalan-python.html"><a href="pengenalan-python.html#linux"><i class="fa fa-check"></i><b>0.7.3</b> Linux</a></li>
+</ul></li>
+<li class="chapter" data-level="0.8" data-path="pengenalan-python.html"><a href="pengenalan-python.html#teks-editor"><i class="fa fa-check"></i><b>0.8</b> Teks Editor</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="konsep-dasar-python.html"><a href="konsep-dasar-python.html"><i class="fa fa-check"></i><b>1</b> Konsep Dasar Python</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="konsep-dasar-python.html"><a href="konsep-dasar-python.html#atribut-peralatan"><i class="fa fa-check"></i><b>1.1</b> Atribut &amp; Peralatan</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="konsep-dasar-python.html"><a href="konsep-dasar-python.html#objek"><i class="fa fa-check"></i><b>1.1.1</b> Objek</a></li>
+<li class="chapter" data-level="1.1.2" data-path="konsep-dasar-python.html"><a href="konsep-dasar-python.html#variabel"><i class="fa fa-check"></i><b>1.1.2</b> Variabel</a></li>
+<li class="chapter" data-level="1.1.3" data-path="konsep-dasar-python.html"><a href="konsep-dasar-python.html#statement"><i class="fa fa-check"></i><b>1.1.3</b> Statement</a></li>
+<li class="chapter" data-level="1.1.4" data-path="konsep-dasar-python.html"><a href="konsep-dasar-python.html#komentar"><i class="fa fa-check"></i><b>1.1.4</b> Komentar</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="konsep-dasar-python.html"><a href="konsep-dasar-python.html#persiapan"><i class="fa fa-check"></i><b>1.2</b> Persiapan</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="konsep-dasar-python.html"><a href="konsep-dasar-python.html#tipe-data"><i class="fa fa-check"></i><b>1.2.1</b> Tipe Data</a></li>
+<li class="chapter" data-level="1.2.2" data-path="konsep-dasar-python.html"><a href="konsep-dasar-python.html#operator"><i class="fa fa-check"></i><b>1.2.2</b> Operator</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="konsep-dasar-python.html"><a href="konsep-dasar-python.html#proses-algoritma"><i class="fa fa-check"></i><b>1.3</b> Proses (Algoritma)</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="konsep-dasar-python.html"><a href="konsep-dasar-python.html#percabangan-if"><i class="fa fa-check"></i><b>1.3.1</b> Percabangan If</a></li>
+<li class="chapter" data-level="1.3.2" data-path="konsep-dasar-python.html"><a href="konsep-dasar-python.html#percabangan-ifelse"><i class="fa fa-check"></i><b>1.3.2</b> Percabangan If/Else</a></li>
+<li class="chapter" data-level="1.3.3" data-path="konsep-dasar-python.html"><a href="konsep-dasar-python.html#percabangan-ifelifelse"><i class="fa fa-check"></i><b>1.3.3</b> Percabangan If/Elif/Else</a></li>
+<li class="chapter" data-level="1.3.4" data-path="konsep-dasar-python.html"><a href="konsep-dasar-python.html#perulangan-for"><i class="fa fa-check"></i><b>1.3.4</b> Perulangan for</a></li>
+<li class="chapter" data-level="1.3.5" data-path="konsep-dasar-python.html"><a href="konsep-dasar-python.html#perulangan-while"><i class="fa fa-check"></i><b>1.3.5</b> Perulangan while</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="konsep-dasar-python.html"><a href="konsep-dasar-python.html#penyajian"><i class="fa fa-check"></i><b>1.4</b> Penyajian</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="persiapan-data.html"><a href="persiapan-data.html"><i class="fa fa-check"></i><b>2</b> Persiapan Data</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="persiapan-data.html"><a href="persiapan-data.html#tahapan-persiapan-data"><i class="fa fa-check"></i><b>2.1</b> Tahapan Persiapan Data</a></li>
+<li class="chapter" data-level="2.2" data-path="persiapan-data.html"><a href="persiapan-data.html#mengapa-python-vs-excel"><i class="fa fa-check"></i><b>2.2</b> Mengapa Python vs Excel?</a></li>
+<li class="chapter" data-level="2.3" data-path="persiapan-data.html"><a href="persiapan-data.html#contoh-persiapan-data-1"><i class="fa fa-check"></i><b>2.3</b> Contoh Persiapan Data 1</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="persiapan-data.html"><a href="persiapan-data.html#impor-data"><i class="fa fa-check"></i><b>2.3.1</b> Impor Data</a></li>
+<li class="chapter" data-level="2.3.2" data-path="persiapan-data.html"><a href="persiapan-data.html#ekspor-simpan-data"><i class="fa fa-check"></i><b>2.3.2</b> Ekspor (Simpan Data)</a></li>
+<li class="chapter" data-level="2.3.3" data-path="persiapan-data.html"><a href="persiapan-data.html#menyortir-data"><i class="fa fa-check"></i><b>2.3.3</b> Menyortir Data</a></li>
+<li class="chapter" data-level="2.3.4" data-path="persiapan-data.html"><a href="persiapan-data.html#penjumlahan-nilai-di-kolom"><i class="fa fa-check"></i><b>2.3.4</b> Penjumlahan Nilai di Kolom</a></li>
+<li class="chapter" data-level="2.3.5" data-path="persiapan-data.html"><a href="persiapan-data.html#join-data"><i class="fa fa-check"></i><b>2.3.5</b> Join Data</a></li>
+<li class="chapter" data-level="2.3.6" data-path="persiapan-data.html"><a href="persiapan-data.html#kondisional-nilai"><i class="fa fa-check"></i><b>2.3.6</b> Kondisional Nilai</a></li>
+<li class="chapter" data-level="2.3.7" data-path="persiapan-data.html"><a href="persiapan-data.html#tabel-pivot"><i class="fa fa-check"></i><b>2.3.7</b> Tabel pivot</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="persiapan-data.html"><a href="persiapan-data.html#contoh-persiapan-data-2"><i class="fa fa-check"></i><b>2.4</b> Contoh Persiapan Data 2</a></li>
+<li class="chapter" data-level="2.5" data-path="persiapan-data.html"><a href="persiapan-data.html#persiapan-data-lanjutan"><i class="fa fa-check"></i><b>2.5</b> Persiapan Data Lanjutan</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="persiapan-data.html"><a href="persiapan-data.html#import-data"><i class="fa fa-check"></i><b>2.5.1</b> Import Data</a></li>
+<li class="chapter" data-level="2.5.2" data-path="persiapan-data.html"><a href="persiapan-data.html#format-tanggal"><i class="fa fa-check"></i><b>2.5.2</b> Format Tanggal</a></li>
+<li class="chapter" data-level="2.5.3" data-path="persiapan-data.html"><a href="persiapan-data.html#rename-variabel"><i class="fa fa-check"></i><b>2.5.3</b> Rename Variabel</a></li>
+<li class="chapter" data-level="2.5.4" data-path="persiapan-data.html"><a href="persiapan-data.html#ekspor-data"><i class="fa fa-check"></i><b>2.5.4</b> Ekspor Data</a></li>
+<li class="chapter" data-level="2.5.5" data-path="persiapan-data.html"><a href="persiapan-data.html#ekstrak-kondisional-data"><i class="fa fa-check"></i><b>2.5.5</b> Ekstrak Kondisional Data</a></li>
+<li class="chapter" data-level="2.5.6" data-path="persiapan-data.html"><a href="persiapan-data.html#baris-pertama-tugas"><i class="fa fa-check"></i><b>2.5.6</b> 8 Baris Pertama (Tugas)</a></li>
+<li class="chapter" data-level="2.5.7" data-path="persiapan-data.html"><a href="persiapan-data.html#check-dimensi-data-tugas"><i class="fa fa-check"></i><b>2.5.7</b> Check Dimensi Data (Tugas)</a></li>
+<li class="chapter" data-level="2.5.8" data-path="persiapan-data.html"><a href="persiapan-data.html#check-atribut-kolom-tugas"><i class="fa fa-check"></i><b>2.5.8</b> Check Atribut Kolom (Tugas)</a></li>
+<li class="chapter" data-level="2.5.9" data-path="persiapan-data.html"><a href="persiapan-data.html#info-dasar-data-tugas"><i class="fa fa-check"></i><b>2.5.9</b> Info Dasar Data (Tugas)</a></li>
+<li class="chapter" data-level="2.5.10" data-path="persiapan-data.html"><a href="persiapan-data.html#pembulatan-nilai-tugas"><i class="fa fa-check"></i><b>2.5.10</b> Pembulatan Nilai (Tugas)</a></li>
+<li class="chapter" data-level="2.5.11" data-path="persiapan-data.html"><a href="persiapan-data.html#pilah-data-kolom-tugas"><i class="fa fa-check"></i><b>2.5.11</b> Pilah Data Kolom (Tugas)</a></li>
+<li class="chapter" data-level="2.5.12" data-path="persiapan-data.html"><a href="persiapan-data.html#kolom-baru-tugas"><i class="fa fa-check"></i><b>2.5.12</b> Kolom Baru (Tugas)</a></li>
+<li class="chapter" data-level="2.5.13" data-path="persiapan-data.html"><a href="persiapan-data.html#sortir-data"><i class="fa fa-check"></i><b>2.5.13</b> Sortir Data</a></li>
+<li class="chapter" data-level="2.5.14" data-path="persiapan-data.html"><a href="persiapan-data.html#tabel-pivot-1"><i class="fa fa-check"></i><b>2.5.14</b> Tabel Pivot</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="visualisasi-data.html"><a href="visualisasi-data.html"><i class="fa fa-check"></i><b>3</b> Visualisasi Data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="visualisasi-data.html"><a href="visualisasi-data.html#import-data-1"><i class="fa fa-check"></i><b>3.1</b> Import Data</a></li>
+<li class="chapter" data-level="3.2" data-path="visualisasi-data.html"><a href="visualisasi-data.html#verifikasi-kelengkapan-data"><i class="fa fa-check"></i><b>3.2</b> Verifikasi Kelengkapan Data</a></li>
+<li class="chapter" data-level="3.3" data-path="visualisasi-data.html"><a href="visualisasi-data.html#perbaharui-data"><i class="fa fa-check"></i><b>3.3</b> Perbaharui Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="visualisasi-data.html"><a href="visualisasi-data.html#quiz-1"><i class="fa fa-check"></i>Quiz 1</a></li>
+<li class="chapter" data-level="" data-path="visualisasi-data.html"><a href="visualisasi-data.html#quiz-2"><i class="fa fa-check"></i>Quiz 2</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="visualisasi-data.html"><a href="visualisasi-data.html#statistik-dasar"><i class="fa fa-check"></i><b>3.4</b> Statistik Dasar</a>
+<ul>
+<li class="chapter" data-level="" data-path="visualisasi-data.html"><a href="visualisasi-data.html#quiz-3"><i class="fa fa-check"></i>Quiz 3</a></li>
+<li class="chapter" data-level="" data-path="visualisasi-data.html"><a href="visualisasi-data.html#quiz-4"><i class="fa fa-check"></i>Quiz 4</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="visualisasi-data.html"><a href="visualisasi-data.html#tabel-pivot-2"><i class="fa fa-check"></i><b>3.5</b> Tabel Pivot</a>
+<ul>
+<li class="chapter" data-level="" data-path="visualisasi-data.html"><a href="visualisasi-data.html#quiz-5"><i class="fa fa-check"></i>Quiz 5</a></li>
+<li class="chapter" data-level="" data-path="visualisasi-data.html"><a href="visualisasi-data.html#quiz-6"><i class="fa fa-check"></i>Quiz 6</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="visualisasi-data.html"><a href="visualisasi-data.html#pie-chart"><i class="fa fa-check"></i><b>3.6</b> Pie-Chart</a>
+<ul>
+<li class="chapter" data-level="" data-path="visualisasi-data.html"><a href="visualisasi-data.html#quiz-7"><i class="fa fa-check"></i>Quiz 7</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="visualisasi-data.html"><a href="visualisasi-data.html#bar-chart"><i class="fa fa-check"></i><b>3.7</b> Bar-Chart</a>
+<ul>
+<li class="chapter" data-level="" data-path="visualisasi-data.html"><a href="visualisasi-data.html#quiz-8"><i class="fa fa-check"></i>Quiz 8</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="visualisasi-data.html"><a href="visualisasi-data.html#box-plot"><i class="fa fa-check"></i><b>3.8</b> Box-plot</a></li>
+<li class="chapter" data-level="3.9" data-path="visualisasi-data.html"><a href="visualisasi-data.html#scatter-plot"><i class="fa fa-check"></i><b>3.9</b> Scatter Plot</a></li>
+<li class="chapter" data-level="3.10" data-path="visualisasi-data.html"><a href="visualisasi-data.html#diagram-garis"><i class="fa fa-check"></i><b>3.10</b> Diagram Garis</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="mini-project.html"><a href="mini-project.html"><i class="fa fa-check"></i><b>4</b> Mini Project</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="mini-project.html"><a href="mini-project.html#impor-data-1"><i class="fa fa-check"></i><b>4.1</b> Impor Data</a></li>
+<li class="chapter" data-level="4.2" data-path="mini-project.html"><a href="mini-project.html#konversi-format-file"><i class="fa fa-check"></i><b>4.2</b> Konversi Format File</a></li>
+<li class="chapter" data-level="4.3" data-path="mini-project.html"><a href="mini-project.html#gabungkan-data"><i class="fa fa-check"></i><b>4.3</b> Gabungkan Data</a></li>
+<li class="chapter" data-level="4.4" data-path="mini-project.html"><a href="mini-project.html#deskripsi-data"><i class="fa fa-check"></i><b>4.4</b> Deskripsi Data</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="mini-project.html"><a href="mini-project.html#quiz-1-1"><i class="fa fa-check"></i><b>4.4.1</b> Quiz 1</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="mini-project.html"><a href="mini-project.html#verifikasi-kelengkapan-data-1"><i class="fa fa-check"></i><b>4.5</b> Verifikasi Kelengkapan Data</a></li>
+<li class="chapter" data-level="4.6" data-path="mini-project.html"><a href="mini-project.html#perbaharui-data-1"><i class="fa fa-check"></i><b>4.6</b> Perbaharui Data</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="mini-project.html"><a href="mini-project.html#quiz-2-1"><i class="fa fa-check"></i><b>4.6.1</b> Quiz 2</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="mini-project.html"><a href="mini-project.html#periksa-data-duplikat"><i class="fa fa-check"></i><b>4.7</b> Periksa Data Duplikat</a></li>
+<li class="chapter" data-level="4.8" data-path="mini-project.html"><a href="mini-project.html#periksa-data-anomali"><i class="fa fa-check"></i><b>4.8</b> Periksa Data Anomali</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="mini-project.html"><a href="mini-project.html#quiz-3-1"><i class="fa fa-check"></i><b>4.8.1</b> Quiz 3</a></li>
+<li class="chapter" data-level="4.8.2" data-path="mini-project.html"><a href="mini-project.html#quiz-4-1"><i class="fa fa-check"></i><b>4.8.2</b> Quiz 4</a></li>
+<li class="chapter" data-level="4.8.3" data-path="mini-project.html"><a href="mini-project.html#quiz-5-1"><i class="fa fa-check"></i><b>4.8.3</b> Quiz 5</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="mini-project.html"><a href="mini-project.html#membuat-kolom-baru"><i class="fa fa-check"></i><b>4.9</b> Membuat Kolom Baru</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="mini-project.html"><a href="mini-project.html#quiz-6-1"><i class="fa fa-check"></i><b>4.9.1</b> Quiz 6</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="mini-project.html"><a href="mini-project.html#analisis-outstanding"><i class="fa fa-check"></i><b>4.10</b> Analisis Outstanding</a>
+<ul>
+<li class="chapter" data-level="4.10.1" data-path="mini-project.html"><a href="mini-project.html#regional"><i class="fa fa-check"></i><b>4.10.1</b> Regional</a></li>
+<li class="chapter" data-level="4.10.2" data-path="mini-project.html"><a href="mini-project.html#pelanggan-tujuan"><i class="fa fa-check"></i><b>4.10.2</b> Pelanggan &amp; Tujuan</a></li>
+<li class="chapter" data-level="4.10.3" data-path="mini-project.html"><a href="mini-project.html#quiz-7-1"><i class="fa fa-check"></i><b>4.10.3</b> Quiz 7</a></li>
+<li class="chapter" data-level="4.10.4" data-path="mini-project.html"><a href="mini-project.html#quiz-8-1"><i class="fa fa-check"></i><b>4.10.4</b> Quiz 8</a></li>
+<li class="chapter" data-level="4.10.5" data-path="mini-project.html"><a href="mini-project.html#projek"><i class="fa fa-check"></i><b>4.10.5</b> Projek</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="studi-kasus.html"><a href="studi-kasus.html"><i class="fa fa-check"></i><b>5</b> Studi Kasus</a></li>
+<li class="chapter" data-level="" data-path="referensi.html"><a href="referensi.html"><i class="fa fa-check"></i>Referensi</a>
+<ul>
+<li class="chapter" data-level="" data-path="referensi.html"><a href="referensi.html#pertemuan-1"><i class="fa fa-check"></i>Pertemuan 1</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/sainzdata/Py_JNE" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Modul Pelatihan JNE</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="mini-project" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Pertemuan 4</span> Mini Project<a href="mini-project.html#mini-project" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Adapun beberapa hal yang dipelajari pada program pelatihan Data Analitics With Python pertemuan ke-4 ini adalah sebagai berikut:</p>
+<ul>
+<li>Penggabungan data menggunakan 3 file dibawah ini: <a href="https://jne2-my.sharepoint.com/personal/ibnu_falah_jne_co_id/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fibnu%5Ffalah%5Fjne%5Fco%5Fid%2FDocuments%2FData%20for%20P%27%20Bakti&amp;ga=1">(download data disini)</a>.
+<ol style="list-style-type: decimal">
+<li>OTS ARAP UPDATE 30092022.XLSX;</li>
+<li>OTS CURRENT 2022 UPDATE 30092022.XLSX;</li>
+<li>OTS CURRENT 2022 UPDATE 30092022 PART 2.XLSX)</li>
+</ol></li>
+<li>Periksa data duplikat (Nomor connote apakah ada yang double)</li>
+<li>Periksa data anomali (Memeriksa Data OTS yang nilai nya minus)</li>
+<li>Data outstanding diurutkan berdasarkan nama customer – Dest Runsheet</li>
+<li>Analisa nilai outstanding yang tinggi berdasarkan Regional – Cabang – Kurir.</li>
+<li>Outstanding berdasarkan Kurir / ID Kurir (data kurir dapat dilihat di file ID Kurir.XLSX)</li>
+</ul>
+<div id="impor-data-1" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Impor Data<a href="mini-project.html#impor-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Dalam proses impor (baca) data dari Excel ke Python, beberapa hal yang harus diperhatikan adalah:</p>
+<ol style="list-style-type: decimal">
+<li>Pastikan Notebook Python (Koding) anda berada dalam satu folder</li>
+<li>Buatlah folder baru untuk meyimpan data tersebut (opsional)</li>
+<li>Nama file excel tidak memuat spasi (gunakan underline <code>_</code> jika diperlukan). Dalam hal ini, penulis merubah nama variabel menjadi OTS1, OTS2, dan OTS3.</li>
+<li>impor packages/Library/Module yang diperlukan (dalam hal ini digunakan ‘pandas’)</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="mini-project.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd              <span class="co"># library untuk impor data</span></span>
+<span id="cb1-2"><a href="mini-project.html#cb1-2" aria-hidden="true" tabindex="-1"></a>f1 <span class="op">=</span> pd.read_excel(<span class="st">&#39;data/Mini_Project/OTS1.xlsx&#39;</span>) </span>
+<span id="cb1-3"><a href="mini-project.html#cb1-3" aria-hidden="true" tabindex="-1"></a>f2 <span class="op">=</span> pd.read_excel(<span class="st">&#39;data/Mini_Project/OTS2.xlsx&#39;</span>) </span>
+<span id="cb1-4"><a href="mini-project.html#cb1-4" aria-hidden="true" tabindex="-1"></a>f3 <span class="op">=</span> pd.read_excel(<span class="st">&#39;data/Mini_Project/OTS3.xlsx&#39;</span>) </span></code></pre></div>
+<p>Berikutnya dilakukan pemerikasan struktur data dan informasi dasar pada dataset.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="mini-project.html#cb2-1" aria-hidden="true" tabindex="-1"></a>f3.info()                        <span class="co"># print struktur dan informasi dasar</span></span></code></pre></div>
+<p>Berdasarkan pengamatan yang dilakukan pada ke-3 file dataset di atas, diperoleh beberapa catatan sebagai berikut:</p>
+<ol style="list-style-type: decimal">
+<li>Struktur data belum jelas karena nama variabel (kolom) pada file excel tidak ada pada baris pertama</li>
+<li>Data pada <code>OTS1.xlsx</code> tidak dapat terbaca dengan baik di Python. Langkah penyelesaian permasalahan ini adalah dengan cara <code>Copy-Paste</code> file tersebut ke file excel yang baru dan replace (menimpa) file yang lama.</li>
+<li>Nama variabel (kolom) pada baris pertama belum sesuai (tidak sama).</li>
+<li>Banyak kolom tidak sama.</li>
+</ol>
+<p><strong>Catatan:</strong> Jika tidak ingin menghapus baris pertama dari file Excel maka dapat dilakukan dengan parameter <code>skiprows=1</code>. Selain itu, anda juga dapat menggunakan parameter <code>header=2</code> untuk menunjukan nama variabel ada pada baris ke-2. Terlebih daripada itu, jika anda ingin melewati baris pada indeks 0, 2 dan 5 dapat menggunakan <code>skiprows=[0,2,5]</code></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="mini-project.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd              <span class="co"># library untuk impor data</span></span>
+<span id="cb3-2"><a href="mini-project.html#cb3-2" aria-hidden="true" tabindex="-1"></a>f1 <span class="op">=</span> pd.read_excel(<span class="st">&#39;data/Mini_Project/OTS1.xlsx&#39;</span>,skiprows<span class="op">=</span><span class="dv">1</span>, usecols<span class="op">=</span><span class="st">&#39;A:I, K&#39;</span>) </span>
+<span id="cb3-3"><a href="mini-project.html#cb3-3" aria-hidden="true" tabindex="-1"></a>f2 <span class="op">=</span> pd.read_excel(<span class="st">&#39;data/Mini_Project/OTS2.xlsx&#39;</span>,header<span class="op">=</span><span class="dv">1</span>) </span>
+<span id="cb3-4"><a href="mini-project.html#cb3-4" aria-hidden="true" tabindex="-1"></a>f3 <span class="op">=</span> pd.read_excel(<span class="st">&#39;data/Mini_Project/OTS3.xlsx&#39;</span>,header<span class="op">=</span><span class="dv">1</span>) </span></code></pre></div>
+</div>
+<div id="konversi-format-file" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Konversi Format File<a href="mini-project.html#konversi-format-file" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Saat mengerjakan proyek analitik data dengan jumlah pengamatan yang banyak, proses menyimpan dan memuat kembali data ke dalam memori menjadi lebih lambat, dan setiap kali anda melakukan restart pada kernel akan membutuhkan waktu tunggu yang cukup lama. Sehingga, sangat disarankan untuk menyimpan data dengan format terbaik. Menurut <strong>Ilia Zaitsev</strong> di dalam artikelnya pada laman <a href="https://towardsdatascience.com/the-best-format-to-save-pandas-data-414dca023e0d">Towards Data Science</a> file EXCEL atau CSV atau format teks biasa lainnya bukanlah pilihan yang baik. Ini terbukti dari proses loading data pada ke-3 file Excel diatas <strong>membutuhkan kurang lebih 3 menit untuk ukuran file 64 Mb</strong>. Sehingga, untuk mempercepat proses loading data ini maka dilakukan proses penyimpanan data dengan format <code>feather</code>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="mini-project.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pip install pyarrow`                                       # jangan lupa `install</span></span>
+<span id="cb4-2"><a href="mini-project.html#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="mini-project.html#cb4-3" aria-hidden="true" tabindex="-1"></a>f1.to_feather(<span class="st">&#39;data/Mini_Project/OTS1.ftr&#39;</span>)                  <span class="co"># data frame f1 ke `OTS1.ftr`</span></span>
+<span id="cb4-4"><a href="mini-project.html#cb4-4" aria-hidden="true" tabindex="-1"></a>f2.to_feather(<span class="st">&#39;data/Mini_Project/OTS2.ftr&#39;</span>)                  <span class="co"># data frame f2 ke `OTS2.ftr`</span></span>
+<span id="cb4-5"><a href="mini-project.html#cb4-5" aria-hidden="true" tabindex="-1"></a>f3.to_feather(<span class="st">&#39;data/Mini_Project/OTS2.ftr&#39;</span>)                  <span class="co"># data frame f1 ke `OTS1.ftr`</span></span></code></pre></div>
+</div>
+<div id="gabungkan-data" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Gabungkan Data<a href="mini-project.html#gabungkan-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Setelah meyimpanan data dengan format <code>feather</code>, selanjutnya dilakukan proses penggabungan data.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="mini-project.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
+<span id="cb5-2"><a href="mini-project.html#cb5-2" aria-hidden="true" tabindex="-1"></a>ftr1<span class="op">=</span>pd.read_feather(<span class="st">&#39;data/Mini_Project/OTS1.ftr&#39;</span>)           <span class="co"># impor data </span></span>
+<span id="cb5-3"><a href="mini-project.html#cb5-3" aria-hidden="true" tabindex="-1"></a>ftr2<span class="op">=</span>pd.read_feather(<span class="st">&#39;data/Mini_Project/OTS2.ftr&#39;</span>)           <span class="co"># impor data </span></span>
+<span id="cb5-4"><a href="mini-project.html#cb5-4" aria-hidden="true" tabindex="-1"></a>ftr3<span class="op">=</span>pd.read_feather(<span class="st">&#39;data/Mini_Project/OTS2.ftr&#39;</span>)           <span class="co"># impor data </span></span>
+<span id="cb5-5"><a href="mini-project.html#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="mini-project.html#cb5-6" aria-hidden="true" tabindex="-1"></a>datagabung <span class="op">=</span> pd.concat([ftr1,ftr2,ftr3],ignore_index<span class="op">=</span><span class="va">True</span>)   <span class="co"># gabungkan semua data</span></span>
+<span id="cb5-7"><a href="mini-project.html#cb5-7" aria-hidden="true" tabindex="-1"></a>datagabung.info()                                            <span class="co"># informasi dasar </span></span></code></pre></div>
+<pre><code>## &lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+## RangeIndex: 1312227 entries, 0 to 1312226
+## Data columns (total 10 columns):
+##  #   Column         Non-Null Count    Dtype  
+## ---  ------         --------------    -----  
+##  0   Connote No     1312227 non-null  object 
+##  1   Order Id       1211622 non-null  object 
+##  2   Origin         1312227 non-null  object 
+##  3   Dest Runsheet  1312227 non-null  object 
+##  4   Amount         1312227 non-null  int64  
+##  5   Project        1312227 non-null  object 
+##  6   POD Status     1312227 non-null  object 
+##  7   Customer Name  1312227 non-null  object 
+##  8   Regional       1312227 non-null  object 
+##  9   OUTSTANDING    1312227 non-null  float64
+## dtypes: float64(1), int64(1), object(8)
+## memory usage: 100.1+ MB</code></pre>
+<p><strong>Catatan:</strong> Banyaknya observasi (baris) sudah melebihi batas <strong>maksimum file Excel 1048576 baris/kolom</strong>.</p>
+</div>
+<div id="deskripsi-data" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Deskripsi Data<a href="mini-project.html#deskripsi-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Berikut ini adalah deskripsi dataset yang sedang digunakan:</p>
+<ul>
+<li><code>Connote</code> : No Nomor yang diberikan oleh Seller/Penjual berguna untuk melacak sejauh mana proses pengiriman</li>
+<li><code>Order Id</code> : No Resi Pengiriman<br />
+</li>
+<li><code>Origin</code> : Asal barang yang akan dikirimkan<br />
+</li>
+<li><code>Dest Runsheet</code> : Tujuan pengiriman<br />
+</li>
+<li><code>Amount</code> : Biaya Pengiriman<br />
+</li>
+<li><code>Project</code> : Jenis Project<br />
+</li>
+<li><code>POD Status</code> : Process On delivery Detail adalah Paket atau barang sedang atau baru saja dikirimkan oleh kurir.<br />
+</li>
+<li><code>Customer Name</code>: Nama Pelanggan<br />
+</li>
+<li><code>Regional</code> : Regional<br />
+</li>
+<li><code>Kategori</code> : Kategori<br />
+</li>
+<li><code>OUTSTANDING</code> : Capaian/Nilai akhir (Verifikasi biaya pengiriman)</li>
+</ul>
+<p><strong>Catatan:</strong> Data gabungan tersebut disimpan dengan format <code>feather</code>, sehingga untuk selanjutnya data ini yang akan di impor pada saat melakukan analisis.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="mini-project.html#cb7-1" aria-hidden="true" tabindex="-1"></a>datagabung.to_feather(<span class="st">&#39;data/Mini_Project/datagabung.ftr&#39;</span>) <span class="co"># data frame f1 ke `OTS1.ftr`</span></span></code></pre></div>
+<div id="quiz-1-1" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Quiz 1<a href="mini-project.html#quiz-1-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Lakukan proses impor data dan memeriksa struktur data dengan format <code>feather</code>!</p>
+</div>
+</div>
+<div id="verifikasi-kelengkapan-data-1" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Verifikasi Kelengkapan Data<a href="mini-project.html#verifikasi-kelengkapan-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Dataset terkadang memuat data yang hilang, bisa saja karena tidak dikumpulkan atau tidak pernah ada. Sehingga, untuk melakukan analisa perlu dilakukan <a href="https://stackoverflow.com/questions/26266362/how-do-i-count-the-nan-values-in-a-column-in-pandas-dataframe">pemeriksaan kelengkapan data</a> terlebih dahulu.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="mini-project.html#cb8-1" aria-hidden="true" tabindex="-1"></a>df<span class="op">=</span>pd.read_feather(<span class="st">&#39;data/Mini_Project/datagabung.ftr&#39;</span>)  <span class="co"># impor data </span></span>
+<span id="cb8-2"><a href="mini-project.html#cb8-2" aria-hidden="true" tabindex="-1"></a>df.isna().<span class="bu">sum</span>()                                         <span class="co"># jlh data hilang disetiap kolom</span></span></code></pre></div>
+<pre><code>## Connote No            0
+## Order Id         100605
+## Origin                0
+## Dest Runsheet         0
+## Amount                0
+## Project               0
+## POD Status            0
+## Customer Name         0
+## Regional              0
+## OUTSTANDING           0
+## dtype: int64</code></pre>
+<p>Berikut ini diperlihatkan cara untuk mengekstrak baris yang berisi setidaknya satu nilai yang hilang:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="mini-project.html#cb10-1" aria-hidden="true" tabindex="-1"></a>df[df.isna().<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>)]</span></code></pre></div>
+<pre><code>##               Connote No Order Id  ...             Regional OUTSTANDING
+## 962     3012652100730710     None  ...         BODETABEKCIL    214240.0
+## 1596     JNAC-0015215845     None  ...         BODETABEKCIL     56650.0
+## 22446    JNER-1000117379     None  ...         BODETABEKCIL   2199000.0
+## 23125   0100142102776621     None  ...              JAKARTA    950000.0
+## 23126   0100142102904199     None  ...              JAKARTA    890000.0
+## ...                  ...      ...  ...                  ...         ...
+## 218598   JNXB-0001207352     None  ...  SUMATERA REG. UTARA     27000.0
+## 218599   JNXB-0001207373     None  ...  SUMATERA REG. UTARA     21000.0
+## 218600   JNXB-0001207895     None  ...  SUMATERA REG. UTARA     92000.0
+## 218601   JNXB-0001208491     None  ...  SUMATERA REG. UTARA    213000.0
+## 218602   JNXB-0001208634     None  ...  SUMATERA REG. UTARA    268524.0
+## 
+## [100605 rows x 10 columns]</code></pre>
+<p><strong>Catatan:</strong> Data yang hilang tersebut berasal dari file <code>OTS1.xlsx</code></p>
+</div>
+<div id="perbaharui-data-1" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Perbaharui Data<a href="mini-project.html#perbaharui-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Berikut ini dilakukan proses penggantian data yang hilang menggunakan nilai dari kolom lain yang besesuaian barisnya.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="mini-project.html#cb12-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;Order Id&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Order Id&#39;</span>].fillna(value<span class="op">=</span>df[<span class="st">&#39;Connote No&#39;</span>])</span>
+<span id="cb12-2"><a href="mini-project.html#cb12-2" aria-hidden="true" tabindex="-1"></a>df.isna().<span class="bu">sum</span>()    </span></code></pre></div>
+<pre><code>## Connote No       0
+## Order Id         0
+## Origin           0
+## Dest Runsheet    0
+## Amount           0
+## Project          0
+## POD Status       0
+## Customer Name    0
+## Regional         0
+## OUTSTANDING      0
+## dtype: int64</code></pre>
+<div id="quiz-2-1" class="section level3 hasAnchor" number="4.6.1">
+<h3><span class="header-section-number">4.6.1</span> Quiz 2<a href="mini-project.html#quiz-2-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Bagaimana jika anda ingin menggantikan semua nilai pada ‘Order Id’ adalah sama dengan ‘Connote No’? Buatlah script anda menggunakan Python!</p>
+</div>
+</div>
+<div id="periksa-data-duplikat" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> Periksa Data Duplikat<a href="mini-project.html#periksa-data-duplikat" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Selain identifikasi missing values, kita juga dapat mengidentifikasi adanya data yang duplikat di dataframe Pandas. Anda dapat menggunakan metode berikut untuk <a href="https://blog.finxter.com/4-best-ways-to-count-duplicates-in-a-dataframe/">menghitung duplikat</a>:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="mini-project.html#cb14-1" aria-hidden="true" tabindex="-1"></a>df.pivot_table(columns<span class="op">=</span>[<span class="st">&#39;Connote No&#39;</span>], aggfunc<span class="op">=</span><span class="st">&#39;size&#39;</span>)</span></code></pre></div>
+<pre><code>## Connote No
+## 00001597324367      2
+## 00001774777169      2
+## 00003088381542      2
+## 00003088839431      2
+## 00003088872622      2
+##                    ..
+## Y220929970421965    2
+## Y220929971437980    2
+## Y220929976998741    2
+## Y220929983918700    2
+## Y220929997027189    2
+## Length: 765306, dtype: int64</code></pre>
+<p>Berikut ini contoh untuk memperlihatkan data duplikat dalam dataframe berdasarkan kolom <code>Connote No</code>:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="mini-project.html#cb16-1" aria-hidden="true" tabindex="-1"></a>df[df.duplicated([<span class="st">&#39;Connote No&#39;</span>])]</span></code></pre></div>
+<pre><code>##                Connote No          Order Id  ...               Regional OUTSTANDING
+## 219528   3012652200220968  3012652200220968  ...             JAWA BARAT    209000.0
+## 527533   1727142200054526  1727142200054526  ...    JATIM, BALI &amp; NUSRA    181000.0
+## 528595   2010992200558197  2010992200558197  ...    JATIM, BALI &amp; NUSRA    129000.0
+## 528627   2010992200603043  2010992200603043  ...    JATIM, BALI &amp; NUSRA    214000.0
+## 528636   2010992200606533  2010992200606533  ...    JATIM, BALI &amp; NUSRA    200000.0
+## ...                   ...               ...  ...                    ...         ...
+## 1312222  5445782200015795  5445782200015795  ...  SUMATERA REG. SELATAN    141110.0
+## 1312223  5441602200100864  5441602200100864  ...  SUMATERA REG. SELATAN    925970.0
+## 1312224  5441602200101581  5441602200101581  ...  SUMATERA REG. SELATAN    323420.0
+## 1312225  5441602200098233  5441602200098233  ...  SUMATERA REG. SELATAN    650960.0
+## 1312226  5827522200009960  5827522200009960  ...  SUMATERA REG. SELATAN     39000.0
+## 
+## [546921 rows x 10 columns]</code></pre>
+<p><strong>Catatan:</strong> Dari hasil pemeriksaan data duplikat diatas, diduga kuat bahwa data duplikat tersebut adalah data pengulangan. Olehkarena itu, data duplikat ini dapat dihapuskan. Untuk <a href="https://www.statology.org/pandas-drop-duplicates/">menghapus data duplikat</a> ini dapat dilakukan dengan cara berikut:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="mini-project.html#cb18-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop_duplicates([<span class="st">&#39;Connote No&#39;</span>], keep<span class="op">=</span><span class="st">&#39;last&#39;</span>) <span class="co"># hapus data duplikat </span></span>
+<span id="cb18-2"><a href="mini-project.html#cb18-2" aria-hidden="true" tabindex="-1"></a>df.info()</span></code></pre></div>
+<pre><code>## &lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+## Int64Index: 765306 entries, 0 to 1312226
+## Data columns (total 10 columns):
+##  #   Column         Non-Null Count   Dtype  
+## ---  ------         --------------   -----  
+##  0   Connote No     765306 non-null  object 
+##  1   Order Id       765306 non-null  object 
+##  2   Origin         765306 non-null  object 
+##  3   Dest Runsheet  765306 non-null  object 
+##  4   Amount         765306 non-null  int64  
+##  5   Project        765306 non-null  object 
+##  6   POD Status     765306 non-null  object 
+##  7   Customer Name  765306 non-null  object 
+##  8   Regional       765306 non-null  object 
+##  9   OUTSTANDING    765306 non-null  float64
+## dtypes: float64(1), int64(1), object(8)
+## memory usage: 64.2+ MB</code></pre>
+</div>
+<div id="periksa-data-anomali" class="section level2 hasAnchor" number="4.8">
+<h2><span class="header-section-number">4.8</span> Periksa Data Anomali<a href="mini-project.html#periksa-data-anomali" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Pemeriksaan data anomali bertujuan untuk menemukan atau menganalisis suatu nilai yang dianggap menyimpangan atau memiliki keanehan yang terjadi atau dengan kata lain tidak seperti biasanya. Berikut ini dilakukan pemerikasaan data anomali dengan statistik deskriptif numerikal.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="mini-project.html#cb20-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code></pre></div>
+<pre><code>##              Amount   OUTSTANDING
+## count  7.653060e+05  7.653060e+05
+## mean   1.298612e+05  1.297907e+05
+## std    1.994777e+05  1.994349e+05
+## min    0.000000e+00 -1.769078e+06
+## 25%    3.499900e+04  3.499400e+04
+## 50%    7.550000e+04  7.540000e+04
+## 75%    1.690000e+05  1.690000e+05
+## max    1.349100e+07  1.349100e+07</code></pre>
+<p><strong>Catatan:</strong> Ditemukan bahwa terdapat nilai <code>OUTSTANDING</code> yang negatif.</p>
+<div id="quiz-3-1" class="section level3 hasAnchor" number="4.8.1">
+<h3><span class="header-section-number">4.8.1</span> Quiz 3<a href="mini-project.html#quiz-3-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Berikut ini diperlihatkan data <code>OUTSTANDING</code> yang bernilai negatif. Lengkapi script dibawah, jika anda ingin memperbaharui nilai pada kolom OUTSTANDING tersebut dengan menggunakan nilai dari kolom <code>Amount</code>.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="mini-project.html#cb22-1" aria-hidden="true" tabindex="-1"></a>df.loc[df[<span class="st">&#39;OUTSTANDING&#39;</span>] <span class="op">&lt;</span> <span class="dv">0</span>, <span class="st">&#39;OUTSTANDING&#39;</span>]</span></code></pre></div>
+<pre><code>## 128811     -10000.0
+## 142237     -43610.0
+## 142238    -190610.0
+## 142239   -1769078.0
+## 151009      -3332.0
+##             ...    
+## 189461      -7486.0
+## 207695     -10000.0
+## 209666     -22461.0
+## 211599    -100000.0
+## 943704     -16000.0
+## Name: OUTSTANDING, Length: 62, dtype: float64</code></pre>
+<p>Berikut ini diperlihatkan data2 yang memuat nilai negatif tersebut menggunakan fungsi <a href="https://sparkbyexamples.com/pandas/pandas-filter-by-column-value/"><code>query</code> yang disediakan library <code>pandas</code></a>.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="mini-project.html#cb24-1" aria-hidden="true" tabindex="-1"></a>ots_negatif <span class="op">=</span> df.query(<span class="st">&quot;OUTSTANDING &lt; 0&quot;</span>)</span>
+<span id="cb24-2"><a href="mini-project.html#cb24-2" aria-hidden="true" tabindex="-1"></a>ots_negatif.info()</span></code></pre></div>
+<pre><code>## &lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+## Int64Index: 62 entries, 128811 to 943704
+## Data columns (total 10 columns):
+##  #   Column         Non-Null Count  Dtype  
+## ---  ------         --------------  -----  
+##  0   Connote No     62 non-null     object 
+##  1   Order Id       62 non-null     object 
+##  2   Origin         62 non-null     object 
+##  3   Dest Runsheet  62 non-null     object 
+##  4   Amount         62 non-null     int64  
+##  5   Project        62 non-null     object 
+##  6   POD Status     62 non-null     object 
+##  7   Customer Name  62 non-null     object 
+##  8   Regional       62 non-null     object 
+##  9   OUTSTANDING    62 non-null     float64
+## dtypes: float64(1), int64(1), object(8)
+## memory usage: 5.3+ KB</code></pre>
+<p>Untuk mengurutkan data <code>OUTSTANDING</code> negatif yang paling besar ke paling kecil dapat digunakan script berikut:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="mini-project.html#cb26-1" aria-hidden="true" tabindex="-1"></a>ots_negatif.sort_values(<span class="st">&#39;OUTSTANDING&#39;</span>, ascending<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<pre><code>##               Connote No          Order Id  ...    Regional OUTSTANDING
+## 142239  CGKEC30636014422  CGKEC30636014422  ...  KALIMANTAN  -1769078.0
+## 166174  2111801900093819  2111801900093819  ...  SULAMPAPUA  -1016380.0
+## 166024  2111801900063390  2111801900063390  ...  SULAMPAPUA   -985520.0
+## 166061  2111801900071252  2111801900071252  ...  SULAMPAPUA   -752000.0
+## 166205  2111801900099410  2111801900099410  ...  SULAMPAPUA   -446020.0
+## ...                  ...               ...  ...         ...         ...
+## 187612   JNRP-0013069369   JNRP-0013069369  ...  SULAMPAPUA      -666.0
+## 168585  2901961800115130  2901961800115130  ...  SULAMPAPUA      -500.0
+## 166111  2111801900079131  2111801900079131  ...  SULAMPAPUA      -500.0
+## 178266   JNCB-0300665670   JNCB-0300665670  ...  SULAMPAPUA      -142.0
+## 187277   JNRP-0011633455   JNRP-0011633455  ...  SULAMPAPUA      -110.0
+## 
+## [62 rows x 10 columns]</code></pre>
+</div>
+<div id="quiz-4-1" class="section level3 hasAnchor" number="4.8.2">
+<h3><span class="header-section-number">4.8.2</span> Quiz 4<a href="mini-project.html#quiz-4-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Perhatikan script dibawah ini, kemudian lakukan pembaharuan data <code>OUTSTANDING</code> yang bernilai negatif tersebut menjadi satu dataframe baru. Gunakan gunakan <code>pd.DataFrame()</code>.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="mini-project.html#cb28-1" aria-hidden="true" tabindex="-1"></a>ots_negatif <span class="op">=</span> df.query(<span class="st">&quot;OUTSTANDING &lt; 0&quot;</span>)</span></code></pre></div>
+<p>Berikut ini dilakukan pemerikasaan data anomali dengan statistik deskriptif kategorikal.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="mini-project.html#cb29-1" aria-hidden="true" tabindex="-1"></a>ots_negatif <span class="op">=</span> df.query(<span class="st">&quot;OUTSTANDING &lt; 0&quot;</span>)</span></code></pre></div>
+<p>Berikut ini dilakukan pemerikasaan data anomali dengan statistik deskriptif kategorikal.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="mini-project.html#cb30-1" aria-hidden="true" tabindex="-1"></a>kategori <span class="op">=</span> df.select_dtypes(include<span class="op">=</span><span class="st">&#39;object&#39;</span>) <span class="co"># pilih data kategori</span></span>
+<span id="cb30-2"><a href="mini-project.html#cb30-2" aria-hidden="true" tabindex="-1"></a>kategori.describe().transpose()               <span class="co"># deskriptif kategorical</span></span></code></pre></div>
+<pre><code>##                 count  unique                  top    freq
+## Connote No     765306  765306     0100792200104454       1
+## Order Id       765306  765202     0226472200012531      62
+## Origin         765306      60                  CGK  207272
+## Dest Runsheet  765306      62                  SUB   92738
+## Project        765306       5        COD CORPORATE  679957
+## POD Status     765306      15                  D01  687463
+## Customer Name  765306    2647      LAZADA MPDS COD  551355
+## Regional       765306       9  JATIM, BALI &amp; NUSRA  218953</code></pre>
+</div>
+<div id="quiz-5-1" class="section level3 hasAnchor" number="4.8.3">
+<h3><span class="header-section-number">4.8.3</span> Quiz 5<a href="mini-project.html#quiz-5-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Berikan pendapat (temuan) anda mengenai statistik deskriptif kategorikal diatas!</p>
+</div>
+</div>
+<div id="membuat-kolom-baru" class="section level2 hasAnchor" number="4.9">
+<h2><span class="header-section-number">4.9</span> Membuat Kolom Baru<a href="mini-project.html#membuat-kolom-baru" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Dalam analisis data terkadang kita perlu membuat kolom baru untuk menampung informasi yang lebih detail yang dapat membantu kita melihat lebih jauh tentang data yang sedang kita observasi. Untuk itu, pada tulisan ini, saya akan membahas cara menambahkan kolom baru pada dataframe pandas. Berikut ini dilakukan penambahan kolom baru untuk melihat <code>Selisih</code> nilai antara kolom <code>Amount</code> dan <code>OUTSTANDING</code>.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="mini-project.html#cb32-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;Selisih&#39;</span>] <span class="op">=</span> (df[<span class="st">&#39;OUTSTANDING&#39;</span>]<span class="op">-</span>df[<span class="st">&#39;Amount&#39;</span>])</span></code></pre></div>
+<div id="quiz-6-1" class="section level3 hasAnchor" number="4.9.1">
+<h3><span class="header-section-number">4.9.1</span> Quiz 6<a href="mini-project.html#quiz-6-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Dataframe diatas sudah memiliki kolom <code>Selisih</code> nilai dari kolom <code>Amount</code> dan <code>OUTSTANDING</code>. Bagaimana jika anda diminta untuk memperlihatkan nilai selisih yang lebih besar dan lebih kecil dari nol? tunjukan script dan hasilnya!</p>
+</div>
+</div>
+<div id="analisis-outstanding" class="section level2 hasAnchor" number="4.10">
+<h2><span class="header-section-number">4.10</span> Analisis Outstanding<a href="mini-project.html#analisis-outstanding" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="regional" class="section level3 hasAnchor" number="4.10.1">
+<h3><span class="header-section-number">4.10.1</span> Regional<a href="mini-project.html#regional" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Berikut ini adalah Analisa nilai outstanding yang berdasarkan Regional:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="mini-project.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabel Pivot</span></span>
+<span id="cb33-2"><a href="mini-project.html#cb33-2" aria-hidden="true" tabindex="-1"></a>ots<span class="op">=</span>pd.pivot_table(df,index<span class="op">=</span>[<span class="st">&#39;Regional&#39;</span>], </span>
+<span id="cb33-3"><a href="mini-project.html#cb33-3" aria-hidden="true" tabindex="-1"></a>                   values<span class="op">=</span>[<span class="st">&#39;OUTSTANDING&#39;</span>], aggfunc<span class="op">=</span><span class="st">&#39;sum&#39;</span>)</span>
+<span id="cb33-4"><a href="mini-project.html#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="mini-project.html#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Komfersi indeks menjadi Kolom</span></span>
+<span id="cb33-6"><a href="mini-project.html#cb33-6" aria-hidden="true" tabindex="-1"></a>ots.reset_index(inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb33-7"><a href="mini-project.html#cb33-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-8"><a href="mini-project.html#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Urutkan data dari yang besar ke kecil</span></span>
+<span id="cb33-9"><a href="mini-project.html#cb33-9" aria-hidden="true" tabindex="-1"></a>ots<span class="op">=</span>ots.sort_values([<span class="st">&#39;OUTSTANDING&#39;</span>],ascending<span class="op">=</span><span class="va">False</span>).head(<span class="dv">100</span>)</span>
+<span id="cb33-10"><a href="mini-project.html#cb33-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-11"><a href="mini-project.html#cb33-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Konversi Total omset menjadi per-juta </span></span>
+<span id="cb33-12"><a href="mini-project.html#cb33-12" aria-hidden="true" tabindex="-1"></a>ots[<span class="st">&quot;OUTSTANDING&quot;</span>] <span class="op">=</span> (ots[<span class="st">&#39;OUTSTANDING&#39;</span>]<span class="op">/</span><span class="dv">1000000</span>)</span>
+<span id="cb33-13"><a href="mini-project.html#cb33-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-14"><a href="mini-project.html#cb33-14" aria-hidden="true" tabindex="-1"></a>ots</span></code></pre></div>
+<pre><code>##                 Regional   OUTSTANDING
+## 2    JATIM, BALI &amp; NUSRA  24036.152920
+## 6             SULAMPAPUA  19062.006514
+## 5             KALIMANTAN  10212.505786
+## 0           BODETABEKCIL   9379.149909
+## 8    SUMATERA REG. UTARA   9177.094226
+## 7  SUMATERA REG. SELATAN   9070.247045
+## 3             JAWA BARAT   8690.865457
+## 4      JAWA TENGAH &amp; DIY   7843.426443
+## 1                JAKARTA   1858.182450</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="mini-project.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># impor library yg dibutuhkan untuk visualisasi</span></span>
+<span id="cb35-2"><a href="mini-project.html#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb35-3"><a href="mini-project.html#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="mini-project.html#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co"># membuat grafik batang (bar-chart)</span></span>
+<span id="cb35-5"><a href="mini-project.html#cb35-5" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.bar(ots, y<span class="op">=</span><span class="st">&#39;OUTSTANDING&#39;</span>, x<span class="op">=</span><span class="st">&#39;Regional&#39;</span>,color<span class="op">=</span><span class="st">&#39;Regional&#39;</span>, text_auto<span class="op">=</span><span class="st">&#39;.2s&#39;</span>)</span>
+<span id="cb35-6"><a href="mini-project.html#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="mini-project.html#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Pengaturan detail grafik</span></span>
+<span id="cb35-8"><a href="mini-project.html#cb35-8" aria-hidden="true" tabindex="-1"></a>fig.update_layout(barmode<span class="op">=</span><span class="st">&#39;stack&#39;</span>,</span>
+<span id="cb35-9"><a href="mini-project.html#cb35-9" aria-hidden="true" tabindex="-1"></a>                  width<span class="op">=</span><span class="dv">800</span>,</span>
+<span id="cb35-10"><a href="mini-project.html#cb35-10" aria-hidden="true" tabindex="-1"></a>                  height<span class="op">=</span><span class="dv">600</span>,</span>
+<span id="cb35-11"><a href="mini-project.html#cb35-11" aria-hidden="true" tabindex="-1"></a>                  showlegend<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb35-12"><a href="mini-project.html#cb35-12" aria-hidden="true" tabindex="-1"></a>                  title<span class="op">=</span><span class="st">&quot;Total OTS Berdasarkan Regional&quot;</span>,</span>
+<span id="cb35-13"><a href="mini-project.html#cb35-13" aria-hidden="true" tabindex="-1"></a>                  xaxis_title<span class="op">=</span><span class="st">&quot;Regional&quot;</span>,</span>
+<span id="cb35-14"><a href="mini-project.html#cb35-14" aria-hidden="true" tabindex="-1"></a>                  yaxis_title<span class="op">=</span><span class="st">&quot;Per-miliar (Rp)&quot;</span>)<span class="op">;</span></span>
+<span id="cb35-15"><a href="mini-project.html#cb35-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-16"><a href="mini-project.html#cb35-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Pengaturan rotasi axis x (+-360 derajat)</span></span></code></pre></div>
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>                <div id="1e8b348d-d766-4d0f-ab6d-596b81680853" class="plotly-graph-div" style="height:600px; width:800px;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("1e8b348d-d766-4d0f-ab6d-596b81680853")) {                    Plotly.newPlot(                        "1e8b348d-d766-4d0f-ab6d-596b81680853",                        [{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"JATIM, BALI & NUSRA","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"JATIM, BALI & NUSRA","offsetgroup":"JATIM, BALI & NUSRA","orientation":"v","showlegend":true,"textposition":"auto","texttemplate":"%{y:.2s}","x":["JATIM, BALI & NUSRA"],"xaxis":"x","y":[24036.15292],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"SULAMPAPUA","marker":{"color":"#EF553B","pattern":{"shape":""}},"name":"SULAMPAPUA","offsetgroup":"SULAMPAPUA","orientation":"v","showlegend":true,"textposition":"auto","texttemplate":"%{y:.2s}","x":["SULAMPAPUA"],"xaxis":"x","y":[19062.006514],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"KALIMANTAN","marker":{"color":"#00cc96","pattern":{"shape":""}},"name":"KALIMANTAN","offsetgroup":"KALIMANTAN","orientation":"v","showlegend":true,"textposition":"auto","texttemplate":"%{y:.2s}","x":["KALIMANTAN"],"xaxis":"x","y":[10212.505786],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"BODETABEKCIL","marker":{"color":"#ab63fa","pattern":{"shape":""}},"name":"BODETABEKCIL","offsetgroup":"BODETABEKCIL","orientation":"v","showlegend":true,"textposition":"auto","texttemplate":"%{y:.2s}","x":["BODETABEKCIL"],"xaxis":"x","y":[9379.149909],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"SUMATERA REG. UTARA","marker":{"color":"#FFA15A","pattern":{"shape":""}},"name":"SUMATERA REG. UTARA","offsetgroup":"SUMATERA REG. UTARA","orientation":"v","showlegend":true,"textposition":"auto","texttemplate":"%{y:.2s}","x":["SUMATERA REG. UTARA"],"xaxis":"x","y":[9177.094226],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"SUMATERA REG. SELATAN","marker":{"color":"#19d3f3","pattern":{"shape":""}},"name":"SUMATERA REG. SELATAN","offsetgroup":"SUMATERA REG. SELATAN","orientation":"v","showlegend":true,"textposition":"auto","texttemplate":"%{y:.2s}","x":["SUMATERA REG. SELATAN"],"xaxis":"x","y":[9070.247045],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"JAWA BARAT","marker":{"color":"#FF6692","pattern":{"shape":""}},"name":"JAWA BARAT","offsetgroup":"JAWA BARAT","orientation":"v","showlegend":true,"textposition":"auto","texttemplate":"%{y:.2s}","x":["JAWA BARAT"],"xaxis":"x","y":[8690.865457],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"JAWA TENGAH & DIY","marker":{"color":"#B6E880","pattern":{"shape":""}},"name":"JAWA TENGAH & DIY","offsetgroup":"JAWA TENGAH & DIY","orientation":"v","showlegend":true,"textposition":"auto","texttemplate":"%{y:.2s}","x":["JAWA TENGAH & DIY"],"xaxis":"x","y":[7843.426443],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"JAKARTA","marker":{"color":"#FF97FF","pattern":{"shape":""}},"name":"JAKARTA","offsetgroup":"JAKARTA","orientation":"v","showlegend":true,"textposition":"auto","texttemplate":"%{y:.2s}","x":["JAKARTA"],"xaxis":"x","y":[1858.1824498545454],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Regional"},"categoryorder":"array","categoryarray":["JATIM, BALI & NUSRA","SULAMPAPUA","KALIMANTAN","BODETABEKCIL","SUMATERA REG. UTARA","SUMATERA REG. SELATAN","JAWA BARAT","JAWA TENGAH & DIY","JAKARTA"]},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Per-miliar (Rp)"}},"legend":{"title":{"text":"Regional"},"tracegroupgap":0},"margin":{"t":60},"barmode":"stack","width":800,"height":600,"showlegend":false,"title":{"text":"Total OTS Berdasarkan Regional"}},                        {"responsive": true}                    )                };                            </script>        </div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="mini-project.html#cb36-1" aria-hidden="true" tabindex="-1"></a>fig.update_xaxes(tickangle<span class="op">=-</span><span class="dv">45</span>, showticklabels<span class="op">=</span><span class="va">True</span>)<span class="op">;</span></span>
+<span id="cb36-2"><a href="mini-project.html#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-3"><a href="mini-project.html#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Pengaturan posisi, ukuran, dan rotasi teks</span></span></code></pre></div>
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>                <div id="a6a03edd-7346-4afe-9d1e-1c2552136e08" class="plotly-graph-div" style="height:600px; width:800px;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("a6a03edd-7346-4afe-9d1e-1c2552136e08")) {                    Plotly.newPlot(                        "a6a03edd-7346-4afe-9d1e-1c2552136e08",                        [{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"JATIM, BALI & NUSRA","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"JATIM, BALI & NUSRA","offsetgroup":"JATIM, BALI & NUSRA","orientation":"v","showlegend":true,"textposition":"auto","texttemplate":"%{y:.2s}","x":["JATIM, BALI & NUSRA"],"xaxis":"x","y":[24036.15292],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"SULAMPAPUA","marker":{"color":"#EF553B","pattern":{"shape":""}},"name":"SULAMPAPUA","offsetgroup":"SULAMPAPUA","orientation":"v","showlegend":true,"textposition":"auto","texttemplate":"%{y:.2s}","x":["SULAMPAPUA"],"xaxis":"x","y":[19062.006514],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"KALIMANTAN","marker":{"color":"#00cc96","pattern":{"shape":""}},"name":"KALIMANTAN","offsetgroup":"KALIMANTAN","orientation":"v","showlegend":true,"textposition":"auto","texttemplate":"%{y:.2s}","x":["KALIMANTAN"],"xaxis":"x","y":[10212.505786],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"BODETABEKCIL","marker":{"color":"#ab63fa","pattern":{"shape":""}},"name":"BODETABEKCIL","offsetgroup":"BODETABEKCIL","orientation":"v","showlegend":true,"textposition":"auto","texttemplate":"%{y:.2s}","x":["BODETABEKCIL"],"xaxis":"x","y":[9379.149909],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"SUMATERA REG. UTARA","marker":{"color":"#FFA15A","pattern":{"shape":""}},"name":"SUMATERA REG. UTARA","offsetgroup":"SUMATERA REG. UTARA","orientation":"v","showlegend":true,"textposition":"auto","texttemplate":"%{y:.2s}","x":["SUMATERA REG. UTARA"],"xaxis":"x","y":[9177.094226],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"SUMATERA REG. SELATAN","marker":{"color":"#19d3f3","pattern":{"shape":""}},"name":"SUMATERA REG. SELATAN","offsetgroup":"SUMATERA REG. SELATAN","orientation":"v","showlegend":true,"textposition":"auto","texttemplate":"%{y:.2s}","x":["SUMATERA REG. SELATAN"],"xaxis":"x","y":[9070.247045],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"JAWA BARAT","marker":{"color":"#FF6692","pattern":{"shape":""}},"name":"JAWA BARAT","offsetgroup":"JAWA BARAT","orientation":"v","showlegend":true,"textposition":"auto","texttemplate":"%{y:.2s}","x":["JAWA BARAT"],"xaxis":"x","y":[8690.865457],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"JAWA TENGAH & DIY","marker":{"color":"#B6E880","pattern":{"shape":""}},"name":"JAWA TENGAH & DIY","offsetgroup":"JAWA TENGAH & DIY","orientation":"v","showlegend":true,"textposition":"auto","texttemplate":"%{y:.2s}","x":["JAWA TENGAH & DIY"],"xaxis":"x","y":[7843.426443],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"JAKARTA","marker":{"color":"#FF97FF","pattern":{"shape":""}},"name":"JAKARTA","offsetgroup":"JAKARTA","orientation":"v","showlegend":true,"textposition":"auto","texttemplate":"%{y:.2s}","x":["JAKARTA"],"xaxis":"x","y":[1858.1824498545454],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Regional"},"categoryorder":"array","categoryarray":["JATIM, BALI & NUSRA","SULAMPAPUA","KALIMANTAN","BODETABEKCIL","SUMATERA REG. UTARA","SUMATERA REG. SELATAN","JAWA BARAT","JAWA TENGAH & DIY","JAKARTA"],"tickangle":-45,"showticklabels":true},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Per-miliar (Rp)"}},"legend":{"title":{"text":"Regional"},"tracegroupgap":0},"margin":{"t":60},"barmode":"stack","width":800,"height":600,"showlegend":false,"title":{"text":"Total OTS Berdasarkan Regional"}},                        {"responsive": true}                    )                };                            </script>        </div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="mini-project.html#cb37-1" aria-hidden="true" tabindex="-1"></a>fig.update_traces(textfont_size<span class="op">=</span><span class="dv">12</span>, textangle<span class="op">=</span><span class="dv">0</span>, textposition<span class="op">=</span><span class="st">&quot;outside&quot;</span>)<span class="op">;</span></span>
+<span id="cb37-2"><a href="mini-project.html#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="mini-project.html#cb37-3" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code></pre></div>
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>                <div id="700a4d08-b84f-4b0d-9684-d6c1164d41b3" class="plotly-graph-div" style="height:600px; width:800px;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("700a4d08-b84f-4b0d-9684-d6c1164d41b3")) {                    Plotly.newPlot(                        "700a4d08-b84f-4b0d-9684-d6c1164d41b3",                        [{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"JATIM, BALI & NUSRA","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"JATIM, BALI & NUSRA","offsetgroup":"JATIM, BALI & NUSRA","orientation":"v","showlegend":true,"textposition":"outside","texttemplate":"%{y:.2s}","x":["JATIM, BALI & NUSRA"],"xaxis":"x","y":[24036.15292],"yaxis":"y","type":"bar","textfont":{"size":12},"textangle":0},{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"SULAMPAPUA","marker":{"color":"#EF553B","pattern":{"shape":""}},"name":"SULAMPAPUA","offsetgroup":"SULAMPAPUA","orientation":"v","showlegend":true,"textposition":"outside","texttemplate":"%{y:.2s}","x":["SULAMPAPUA"],"xaxis":"x","y":[19062.006514],"yaxis":"y","type":"bar","textfont":{"size":12},"textangle":0},{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"KALIMANTAN","marker":{"color":"#00cc96","pattern":{"shape":""}},"name":"KALIMANTAN","offsetgroup":"KALIMANTAN","orientation":"v","showlegend":true,"textposition":"outside","texttemplate":"%{y:.2s}","x":["KALIMANTAN"],"xaxis":"x","y":[10212.505786],"yaxis":"y","type":"bar","textfont":{"size":12},"textangle":0},{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"BODETABEKCIL","marker":{"color":"#ab63fa","pattern":{"shape":""}},"name":"BODETABEKCIL","offsetgroup":"BODETABEKCIL","orientation":"v","showlegend":true,"textposition":"outside","texttemplate":"%{y:.2s}","x":["BODETABEKCIL"],"xaxis":"x","y":[9379.149909],"yaxis":"y","type":"bar","textfont":{"size":12},"textangle":0},{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"SUMATERA REG. UTARA","marker":{"color":"#FFA15A","pattern":{"shape":""}},"name":"SUMATERA REG. UTARA","offsetgroup":"SUMATERA REG. UTARA","orientation":"v","showlegend":true,"textposition":"outside","texttemplate":"%{y:.2s}","x":["SUMATERA REG. UTARA"],"xaxis":"x","y":[9177.094226],"yaxis":"y","type":"bar","textfont":{"size":12},"textangle":0},{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"SUMATERA REG. SELATAN","marker":{"color":"#19d3f3","pattern":{"shape":""}},"name":"SUMATERA REG. SELATAN","offsetgroup":"SUMATERA REG. SELATAN","orientation":"v","showlegend":true,"textposition":"outside","texttemplate":"%{y:.2s}","x":["SUMATERA REG. SELATAN"],"xaxis":"x","y":[9070.247045],"yaxis":"y","type":"bar","textfont":{"size":12},"textangle":0},{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"JAWA BARAT","marker":{"color":"#FF6692","pattern":{"shape":""}},"name":"JAWA BARAT","offsetgroup":"JAWA BARAT","orientation":"v","showlegend":true,"textposition":"outside","texttemplate":"%{y:.2s}","x":["JAWA BARAT"],"xaxis":"x","y":[8690.865457],"yaxis":"y","type":"bar","textfont":{"size":12},"textangle":0},{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"JAWA TENGAH & DIY","marker":{"color":"#B6E880","pattern":{"shape":""}},"name":"JAWA TENGAH & DIY","offsetgroup":"JAWA TENGAH & DIY","orientation":"v","showlegend":true,"textposition":"outside","texttemplate":"%{y:.2s}","x":["JAWA TENGAH & DIY"],"xaxis":"x","y":[7843.426443],"yaxis":"y","type":"bar","textfont":{"size":12},"textangle":0},{"alignmentgroup":"True","hovertemplate":"Regional=%{x}<br>OUTSTANDING=%{y}<extra></extra>","legendgroup":"JAKARTA","marker":{"color":"#FF97FF","pattern":{"shape":""}},"name":"JAKARTA","offsetgroup":"JAKARTA","orientation":"v","showlegend":true,"textposition":"outside","texttemplate":"%{y:.2s}","x":["JAKARTA"],"xaxis":"x","y":[1858.1824498545454],"yaxis":"y","type":"bar","textfont":{"size":12},"textangle":0}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Regional"},"categoryorder":"array","categoryarray":["JATIM, BALI & NUSRA","SULAMPAPUA","KALIMANTAN","BODETABEKCIL","SUMATERA REG. UTARA","SUMATERA REG. SELATAN","JAWA BARAT","JAWA TENGAH & DIY","JAKARTA"],"tickangle":-45,"showticklabels":true},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Per-miliar (Rp)"}},"legend":{"title":{"text":"Regional"},"tracegroupgap":0},"margin":{"t":60},"barmode":"stack","width":800,"height":600,"showlegend":false,"title":{"text":"Total OTS Berdasarkan Regional"}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+<div id="pelanggan-tujuan" class="section level3 hasAnchor" number="4.10.2">
+<h3><span class="header-section-number">4.10.2</span> Pelanggan &amp; Tujuan<a href="mini-project.html#pelanggan-tujuan" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Berikut ini dperlihatkan pencapaian <strong>(outstanding)</strong> yang diurutkan berdasarkan nama <code>customer ~ Dest Runsheet</code>.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="mini-project.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabel Pivot</span></span>
+<span id="cb38-2"><a href="mini-project.html#cb38-2" aria-hidden="true" tabindex="-1"></a>ots<span class="op">=</span>pd.pivot_table(df,index<span class="op">=</span>[<span class="st">&#39;Customer Name&#39;</span>,<span class="st">&#39;Dest Runsheet&#39;</span>], </span>
+<span id="cb38-3"><a href="mini-project.html#cb38-3" aria-hidden="true" tabindex="-1"></a>                   values<span class="op">=</span>[<span class="st">&#39;OUTSTANDING&#39;</span>], aggfunc<span class="op">=</span><span class="st">&#39;sum&#39;</span>)</span>
+<span id="cb38-4"><a href="mini-project.html#cb38-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-5"><a href="mini-project.html#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Komfersi indeks menjadi Kolom</span></span>
+<span id="cb38-6"><a href="mini-project.html#cb38-6" aria-hidden="true" tabindex="-1"></a>ots.reset_index(inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb38-7"><a href="mini-project.html#cb38-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-8"><a href="mini-project.html#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Urutkan data dari yang besar ke kecil</span></span>
+<span id="cb38-9"><a href="mini-project.html#cb38-9" aria-hidden="true" tabindex="-1"></a>ots<span class="op">=</span>ots.sort_values([<span class="st">&#39;OUTSTANDING&#39;</span>],ascending<span class="op">=</span><span class="va">False</span>).head(<span class="dv">100</span>)</span>
+<span id="cb38-10"><a href="mini-project.html#cb38-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-11"><a href="mini-project.html#cb38-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Konversi Total omset menjadi per-juta </span></span>
+<span id="cb38-12"><a href="mini-project.html#cb38-12" aria-hidden="true" tabindex="-1"></a>ots[<span class="st">&quot;OUTSTANDING&quot;</span>] <span class="op">=</span> (ots[<span class="st">&#39;OUTSTANDING&#39;</span>]<span class="op">/</span><span class="dv">1000000</span>)</span>
+<span id="cb38-13"><a href="mini-project.html#cb38-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-14"><a href="mini-project.html#cb38-14" aria-hidden="true" tabindex="-1"></a>ots</span></code></pre></div>
+<pre><code>##                          Customer Name Dest Runsheet  OUTSTANDING
+## 8978                   LAZADA MPDS COD           SUB  6638.606005
+## 8980                   LAZADA MPDS COD           TGR  3699.967101
+## 8930                   LAZADA MPDS COD           BDO  3036.068315
+## 8953                   LAZADA MPDS COD           KOE  2943.961754
+## 8959                   LAZADA MPDS COD           MJK  2450.080273
+## ...                                ...           ...          ...
+## 11150                 ORDIVO TEKNOLOGY           BTJ   150.349723
+## 9770   MENGANTAR KARYA BANGSA PT / COD           CGK   143.056835
+## 9807   MENGANTAR KARYA BANGSA PT / COD           SOQ   142.298665
+## 13998  SICEPAT EKSPRES INDONESIA / COD           MDC   141.480843
+## 9759   MENGANTAR KARYA BANGSA PT / COD           AMQ   140.652186
+## 
+## [100 rows x 3 columns]</code></pre>
+<p>Untuk menganalisis secara visual, dapat diperlihatkan dengan menggunakan <code>Bar-Chart</code> sebagai berikut:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="mini-project.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># impor library yg dibutuhkan untuk visualisasi</span></span>
+<span id="cb40-2"><a href="mini-project.html#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb40-3"><a href="mini-project.html#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="mini-project.html#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co"># membuat grafik batang (bar-chart)</span></span>
+<span id="cb40-5"><a href="mini-project.html#cb40-5" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.bar(ots, y<span class="op">=</span><span class="st">&#39;Dest Runsheet&#39;</span>, x<span class="op">=</span><span class="st">&#39;OUTSTANDING&#39;</span>,color<span class="op">=</span><span class="st">&#39;Customer Name&#39;</span>, text_auto<span class="op">=</span><span class="st">&#39;.2s&#39;</span>)</span>
+<span id="cb40-6"><a href="mini-project.html#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-7"><a href="mini-project.html#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Pengaturan detail grafik</span></span>
+<span id="cb40-8"><a href="mini-project.html#cb40-8" aria-hidden="true" tabindex="-1"></a>fig.update_layout(barmode<span class="op">=</span><span class="st">&#39;stack&#39;</span>,</span>
+<span id="cb40-9"><a href="mini-project.html#cb40-9" aria-hidden="true" tabindex="-1"></a>                  width<span class="op">=</span><span class="dv">1000</span>,</span>
+<span id="cb40-10"><a href="mini-project.html#cb40-10" aria-hidden="true" tabindex="-1"></a>                  height<span class="op">=</span><span class="dv">600</span>,</span>
+<span id="cb40-11"><a href="mini-project.html#cb40-11" aria-hidden="true" tabindex="-1"></a>                  showlegend<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb40-12"><a href="mini-project.html#cb40-12" aria-hidden="true" tabindex="-1"></a>                  title<span class="op">=</span><span class="st">&quot;Total OTS Berdasarkan Tujuan Pengiriman&quot;</span>,</span>
+<span id="cb40-13"><a href="mini-project.html#cb40-13" aria-hidden="true" tabindex="-1"></a>                  xaxis_title<span class="op">=</span><span class="st">&quot;Per-miliar (Rp)&quot;</span>,</span>
+<span id="cb40-14"><a href="mini-project.html#cb40-14" aria-hidden="true" tabindex="-1"></a>                  yaxis_title<span class="op">=</span><span class="st">&quot;Tujuan Pengiriman&quot;</span>)<span class="op">;</span></span>
+<span id="cb40-15"><a href="mini-project.html#cb40-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-16"><a href="mini-project.html#cb40-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Pengaturan rotasi axis x (+-360 derajat)</span></span></code></pre></div>
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>                <div id="f4d88d8c-a081-42b7-82ff-c53df964034e" class="plotly-graph-div" style="height:600px; width:1000px;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("f4d88d8c-a081-42b7-82ff-c53df964034e")) {                    Plotly.newPlot(                        "f4d88d8c-a081-42b7-82ff-c53df964034e",                        [{"alignmentgroup":"True","hovertemplate":"Customer Name=LAZADA MPDS COD<br>OUTSTANDING=%{x}<br>Dest Runsheet=%{y}<extra></extra>","legendgroup":"LAZADA MPDS COD","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"LAZADA MPDS COD","offsetgroup":"LAZADA MPDS COD","orientation":"h","showlegend":true,"textposition":"auto","texttemplate":"%{x:.2s}","x":[6638.606005,3699.967101,3036.068315,2943.961754,2450.080273,2410.26772,2125.855633,1625.984454,1549.143345,1528.611112,1316.8457938545453,1297.133789,1262.549812,1244.926671,1147.300166,1127.865028,1104.420339,1068.319703,1066.21041,994.978713,994.032594,894.746203,796.276349,770.978479,763.060947,725.610835,635.082253,554.932528,553.716636,530.007704,496.411036,432.841984,381.423962,362.060507,361.30458,353.947396,332.858477,326.303316,308.042959,300.510754,294.004191,284.816589,262.148579,215.226363,209.632376,198.694413,193.451897,192.741356,191.791485,167.260075],"xaxis":"x","y":["SUB","TGR","BDO","KOE","MJK","SRG","BKS","TGL","CBN","CLG","CGK","KRW","BDJ","MES","AMQ","PLM","MGL","TSM","TKG","PGK","MDN","PKY","UPG","PBL","CKR","DJJ","JBR","MXG","SMI","PLW","BOO","JOG","PKU","SOQ","KDI","AMI","CXP","DPS","MDC","PWT","PSR","BPN","GTO","BKI","BTH","MKQ","BTJ","PNK","TTE","PDG"],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Customer Name=MENGANTAR KARYA BANGSA PT / COD<br>OUTSTANDING=%{x}<br>Dest Runsheet=%{y}<extra></extra>","legendgroup":"MENGANTAR KARYA BANGSA PT / COD","marker":{"color":"#EF553B","pattern":{"shape":""}},"name":"MENGANTAR KARYA BANGSA PT / COD","offsetgroup":"MENGANTAR KARYA BANGSA PT / COD","orientation":"h","showlegend":true,"textposition":"auto","texttemplate":"%{x:.2s}","x":[1076.996299,940.419119,916.453293,633.332304,548.255104,535.726235,489.917233,443.047398,416.697046,408.204621,376.828513,364.767186,352.671027,330.306647,273.88432,256.080045,230.765878,227.32872,219.681996,216.253452,202.282595,191.261225,171.788059,166.052666,155.985489,143.056835,142.298665,140.652186],"xaxis":"x","y":["UPG","TTE","MES","BDJ","PNK","TGR","TKG","SUB","PKU","PLW","KOE","AMI","DPS","BTJ","PKY","MDC","PLM","PDG","SRG","DJJ","MXG","KDI","BPN","MJK","DTB","CGK","SOQ","AMQ"],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Customer Name=SALESTOCK COD<br>OUTSTANDING=%{x}<br>Dest Runsheet=%{y}<extra></extra>","legendgroup":"SALESTOCK COD","marker":{"color":"#00cc96","pattern":{"shape":""}},"name":"SALESTOCK COD","offsetgroup":"SALESTOCK COD","orientation":"h","showlegend":true,"textposition":"auto","texttemplate":"%{x:.2s}","x":[500.254873,261.271402],"xaxis":"x","y":["AMQ","SOQ"],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Customer Name=ORDIVO TEKNOLOGY<br>OUTSTANDING=%{x}<br>Dest Runsheet=%{y}<extra></extra>","legendgroup":"ORDIVO TEKNOLOGY","marker":{"color":"#ab63fa","pattern":{"shape":""}},"name":"ORDIVO TEKNOLOGY","offsetgroup":"ORDIVO TEKNOLOGY","orientation":"h","showlegend":true,"textposition":"auto","texttemplate":"%{x:.2s}","x":[403.806902,398.897028,326.911892,294.769066,267.681742,229.616475,214.843431,198.410656,178.654028,168.011935,163.971947,161.585343,159.543228,150.349723],"xaxis":"x","y":["UPG","MES","TTE","BDJ","TGR","PNK","KOE","PKU","DPS","AMI","PLW","TKG","SUB","BTJ"],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Customer Name=SICEPAT EKSPRES INDONESIA / COD<br>OUTSTANDING=%{x}<br>Dest Runsheet=%{y}<extra></extra>","legendgroup":"SICEPAT EKSPRES INDONESIA / COD","marker":{"color":"#FFA15A","pattern":{"shape":""}},"name":"SICEPAT EKSPRES INDONESIA / COD","offsetgroup":"SICEPAT EKSPRES INDONESIA / COD","orientation":"h","showlegend":true,"textposition":"auto","texttemplate":"%{x:.2s}","x":[291.215648,241.184902,141.480843],"xaxis":"x","y":["PLW","KOE","MDC"],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Customer Name=MENGANTAR COM / COD<br>OUTSTANDING=%{x}<br>Dest Runsheet=%{y}<extra></extra>","legendgroup":"MENGANTAR COM / COD","marker":{"color":"#19d3f3","pattern":{"shape":""}},"name":"MENGANTAR COM / COD","offsetgroup":"MENGANTAR COM / COD","orientation":"h","showlegend":true,"textposition":"auto","texttemplate":"%{x:.2s}","x":[273.455627,155.651874],"xaxis":"x","y":["BDJ","TTE"],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Customer Name=ZALORA COD WH<br>OUTSTANDING=%{x}<br>Dest Runsheet=%{y}<extra></extra>","legendgroup":"ZALORA COD WH","marker":{"color":"#FF6692","pattern":{"shape":""}},"name":"ZALORA COD WH","offsetgroup":"ZALORA COD WH","orientation":"h","showlegend":true,"textposition":"auto","texttemplate":"%{x:.2s}","x":[193.379352],"xaxis":"x","y":["BDJ"],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Per-miliar (Rp)"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Tujuan Pengiriman"}},"legend":{"title":{"text":"Customer Name"},"tracegroupgap":0},"margin":{"t":60},"barmode":"stack","width":1000,"height":600,"showlegend":true,"title":{"text":"Total OTS Berdasarkan Tujuan Pengiriman"}},                        {"responsive": true}                    )                };                            </script>        </div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="mini-project.html#cb41-1" aria-hidden="true" tabindex="-1"></a>fig.update_xaxes(tickangle<span class="op">=</span><span class="dv">0</span>, showticklabels<span class="op">=</span><span class="va">False</span>)<span class="op">;</span></span>
+<span id="cb41-2"><a href="mini-project.html#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="mini-project.html#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Pengaturan posisi, ukuran, dan rotasi teks</span></span></code></pre></div>
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>                <div id="8353203d-c4c9-49a2-8094-2a06d1836a38" class="plotly-graph-div" style="height:600px; width:1000px;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("8353203d-c4c9-49a2-8094-2a06d1836a38")) {                    Plotly.newPlot(                        "8353203d-c4c9-49a2-8094-2a06d1836a38",                        [{"alignmentgroup":"True","hovertemplate":"Customer Name=LAZADA MPDS COD<br>OUTSTANDING=%{x}<br>Dest Runsheet=%{y}<extra></extra>","legendgroup":"LAZADA MPDS COD","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"LAZADA MPDS COD","offsetgroup":"LAZADA MPDS COD","orientation":"h","showlegend":true,"textposition":"auto","texttemplate":"%{x:.2s}","x":[6638.606005,3699.967101,3036.068315,2943.961754,2450.080273,2410.26772,2125.855633,1625.984454,1549.143345,1528.611112,1316.8457938545453,1297.133789,1262.549812,1244.926671,1147.300166,1127.865028,1104.420339,1068.319703,1066.21041,994.978713,994.032594,894.746203,796.276349,770.978479,763.060947,725.610835,635.082253,554.932528,553.716636,530.007704,496.411036,432.841984,381.423962,362.060507,361.30458,353.947396,332.858477,326.303316,308.042959,300.510754,294.004191,284.816589,262.148579,215.226363,209.632376,198.694413,193.451897,192.741356,191.791485,167.260075],"xaxis":"x","y":["SUB","TGR","BDO","KOE","MJK","SRG","BKS","TGL","CBN","CLG","CGK","KRW","BDJ","MES","AMQ","PLM","MGL","TSM","TKG","PGK","MDN","PKY","UPG","PBL","CKR","DJJ","JBR","MXG","SMI","PLW","BOO","JOG","PKU","SOQ","KDI","AMI","CXP","DPS","MDC","PWT","PSR","BPN","GTO","BKI","BTH","MKQ","BTJ","PNK","TTE","PDG"],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Customer Name=MENGANTAR KARYA BANGSA PT / COD<br>OUTSTANDING=%{x}<br>Dest Runsheet=%{y}<extra></extra>","legendgroup":"MENGANTAR KARYA BANGSA PT / COD","marker":{"color":"#EF553B","pattern":{"shape":""}},"name":"MENGANTAR KARYA BANGSA PT / COD","offsetgroup":"MENGANTAR KARYA BANGSA PT / COD","orientation":"h","showlegend":true,"textposition":"auto","texttemplate":"%{x:.2s}","x":[1076.996299,940.419119,916.453293,633.332304,548.255104,535.726235,489.917233,443.047398,416.697046,408.204621,376.828513,364.767186,352.671027,330.306647,273.88432,256.080045,230.765878,227.32872,219.681996,216.253452,202.282595,191.261225,171.788059,166.052666,155.985489,143.056835,142.298665,140.652186],"xaxis":"x","y":["UPG","TTE","MES","BDJ","PNK","TGR","TKG","SUB","PKU","PLW","KOE","AMI","DPS","BTJ","PKY","MDC","PLM","PDG","SRG","DJJ","MXG","KDI","BPN","MJK","DTB","CGK","SOQ","AMQ"],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Customer Name=SALESTOCK COD<br>OUTSTANDING=%{x}<br>Dest Runsheet=%{y}<extra></extra>","legendgroup":"SALESTOCK COD","marker":{"color":"#00cc96","pattern":{"shape":""}},"name":"SALESTOCK COD","offsetgroup":"SALESTOCK COD","orientation":"h","showlegend":true,"textposition":"auto","texttemplate":"%{x:.2s}","x":[500.254873,261.271402],"xaxis":"x","y":["AMQ","SOQ"],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Customer Name=ORDIVO TEKNOLOGY<br>OUTSTANDING=%{x}<br>Dest Runsheet=%{y}<extra></extra>","legendgroup":"ORDIVO TEKNOLOGY","marker":{"color":"#ab63fa","pattern":{"shape":""}},"name":"ORDIVO TEKNOLOGY","offsetgroup":"ORDIVO TEKNOLOGY","orientation":"h","showlegend":true,"textposition":"auto","texttemplate":"%{x:.2s}","x":[403.806902,398.897028,326.911892,294.769066,267.681742,229.616475,214.843431,198.410656,178.654028,168.011935,163.971947,161.585343,159.543228,150.349723],"xaxis":"x","y":["UPG","MES","TTE","BDJ","TGR","PNK","KOE","PKU","DPS","AMI","PLW","TKG","SUB","BTJ"],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Customer Name=SICEPAT EKSPRES INDONESIA / COD<br>OUTSTANDING=%{x}<br>Dest Runsheet=%{y}<extra></extra>","legendgroup":"SICEPAT EKSPRES INDONESIA / COD","marker":{"color":"#FFA15A","pattern":{"shape":""}},"name":"SICEPAT EKSPRES INDONESIA / COD","offsetgroup":"SICEPAT EKSPRES INDONESIA / COD","orientation":"h","showlegend":true,"textposition":"auto","texttemplate":"%{x:.2s}","x":[291.215648,241.184902,141.480843],"xaxis":"x","y":["PLW","KOE","MDC"],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Customer Name=MENGANTAR COM / COD<br>OUTSTANDING=%{x}<br>Dest Runsheet=%{y}<extra></extra>","legendgroup":"MENGANTAR COM / COD","marker":{"color":"#19d3f3","pattern":{"shape":""}},"name":"MENGANTAR COM / COD","offsetgroup":"MENGANTAR COM / COD","orientation":"h","showlegend":true,"textposition":"auto","texttemplate":"%{x:.2s}","x":[273.455627,155.651874],"xaxis":"x","y":["BDJ","TTE"],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Customer Name=ZALORA COD WH<br>OUTSTANDING=%{x}<br>Dest Runsheet=%{y}<extra></extra>","legendgroup":"ZALORA COD WH","marker":{"color":"#FF6692","pattern":{"shape":""}},"name":"ZALORA COD WH","offsetgroup":"ZALORA COD WH","orientation":"h","showlegend":true,"textposition":"auto","texttemplate":"%{x:.2s}","x":[193.379352],"xaxis":"x","y":["BDJ"],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Per-miliar (Rp)"},"tickangle":0,"showticklabels":false},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Tujuan Pengiriman"}},"legend":{"title":{"text":"Customer Name"},"tracegroupgap":0},"margin":{"t":60},"barmode":"stack","width":1000,"height":600,"showlegend":true,"title":{"text":"Total OTS Berdasarkan Tujuan Pengiriman"}},                        {"responsive": true}                    )                };                            </script>        </div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="mini-project.html#cb42-1" aria-hidden="true" tabindex="-1"></a>fig.update_traces(textfont_size<span class="op">=</span><span class="dv">12</span>, textangle<span class="op">=</span><span class="dv">0</span>, textposition<span class="op">=</span><span class="st">&quot;outside&quot;</span>)<span class="op">;</span></span>
+<span id="cb42-2"><a href="mini-project.html#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="mini-project.html#cb42-3" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code></pre></div>
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>                <div id="4f4230e9-64c1-4db2-9eb3-1817a57db6f1" class="plotly-graph-div" style="height:600px; width:1000px;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("4f4230e9-64c1-4db2-9eb3-1817a57db6f1")) {                    Plotly.newPlot(                        "4f4230e9-64c1-4db2-9eb3-1817a57db6f1",                        [{"alignmentgroup":"True","hovertemplate":"Customer Name=LAZADA MPDS COD<br>OUTSTANDING=%{x}<br>Dest Runsheet=%{y}<extra></extra>","legendgroup":"LAZADA MPDS COD","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"LAZADA MPDS COD","offsetgroup":"LAZADA MPDS COD","orientation":"h","showlegend":true,"textposition":"outside","texttemplate":"%{x:.2s}","x":[6638.606005,3699.967101,3036.068315,2943.961754,2450.080273,2410.26772,2125.855633,1625.984454,1549.143345,1528.611112,1316.8457938545453,1297.133789,1262.549812,1244.926671,1147.300166,1127.865028,1104.420339,1068.319703,1066.21041,994.978713,994.032594,894.746203,796.276349,770.978479,763.060947,725.610835,635.082253,554.932528,553.716636,530.007704,496.411036,432.841984,381.423962,362.060507,361.30458,353.947396,332.858477,326.303316,308.042959,300.510754,294.004191,284.816589,262.148579,215.226363,209.632376,198.694413,193.451897,192.741356,191.791485,167.260075],"xaxis":"x","y":["SUB","TGR","BDO","KOE","MJK","SRG","BKS","TGL","CBN","CLG","CGK","KRW","BDJ","MES","AMQ","PLM","MGL","TSM","TKG","PGK","MDN","PKY","UPG","PBL","CKR","DJJ","JBR","MXG","SMI","PLW","BOO","JOG","PKU","SOQ","KDI","AMI","CXP","DPS","MDC","PWT","PSR","BPN","GTO","BKI","BTH","MKQ","BTJ","PNK","TTE","PDG"],"yaxis":"y","type":"bar","textfont":{"size":12},"textangle":0},{"alignmentgroup":"True","hovertemplate":"Customer Name=MENGANTAR KARYA BANGSA PT / COD<br>OUTSTANDING=%{x}<br>Dest Runsheet=%{y}<extra></extra>","legendgroup":"MENGANTAR KARYA BANGSA PT / COD","marker":{"color":"#EF553B","pattern":{"shape":""}},"name":"MENGANTAR KARYA BANGSA PT / COD","offsetgroup":"MENGANTAR KARYA BANGSA PT / COD","orientation":"h","showlegend":true,"textposition":"outside","texttemplate":"%{x:.2s}","x":[1076.996299,940.419119,916.453293,633.332304,548.255104,535.726235,489.917233,443.047398,416.697046,408.204621,376.828513,364.767186,352.671027,330.306647,273.88432,256.080045,230.765878,227.32872,219.681996,216.253452,202.282595,191.261225,171.788059,166.052666,155.985489,143.056835,142.298665,140.652186],"xaxis":"x","y":["UPG","TTE","MES","BDJ","PNK","TGR","TKG","SUB","PKU","PLW","KOE","AMI","DPS","BTJ","PKY","MDC","PLM","PDG","SRG","DJJ","MXG","KDI","BPN","MJK","DTB","CGK","SOQ","AMQ"],"yaxis":"y","type":"bar","textfont":{"size":12},"textangle":0},{"alignmentgroup":"True","hovertemplate":"Customer Name=SALESTOCK COD<br>OUTSTANDING=%{x}<br>Dest Runsheet=%{y}<extra></extra>","legendgroup":"SALESTOCK COD","marker":{"color":"#00cc96","pattern":{"shape":""}},"name":"SALESTOCK COD","offsetgroup":"SALESTOCK COD","orientation":"h","showlegend":true,"textposition":"outside","texttemplate":"%{x:.2s}","x":[500.254873,261.271402],"xaxis":"x","y":["AMQ","SOQ"],"yaxis":"y","type":"bar","textfont":{"size":12},"textangle":0},{"alignmentgroup":"True","hovertemplate":"Customer Name=ORDIVO TEKNOLOGY<br>OUTSTANDING=%{x}<br>Dest Runsheet=%{y}<extra></extra>","legendgroup":"ORDIVO TEKNOLOGY","marker":{"color":"#ab63fa","pattern":{"shape":""}},"name":"ORDIVO TEKNOLOGY","offsetgroup":"ORDIVO TEKNOLOGY","orientation":"h","showlegend":true,"textposition":"outside","texttemplate":"%{x:.2s}","x":[403.806902,398.897028,326.911892,294.769066,267.681742,229.616475,214.843431,198.410656,178.654028,168.011935,163.971947,161.585343,159.543228,150.349723],"xaxis":"x","y":["UPG","MES","TTE","BDJ","TGR","PNK","KOE","PKU","DPS","AMI","PLW","TKG","SUB","BTJ"],"yaxis":"y","type":"bar","textfont":{"size":12},"textangle":0},{"alignmentgroup":"True","hovertemplate":"Customer Name=SICEPAT EKSPRES INDONESIA / COD<br>OUTSTANDING=%{x}<br>Dest Runsheet=%{y}<extra></extra>","legendgroup":"SICEPAT EKSPRES INDONESIA / COD","marker":{"color":"#FFA15A","pattern":{"shape":""}},"name":"SICEPAT EKSPRES INDONESIA / COD","offsetgroup":"SICEPAT EKSPRES INDONESIA / COD","orientation":"h","showlegend":true,"textposition":"outside","texttemplate":"%{x:.2s}","x":[291.215648,241.184902,141.480843],"xaxis":"x","y":["PLW","KOE","MDC"],"yaxis":"y","type":"bar","textfont":{"size":12},"textangle":0},{"alignmentgroup":"True","hovertemplate":"Customer Name=MENGANTAR COM / COD<br>OUTSTANDING=%{x}<br>Dest Runsheet=%{y}<extra></extra>","legendgroup":"MENGANTAR COM / COD","marker":{"color":"#19d3f3","pattern":{"shape":""}},"name":"MENGANTAR COM / COD","offsetgroup":"MENGANTAR COM / COD","orientation":"h","showlegend":true,"textposition":"outside","texttemplate":"%{x:.2s}","x":[273.455627,155.651874],"xaxis":"x","y":["BDJ","TTE"],"yaxis":"y","type":"bar","textfont":{"size":12},"textangle":0},{"alignmentgroup":"True","hovertemplate":"Customer Name=ZALORA COD WH<br>OUTSTANDING=%{x}<br>Dest Runsheet=%{y}<extra></extra>","legendgroup":"ZALORA COD WH","marker":{"color":"#FF6692","pattern":{"shape":""}},"name":"ZALORA COD WH","offsetgroup":"ZALORA COD WH","orientation":"h","showlegend":true,"textposition":"outside","texttemplate":"%{x:.2s}","x":[193.379352],"xaxis":"x","y":["BDJ"],"yaxis":"y","type":"bar","textfont":{"size":12},"textangle":0}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Per-miliar (Rp)"},"tickangle":0,"showticklabels":false},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Tujuan Pengiriman"}},"legend":{"title":{"text":"Customer Name"},"tracegroupgap":0},"margin":{"t":60},"barmode":"stack","width":1000,"height":600,"showlegend":true,"title":{"text":"Total OTS Berdasarkan Tujuan Pengiriman"}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+<div id="quiz-7-1" class="section level3 hasAnchor" number="4.10.3">
+<h3><span class="header-section-number">4.10.3</span> Quiz 7<a href="mini-project.html#quiz-7-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Buatlah Analisa nilai outstanding yang berdasarkan <code>Dest Runsheet</code> dan <code>POD Status</code></p>
+</div>
+<div id="quiz-8-1" class="section level3 hasAnchor" number="4.10.4">
+<h3><span class="header-section-number">4.10.4</span> Quiz 8<a href="mini-project.html#quiz-8-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Buatlah Analisa nilai outstanding yang berdasarkan <code>Origin</code> dan <code>Dest Runsheet</code></p>
+</div>
+<div id="projek" class="section level3 hasAnchor" number="4.10.5">
+<h3><span class="header-section-number">4.10.5</span> Projek<a href="mini-project.html#projek" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Berikut ini diperlihatkan analisis Outstanding berdasarkan persentase <code>Project</code>:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="mini-project.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabel Pivot untuk menghitung jumlah omzet berdasarkan Region</span></span>
+<span id="cb43-2"><a href="mini-project.html#cb43-2" aria-hidden="true" tabindex="-1"></a>df<span class="op">=</span>pd.pivot_table(df,index<span class="op">=</span>[<span class="st">&#39;Project&#39;</span>], values<span class="op">=</span>[<span class="st">&#39;OUTSTANDING&#39;</span>], aggfunc<span class="op">=</span><span class="st">&#39;sum&#39;</span>)</span>
+<span id="cb43-3"><a href="mini-project.html#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-4"><a href="mini-project.html#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Komfersi indeks menjadi Kolom</span></span>
+<span id="cb43-5"><a href="mini-project.html#cb43-5" aria-hidden="true" tabindex="-1"></a>df.reset_index(inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb43-6"><a href="mini-project.html#cb43-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-7"><a href="mini-project.html#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Konversi Total omset menjadi per-miliar </span></span>
+<span id="cb43-8"><a href="mini-project.html#cb43-8" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&quot;OUTSTANDING&quot;</span>] <span class="op">=</span> (df[<span class="st">&#39;OUTSTANDING&#39;</span>]<span class="op">/</span><span class="dv">1000000000</span>)</span>
+<span id="cb43-9"><a href="mini-project.html#cb43-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-10"><a href="mini-project.html#cb43-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb43-11"><a href="mini-project.html#cb43-11" aria-hidden="true" tabindex="-1"></a><span class="co"># membuat grafik lingkaran (pie-chart)</span></span>
+<span id="cb43-12"><a href="mini-project.html#cb43-12" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.pie(df, values<span class="op">=</span><span class="st">&#39;OUTSTANDING&#39;</span>, names<span class="op">=</span><span class="st">&#39;Project&#39;</span>, hole<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb43-13"><a href="mini-project.html#cb43-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-14"><a href="mini-project.html#cb43-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Pengaturan detail grafik</span></span>
+<span id="cb43-15"><a href="mini-project.html#cb43-15" aria-hidden="true" tabindex="-1"></a>fig.update_layout(showlegend<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb43-16"><a href="mini-project.html#cb43-16" aria-hidden="true" tabindex="-1"></a>                  autosize<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb43-17"><a href="mini-project.html#cb43-17" aria-hidden="true" tabindex="-1"></a>                  width<span class="op">=</span><span class="dv">800</span>,</span>
+<span id="cb43-18"><a href="mini-project.html#cb43-18" aria-hidden="true" tabindex="-1"></a>                  height<span class="op">=</span><span class="dv">600</span>,</span>
+<span id="cb43-19"><a href="mini-project.html#cb43-19" aria-hidden="true" tabindex="-1"></a>                  title<span class="op">=</span><span class="st">&quot;Total Outstanding berdasarkan persentase `Project`&quot;</span>)<span class="op">;</span></span>
+<span id="cb43-20"><a href="mini-project.html#cb43-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-21"><a href="mini-project.html#cb43-21" aria-hidden="true" tabindex="-1"></a>fig.update_traces(textposition<span class="op">=</span><span class="st">&#39;outside&#39;</span>, textinfo<span class="op">=</span><span class="st">&#39;percent+label&#39;</span>)<span class="op">;</span></span>
+<span id="cb43-22"><a href="mini-project.html#cb43-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-23"><a href="mini-project.html#cb43-23" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code></pre></div>
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>                <div id="a5a12aeb-f437-4ea8-a979-8c6aa37e888e" class="plotly-graph-div" style="height:600px; width:800px;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("a5a12aeb-f437-4ea8-a979-8c6aa37e888e")) {                    Plotly.newPlot(                        "a5a12aeb-f437-4ea8-a979-8c6aa37e888e",                        [{"domain":{"x":[0.0,1.0],"y":[0.0,1.0]},"hole":0.5,"hovertemplate":"Project=%{label}<br>OUTSTANDING=%{value}<extra></extra>","labels":["COD CNC","COD CORPORATE","COD ONGKIR","COD RETAIL","COD UPS"],"legendgroup":"","name":"","showlegend":true,"values":[14.676239924,80.66573822285454,0.192554892,3.589503849,0.205593862],"type":"pie","textinfo":"percent+label","textposition":"outside"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"legend":{"tracegroupgap":0},"margin":{"t":60},"showlegend":true,"autosize":false,"width":800,"height":600,"title":{"text":"Total Outstanding berdasarkan persentase `Project`"}},                        {"responsive": true}                    )                };                            </script>        </div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="visualisasi-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="studi-kasus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": true,
+"twitter": true,
+"linkedin": true,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/sainzdata/Py_JNE/edit/master/04-Mini_Project.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
