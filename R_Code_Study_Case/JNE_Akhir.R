@@ -1,0 +1,286 @@
+# Import Data (RiskRegister)
+
+library(readxl)
+riskregister = read_excel("C:/Users/DELLA/OneDrive/Documents/RiskRegister.xlsx",sheet=1,skip=1)
+riskregister
+
+# Pivot Table
+
+## Pivot Table Status Risiko
+
+library(pivottabler)
+ptR <- PivotTable$new()
+ptR$addData(riskregister)
+ptR$addRowDataGroups("STATUS RISIKO")
+ptR$defineCalculation(calculationName="STATUS RISIKO", summariseExpression="n()")
+pivotstatres = ptR$renderPivot()
+pivotstatres
+
+## Pivot Table Mitigasi
+
+pt <- PivotTable$new()
+pt$addData(riskregister)
+pt$addRowDataGroups("STATUS MITIGASI")
+pt$defineCalculation(calculationName="STATUS MITIGASI", summariseExpression="n()")
+pivotmit= pt$renderPivot()
+pivotmit= pt$renderPivot()
+
+## Pivot Table Risk Type
+
+pivot = PivotTable$new()
+pivot$addData(riskregister)
+pivot$addRowDataGroups("Risk Type")
+pivot$defineCalculation(calculationName = "Risk Type", summariseExpression = "n()")
+pivotrisk = pivot$renderPivot()
+pivotrisk
+
+## Pivot Table Departemen
+
+pivot1 = PivotTable$new()
+pivot1$addData(riskregister)
+pivot1$addRowDataGroups("Departemen")
+pivot1$addColumnDataGroups("STATUS MITIGASI")
+pivot1$defineCalculation(calculationName = "Departemen", summariseExpression = "n()")
+pivotdepart = pivot1$renderPivot()
+pivotdepart
+
+# Analisis Data
+
+## Bar Chart 
+
+### Status Risk
+
+library(plotly)
+
+dat <- data.frame(
+  cat = factor(c("Acceptable","Issue","Supplementary Issue","Unaccaptable"), 
+               levels=c("Acceptable","Issue","Supplementary Issue","Unaccaptable")),
+  value = c(198, 127,194,47)
+)
+
+p <- ggplot(data=dat, aes(x=cat, y=value, fill=cat)) +
+  geom_bar(stat="identity")+
+  labs(title=" Bar Plot for Status Risk")
+
+fig <- ggplotly(p)
+
+fig
+
+### Mitigation Risk
+
+library(plotly)
+dm <- data.frame(
+  categori = factor(c("Priority","Not Priority"), 
+                    levels=c("Priority","Not Priority")),
+  value = c(174,392))
+
+pm <- ggplot(dm, aes(x=categori, y=value, fill=categori)) +
+  geom_bar(stat="identity")+
+  labs(title=" Bar Plot for Mitigation Risk")
+
+fig <- ggplotly(pm)
+fig
+
+### Mitigation and Department
+
+library(ggplot2) 
+ggplot(data = riskregister, aes(x = Departemen , fill = `STATUS MITIGASI`)) +
+  geom_bar(position = "dodge")+
+  theme(text = element_text(size = 8),element_line(size =1))
+
+## Pie Chart
+
+library(plotly)
+plot1data <- riskregister %>%
+  count(`Risk Type`) %>%
+  arrange(desc('Risk Type')) %>%
+  mutate(prop = round(n*100/sum(n), 1),
+         lab.ypos = cumsum(prop) - 0.5*prop)
+
+## Membuat Diagram Pai
+fig <- plot_ly(plot1data, labels = ~`Risk Type`, values = ~n, type = 'pie')
+fig <- fig %>% layout(title = 'Risk Type',
+                      xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+                      yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+
+fig
+
+# Import Data (CSA)
+
+csa = read_excel("C:/Users/DELLA/OneDrive/Documents/RiskRegister.xlsx",sheet="CSA",skip=1)
+csa
+
+# Pivot Tabel
+
+## Sheet CSA : Design
+library(pivottabler)
+ptd <- PivotTable$new()
+ptd$addData(csa)
+ptd$addRowDataGroups("D")
+ptd$defineCalculation(calculationName="D", summariseExpression="n()")
+ptd$renderPivot()
+
+## Sheet CSA : Implementation
+library(pivottabler)
+pti <- PivotTable$new()
+pti$addData(csa)
+pti$addRowDataGroups("I")
+pti$defineCalculation(calculationName="I", summariseExpression="n()")
+pti$renderPivot()
+
+## Sheet CSA : Monitoring
+library(pivottabler)
+ptmn <- PivotTable$new()
+ptmn$addData(csa)
+ptmn$addRowDataGroups("M")
+ptmn$defineCalculation(calculationName="M", summariseExpression="n()")
+ptmn$renderPivot()
+
+## Sheet CSA : Evaluation
+library(pivottabler)
+ptmn <- PivotTable$new()
+ptmn$addData(csa)
+ptmn$addRowDataGroups("E")
+ptmn$defineCalculation(calculationName="E", summariseExpression="n()")
+ptmn$renderPivot()
+
+## Sheet CSA : PERSENTAsE EFEKTIVITAS KONTROL
+
+library(pivottabler)
+ptpek <- PivotTable$new()
+ptpek$addData(csa)
+ptpek$addRowDataGroups("To Reduce")
+ptpek$defineCalculation(calculationName="To Reduce", summariseExpression="n()")
+ptpek$renderPivot()
+
+## Sheet CSA : Source Data Process
+library(pivottabler)
+ptrow<- PivotTable$new()
+ptrow$addData(rr5)
+ptrow$addRowDataGroups("Source Data Process")
+ptrow$defineCalculation(calculationName="Source Data Process", summariseExpression="n()")
+ptrow$renderPivot()
+
+# Analisis Data
+
+## Bar Plot Design
+
+library(plotly)
+
+r5 <- data.frame(
+  categori = factor(c("1","2","3"), 
+                    levels=c("1","2","3")),
+  value = c(132,2325,722)
+)
+
+pr5 <- ggplot(r5, aes(x=categori, y=value, fill=categori)) +
+  geom_bar(stat="identity")+
+  labs(title=" Bar Plot for Design")
+
+figD <- ggplotly(pr5)
+figD
+
+## Bar Plot Implementation
+
+
+library(plotly)
+
+ri5 <- data.frame(
+  categori = factor(c("1","2","3"), 
+                    levels=c("1","2","3")),
+  value = c(177,2113,889)
+)
+
+pri5 <- ggplot(ri5, aes(x=categori, y=value, fill=categori)) +
+  geom_bar(stat="identity")+
+  labs(title=" Bar Plot for Implementation")
+
+figI <- ggplotly(pri5)
+figI
+
+## Bar Plot Monitoring
+
+library(plotly)
+
+rmn5 <- data.frame(
+  categori = factor(c("0","1","2","3"), 
+                    levels=c("0","1","2","3")),
+  value = c(1,453,284,2441)
+)
+
+prmn5 <- ggplot(rmn5, aes(x=categori, y=value, fill=categori)) +
+  geom_bar(stat="identity")+
+  labs(title=" Bar Plot for Monitoring")
+
+figM <- ggplotly(prmn5)
+
+figM
+
+## Bar Plot Evaluation
+library(plotly)
+
+re5 <- data.frame(
+  categori = factor(c("0","1","2","3"), 
+                    levels=c("0","1","2","3")),
+  value = c(18,1066,266,1829)
+)
+
+pre5 <- ggplot(re5, aes(x=categori, y=value, fill=categori)) +
+  geom_bar(stat="identity")+
+  labs(title=" Bar Plot for Evaluation")
+
+figE <- ggplotly(pre5)
+
+figE
+
+## Plot Klasifikasi Tipe Kontrol pada Skala Efektivitas
+
+library(ggplot2) 
+ggplot(data = csa, aes(x = Type, fill = Scale)) +
+  geom_bar(position = "dodge")+
+  labs(title=" Klasifikasi Tipe Kontrol pada Skala Efektivitas")+
+  theme(text = element_text(size = 8),element_line(size =1))
+
+## Plot Skala Efektivitas Kontrol
+
+library(ggplot2) 
+ggplot(data = csa, aes(x = Departemen, fill = Scale)) +
+  geom_bar(position = "dodge")+
+  labs(title=" Skala Efektivitas Kontrol")+
+  theme(text = element_text(size = 8),element_line(size =1))
+
+## Plot Presentase Efektivitas Kontrol
+
+library(dplyr)
+library(ggplot2)
+library(plotly)
+plotdata <- csa %>%
+  count(`To Reduce`) %>%
+  arrange(desc('To Reduce')) %>%
+  mutate(prop = round(n*100/sum(n), 1),
+         lab.ypos = cumsum(prop) - 0.5*prop)
+
+### Membuat Diagram Pai
+fig2 <- plot_ly(plotdata, labels = ~`To Reduce`, values = ~n, type = 'pie')
+fig2 <- fig2 %>% layout(title = 'Presentase Efektivitas Kontrol',
+                        xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+                        yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+fig2
+
+## Plot Presentase Tipe Kontrol
+
+library(dplyr)
+library(ggplot2)
+library(plotly)
+plotdata <- csa %>%
+  count(`Type`) %>%
+  arrange(desc('Type')) %>%
+  mutate(prop = round(n*100/sum(n), 1),
+         lab.ypos = cumsum(prop) - 0.5*prop)
+
+### Membuat Diagram Pai
+fig2 <- plot_ly(plotdata, labels = ~`Type`, values = ~n, type = 'pie')
+fig2 <- fig2 %>% layout(title = 'Presentase Type Kontrol',
+                        xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+                        yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+fig2
