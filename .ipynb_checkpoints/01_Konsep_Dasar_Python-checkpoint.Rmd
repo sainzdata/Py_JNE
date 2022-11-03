@@ -1,0 +1,356 @@
+# Konsep Dasar Python
+
+Untuk memulai mempelajari segala sesuatu perlu dilakukan dari hal yang sangat fundamental, begitu pula jika anda ingin belajar  Python. Konsep dasar dan cara kerja Python, dapat dianalogikan sebagai proses memasak Roti serata bagaimana cara menyajiannya. Perhatikan gambar 1 berikut: 
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/analogi_py.png?raw=true" width=800" height="300">
+</center>
+
+Sejatinya koding yang dituliskan dalam bahasa pemrograman Python adalah suatu instruksi dari pengguna **(user)** kepada komputer untuk melakukan proses mengolah antara bahan, persiapan sampai dengan memasak dibutuhkan “kata” khusus, “simbol”, sehingga dikombinasikan sebagai sebuah “kalimat”.
+
+
+## Atribut & Peralatan
+
+Setiap bahasa pemrograman memiliki atribut dan aturan penulisan yang berbeda-beda. Python memiliki beberapa aturan penulisan objek, variabel, statement, operator, hingga penulisan komentar. Jika terdapat penulisan yang tidak sesuai dengan aturan, maka program tidak akan berjalan atau error. Berikut ini adalah beberapa atribut dan struktur penulisan yang perlu diperhatikan pengguna Python.
+
+### Objek 
+
+Apapun yang diimplementasikan di Python disebut sebagai sebuah objek. Object ini tentu akan memiliki beberapa tipe, misalnya nilai Integer atau Boolean. Berdasarkan tipe suatu objek tersebut, dapat menentukan proses apa yang bisa dilakukan dengan data yang dimiliki. Contoh; suatu nilai Integer dianggap sebagai objek yang dianalogikan dengan sebuah kotak transparan yang memiliki nilai 10.
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/tipe_objek.png?raw=true" width=500" height="300">
+</center>
+
+
+**Catatan:** Tipe object, menentukan apakah value yang ada di dalam kotak ini dapat diubah (mutable) atau konstan (immutable).
+
+
+### Variabel 
+
+Variabel merupakan tempat penyimpanan sementara yang dapat digunakan untuk menyimpan data atau informasi. Variabel bersifat mutable, artinya nilai yang ada di dalam variabel dapat diubah, Nilai yang ada di dalam variabel pun dapat berupa bilangan maupun kata. Jadi, apabila suatu saat data tersebut ingin ditampilkan, kita hanya perlu memanggil variabel tersebut untuk menampilkan data yang tersimpan. Dengan kata lain variabel dapat dianggap seperti sebuah sticky note yang menempel di sebuah objek. 
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/variabel.png?raw=true" width=400" height="200">
+</center>
+
+### Statement
+
+Statement adalah instruksi atau kalimat perintah yang diberikan dalam beberapa baris untuk dieksekusi oleh komputer. Pada bahasa Python, jika kita ingin menuliskan beberapa statement dalam satu baris maka kita harus memisahkannya dengan titik-koma. Seperti contoh berikut:
+
+```{python, eval=F}
+a = 10 ; b = 12; c = a+b; 
+print(a,b,c)
+```
+
+
+### Komentar 
+
+Menambahkan/Memberikan komentar dalam skrip/koding Python adalah untuk memudahkan anda memahami arti/makna penggunaan suatu perintah/program. Komentar yang ditulis dalam sebuah program tersebut hanya bersifat penjelasan tentang apa yang dilakukannya atau apa yang seharusnya dilakukan oleh sebuah skrip/koding. Perlu dicatat bahwa komentar yang bersifat informasi tidak ada hubungannya dengan logika pemrogaram yang sedang anda gunakan. Mereka benar-benar diabaikan oleh kompiler dan dengan demikian tidak pernah tercermin pada input. Biasanya komentar dituliskan pada satu baris yang tersedia di Python, dengan menggunakan `#` di awal maupun di akhir pernyataan.
+
+
+```{python eval=FALSE, include=T}
+# input suatu nilai ke variabel (contoh: komentar di awal script)
+a1  = 10
+a_1 = 12   # input suatu nilai ke variabel (contoh: komentar di akhir script)
+1a  = 13   # contoh penulisan variabel yang salah
+```
+
+**Keterangan:** Penulisan variabel dalam Python juga memiliki aturan tertentu, sebagai berikut.
+
+* Karakter pertama harus berupa huruf atau garis bawah/underscore (_), artinya **tidak boleh dimulai dengan angka**.
+* Karakter selanjutnya dapat berupa huruf, garis bawah/underscore (_) atau angka.
+* Karakter pada nama variabel bersifat sensitif (case-sensitif). Artinya huruf kecil dan huruf besar dibedakan. Sebagai contoh, variabel nama dan Nama dianggap menjadi variabel yang berbeda. 
+
+
+
+## Persiapan
+
+Dalam persiapan data, kita perlu mengetahui apa tipe data karena tiap tipe data memiliki perlakuan yang berbeda. Khususnya, jika Python tidak mendeteksi tipe data kita dengan benar, misalkan nomor telepon dalam bentuk `Integer` perlu dirubah menjadi `Strings`. 
+
+### Tipe Data
+
+Berikut adalah tipe data yang umum di Python:
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/tipedata_py.jpeg?raw=true" width=630" height="430">
+</center>
+
+**Keterangan:**
+
+* `List[]` :- Kumpulan elemen dapat diubah (mutable).
+* ` Tuple()`:- Kumpulan elemen tidak dapat diubah (immutable).
+* `Set{}` :- Koleksi elemen unik (tidak memungkinkan pengulangan elemen)
+
+Selain pemahaman tipe data, memahami penggunaan operator Python adalah hal yang sangat penting untuk mempersiapkan pengolahan data. 
+
+
+### Operator 
+
+Operator merupakan simbol-simbol yang digunakan untuk melakukan operasi tertentu. Ada 4 jenis operator dalam pemrograman yang wajib diketahui:
+
+#### Operator Penugasan  {-}
+
+Seperti namanya, operator ini digunakan untuk memberikan tugas pada variabel. Selain menyimpan atau pengisian nilai, ada juga menjumlahkan, mengurangi, perkalian, pembagian, dsb. Selengkapnya bisa dilihat contoh berikut.
+
+```{python, eval=F}
+a = 9                   # Input suatu nilai ke variabel
+a += 8                  # tambahkan dengan 8 
+a -= 7                  # kurangi 7
+a *= 6                  # kali 6
+a /= 5                  # bagi dengan 5
+a **=4                  # pangkat 4
+a
+```
+#### Operator Aritmatika {-}
+
+Opeartor aritmatika termasuk dalam operator yang paling sering digunakan dalam pemrograman. Berikut adalah contoh penggunaanya:
+
+```{python, eval=F}
+a = 3                   # Input suatu nilai ke variabel
+b = 6                   # Input suatu nilai ke variabel
+a + b                   # Penjumlahan
+a - b                   # Pengurangan
+a * b                   # Perkalian
+a / b                   # Pembagian
+a // b                  # Pembagian bulat
+a % b                   # Sisa Bagi (modulo)
+a ** b                  # Pangkat
+```
+
+#### Operator Pembanding {-}
+
+Operator ini digunakan untuk membandingkan dua buah nilai. Operator ini juga dikenal dengan operator relasi dan sering digunakan untuk membuat sebuah logika atau kondisi. Perhatikan contoh berikut:
+
+```{python, eval=F}
+a = 3                   # Input suatu nilai ke variabel
+b = 6                   # Input suatu nilai ke variabel
+a == b                  # apakah a sama dengan b?
+a < b                   # apakah a lebih kecil dari b?
+a > b                   # apakah a lebih besar dari b?
+a <= b                  # apakah a lebih kecil sama dengan b?
+a >= b                  # apakah a lebih besar sama dengan b? b?
+a != b                  # apakah a bukan b?
+```
+
+
+#### Opeartor Logika  {-}
+
+```{python, eval=F}
+a=True                  # Input suatu nilai ke variabel
+b=False                 # Input suatu nilai ke variabel
+not a                   # negasi 
+a & b                   # Logika AND
+a and b                 # Logika AND
+a | b                   # Logika OR
+a or b                  # Logika OR
+```
+
+## Proses (Algoritma)
+
+Pada dasarnya, algoritma hanyalah serangkaian instruksi yang dirancang dengan menggunakan alur logis, disusun langkah demi langkah, yang berguna untuk menyelesaikan suatu masalah maupun dalam menyelesaikan tugas tertentu. Dalam komputasi, algoritma menyediakan komputer dengan panduan berturut-turut untuk menyelesaikan tindakan. Mereka terdiri dari daftar instruksi yang tepat yang menguraikan dengan tepat bagaimana menyelesaikan tugas. 
+
+Untuk mempermudah pemahaman mengenai algoritma ini, maka berikut ini diberikan tiga contoh penerepan algoritma dalam kehidupan sehari-hari dan dilengkapi dengan flowchartnya. Dalam hal ini, misalkan anda ingin memasak telur, ada beberapa variasi dan langkah yang bisa dilakukan:
+
+* Siapkan telur yang akan dimasak
+* Tentukan telurnya akan dimasak seperti apa
+* Jika ingin memasak orak-arik, maka:
+  * Pecahkan telurnya ke dalam wadah
+  * Kocok telur dan tambahkan bumbu sesuai selera
+  * Panaskan penggorengan
+  * Masukkan kocokan telur ke penggorengan yang sudah panas
+  * Aduk telur sampai menjadi orak-arik
+* Jika ingin memasak ceplok, maka:
+  * Panaskan penggorengan yang sudah diisi minyak
+  * Pecahkan telur di penggorengan dan tunggu sampai matang
+* Jika ingin memasak telur rebus, maka:
+  * Didihkan air dalam panci
+  * Masukkan telur utuh ke dalamnya dan tunggu beberapa menit sampai isinya matang sesuai selera
+* Siap untuk dimakan
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/masak-telurs.png?raw=true" width="550" height="700">
+</center>
+
+
+**Catatan:** Jika anda ingin belajar lebih lanjut mengenai prosedur membuat flowchart silahkan klik [disini](https://ndoware.com/diagram-alir-flowchart.html). 
+
+
+### Percabangan If
+
+Percabangan `if` digunakan saat terdapat satu pilihan keputusan. Contoh, Jika peserta pelatihan tidak lulus dalam ujian, maka kita harus ikut remidi. Sedangkan yang lulus dapat sertifikat.
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/if.png?raw=true" width="300" height="300">
+</center>
+
+Dalam hal ini digunakan operator relasi sama dengan (==) untuk membandingkan isi variabel lulus. Sedangkan tanda titik-dua (:) adalah tanda untuk memulai blok kode `if`. 
+
+```{python, eval=F}
+# Program untuk Check Kelulusan
+
+lulus = input("Apakah anda lulus? [ya/tidak]: ")
+
+if lulus == "tidak":
+   print("Anda harus ikut ujian remidi")
+```
+**Catatan**: Penulisan blok `if`, harus diberikan indentasi tab atau spasi 2x.
+
+Biar pemahamannya semakin mantap, silahkan coba contoh kasus berikut ini.
+
+```{python, eval=F}
+# program untuk mengecek bonus dan diskon
+
+biaya_pengiriman = input("Total biaya pengiriman: Rp ")
+
+# jumlah yang harus dibayar adalah berapa total pengirimannya
+# tapi kalau dapat diskon akan berkurang biaya pengiriamannya
+
+bayar = biaya_pengiriman
+
+# jika dia biaya pengiriman di atas 100rb maka berikan bonus dan diskon
+
+if int(biaya_pengiriman) > 100000:
+    print("dan diskon 5%")
+    print("Kamu mendapatkan bonus minuman dingin")
+
+    # hitung diskonnya
+    diskon = int(biaya_pengiriman) * 5/100   # 5%
+    bayar = int(biaya_pengiriman) - diskon
+
+    # cetak struk
+    print("Total yang harus dibayar: Rp %s" % bayar)
+    print("Terima kasih sudah mengirim paket dengan JNE")
+    print("Selamat Datang Kembali...")
+```
+
+### Percabangan If/Else
+
+Percabangan If/Else digunakan saat terdapat dua pilihan keputusan.
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/if-else.png?raw=true" width="500" height="350">
+</center>
+
+Jika contoh diatas diterapkan dengan program Python maka diperoleh;
+
+```{python, eval=F}
+nilai = input("Berapa Nilai Anda?: ")
+
+if int(nilai) >= 75:
+    print("Anda berhak mendapatkan Sertifikat")
+else:
+    print("Diwajibkan untuk ikut remidi")
+```
+
+
+### Percabangan If/Elif/Else
+
+Percabangan If/Elif/Else digunakan apabila terdapat lebih dari dua pilihan keputusan.
+
+<center>
+<img src="https://github.com/sainzdata/Py_JNE/blob/main/images/if-elif-else.png?raw=true" width="550" height="400">
+</center>
+
+Berikut ini adalah cara penyusunan programmnya:
+
+```
+if begini:
+    maka ini
+elif begitu:
+    maka itu
+elif begono:
+    maka anu
+    .
+    .
+    .
+elif dst:
+    maka dst    
+else:
+    pokoknya selain yg diatas!
+```
+
+Misalkan kita akan membuat program untuk menentukan grade nilai dengan flow chart diatas, Maka kode programnya adalah sebagai berikut:
+
+```{python, eval=F}
+# menentukan grade nilai kelulusan
+
+nilai = int(input("Inputkan nilaimu: "))
+
+if nilai >= 90:
+   grade = "A"
+elif nilai >= 80:
+   grade = "B+"
+elif nilai >= 70:
+   grade = "B"
+elif nilai >= 60:
+   grade = "C+"
+elif nilai >= 50:
+   grade = "C"
+elif nilai >= 40:
+   grade = "D"
+else:
+   grade = "E"
+
+print("Grade: %s" % grade)
+```
+
+### Perulangan for
+
+Perualangan dalam bahasa pemrograman berfungsi menyuruh komputer melakukan sesuatu secara berulang-ulang. Terdapat dua jenis perualangan dalam bahasa pemrograman python, yaitu perulangan dengan for dan while. Perbedaannya adalah perulangan for biasanya digunakan untuk mengulangi kode yang sudah diketahui banyak perulangannya. 
+
+Contoh program:
+
+```{python eval=F}
+ulang = 10
+
+for i in range(ulang):
+    print(f"Perulangan ke-{i}")
+```
+
+Variabel `i` berfungsi untuk menampung indeks, dan fungsi `range()` berfungsi untuk membuat list dengan range dari 0-10. Fungsi str() berfungsi merubah tipe data integer ke string
+
+
+Contoh lain menggunakan senarai (list):
+
+```{python eval=F}
+item = ['SS','YES','OK','PESONA']
+
+for Pruduk_JNE in item:
+    print(Pruduk_JNE)
+```
+
+
+### Perulangan while
+
+Perulangan while untuk perulangan yang memiliki syarat dan tidak tentu berapa banyak perulangannya.
+
+```{python eval=F}
+jawab = 'ya'
+hitung = 0
+
+while(jawab == 'ya'):
+    hitung += 1
+    jawab = input("Ulang lagi tidak? ")
+
+print(f"Total perulagan: {hitung}")
+```
+
+Atau bisa juga dengan bentuk yang seperti ini, dengan menggunakan kata kuci `break`
+
+
+```{python eval=F}
+jawab = 'ya'
+hitung = 0
+
+while(jawab == 'ya'):
+    hitung += 1
+    jawab = input("Ulang lagi tidak? ")
+
+print(f"Total perulagan: {hitung}")
+```
+
+
+## Penyajian
+
+Dilanjukan ke Pertemuan berikutnya....
+
